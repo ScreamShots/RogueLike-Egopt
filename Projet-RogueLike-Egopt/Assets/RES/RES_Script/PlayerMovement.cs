@@ -48,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(Input.GetAxisRaw("Roll"));
 
         //Move
 
@@ -61,9 +60,8 @@ public class PlayerMovement : MonoBehaviour
 
         //Dash
 
-        if (/*Input.GetButtonDown("Roll") ||*/ Input.GetAxisRaw("Roll") > 0 && isPlayerDashAvailable == true)
+        if (Input.GetAxisRaw("Roll") > 0 && isPlayerDashAvailable == true)
         {
-            Debug.Log("entrée dans le if");
             StartCoroutine(Dash(lastMove));
         }
 

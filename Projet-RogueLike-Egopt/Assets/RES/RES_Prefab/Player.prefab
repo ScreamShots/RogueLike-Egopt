@@ -102,8 +102,8 @@ MonoBehaviour:
   inputVerticalMoove: 0
   playerDirection: 0
   lastMove: {x: 0, y: 0, z: 0}
-  dashSpeed: 80
-  dashTime: 0.2
+  dashSpeed: 60
+  dashTime: 0.5
   dashCooldown: 1
   dashCurve:
     serializedVersion: 2
@@ -111,17 +111,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0.5817708
-      outSlope: 0.5817708
+      inSlope: 0.28297225
+      outSlope: 0.28297225
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.33963278
-      value: 0.19758843
-      inSlope: 0.14128043
-      outSlope: 0.14128043
+      time: 0.4437969
+      value: 0.1255822
+      inSlope: 0.028593734
+      outSlope: 0.028593734
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -129,8 +129,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -0.29920992
-      outSlope: -0.29920992
+      inSlope: -0.22578478
+      outSlope: -0.22578478
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
