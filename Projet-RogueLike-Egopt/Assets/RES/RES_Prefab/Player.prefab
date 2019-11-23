@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3080488959520002744}
   - component: {fileID: 54436460348400174}
   - component: {fileID: 9008232266388774560}
+  - component: {fileID: 308797032114549613}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -29,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2381946811977984154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1999314, y: -0.6469748, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,8 +73,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a5aa6cc89c03f11428cb4e5d3d577d6b, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 1487330265556667585, guid: 0ddc8bff0663271419b406e384c79bbf,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -139,6 +141,8 @@ MonoBehaviour:
   inputVerticalMoove: 0
   playerDirection: 0
   lastMove: {x: 0, y: 0, z: 0}
+  directionHorizontal: 0
+  directionVertical: 0
   dashSpeed: 60
   dashTime: 0.5
   dashCooldown: 1
@@ -190,6 +194,19 @@ MonoBehaviour:
   attackSpeed: 0
   imobilisationTime: 0.75
   attackDirection: 0
-  equipiedWeapon: {fileID: 2707228538706793494, guid: b63d7139c7870754caf68f81bea7c1ff,
+  equipiedWeapon: {fileID: 2707228538706793494, guid: ba1e1e55addf66e40ac4ae68073e98f0,
     type: 3}
   usedWeapon: {fileID: 0}
+--- !u!114 &308797032114549613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2381946811977984154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8268106d01c9234aa0813813c73fdfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerIventory: []

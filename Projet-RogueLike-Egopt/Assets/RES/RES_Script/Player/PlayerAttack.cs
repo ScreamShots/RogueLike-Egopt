@@ -7,8 +7,9 @@ public class PlayerAttack : MonoBehaviour
     //Statement
 
     public static bool isPlayerAttackAvailable;
+
     public float attackSpeed;
-    public float playerImobilisationTime;
+    public float imobilisationTime;
     public int attackDirection;
 
     public GameObject equipiedWeapon;
@@ -36,10 +37,16 @@ public class PlayerAttack : MonoBehaviour
         usedWeapon = Instantiate(equipiedWeapon);
         usedWeapon.transform.parent = GetComponent<Transform>();
         usedWeapon.transform.localPosition = new Vector3(0, 0, 0);
+
         isPlayerAttackAvailable = false;
         PlayerMovement.isPlayerMoovAvailable = false;
         PlayerMovement.isPlayerDashAvailable = false;
         PlayerMovement.playerRgb.velocity = new Vector3(0,0,0);
+
+        attackSpeed = usedWeapon.GetComponent<WeaponManager>().weaponAttackSpeed;
+        imobilisationTime = usedWeapon.GetComponent<WeaponManager>().weaponImobilisationTime;
+
+
 
         switch (attackDirection)
         {
@@ -61,8 +68,7 @@ public class PlayerAttack : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.001f);
-        attackSpeed = usedWeapon.GetComponent<WeaponManager>().WeaponAttack();
-        imobilisationTime = 1;
+        usedWeapon.GetComponent<WeaponManager>().WeaponAttack();
 
         yield return new WaitForSeconds(imobilisationTime);
         Destroy(usedWeapon);

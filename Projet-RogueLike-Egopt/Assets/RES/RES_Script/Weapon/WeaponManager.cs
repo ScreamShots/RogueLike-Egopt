@@ -26,14 +26,11 @@ public class WeaponManager : MonoBehaviour
         }
 
     }
-
-    public float WeaponAttack()
+    public void WeaponAttack()
     {
         foreach (GameObject enemy in enemyInRangList)
         {
             enemy.GetComponent<EnemyHealthSystem>().IsTakingDmg(weaponDmg);
-        }
-        return weaponAttackSpeed;
-        
+        }        
     }
 }
