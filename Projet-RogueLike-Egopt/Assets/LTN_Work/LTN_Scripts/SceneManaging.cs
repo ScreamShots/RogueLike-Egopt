@@ -7,18 +7,23 @@ public class SceneManaging : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public static bool GameIsRunning = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        PauseGame();
+
     }
 
+    private void FixedUpdate()
+    {
+        PauseGame();
+    }
     public void NewGameSceneLoad()
     {
         SceneManager.LoadScene("TestGameScene", LoadSceneMode.Single);
@@ -42,17 +47,20 @@ public class SceneManaging : MonoBehaviour
             SceneManager.LoadScene("PauseScreenScene", LoadSceneMode.Additive);
             Debug.Log("Game paused");
         }
-        else if(Input.GetKeyDown(KeyCode.Escape) && GameIsPaused == true && GameIsRunning == true)
-        {
-            GameIsPaused = false;
-            Debug.Log("Game unpausing");
-            SceneManager.UnloadSceneAsync("PauseScreenScene");
-            Time.timeScale = 1f;
-            Debug.Log("Game playing");
-        }
         else if(GameIsPaused == true && GameIsRunning == true)
         {
-            UnloadPauseButton();
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                GameIsPaused = false;
+                Debug.Log("Game unpausing");
+                SceneManager.UnloadSceneAsync("PauseScreenScene");
+                Time.timeScale = 1f;
+                Debug.Log("Game playing");
+            }
+            else
+            {
+                UnloadPauseButton();
+            }
         }
     }
 
@@ -71,6 +79,7 @@ public class SceneManaging : MonoBehaviour
         GameIsRunning = false;
         Debug.Log("Unpausing and getting back to title");
         SceneManager.UnloadSceneAsync("PauseScreenScene");
+        SceneManager.LoadScene("TitleScreenScene");
         Time.timeScale = 1f;
         Debug.Log("You're back to title");
     }

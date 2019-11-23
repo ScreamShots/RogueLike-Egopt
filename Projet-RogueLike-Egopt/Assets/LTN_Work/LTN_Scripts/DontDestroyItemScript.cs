@@ -7,7 +7,7 @@ public class DontDestroyItemScript : MonoBehaviour
 
     private void Awake()
     {
-        
+        DontDestroyOnLoad(this.gameObject);
     }
     // Start is called before the first frame update
     void Start()
