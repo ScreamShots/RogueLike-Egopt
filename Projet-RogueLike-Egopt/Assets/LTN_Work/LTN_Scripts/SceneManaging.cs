@@ -14,12 +14,6 @@ public class SceneManaging : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void FixedUpdate()
     {
         PauseGame();
@@ -49,18 +43,11 @@ public class SceneManaging : MonoBehaviour
         }
         else if(GameIsPaused == true && GameIsRunning == true)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                GameIsPaused = false;
-                Debug.Log("Game unpausing");
-                SceneManager.UnloadSceneAsync("PauseScreenScene");
-                Time.timeScale = 1f;
-                Debug.Log("Game playing");
-            }
-            else
-            {
-                UnloadPauseButton();
-            }
+            UnloadPauseButton();
+        }
+        else if(GameIsPaused == true && GameIsRunning == true && Input.GetKeyDown(KeyCode.Escape))
+        {
+            UnloadPauseButton();
         }
     }
 
