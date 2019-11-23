@@ -28,6 +28,7 @@ public class SceneManaging : MonoBehaviour
     public void CloseGame()
     {
         Debug.Log("Game is closed");
+        UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
 
