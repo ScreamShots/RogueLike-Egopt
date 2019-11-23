@@ -16,6 +16,9 @@ public class XP_RoomSpawner : MonoBehaviour
     private bool spawned;
     private int numberOfRooms;
 
+    [SerializeField]
+     public bool spawningIsFinish = false;
+
 
 
 
@@ -31,6 +34,7 @@ public class XP_RoomSpawner : MonoBehaviour
         if (numberOfRooms >= 13)
         {
             Instantiate(templates.closedRooms[0], transform.position, templates.closedRooms[0].transform.rotation);
+            spawningIsFinish = true;
         }
     }
 
@@ -76,7 +80,7 @@ public class XP_RoomSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("SpawnPoint") ||  other.gameObject.tag == "SpawnRoom" )
+        if (other.gameObject.tag == ("SpawnPoint")  ||  other.gameObject.tag == "SpawnRoom" )
         {
                Destroy(gameObject);
           

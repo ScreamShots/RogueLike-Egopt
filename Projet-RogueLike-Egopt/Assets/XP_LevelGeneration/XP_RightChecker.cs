@@ -5,16 +5,31 @@ using UnityEngine;
 public class XP_RightChecker : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject topDoors;
-    public GameObject bottomDoors;
-    public GameObject leftDoors;
+    public GameObject rightDoors;
+    
 
+
+    private void Start()
+    {
+        
+        rightDoors.SetActive(false);
+    }
+    private void Update()
+    {
+
+    }
 
     // Update is called once per frame
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        Destroy(bottomDoors);
-        Destroy(leftDoors);
-        Destroy(topDoors);
+        
+            if (collision.gameObject.tag == "MiddleCenter")
+            {
+                rightDoors.SetActive(true);
+            }
+        
+            
+
+        
     }
 }

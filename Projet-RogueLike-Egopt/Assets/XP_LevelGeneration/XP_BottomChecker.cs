@@ -5,16 +5,28 @@ using UnityEngine;
 public class XP_BottomChecker : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject topDoors;
-    public GameObject leftDoors;
-    public GameObject rightDoors;
+    public GameObject bottomDoors;
 
+  
+
+    private void Start()
+    {
+        
+        bottomDoors.SetActive(false);
+    }
+    private void Update()
+    {
+       
+    }
 
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(topDoors);
-        Destroy(leftDoors);
-        Destroy(rightDoors);
+       
+            if (collision.gameObject.tag == "MiddleCenter")
+            {
+                bottomDoors.SetActive(true);
+            }
+        
     }
 }
