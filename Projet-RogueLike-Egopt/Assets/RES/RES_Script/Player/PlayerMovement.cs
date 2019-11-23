@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //Statement
 
-    public Rigidbody2D playerRgb;
+    public static Rigidbody2D playerRgb;
 
     //Move
 
@@ -94,11 +94,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (inputHorizontalMoove > 0)
                 {
-                    playerDirection = 0;      //right
+                    playerDirection = 1;      //right
                 }
                 else if (inputHorizontalMoove < 0)
                 {
-                    playerDirection = 1;      //left
+                    playerDirection = 3;      //left
                 }
             }
             else
@@ -106,14 +106,17 @@ public class PlayerMovement : MonoBehaviour
 
                 if (inputVerticalMoove > 0)
                 {
-                    playerDirection = 2;      //up
+                    playerDirection = 0;      //up
                 }
                 else if (inputVerticalMoove < 0)
                 {
-                    playerDirection = 3;      //down
+                    playerDirection = 2;      //down
                 }
             }
         }
+
+        GetComponent<PlayerAttack>().attackDirection = playerDirection;
+
     }
 
 
