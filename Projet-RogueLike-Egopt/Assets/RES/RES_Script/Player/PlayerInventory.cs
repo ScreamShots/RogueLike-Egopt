@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public GameObject[] playerIventory;
+    public GameObject[] playerInventory;
     public GameObject selectionedObject;
 
     public int inventoryIndex;
@@ -12,7 +12,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void Start()
     {
-        playerIventory = new GameObject[inventorySize];
+        playerInventory = new GameObject[inventorySize];
     }
 
     private void Update()
@@ -23,7 +23,7 @@ public class PlayerInventory : MonoBehaviour
 
             Debug.Log(inventoryIndex);
         }
-        selectionedObject = playerIventory[inventoryIndex];
+        selectionedObject = playerInventory[inventoryIndex];
         
     }
 
@@ -51,7 +51,11 @@ public class PlayerInventory : MonoBehaviour
 
     public void PickingObject(GameObject item)
     {
-        playerIventory[inventoryIndex] = item;
+        if (playerInventory[inventoryIndex] != null)
+        {
+            playerInventory[inventoryIndex].GetComponent<ItemDrop>().Drop();
+        }
+        playerInventory[inventoryIndex] = item;
     }
 
 }
