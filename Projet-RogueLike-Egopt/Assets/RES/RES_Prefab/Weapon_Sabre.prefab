@@ -89,8 +89,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1752700537578911121}
-  - component: {fileID: 4925682770445915489}
   - component: {fileID: 5584242645969025276}
+  - component: {fileID: 4925682770445915489}
+  - component: {fileID: 8460145628736507507}
   m_Layer: 0
   m_Name: Weapon_Sabre
   m_TagString: Untagged
@@ -116,23 +117,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4925682770445915489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2707228538706793494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a56a7719d7d68344e9d40d009be413aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WeaponId: 0
-  weaponAttackSpeed: 0
-  weaponDmg: 15
-  weaponImobilisationTime: 1
-  enemyInRangList: []
 --- !u!60 &5584242645969025276
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -163,6 +147,38 @@ PolygonCollider2D:
       - {x: -0.3, y: 0}
       - {x: 0.3, y: 0}
       - {x: 0.9, y: 0.4}
+--- !u!114 &4925682770445915489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2707228538706793494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a56a7719d7d68344e9d40d009be413aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponId: 0
+  weaponAttackSpeed: 0
+  weaponDmg: 15
+  weaponImobilisationTime: 1
+  enemyInRangList: []
+--- !u!114 &8460145628736507507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2707228538706793494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e82043346765a95459b01ddc94d42535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickableVersionObject: {fileID: 7734535245585211807, guid: 7ea6f341e0150ac4a9daeda4be876a41,
+    type: 3}
+  spawnedPickableObject: {fileID: 0}
 --- !u!1 &4444159215060792729
 GameObject:
   m_ObjectHideFlags: 0

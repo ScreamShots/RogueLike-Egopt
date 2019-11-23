@@ -329,8 +329,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1752700537578911121}
-  - component: {fileID: 4925682770445915489}
   - component: {fileID: 4040827097038487253}
+  - component: {fileID: 4925682770445915489}
+  - component: {fileID: 6633406320477258880}
   m_Layer: 0
   m_Name: Weapon_Marteau
   m_TagString: Untagged
@@ -360,6 +361,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &4040827097038487253
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2707228538706793494}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!114 &4925682770445915489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,22 +394,21 @@ MonoBehaviour:
   weaponDmg: 60
   weaponImobilisationTime: 2
   enemyInRangList: []
---- !u!58 &4040827097038487253
-CircleCollider2D:
+--- !u!114 &6633406320477258880
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2707228538706793494}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e82043346765a95459b01ddc94d42535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickableVersionObject: {fileID: 7734535245585211807, guid: f79efb18e0ae9de4096eca6ed4b05c92,
+    type: 3}
+  spawnedPickableObject: {fileID: 0}
 --- !u!1 &3115977619974655076
 GameObject:
   m_ObjectHideFlags: 0
