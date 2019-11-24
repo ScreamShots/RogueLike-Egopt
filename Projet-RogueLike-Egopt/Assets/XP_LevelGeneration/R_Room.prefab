@@ -4096,7 +4096,7 @@ PrefabInstance:
     - target: {fileID: 8016475789753853429, guid: 141586f86a02ec74e8454402b2c47602,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3936723066983082385, guid: 141586f86a02ec74e8454402b2c47602,
         type: 3}
@@ -4208,16 +4208,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5790362052881282190}
     m_Modifications:
-    - target: {fileID: 8189654939981778667, guid: 104f749ed3edeaa4aacae536f51461e6,
-        type: 3}
-      propertyPath: m_Name
-      value: Mur_Bas
-      objectReference: {fileID: 0}
-    - target: {fileID: 8189654939981778667, guid: 104f749ed3edeaa4aacae536f51461e6,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 8578766324460378836, guid: 104f749ed3edeaa4aacae536f51461e6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4287,6 +4277,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.0692
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189654939981778667, guid: 104f749ed3edeaa4aacae536f51461e6,
+        type: 3}
+      propertyPath: m_Name
+      value: Mur_Bas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189654939981778667, guid: 104f749ed3edeaa4aacae536f51461e6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5064094020521200415, guid: 104f749ed3edeaa4aacae536f51461e6,
         type: 3}

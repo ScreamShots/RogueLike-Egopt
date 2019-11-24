@@ -3638,6 +3638,7 @@ MonoBehaviour:
   openingDirection: 4
   templates: {fileID: 7055927139324732002, guid: 548a5226767706749bf687d153ea6ab1,
     type: 3}
+  numberOfRooms: 0
   spawningIsFinish: 0
 --- !u!1 &8052633848752355148
 GameObject:
@@ -4096,7 +4097,7 @@ PrefabInstance:
     - target: {fileID: 8016475789753853429, guid: 141586f86a02ec74e8454402b2c47602,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3936723066983082385, guid: 141586f86a02ec74e8454402b2c47602,
         type: 3}
@@ -4153,36 +4154,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4516014677141653100, guid: 141586f86a02ec74e8454402b2c47602,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450300329258230655, guid: 141586f86a02ec74e8454402b2c47602,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7231757849224558385, guid: 141586f86a02ec74e8454402b2c47602,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7231757849736699659, guid: 141586f86a02ec74e8454402b2c47602,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4190503908844293444, guid: 141586f86a02ec74e8454402b2c47602,
         type: 3}
       propertyPath: m_TagString
       value: Checkers
       objectReference: {fileID: 0}
-    - target: {fileID: 5508734892066978152, guid: 141586f86a02ec74e8454402b2c47602,
-        type: 3}
-      propertyPath: topDoors
-      value: 
-      objectReference: {fileID: 5790362053875657040}
     - target: {fileID: 481797222104947672, guid: 141586f86a02ec74e8454402b2c47602,
         type: 3}
       propertyPath: m_TagString
       value: Checkers
       objectReference: {fileID: 0}
-    - target: {fileID: 7547760940192500454, guid: 141586f86a02ec74e8454402b2c47602,
-        type: 3}
-      propertyPath: leftDoors
-      value: 
-      objectReference: {fileID: 5790362052440488235}
     - target: {fileID: 7231757849224558386, guid: 141586f86a02ec74e8454402b2c47602,
         type: 3}
       propertyPath: m_TagString
       value: Checkers
       objectReference: {fileID: 0}
-    - target: {fileID: 7311044944860733601, guid: 141586f86a02ec74e8454402b2c47602,
-        type: 3}
-      propertyPath: bottomDoors
-      value: 
-      objectReference: {fileID: 5790362053401534614}
     - target: {fileID: 7231757849736699652, guid: 141586f86a02ec74e8454402b2c47602,
         type: 3}
       propertyPath: m_TagString
@@ -4193,6 +4199,31 @@ PrefabInstance:
       propertyPath: rightDoors
       value: 
       objectReference: {fileID: 5790362051843877577}
+    - target: {fileID: 7547760940192500454, guid: 141586f86a02ec74e8454402b2c47602,
+        type: 3}
+      propertyPath: leftDoors
+      value: 
+      objectReference: {fileID: 5790362052440488235}
+    - target: {fileID: 7591903666139892501, guid: 141586f86a02ec74e8454402b2c47602,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.07035828
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591903666139892501, guid: 141586f86a02ec74e8454402b2c47602,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.7598782
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311044944860733601, guid: 141586f86a02ec74e8454402b2c47602,
+        type: 3}
+      propertyPath: bottomDoors
+      value: 
+      objectReference: {fileID: 5790362053401534614}
+    - target: {fileID: 5508734892066978152, guid: 141586f86a02ec74e8454402b2c47602,
+        type: 3}
+      propertyPath: topDoors
+      value: 
+      objectReference: {fileID: 5790362053875657040}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 141586f86a02ec74e8454402b2c47602, type: 3}
 --- !u!4 &8514931684169084411 stripped
