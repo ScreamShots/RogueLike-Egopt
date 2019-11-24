@@ -47,8 +47,6 @@ public class PlayerMovement : MonoBehaviour
         lastMove = new Vector3(1, 0, 0);
 
         isPlayerDashing = false;
-
-
     }
 
 
@@ -160,5 +158,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("moveX", playerRgb.velocity.x);
         animator.SetInteger("playerDirection", playerDirection);
         animator.SetBool("isMoving", isMoving);
+        animator.SetBool("canDash", isPlayerDashAvailable);
+        animator.SetBool("dashIsPressed", isPlayerDashing);
     }
 }
