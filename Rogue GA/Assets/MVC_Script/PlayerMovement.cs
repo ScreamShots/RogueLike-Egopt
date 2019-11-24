@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     Vector2 movement;
     public bool canMove = true;
+    public int health = 100;
 
     void Update()
     {      
