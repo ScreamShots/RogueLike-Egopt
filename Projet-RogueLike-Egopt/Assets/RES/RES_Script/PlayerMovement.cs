@@ -30,6 +30,12 @@ public class PlayerMovement : MonoBehaviour
     public float dashCooldown;
     public AnimationCurve dashCurve;
 
+    //Animation
+
+    public Animator animator;
+    public bool isMoving;
+
+
     void Awake()
     {
         playerRgb = GetComponent<Rigidbody2D>();
@@ -48,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-
+         
         //Move
 
         Move();
@@ -65,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(Dash(lastMove));
         }
 
+        AnimatorStuff();
     }
 
     //Move
@@ -89,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
         if (move != Vector3.zero)
         {
             lastMove = move;
-
+            isMoving = true;
             if (Mathf.Abs(inputHorizontalMoove) > Mathf.Abs(inputVerticalMoove))
             {
                 if (inputHorizontalMoove > 0)
@@ -113,6 +120,10 @@ public class PlayerMovement : MonoBehaviour
                     playerDirection = 3;      //down
                 }
             }
+        }
+        else
+        {
+            isMoving = false;
         }
     }
 
@@ -141,5 +152,13 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashCooldown);
         isPlayerDashAvailable = true;
 
+    }
+
+    public void AnimatorStuff()
+    {
+        animator.SetFloat("moveY", playerRgb.velocity.y);
+        animator.SetFloat("moveX", playerRgb.velocity.x);
+        animator.SetInteger("playerDirection", playerDirection);
+        animator.SetBool("isMoving", isMoving);
     }
 }
