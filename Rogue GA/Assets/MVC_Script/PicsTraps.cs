@@ -11,68 +11,78 @@ public class PicsTraps : MonoBehaviour
     bool inRoom = true;
     public int HP = 100;
     public int picsDamage = 10;
-    public GameObject player;
     bool canTakeDamage = true;
     bool isInPics = false;
-    int newHP;
+    private GameObject player;
 
     private void Start()
     {
         spr = GetComponent<SpriteRenderer>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
      void Update()
     {
-        if (inRoom == true && picsActivated == false)
+        if (inRoom && !picsActivated)
         {
             StartCoroutine(PicsMovement());
         }
 
-        IEnumerator PicsMovement()
-        {
-            // début de l'animation
-            yield return new WaitForSeconds(2);
-            picsActivated = true;
-            spr.sprite = activatedPics;
 
-            // début de l'animation
-            yield return new WaitForSeconds(2); 
-            picsActivated = false;
-            spr.sprite = desactivatedPics;            
-        }
+        //Debug.Log(isInPics);
 
-        if (picsActivated == true && canTakeDamage == true && isInPics == true)
+        if (picsActivated && canTakeDamage && isInPics)
         {
-            newHP = HP -= picsDamage;
-            Debug.Log("le joueur n'a plus que " + newHP + " HP");
+            
+            player.GetComponent<PlayerMovement>().health -= picsDamage;
+            Debug.Log("le joueur n'a plus que " + player.GetComponent<PlayerMovement>().health + " HP");
 
             StartCoroutine(DamageReload());
         }
       
-        IEnumerator DamageReload()
-        {
-            canTakeDamage = false;
-            yield return new WaitForSeconds(2);
-            canTakeDamage = true;
-        }
+      
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (picsActivated == true && collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             isInPics = true;
-            canTakeDamage = true;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        isInPics = false;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (picsActivated == true && collision.gameObject.tag == "Player" && isInPics == true && canTakeDamage == true)
+        if (picsActivated && collision.gameObject.tag == "Player" && isInPics && canTakeDamage)
         {
             player.GetComponent<PlayerMovement>().moveSpeed = 1.3f;
         }     
        
+    }
+
+    IEnumerator PicsMovement() //Coroutine de l'animation des pics
+    {
+        // début de l'animation
+        yield return new WaitForSeconds(2);
+        picsActivated = true;
+        spr.sprite = activatedPics;
+
+        // début de l'animation
+        yield return new WaitForSeconds(2);
+        picsActivated = false;
+        spr.sprite = desactivatedPics;
+    }
+
+    IEnumerator DamageReload()
+    {
+        canTakeDamage = false;
+        yield return new WaitForSeconds(2);
+        canTakeDamage = true;
     }
 
 }
