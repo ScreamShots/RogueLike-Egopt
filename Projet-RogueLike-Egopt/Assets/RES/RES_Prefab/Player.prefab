@@ -74,13 +74,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 1487330265556667585, guid: 0ddc8bff0663271419b406e384c79bbf,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: a5aa6cc89c03f11428cb4e5d3d577d6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.44}
+  m_Size: {x: 0.53333336, y: 1.4666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -104,7 +103,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &3080488959520002744
@@ -120,7 +119,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.003039956, y: -0.03951943}
+  m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.40565515, y: 1.2781894}
   m_Direction: 0
 --- !u!114 &54436460348400174
@@ -193,9 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingWeapon: {fileID: 2707228538706793494, guid: ba1e1e55addf66e40ac4ae68073e98f0,
     type: 3}
-  playerInventory: []
   selectionedObject: {fileID: 0}
-  inventoryIndex: 0
   inventorySize: 3
 --- !u!114 &2640595440199165435
 MonoBehaviour:
