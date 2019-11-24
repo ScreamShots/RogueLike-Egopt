@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SablesMouvants : MonoBehaviour
 {
-    public GameObject player;
+    /*public GameObject player;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         player.GetComponent<PlayerMovement>().speed = 0.5f;
@@ -13,5 +13,5 @@ public class SablesMouvants : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         player.GetComponent<PlayerMovement>().speed = 1.5f;
-    }
+    }*/
 }

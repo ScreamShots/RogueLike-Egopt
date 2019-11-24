@@ -11,7 +11,7 @@ public class XP_RoomTemplates : MonoBehaviour
     public GameObject[] rightRooms;
 
 
-    public GameObject[] closedRooms;
+   
    
 
 

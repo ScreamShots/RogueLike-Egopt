@@ -22,7 +22,7 @@ public class XP_RoomSpawner : MonoBehaviour
 
     private void Update()
     {
-        if ( numberOfRooms > 15)
+        if ( numberOfRooms > 12)
         {
             spawningIsFinish = true;
             Debug.Log(spawningIsFinish);
@@ -43,17 +43,14 @@ public class XP_RoomSpawner : MonoBehaviour
 
     void SpawnRoom()
     {
-        if (spawned == false && numberOfRooms <= 15 && spawningIsFinish == false)
+        if (spawned == false && numberOfRooms <= 12 && spawningIsFinish == false)
         {
             if (openingDirection == 1)
             {
                 // Need to spawn a room with a BOTTOM door
                 rand = Random.Range(0, templates.bottomRooms.Length);
-                GameObject room = Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
-                Vector2 roomPos = room.transform.position;
-
+                Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
                 
-
 
             }
             else if (openingDirection == 2)
@@ -88,7 +85,7 @@ public class XP_RoomSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == ("SpawnPoint") ||  other.gameObject.tag == "SpawnRoom" )
+        if (other.gameObject.tag == ("SpawnPoint") ||  other.gameObject.tag == "SpawnRoom")
         {
                Destroy(gameObject);
           

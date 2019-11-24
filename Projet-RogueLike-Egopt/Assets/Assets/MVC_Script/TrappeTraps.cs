@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrappeTraps : MonoBehaviour
 {
-   /* private SpriteRenderer spr;
+   /*private SpriteRenderer spr;
     public Sprite openTrappe;
     public Sprite closeTrappe;
     bool isOpen = false;
