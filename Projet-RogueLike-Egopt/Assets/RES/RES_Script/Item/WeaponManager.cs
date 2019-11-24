@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    public int WeaponId;
     public float weaponAttackSpeed;
     public float weaponDmg;
     public float weaponImobilisationTime;
+
+    //Temporary Inventory UI
+
+    [SerializeField] public Sprite iconDisplay;
 
     public List<GameObject> enemyInRangList;
 

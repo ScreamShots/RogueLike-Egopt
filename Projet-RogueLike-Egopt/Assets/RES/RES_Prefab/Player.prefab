@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 4161220259221076816}
   - component: {fileID: 3080488959520002744}
   - component: {fileID: 54436460348400174}
-  - component: {fileID: 9008232266388774560}
   - component: {fileID: 308797032114549613}
+  - component: {fileID: 2640595440199165435}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -179,24 +179,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &9008232266388774560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2381946811977984154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb2e61b571de04f45a86016eb54f507e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackSpeed: 0
-  imobilisationTime: 0.75
-  attackDirection: 0
-  equipiedWeapon: {fileID: 2707228538706793494, guid: ba1e1e55addf66e40ac4ae68073e98f0,
-    type: 3}
-  usedWeapon: {fileID: 0}
 --- !u!114 &308797032114549613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,7 +191,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8268106d01c9234aa0813813c73fdfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIventory: []
+  startingWeapon: {fileID: 2707228538706793494, guid: ba1e1e55addf66e40ac4ae68073e98f0,
+    type: 3}
+  playerInventory: []
   selectionedObject: {fileID: 0}
   inventoryIndex: 0
   inventorySize: 3
+--- !u!114 &2640595440199165435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2381946811977984154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de8842fb730facd40bb0ea3000800894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeed: 0
+  useSpeed: 0
+  imobilisationTime: 0
+  attackDirection: 0
+  usedWeapon: {fileID: 0}
+  equipiedItem: {fileID: 0}

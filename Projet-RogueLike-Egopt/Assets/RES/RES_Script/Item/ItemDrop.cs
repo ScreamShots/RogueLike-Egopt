@@ -6,10 +6,13 @@ public class ItemDrop : MonoBehaviour
 {
     public GameObject pickableVersionObject;
     public GameObject spawnedPickableObject;
+    public GameObject player;
+
 
     public void Drop()
     {
+        player = GameObject.FindWithTag("Player");
         spawnedPickableObject = Instantiate(pickableVersionObject);
-        spawnedPickableObject.transform.position = GetComponent<Transform>().position;
+        spawnedPickableObject.transform.position = player.GetComponent<Transform>().position;
     }
 }

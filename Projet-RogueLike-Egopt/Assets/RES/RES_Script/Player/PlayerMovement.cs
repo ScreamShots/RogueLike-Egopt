@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Dash
 
-        if (Input.GetAxisRaw("Roll") > 0 && isPlayerDashAvailable == true)
+        if (Input.GetAxisRaw("Roll") > 0 && isPlayerDashAvailable == true && PlayerUse.isPlayerInUse == false)
         {
             StartCoroutine(Dash(lastMove));
         }
@@ -107,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        GetComponent<PlayerAttack>().attackDirection = playerDirection;
+        GetComponent<PlayerUse>().attackDirection = playerDirection;
     }
 
 

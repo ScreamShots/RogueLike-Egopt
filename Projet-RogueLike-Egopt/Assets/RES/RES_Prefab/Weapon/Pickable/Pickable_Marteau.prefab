@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2841352886696981247}
   - component: {fileID: 6845521969494880785}
+  - component: {fileID: -3768520003371071598}
   m_Layer: 0
   m_Name: Pickable_Marteau
   m_TagString: PickableObject
@@ -58,6 +59,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-3768520003371071598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7734535245585211807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40361bc0449a334a938cdd46249d2cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedObject: {fileID: 2707228538706793494, guid: dcfa2ea909550e746a0f3c80b8493651,
+    type: 3}
+  display: {fileID: 2450409160178358049}
 --- !u!1 &9103113281820566431
 GameObject:
   m_ObjectHideFlags: 0
