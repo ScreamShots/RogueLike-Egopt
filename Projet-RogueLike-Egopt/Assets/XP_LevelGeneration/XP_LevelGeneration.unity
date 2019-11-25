@@ -439,6 +439,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6750094069582680058, guid: a99d4770d3fc84f4ea98e04b85384f97,
+        type: 3}
+      propertyPath: m_Name
+      value: RoomTemplates
+      objectReference: {fileID: 0}
     - target: {fileID: 5432403968863882665, guid: a99d4770d3fc84f4ea98e04b85384f97,
         type: 3}
       propertyPath: bottomRooms.Array.size
@@ -543,11 +548,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6933196755375900980, guid: a1f80c9a73b409f48ba8ad0c86b1f97e,
         type: 3}
-    - target: {fileID: 6750094069582680058, guid: a99d4770d3fc84f4ea98e04b85384f97,
-        type: 3}
-      propertyPath: m_Name
-      value: RoomTemplates
-      objectReference: {fileID: 0}
     - target: {fileID: 3596546121919112437, guid: a99d4770d3fc84f4ea98e04b85384f97,
         type: 3}
       propertyPath: m_LocalPosition.x
