@@ -29,6 +29,7 @@ public class SceneManaging : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) && !gameIsPaused)
         {
             SceneManager.LoadScene("TestGameScene", LoadSceneMode.Single);
+            Time.timeScale = 1f;
             gameIsRunning = true;
             inHUB = false;
             Debug.Log("Scene is loaded");
@@ -56,6 +57,7 @@ public class SceneManaging : MonoBehaviour
     public void LoadOptions()
     {
         OptionsUI.SetActive(true);
+        Time.timeScale = 0f;
         //SceneManager.LoadScene("SettingScene", LoadSceneMode.Additive);
         Debug.Log("Options opened");
     }

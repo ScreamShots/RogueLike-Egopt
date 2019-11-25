@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -883,7 +883,7 @@ MonoBehaviour:
   m_CancelButton: BackMenu
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_ForceModuleActive: 1
 --- !u!114 &1791513038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1056,6 +1056,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860602223434692820, guid: ee2478cef21d4f546a9a537745d42ee2,
+        type: 3}
+      propertyPath: m_ForceModuleActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038213681380266678, guid: ee2478cef21d4f546a9a537745d42ee2,
+        type: 3}
+      propertyPath: m_ForceModuleActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee2478cef21d4f546a9a537745d42ee2, type: 3}
