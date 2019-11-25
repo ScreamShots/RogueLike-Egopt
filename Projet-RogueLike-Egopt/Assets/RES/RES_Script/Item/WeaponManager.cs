@@ -8,9 +8,7 @@ public class WeaponManager : MonoBehaviour
     public float weaponDmg;
     public float weaponImobilisationTime;
 
-    //Temporary Inventory UI
-
-    [SerializeField] public Sprite iconDisplay;
+    [SerializeField] public Sprite iconDisplay; //Temporary Inventory UI
 
     public List<GameObject> enemyInRangList;
 

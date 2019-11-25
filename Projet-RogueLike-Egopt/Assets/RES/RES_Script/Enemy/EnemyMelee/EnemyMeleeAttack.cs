@@ -14,6 +14,8 @@ public class EnemyMeleeAttack : MonoBehaviour
 
     public GameObject usedWeapon;
     public GameObject equipiedItem;
+    public GameObject warning;
+    public GameObject warningInstanciated;
 
     private void Start()
     {
@@ -26,23 +28,54 @@ public class EnemyMeleeAttack : MonoBehaviour
 
         if (isPlayerinRang == true)
         {
-            StartCoroutine(Attack());
+            if (isEnemyAttackAvailable == true)
+            {
+                StartCoroutine(Attack());
+            }
+            
         }
     }
 
     IEnumerator Attack()
-    {
-        usedWeapon = Instantiate(equipiedItem);
-        usedWeapon.transform.parent = GetComponent<Transform>();
-        usedWeapon.transform.localPosition = new Vector3(0, 0, 0);
-
+    {       
         isEnemyAttackAvailable = false;
         GetComponent<EnemyMeleeMovement>().isEnnemyMoovAvailable = false;
         GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
         isEnemyAttacking = true;
+        attackDirection = GetComponent<EnemyMeleeMovement>().enemyDirection;
 
-        attackSpeed = usedWeapon.GetComponent<WeaponManager>().weaponAttackSpeed;
-        imobilisationTime = usedWeapon.GetComponent<WeaponManager>().weaponImobilisationTime;
+        warningInstanciated = Instantiate(warning);
+        warningInstanciated.transform.parent = GetComponent<Transform>();
+        warningInstanciated.transform.localPosition = new Vector3(0, 0, 0);
+
+        switch (attackDirection)
+        {
+            case 0:     // up
+                warningInstanciated.transform.Rotate(0, 0, 0);
+                break;
+            case 1:     //right
+                warningInstanciated.transform.Rotate(0, 0, -90);
+                break;
+            case 2:     //down
+                warningInstanciated.transform.Rotate(0, 0, 180);
+                break;
+            case 3:     //left
+                warningInstanciated.transform.Rotate(0, 0, 90);
+                break;
+
+            default:
+                break;
+        }
+
+        yield return new WaitForSeconds(0.7f);
+        Destroy(warningInstanciated);
+
+        usedWeapon = Instantiate(equipiedItem);
+        usedWeapon.transform.parent = GetComponent<Transform>();
+        usedWeapon.transform.localPosition = new Vector3(0, 0, 0);
+
+        attackSpeed = usedWeapon.GetComponent<EnemyWeaponManager>().weaponAttackSpeed;
+        imobilisationTime = usedWeapon.GetComponent<EnemyWeaponManager>().weaponImobilisationTime;
 
 
         switch (attackDirection)
@@ -65,12 +98,11 @@ public class EnemyMeleeAttack : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.001f);
-        usedWeapon.GetComponent<WeaponManager>().WeaponAttack();
+        usedWeapon.GetComponent<EnemyWeaponManager>().WeaponAttack();
 
         yield return new WaitForSeconds(imobilisationTime);
         Destroy(usedWeapon);
-        PlayerMovement.isPlayerMoovAvailable = true;
-        PlayerMovement.isPlayerDashAvailable = true;
+        GetComponent<EnemyMeleeMovement>().isEnnemyMoovAvailable = true;
         isEnemyAttacking = false;
 
         yield return new WaitForSeconds(attackSpeed);

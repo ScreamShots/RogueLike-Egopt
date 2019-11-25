@@ -41,7 +41,7 @@ public class PlayerUse : MonoBehaviour
 
                 if (equipiedItem.tag == "Consumable")
                 {
-                    if (isPlayerUtilisationAvailable == true && PlayerMovement.isPlayerDashing == false)²
+                    if (isPlayerUtilisationAvailable == true && PlayerMovement.isPlayerDashing == false)
                     {
                         StartCoroutine(Attack());
                     }

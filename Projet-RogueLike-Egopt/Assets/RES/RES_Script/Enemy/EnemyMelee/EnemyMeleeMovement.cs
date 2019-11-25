@@ -59,7 +59,7 @@ public class EnemyMeleeMovement : MonoBehaviour
             }
         }
 
-        GetComponent<EnemyMeleeAttack>().attackDirection = enemyDirection;
+        //GetComponent<EnemyMeleeAttack>().attackDirection = enemyDirection;
     }
 
     void Move()
