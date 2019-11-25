@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 2634687175988054407}
   m_Layer: 0
   m_Name: Sol
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -8419,11 +8419,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1313586473166115009}
     m_Modifications:
-    - target: {fileID: 5522450331975794567, guid: 54e4db43112358a47bdbae4908a34d91,
-        type: 3}
-      propertyPath: m_Name
-      value: MiddleCenter
-      objectReference: {fileID: 0}
     - target: {fileID: 3608782007509008316, guid: 54e4db43112358a47bdbae4908a34d91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8478,6 +8473,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522450331975794567, guid: 54e4db43112358a47bdbae4908a34d91,
+        type: 3}
+      propertyPath: m_Name
+      value: MiddleCenter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54e4db43112358a47bdbae4908a34d91, type: 3}
@@ -10061,11 +10061,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1313586473166115009}
     m_Modifications:
-    - target: {fileID: 465631887507196635, guid: 7252eb154ddc53a46b24561c184326bd,
-        type: 3}
-      propertyPath: m_Name
-      value: UpperWalls
-      objectReference: {fileID: 0}
     - target: {fileID: 2150553970769479862, guid: 7252eb154ddc53a46b24561c184326bd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10121,6 +10116,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90.00001
       objectReference: {fileID: 0}
+    - target: {fileID: 465631887507196635, guid: 7252eb154ddc53a46b24561c184326bd,
+        type: 3}
+      propertyPath: m_Name
+      value: UpperWalls
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7252eb154ddc53a46b24561c184326bd, type: 3}
 --- !u!4 &9023213048111110804 stripped
@@ -10144,7 +10144,7 @@ PrefabInstance:
     - target: {fileID: 3262954001591961209, guid: 141586f86a02ec74e8454402b2c47602,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: MiddleCenter
       objectReference: {fileID: 0}
     - target: {fileID: 8406643684418046493, guid: 141586f86a02ec74e8454402b2c47602,
         type: 3}

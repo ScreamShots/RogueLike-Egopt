@@ -825,7 +825,7 @@ GameObject:
   - component: {fileID: 5961293270536058493}
   m_Layer: 0
   m_Name: Sol
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3754,11 +3754,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7210339222880972603}
     m_Modifications:
-    - target: {fileID: 5522450331975794567, guid: 54e4db43112358a47bdbae4908a34d91,
-        type: 3}
-      propertyPath: m_Name
-      value: MiddleCenter
-      objectReference: {fileID: 0}
     - target: {fileID: 3608782007509008316, guid: 54e4db43112358a47bdbae4908a34d91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3813,6 +3808,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522450331975794567, guid: 54e4db43112358a47bdbae4908a34d91,
+        type: 3}
+      propertyPath: m_Name
+      value: MiddleCenter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54e4db43112358a47bdbae4908a34d91, type: 3}
@@ -5052,11 +5052,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7210339222880972603}
     m_Modifications:
-    - target: {fileID: 465631887507196635, guid: 7252eb154ddc53a46b24561c184326bd,
-        type: 3}
-      propertyPath: m_Name
-      value: UpperWalls2
-      objectReference: {fileID: 0}
     - target: {fileID: 2150553970769479862, guid: 7252eb154ddc53a46b24561c184326bd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5112,6 +5107,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90.00001
       objectReference: {fileID: 0}
+    - target: {fileID: 465631887507196635, guid: 7252eb154ddc53a46b24561c184326bd,
+        type: 3}
+      propertyPath: m_Name
+      value: UpperWalls2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7252eb154ddc53a46b24561c184326bd, type: 3}
 --- !u!4 &8951008537146669438 stripped
@@ -5135,7 +5135,7 @@ PrefabInstance:
     - target: {fileID: 2003438330168769992, guid: bf5298510998f024d845f45f72fffd8e,
         type: 3}
       propertyPath: m_TagString
-      value: Checkers
+      value: MiddleCenter
       objectReference: {fileID: 0}
     - target: {fileID: 4769195523914379692, guid: bf5298510998f024d845f45f72fffd8e,
         type: 3}
@@ -5192,27 +5192,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5668400050743317881, guid: bf5298510998f024d845f45f72fffd8e,
+    - target: {fileID: 1211969371341877007, guid: bf5298510998f024d845f45f72fffd8e,
         type: 3}
       propertyPath: m_TagString
       value: SpawnPoint
       objectReference: {fileID: 0}
-    - target: {fileID: 4107124499259056469, guid: bf5298510998f024d845f45f72fffd8e,
+    - target: {fileID: 1211969372103542585, guid: bf5298510998f024d845f45f72fffd8e,
         type: 3}
-      propertyPath: topDoors
-      value: 
-      objectReference: {fileID: 5961293271308138865}
+      propertyPath: m_TagString
+      value: SpawnPoint
+      objectReference: {fileID: 0}
     - target: {fileID: 8224182939362362341, guid: bf5298510998f024d845f45f72fffd8e,
         type: 3}
       propertyPath: m_TagString
       value: SpawnPoint
       objectReference: {fileID: 0}
-    - target: {fileID: 2031847321845519067, guid: bf5298510998f024d845f45f72fffd8e,
-        type: 3}
-      propertyPath: leftDoors
-      value: 
-      objectReference: {fileID: 5961293271030245143}
-    - target: {fileID: 1211969371341877007, guid: bf5298510998f024d845f45f72fffd8e,
+    - target: {fileID: 5668400050743317881, guid: bf5298510998f024d845f45f72fffd8e,
         type: 3}
       propertyPath: m_TagString
       value: SpawnPoint
@@ -5222,16 +5217,21 @@ PrefabInstance:
       propertyPath: bottomDoors
       value: 
       objectReference: {fileID: 5961293271541687102}
-    - target: {fileID: 1211969372103542585, guid: bf5298510998f024d845f45f72fffd8e,
-        type: 3}
-      propertyPath: m_TagString
-      value: SpawnPoint
-      objectReference: {fileID: 0}
     - target: {fileID: 7440990177928887321, guid: bf5298510998f024d845f45f72fffd8e,
         type: 3}
       propertyPath: rightDoors
       value: 
       objectReference: {fileID: 5961293270849312518}
+    - target: {fileID: 4107124499259056469, guid: bf5298510998f024d845f45f72fffd8e,
+        type: 3}
+      propertyPath: topDoors
+      value: 
+      objectReference: {fileID: 5961293271308138865}
+    - target: {fileID: 2031847321845519067, guid: bf5298510998f024d845f45f72fffd8e,
+        type: 3}
+      propertyPath: leftDoors
+      value: 
+      objectReference: {fileID: 5961293271030245143}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf5298510998f024d845f45f72fffd8e, type: 3}
 --- !u!4 &4112107226249201827 stripped

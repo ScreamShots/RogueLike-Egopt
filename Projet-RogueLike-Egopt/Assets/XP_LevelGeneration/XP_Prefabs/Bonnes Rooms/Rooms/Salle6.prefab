@@ -2280,7 +2280,7 @@ GameObject:
   - component: {fileID: 6052290897830001079}
   m_Layer: 0
   m_Name: Sol
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4499,6 +4499,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkers
       objectReference: {fileID: 0}
+    - target: {fileID: 2003438330168769992, guid: bf5298510998f024d845f45f72fffd8e,
+        type: 3}
+      propertyPath: m_TagString
+      value: MiddleCenter
+      objectReference: {fileID: 0}
     - target: {fileID: 4769195523914379692, guid: bf5298510998f024d845f45f72fffd8e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4554,27 +4559,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5668400050743317881, guid: bf5298510998f024d845f45f72fffd8e,
+    - target: {fileID: 1211969371341877007, guid: bf5298510998f024d845f45f72fffd8e,
         type: 3}
       propertyPath: m_TagString
       value: Checkers
       objectReference: {fileID: 0}
-    - target: {fileID: 4107124499259056469, guid: bf5298510998f024d845f45f72fffd8e,
+    - target: {fileID: 1211969372103542585, guid: bf5298510998f024d845f45f72fffd8e,
         type: 3}
-      propertyPath: topDoors
-      value: 
-      objectReference: {fileID: 6052290897460704955}
+      propertyPath: m_TagString
+      value: Checkers
+      objectReference: {fileID: 0}
     - target: {fileID: 8224182939362362341, guid: bf5298510998f024d845f45f72fffd8e,
         type: 3}
       propertyPath: m_TagString
       value: Checkers
       objectReference: {fileID: 0}
-    - target: {fileID: 2031847321845519067, guid: bf5298510998f024d845f45f72fffd8e,
-        type: 3}
-      propertyPath: leftDoors
-      value: 
-      objectReference: {fileID: 6052290897249954013}
-    - target: {fileID: 1211969371341877007, guid: bf5298510998f024d845f45f72fffd8e,
+    - target: {fileID: 5668400050743317881, guid: bf5298510998f024d845f45f72fffd8e,
         type: 3}
       propertyPath: m_TagString
       value: Checkers
@@ -4584,16 +4584,21 @@ PrefabInstance:
       propertyPath: bottomDoors
       value: 
       objectReference: {fileID: 6052290896688180468}
-    - target: {fileID: 1211969372103542585, guid: bf5298510998f024d845f45f72fffd8e,
-        type: 3}
-      propertyPath: m_TagString
-      value: Checkers
-      objectReference: {fileID: 0}
     - target: {fileID: 7440990177928887321, guid: bf5298510998f024d845f45f72fffd8e,
         type: 3}
       propertyPath: rightDoors
       value: 
       objectReference: {fileID: 6052290896993491148}
+    - target: {fileID: 4107124499259056469, guid: bf5298510998f024d845f45f72fffd8e,
+        type: 3}
+      propertyPath: topDoors
+      value: 
+      objectReference: {fileID: 6052290897460704955}
+    - target: {fileID: 2031847321845519067, guid: bf5298510998f024d845f45f72fffd8e,
+        type: 3}
+      propertyPath: leftDoors
+      value: 
+      objectReference: {fileID: 6052290897249954013}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf5298510998f024d845f45f72fffd8e, type: 3}
 --- !u!4 &5852060400659961947 stripped
@@ -4609,11 +4614,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7301618634380812529}
     m_Modifications:
-    - target: {fileID: 5522450331975794567, guid: 54e4db43112358a47bdbae4908a34d91,
-        type: 3}
-      propertyPath: m_Name
-      value: MiddleCenter
-      objectReference: {fileID: 0}
     - target: {fileID: 3608782007509008316, guid: 54e4db43112358a47bdbae4908a34d91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4668,6 +4668,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522450331975794567, guid: 54e4db43112358a47bdbae4908a34d91,
+        type: 3}
+      propertyPath: m_Name
+      value: MiddleCenter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54e4db43112358a47bdbae4908a34d91, type: 3}
@@ -5832,11 +5837,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7301618634380812529}
     m_Modifications:
-    - target: {fileID: 465631887507196635, guid: 7252eb154ddc53a46b24561c184326bd,
-        type: 3}
-      propertyPath: m_Name
-      value: UpperWalls
-      objectReference: {fileID: 0}
     - target: {fileID: 2150553970769479862, guid: 7252eb154ddc53a46b24561c184326bd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5891,6 +5891,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 465631887507196635, guid: 7252eb154ddc53a46b24561c184326bd,
+        type: 3}
+      propertyPath: m_Name
+      value: UpperWalls
       objectReference: {fileID: 0}
     - target: {fileID: 1242128247596266300, guid: 7252eb154ddc53a46b24561c184326bd,
         type: 3}
