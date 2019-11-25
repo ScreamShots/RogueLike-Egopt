@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //Statement
 
-    public Rigidbody2D playerRgb;
+    public static Rigidbody2D playerRgb;
 
     //Move
 
@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
 
     public int playerDirection;
     public Vector3 lastMove;
+    public float directionHorizontal;
+    public float directionVertical;
 
     //Dash
 
@@ -41,18 +43,13 @@ public class PlayerMovement : MonoBehaviour
         lastMove = new Vector3(1, 0, 0);
 
         isPlayerDashing = false;
-
-
     }
-
 
     void FixedUpdate()
     {
-
         //Move
 
         Move();
-
 
         //Direction
 
@@ -60,11 +57,10 @@ public class PlayerMovement : MonoBehaviour
 
         //Dash
 
-        if (Input.GetAxisRaw("Roll") > 0 && isPlayerDashAvailable == true)
+        if (Input.GetAxisRaw("Roll") > 0 && isPlayerDashAvailable == true && PlayerUse.isPlayerInUse == false)
         {
             StartCoroutine(Dash(lastMove));
         }
-
     }
 
     //Move
@@ -86,34 +82,32 @@ public class PlayerMovement : MonoBehaviour
 
     public void Direction()
     {
+        directionHorizontal = Input.GetAxis("HorizontalMove");
+        directionVertical = Input.GetAxis("VerticalMove");
+        
         if (move != Vector3.zero)
         {
             lastMove = move;
 
-            if (Mathf.Abs(inputHorizontalMoove) > Mathf.Abs(inputVerticalMoove))
+            if (directionVertical >= Mathf.Sqrt(2)/2)
             {
-                if (inputHorizontalMoove > 0)
-                {
-                    playerDirection = 0;      //right
-                }
-                else if (inputHorizontalMoove < 0)
-                {
-                    playerDirection = 1;      //left
-                }
+                playerDirection = 0;        //up
             }
-            else
+            else if (directionVertical <= -Mathf.Sqrt(2)/2)
             {
-
-                if (inputVerticalMoove > 0)
-                {
-                    playerDirection = 2;      //up
-                }
-                else if (inputVerticalMoove < 0)
-                {
-                    playerDirection = 3;      //down
-                }
+                playerDirection = 2;        //down
+            }
+            else if (directionHorizontal >= Mathf.Sqrt(2)/2)
+            {
+                playerDirection = 1;        //right
+            }
+            else if (directionHorizontal <= -Mathf.Sqrt(2)/2)
+            {
+                playerDirection = 3;        //left
             }
         }
+
+        GetComponent<PlayerUse>().attackDirection = playerDirection;
     }
 
 
@@ -140,6 +134,5 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(dashCooldown);
         isPlayerDashAvailable = true;
-
     }
 }
