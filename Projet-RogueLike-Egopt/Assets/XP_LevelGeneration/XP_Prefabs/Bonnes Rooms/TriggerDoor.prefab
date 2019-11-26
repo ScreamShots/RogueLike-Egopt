@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 1759300681483470638}
   - component: {fileID: 6333216215960315945}
   - component: {fileID: 8700348683085208903}
+  - component: {fileID: 8488888072881008530}
   m_Layer: 0
   m_Name: LeftTrigger
   m_TagString: Untagged
@@ -250,6 +251,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.057382226, y: 0.60566115}
   m_EdgeRadius: 0
+--- !u!114 &8488888072881008530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879066806293052431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 973f8e8f7ad534c4ba50435bfffdae0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraChange: {x: -6, y: 0}
+  playerChange: {x: -1.5, y: 0, z: 0}
+  cam: {fileID: 0}
 --- !u!1 &6542338718581409808
 GameObject:
   m_ObjectHideFlags: 0
