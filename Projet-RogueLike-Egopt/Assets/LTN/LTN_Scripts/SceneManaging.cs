@@ -6,12 +6,9 @@ using UnityEngine.UI;
 
 public class SceneManaging : MonoBehaviour
 {
-    public static bool gameIsPaused = false;
-    public static bool gameIsRunning = false;
-    public static bool inHUB = false;
-
-    public GameObject PauseUI;
-    public GameObject OptionsUI;
+    public bool gameIsPaused = false;
+    public bool gameIsRunning = false;
+    public bool inHUB = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +19,6 @@ public class SceneManaging : MonoBehaviour
     private void FixedUpdate()
     {
         NewGameSceneLoad();
-        PauseGame();
     }
     public void NewGameSceneLoad()
     {
@@ -46,67 +42,20 @@ public class SceneManaging : MonoBehaviour
     public void LoadHUB()
     {
         Debug.Log("Here is the HUB");
-        PauseUI.SetActive(false);
+        //PauseUI.SetActive(false);
         Time.timeScale = 1f;
         gameIsRunning = true;
         inHUB = true;
         gameIsPaused = false;
         SceneManager.LoadScene("HUBScene");
     }
-
-    public void LoadOptions()
-    {
-        OptionsUI.SetActive(true);
-        Time.timeScale = 0f;
-        //SceneManager.LoadScene("SettingScene", LoadSceneMode.Additive);
-        Debug.Log("Options opened");
-    }
-
-    public void QuitOptions()
-    {
-        OptionsUI.SetActive(false);
-        //SceneManager.UnloadSceneAsync("SettingScene");
-        Debug.Log("Options closed");
-    }
-
-    public void PauseGame()
-    {
-        if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7)) && !gameIsPaused && gameIsRunning)
-        {
-            Time.timeScale = 0f;
-            gameIsPaused = true;
-            Debug.Log("Game is pausing");
-            PauseUI.SetActive(true);
-            //SceneManager.LoadScene("PauseScreenScene", LoadSceneMode.Additive);
-            Debug.Log("Game paused");
-        }
-        else if (gameIsPaused && gameIsRunning)
-        {
-            UnloadPauseButton();
-        }
-        else if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7)) && gameIsPaused)
-        {
-            UnloadPauseButton();
-        }
-    }
-
-    public void UnloadPauseButton()
-    {
-        gameIsPaused = false;
-        Debug.Log("Unpausing game");
-        PauseUI.SetActive(false);
-        //SceneManager.UnloadSceneAsync("PauseScreenScene");
-        Time.timeScale = 1f;
-        Debug.Log("Game playing");
-    }
-
     public void ReturnToTitle()
     {
         gameIsPaused = false;
         inHUB = false;
         Debug.Log("Unpausing and getting back to title");
-        PauseUI.SetActive(false);
-        //SceneManager.UnloadSceneAsync("PauseScreenScene");
+        //PauseUI.SetActive(false);
+        SceneManager.UnloadSceneAsync("PauseScreenScene");
         gameIsRunning = false;
         SceneManager.LoadScene("TitleScreenScene");
         Time.timeScale = 1f;
