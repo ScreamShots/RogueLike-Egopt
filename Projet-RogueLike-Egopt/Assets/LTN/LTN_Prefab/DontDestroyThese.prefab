@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7269384484021100312}
   - component: {fileID: 7269384484021100313}
-  - component: {fileID: 2582278939172617168}
+  - component: {fileID: 7269384484021100314}
   m_Layer: 0
   m_Name: DontDestroyThese
   m_TagString: Untagged
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a51dce21a09539249b731182611cf8ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2582278939172617168
+--- !u!114 &7269384484021100314
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,5 +56,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4b72d1708529c45a318ff44f7e0cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PauseUI: {fileID: 0}
-  OptionsUI: {fileID: 0}
+  pauseMenu: {fileID: 0}

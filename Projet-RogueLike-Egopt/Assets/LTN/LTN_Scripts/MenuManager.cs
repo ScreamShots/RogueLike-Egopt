@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    private SceneManaging sceneStuff;
+    /*private SceneManaging sceneStuff;
 
     public GameObject pauseMenu;
     public GameObject optionMenu;
@@ -90,5 +90,5 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("TitleScreenScene");
         Time.timeScale = 1f;
         Debug.Log("You're back to title");
-    }
+    }*/
 }

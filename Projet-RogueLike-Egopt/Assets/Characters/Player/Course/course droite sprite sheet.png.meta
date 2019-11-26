@@ -26,6 +26,30 @@ TextureImporter:
   - first:
       213: 9053722757864331865
     second: Player_Course_8
+  - first:
+      213: -6980440853477941175
+    second: course droite sprite sheet_0
+  - first:
+      213: -2572181492234080691
+    second: course droite sprite sheet_1
+  - first:
+      213: 4614800373624445120
+    second: course droite sprite sheet_2
+  - first:
+      213: -6454515751174059231
+    second: course droite sprite sheet_3
+  - first:
+      213: 7335694738279142086
+    second: course droite sprite sheet_4
+  - first:
+      213: -579672386826041839
+    second: course droite sprite sheet_5
+  - first:
+      213: -3374090705153752036
+    second: course droite sprite sheet_6
+  - first:
+      213: 9053722757864331865
+    second: course droite sprite sheet_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -110,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Course_1
+      name: course droite sprite sheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 44
-        width: 42
-        height: 42
+        y: 46
+        width: 43
+        height: 44
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,83 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0090e729ff01adf47abb7d30bdf21470
-      internalID: -2572181492234080691
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Course_2
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 44
-        width: 42
-        height: 42
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da2e3654e7971384ebb5e17c4be0278f
-      internalID: 4614800373624445120
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Course_3
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 44
-        width: 42
-        height: 42
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3235507e652655c48a1fabb6a85c77cd
-      internalID: -6454515751174059231
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Course_4
-      rect:
-        serializedVersion: 2
-        x: 129
-        y: 44
-        width: 42
-        height: 42
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 94fbf317bc801d84f81b744d54e5e852
+      spriteID: 261c6425cb1c7194b841738fd0caf1c7
       internalID: -6980440853477941175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Course_5
+      name: course droite sprite sheet_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
-        width: 42
-        height: 42
+        x: 43
+        y: 46
+        width: 43
+        height: 44
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +169,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df10982ca3959114fa70d52d578a6f6a
+      spriteID: f887144b4f8dc8541a73000cffd86c32
+      internalID: -2572181492234080691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: course droite sprite sheet_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 46
+        width: 43
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30bdb6469011f4a4cbbb1a698e29eb31
+      internalID: 4614800373624445120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: course droite sprite sheet_3
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 46
+        width: 43
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e5d467eb5f20a14e9d3073e8c2a132f
+      internalID: -6454515751174059231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: course droite sprite sheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 43
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e8861241c4d2ba48aeb83b1fde5cf1f
       internalID: 7335694738279142086
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Course_6
+      name: course droite sprite sheet_5
       rect:
         serializedVersion: 2
         x: 43
         y: 1
-        width: 42
-        height: 42
+        width: 43
+        height: 44
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +253,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70d60feec01639e458699c53f811f04e
+      spriteID: 5e740a25bfe4ad341b98df25b0db7a5f
       internalID: -579672386826041839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Course_7
+      name: course droite sprite sheet_6
       rect:
         serializedVersion: 2
         x: 86
         y: 1
-        width: 42
-        height: 42
+        width: 43
+        height: 44
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +274,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81cf42bec1b44a54da819905cd4881dd
+      spriteID: 984b1311a0bca2b4ab1cb2421f637a9f
       internalID: -3374090705153752036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Course_8
+      name: course droite sprite sheet_7
       rect:
         serializedVersion: 2
         x: 129
         y: 1
-        width: 42
-        height: 42
+        width: 43
+        height: 44
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,7 +295,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9a347507b90ea54a8f0a6a9c8adb10f
+      spriteID: c862720665dfcf243baeaff5612b0780
       internalID: 9053722757864331865
       vertices: []
       indices: 

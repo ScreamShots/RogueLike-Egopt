@@ -32,14 +32,13 @@ public class PlayerMovement : MonoBehaviour
     public float dashCooldown;
     public AnimationCurve dashCurve;
 
-    //Animation
-
-    public Animator animator;
+    //animator stuff
+    public Animator animatorPlayer;
     public bool isMoving;
-
 
     void Awake()
     {
+        //animatorPlayer = GetComponent<Animator>();
         playerRgb = GetComponent<Rigidbody2D>();
 
         isPlayerMoovAvailable = true;
@@ -53,10 +52,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-<<<<<<< HEAD:Projet-RogueLike-Egopt/Assets/RES/RES_Script/Player/PlayerMovement.cs
-=======
-         
->>>>>>> LTN_Animator:Projet-RogueLike-Egopt/Assets/RES/RES_Script/PlayerMovement.cs
         //Move
 
         Move();
@@ -71,11 +66,8 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(Dash(lastMove));
         }
-<<<<<<< HEAD:Projet-RogueLike-Egopt/Assets/RES/RES_Script/Player/PlayerMovement.cs
-=======
 
         AnimatorStuff();
->>>>>>> LTN_Animator:Projet-RogueLike-Egopt/Assets/RES/RES_Script/PlayerMovement.cs
     }
 
     //Move
@@ -103,13 +95,9 @@ public class PlayerMovement : MonoBehaviour
         if (move != Vector3.zero)
         {
             lastMove = move;
-<<<<<<< HEAD:Projet-RogueLike-Egopt/Assets/RES/RES_Script/Player/PlayerMovement.cs
+            isMoving = true;
 
             if (directionVertical >= Mathf.Sqrt(2)/2)
-=======
-            isMoving = true;
-            if (Mathf.Abs(inputHorizontalMoove) > Mathf.Abs(inputVerticalMoove))
->>>>>>> LTN_Animator:Projet-RogueLike-Egopt/Assets/RES/RES_Script/PlayerMovement.cs
             {
                 playerDirection = 0;        //up
             }
@@ -126,16 +114,14 @@ public class PlayerMovement : MonoBehaviour
                 playerDirection = 3;        //left
             }
         }
-<<<<<<< HEAD:Projet-RogueLike-Egopt/Assets/RES/RES_Script/Player/PlayerMovement.cs
-
-        GetComponent<PlayerUse>().attackDirection = playerDirection;
-=======
         else
         {
             isMoving = false;
         }
->>>>>>> LTN_Animator:Projet-RogueLike-Egopt/Assets/RES/RES_Script/PlayerMovement.cs
+
+        GetComponent<PlayerUse>().attackDirection = playerDirection;
     }
+
 
 
     //Dash
@@ -165,11 +151,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void AnimatorStuff()
     {
-        animator.SetFloat("moveY", playerRgb.velocity.y);
-        animator.SetFloat("moveX", playerRgb.velocity.x);
-        animator.SetInteger("playerDirection", playerDirection);
-        animator.SetBool("isMoving", isMoving);
-        animator.SetBool("canDash", isPlayerDashAvailable);
-        animator.SetBool("dashIsPressed", isPlayerDashing);
+        animatorPlayer.SetFloat("moveY", playerRgb.velocity.y);
+        animatorPlayer.SetFloat("moveX", playerRgb.velocity.x);
+        animatorPlayer.SetInteger("playerDirection", playerDirection);
+        animatorPlayer.SetBool("isMoving", isMoving);
+        animatorPlayer.SetBool("canDash", isPlayerDashAvailable);
+        animatorPlayer.SetBool("dashIsPressed", isPlayerDashing);
     }
 }

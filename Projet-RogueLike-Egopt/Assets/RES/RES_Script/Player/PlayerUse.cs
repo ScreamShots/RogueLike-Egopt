@@ -18,6 +18,10 @@ public class PlayerUse : MonoBehaviour
     public GameObject usedWeapon;
     public GameObject equipiedItem;
 
+    //Animator
+    public Animator attackPAnimator;
+    public int attackSide;
+
     void Start()
     {
         isPlayerAttackAvailable = true;
@@ -48,10 +52,12 @@ public class PlayerUse : MonoBehaviour
                 }
             }        
         }
+        AnimatorStuff();
     }
 
     IEnumerator Attack()
     {
+        attackPAnimator.SetTrigger("isAttacking");
         usedWeapon = Instantiate(equipiedItem);
         usedWeapon.transform.parent = GetComponent<Transform>();
         usedWeapon.transform.localPosition = new Vector3(0, 0, 0);
@@ -71,15 +77,19 @@ public class PlayerUse : MonoBehaviour
         {
             case 0:     // up
                 usedWeapon.transform.Rotate(0, 0, 0);
+                attackSide = 0;
                 break;
             case 1:     //right
                 usedWeapon.transform.Rotate(0, 0, -90);
+                attackSide = 1;
                 break;
             case 2:     //down
                 usedWeapon.transform.Rotate(0, 0, 180);
+                attackSide = 2;
                 break;
             case 3:     //left
                 usedWeapon.transform.Rotate(0, 0, 90);
+                attackSide = 3;
                 break;
 
             default:
@@ -119,5 +129,10 @@ public class PlayerUse : MonoBehaviour
         PlayerMovement.isPlayerDashAvailable = true;
         isPlayerAttackAvailable = true;
         isPlayerInUse = false;
+    }
+
+    void AnimatorStuff()
+    {
+        attackPAnimator.SetInteger("attackSide", attackSide);
     }
 }

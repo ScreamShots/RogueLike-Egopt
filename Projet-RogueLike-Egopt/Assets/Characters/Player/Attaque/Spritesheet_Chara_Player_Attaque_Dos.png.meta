@@ -54,7 +54,7 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -107,18 +107,18 @@ TextureImporter:
       name: Spritesheet_Chara_Player_Attaque_Dos_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 25
         y: 0
-        width: 68
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 16
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2e40f50eeb23ee4180a99acdb4454cf
+      spriteID: 12bb6aec690042245a5c5ffb3e2ba170
       internalID: 5144269667236608309
       vertices: []
       indices: 
@@ -128,18 +128,18 @@ TextureImporter:
       name: Spritesheet_Chara_Player_Attaque_Dos_1
       rect:
         serializedVersion: 2
-        x: 68
+        x: 93
         y: 0
-        width: 68
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 27
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edd725bdd4db9c44cbc903d5d0461475
+      spriteID: fab787dbf8123124aae885ac5e836cb5
       internalID: -6949957280437947847
       vertices: []
       indices: 
@@ -149,18 +149,18 @@ TextureImporter:
       name: Spritesheet_Chara_Player_Attaque_Dos_2
       rect:
         serializedVersion: 2
-        x: 136
+        x: 143
         y: 0
-        width: 68
+        width: 54
         height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8662a5933abffa46a6fec29d11a824d
+      spriteID: 0281d371f048fa34f86d05fabf7e386c
       internalID: 752393058984346190
       vertices: []
       indices: 
@@ -170,18 +170,18 @@ TextureImporter:
       name: Spritesheet_Chara_Player_Attaque_Dos_3
       rect:
         serializedVersion: 2
-        x: 204
+        x: 211
         y: 0
-        width: 68
+        width: 54
         height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6e6e4a2357987e4ba4fa7e7679d0581
+      spriteID: fd051116ff7a1c24492acb64fc97e08a
       internalID: 5411175353661381931
       vertices: []
       indices: 
@@ -191,18 +191,18 @@ TextureImporter:
       name: Spritesheet_Chara_Player_Attaque_Dos_4
       rect:
         serializedVersion: 2
-        x: 272
+        x: 297
         y: 0
-        width: 68
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 27
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 144b0e49df2b2384d900adc405beb83f
+      spriteID: 2b78677b45d614e439d9490cf2d36472
       internalID: -2071751502410434941
       vertices: []
       indices: 
@@ -212,18 +212,18 @@ TextureImporter:
       name: Spritesheet_Chara_Player_Attaque_Dos_5
       rect:
         serializedVersion: 2
-        x: 340
+        x: 365
         y: 0
-        width: 68
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 16
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fb8d9dc48a3dd7439b51e418147958e
+      spriteID: 5ef8a660f6774c141b5f17da33463c00
       internalID: 6997345171750030285
       vertices: []
       indices: 
@@ -232,7 +232,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: d22325b04b252c74ca55bfee4ff218e7
     internalID: 0
     vertices: []
     indices: 

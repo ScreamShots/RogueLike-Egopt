@@ -54,7 +54,7 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -107,18 +107,18 @@ TextureImporter:
       name: Spriteshet_Chara_Player_Attaque_face_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 66
-        height: 71
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 24
+        y: 19
+        width: 16
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c64debc23f7e83147abf33278b37185c
+      spriteID: 1169dc2023845db488dd02c9da417a6a
       internalID: 2869252608341419329
       vertices: []
       indices: 
@@ -128,18 +128,18 @@ TextureImporter:
       name: Spriteshet_Chara_Player_Attaque_face_1
       rect:
         serializedVersion: 2
-        x: 66
-        y: 0
-        width: 66
-        height: 71
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 83
+        y: 19
+        width: 22
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a8567f99583c6746836a36ce6d6c288
+      spriteID: c3e77df3f1f8d6c428b8845e9e2de196
       internalID: 4567272213448010848
       vertices: []
       indices: 
@@ -149,18 +149,18 @@ TextureImporter:
       name: Spriteshet_Chara_Player_Attaque_face_2
       rect:
         serializedVersion: 2
-        x: 132
-        y: 0
-        width: 66
-        height: 71
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 143
+        y: 5
+        width: 48
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88f6053ba0f570c4c94670472437cd3f
+      spriteID: 12f2170d088c87a4096d44ff4b4d3982
       internalID: 6703873203715327075
       vertices: []
       indices: 
@@ -170,18 +170,18 @@ TextureImporter:
       name: Spriteshet_Chara_Player_Attaque_face_3
       rect:
         serializedVersion: 2
-        x: 198
-        y: 0
-        width: 66
-        height: 71
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 209
+        y: 5
+        width: 48
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28b54a9c9cd77f647ab8066ca40690dd
+      spriteID: 67e7db8ecd1ea604784acd0cb5953c53
       internalID: 9177868362466863463
       vertices: []
       indices: 
@@ -191,18 +191,18 @@ TextureImporter:
       name: Spriteshet_Chara_Player_Attaque_face_4
       rect:
         serializedVersion: 2
-        x: 264
-        y: 0
-        width: 66
-        height: 71
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 281
+        y: 20
+        width: 22
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 540b8927e94b2ca4eabdb58f0db33433
+      spriteID: d6ced9649e7813c4fb9c06ac1fca23d6
       internalID: -7119420644196016131
       vertices: []
       indices: 
@@ -212,18 +212,18 @@ TextureImporter:
       name: Spriteshet_Chara_Player_Attaque_face_5
       rect:
         serializedVersion: 2
-        x: 330
-        y: 0
-        width: 66
-        height: 71
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 354
+        y: 19
+        width: 16
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f3873ff09336d9459fa47db02511872
+      spriteID: 3c16dec14c028e24b934af301b9b8d49
       internalID: 6613475082476097786
       vertices: []
       indices: 
@@ -232,7 +232,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: a106a10b2f9f7734ea31e47a545c55a6
     internalID: 0
     vertices: []
     indices: 
