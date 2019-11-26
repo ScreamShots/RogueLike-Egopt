@@ -348,7 +348,8 @@ MonoBehaviour:
   rightTrigger: {fileID: 158616805063177607}
   bottomTrigger: {fileID: 8794683486848848350}
   points: []
-  enemies: []
+  enemies:
+  - {fileID: 967274091731682327, guid: 462e637742fd90d45b1a25458ac6c1d3, type: 3}
 --- !u!61 &9090882121846671209
 BoxCollider2D:
   m_ObjectHideFlags: 0
