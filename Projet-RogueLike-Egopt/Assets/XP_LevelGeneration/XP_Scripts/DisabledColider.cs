@@ -18,7 +18,7 @@ public class DisabledColider : MonoBehaviour
     {
         numberOfSpawnedRooms = GameObject.FindGameObjectsWithTag("Rooms").Length;
 
-        if (numberOfSpawnedRooms >= 15)
+        if (numberOfSpawnedRooms >= 13)
         {
             GetComponent<BoxCollider2D>().enabled = false;
         }

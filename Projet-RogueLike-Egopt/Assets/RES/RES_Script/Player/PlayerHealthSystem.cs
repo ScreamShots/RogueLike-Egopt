@@ -10,6 +10,7 @@ public class PlayerHealthSystem : MonoBehaviour
 
     public float playerMaxHp;
     public float playerHp;
+    public Image healthBar;
     //public Image healthBar;
 
     void Start()
@@ -19,7 +20,7 @@ public class PlayerHealthSystem : MonoBehaviour
 
     private void Update()
     {
-        //healthBar.fillAmount = playerHp / playerMaxHp;
+        healthBar.fillAmount = playerHp / playerMaxHp;
     }
 
     public void IsTakingDmg(float damageValue)       //Put every action requiered when the player is taking dmg on this fonction

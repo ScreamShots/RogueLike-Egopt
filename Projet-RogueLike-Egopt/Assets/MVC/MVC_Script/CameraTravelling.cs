@@ -11,7 +11,7 @@ public class CameraTravelling : MonoBehaviour
 
     void Start()
     {
-        
+        cam = Camera.main;
     }
 
 
