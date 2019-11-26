@@ -39,10 +39,10 @@ public class XP_TopTriggerSpawning : MonoBehaviour
                 Debug.Log(enemies);
             }
 
-            Destroy(leftTrigger);
-            Destroy(rightTrigger);
-            Destroy(bottomTrigger);
-            Destroy(gameObject);
+            //Destroy(leftTrigger);
+            //Destroy(rightTrigger);
+            //Destroy(bottomTrigger);
+            //Destroy(gameObject);
         }
     }
  
