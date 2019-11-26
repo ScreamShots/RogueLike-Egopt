@@ -32,6 +32,12 @@ public class PlayerMovement : MonoBehaviour
     public float dashCooldown;
     public AnimationCurve dashCurve;
 
+    //Animation
+
+    public Animator animator;
+    public bool isMoving;
+
+
     void Awake()
     {
         playerRgb = GetComponent<Rigidbody2D>();
@@ -47,6 +53,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+<<<<<<< HEAD:Projet-RogueLike-Egopt/Assets/RES/RES_Script/Player/PlayerMovement.cs
+=======
+         
+>>>>>>> LTN_Animator:Projet-RogueLike-Egopt/Assets/RES/RES_Script/PlayerMovement.cs
         //Move
 
         Move();
@@ -61,6 +71,11 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(Dash(lastMove));
         }
+<<<<<<< HEAD:Projet-RogueLike-Egopt/Assets/RES/RES_Script/Player/PlayerMovement.cs
+=======
+
+        AnimatorStuff();
+>>>>>>> LTN_Animator:Projet-RogueLike-Egopt/Assets/RES/RES_Script/PlayerMovement.cs
     }
 
     //Move
@@ -88,8 +103,13 @@ public class PlayerMovement : MonoBehaviour
         if (move != Vector3.zero)
         {
             lastMove = move;
+<<<<<<< HEAD:Projet-RogueLike-Egopt/Assets/RES/RES_Script/Player/PlayerMovement.cs
 
             if (directionVertical >= Mathf.Sqrt(2)/2)
+=======
+            isMoving = true;
+            if (Mathf.Abs(inputHorizontalMoove) > Mathf.Abs(inputVerticalMoove))
+>>>>>>> LTN_Animator:Projet-RogueLike-Egopt/Assets/RES/RES_Script/PlayerMovement.cs
             {
                 playerDirection = 0;        //up
             }
@@ -106,8 +126,15 @@ public class PlayerMovement : MonoBehaviour
                 playerDirection = 3;        //left
             }
         }
+<<<<<<< HEAD:Projet-RogueLike-Egopt/Assets/RES/RES_Script/Player/PlayerMovement.cs
 
         GetComponent<PlayerUse>().attackDirection = playerDirection;
+=======
+        else
+        {
+            isMoving = false;
+        }
+>>>>>>> LTN_Animator:Projet-RogueLike-Egopt/Assets/RES/RES_Script/PlayerMovement.cs
     }
 
 
@@ -134,5 +161,15 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(dashCooldown);
         isPlayerDashAvailable = true;
+    }
+
+    public void AnimatorStuff()
+    {
+        animator.SetFloat("moveY", playerRgb.velocity.y);
+        animator.SetFloat("moveX", playerRgb.velocity.x);
+        animator.SetInteger("playerDirection", playerDirection);
+        animator.SetBool("isMoving", isMoving);
+        animator.SetBool("canDash", isPlayerDashAvailable);
+        animator.SetBool("dashIsPressed", isPlayerDashing);
     }
 }
