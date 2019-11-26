@@ -328,6 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce5a3e2112cf324885b4dc09c9c23e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 --- !u!1001 &796364738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -516,6 +517,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ea6f341e0150ac4a9daeda4be876a41, type: 3}
+=======
+--- !u!1 &1262970682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7794560399728274033, guid: 908c04efe4877094f8ea54deee86eb61,
+    type: 3}
+  m_PrefabInstance: {fileID: 1755968521862166974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1262970687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262970682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 973f8e8f7ad534c4ba50435bfffdae0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraChange: {x: 0, y: 0}
+  playerChange: {x: 0, y: 0, z: 0}
+  cam: {fileID: 368658497}
+>>>>>>> MVC_CamTransition
 --- !u!1001 &1265296266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -593,6 +617,7 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.539
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 2079572820974116303, guid: b0fd6d9fc93f7094f9470953759d782a,
         type: 3}
       propertyPath: m_SortingOrder
@@ -602,10 +627,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.y
       value: -0.042430878
+=======
+    - target: {fileID: 3080488959520002744, guid: b0fd6d9fc93f7094f9470953759d782a,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.112723336
+>>>>>>> MVC_CamTransition
       objectReference: {fileID: 0}
     - target: {fileID: 3080488959520002744, guid: b0fd6d9fc93f7094f9470953759d782a,
         type: 3}
       propertyPath: m_Size.y
+<<<<<<< HEAD
       value: 1.012288
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -617,11 +649,25 @@ GameObject:
   m_PrefabInstance: {fileID: 1755968521862166974}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1422753492
+=======
+      value: 0.8887798
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b0fd6d9fc93f7094f9470953759d782a, type: 3}
+--- !u!1 &1523218381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5542848178156188607, guid: 908c04efe4877094f8ea54deee86eb61,
+    type: 3}
+  m_PrefabInstance: {fileID: 1755968521862166974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1523218386
+>>>>>>> MVC_CamTransition
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1422753489}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -772,6 +818,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff43e893d5125194ba790d64deb82ecb, type: 3}
+=======
+  m_GameObject: {fileID: 1523218381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 973f8e8f7ad534c4ba50435bfffdae0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraChange: {x: 0, y: 0}
+  playerChange: {x: 0, y: 0, z: 0}
+  cam: {fileID: 368658497}
+--- !u!1 &2046407307 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3806487406161926118, guid: 908c04efe4877094f8ea54deee86eb61,
+    type: 3}
+  m_PrefabInstance: {fileID: 1755968521862166974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2046407312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046407307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 973f8e8f7ad534c4ba50435bfffdae0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraChange: {x: 0, y: 6}
+  playerChange: {x: 0, y: 1.5, z: 0}
+  cam: {fileID: 368658497}
+>>>>>>> MVC_CamTransition
 --- !u!1001 &1755968521862166974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -864,6 +942,7 @@ PrefabInstance:
       propertyPath: templates
       value: 
       objectReference: {fileID: 403620936}
+<<<<<<< HEAD
     - target: {fileID: 8295866254082196352, guid: 908c04efe4877094f8ea54deee86eb61,
         type: 3}
       propertyPath: m_Offset.x
@@ -884,5 +963,17 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.24346018
       objectReference: {fileID: 0}
+=======
+    - target: {fileID: 5701736231808286249, guid: 908c04efe4877094f8ea54deee86eb61,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840894326620442099, guid: 908c04efe4877094f8ea54deee86eb61,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 368658497}
+>>>>>>> MVC_CamTransition
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 908c04efe4877094f8ea54deee86eb61, type: 3}
