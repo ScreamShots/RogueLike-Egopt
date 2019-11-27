@@ -41,7 +41,7 @@ public class EnemyArcherProjectile : MonoBehaviour
             Destroy(gameObject);
             player.gameObject.GetComponent<PlayerHealthSystem>().IsTakingDmg(projectileDmg);
         }
-        else if (collision.gameObject.tag == "Walls")
+        else if (collision.gameObject.tag == "Walls" || collision.gameObject.tag == ("Props"))
         {
 
             Destroy(gameObject);
