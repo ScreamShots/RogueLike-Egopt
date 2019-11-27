@@ -35,7 +35,7 @@ public class XP_RoomSpawner : MonoBehaviour
         spawned = false;
         Invoke("SpawnRoom", 0.1f);
         numberOfRooms = GameObject.FindGameObjectsWithTag("Rooms").Length;
-        //Debug.Log(numberOfRooms);
+        Debug.Log(numberOfRooms);
 
     }
 
@@ -43,7 +43,7 @@ public class XP_RoomSpawner : MonoBehaviour
 
     void SpawnRoom()
     {
-        if (spawned == false && numberOfRooms <= 12 && spawningIsFinish == false)
+        if (spawned == false && numberOfRooms <= 14 && spawningIsFinish == false)
         {
             if (openingDirection == 1 )
             {

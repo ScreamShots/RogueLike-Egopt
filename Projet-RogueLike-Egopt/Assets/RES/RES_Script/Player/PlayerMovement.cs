@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     public float dashCooldown;
     public AnimationCurve dashCurve;
 
+    
+   
     void Awake()
     {
         playerRgb = GetComponent<Rigidbody2D>();

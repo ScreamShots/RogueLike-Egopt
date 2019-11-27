@@ -9,6 +9,9 @@ public class CameraTravelling : MonoBehaviour
     public Camera cam;
     private Vector2 newPos;
 
+    
+
+
     void Start()
     {
         cam = Camera.main;
@@ -19,13 +22,15 @@ public class CameraTravelling : MonoBehaviour
     {
 
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.tag == ("Player"))
         {
+           
             newPos = new Vector2(cam.transform.position.x + cameraChange.x, cam.transform.position.y + cameraChange.y);
             cam.transform.position = newPos;
             other.transform.position += playerChange;
+            
         }
     }
 }

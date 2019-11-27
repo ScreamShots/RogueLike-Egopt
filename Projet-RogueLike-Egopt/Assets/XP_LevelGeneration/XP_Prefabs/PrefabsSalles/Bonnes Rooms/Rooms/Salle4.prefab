@@ -1316,6 +1316,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawners
       objectReference: {fileID: 0}
+    - target: {fileID: 3823021241774032214, guid: b7be083c965f1ec4cb881e785b49f520,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5684131322829449517, guid: b7be083c965f1ec4cb881e785b49f520,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1380,6 +1385,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542712595829678525, guid: b7be083c965f1ec4cb881e785b49f520,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.346
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7be083c965f1ec4cb881e785b49f520, type: 3}
