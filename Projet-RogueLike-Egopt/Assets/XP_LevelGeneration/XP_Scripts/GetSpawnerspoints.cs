@@ -23,7 +23,7 @@ public class GetSpawnerspoints : MonoBehaviour
             foreach (GameObject go in children)
             {
                 go.GetComponent<XP_SpawningSystem>().Invoke("Spawning", 0.5f);
-                //DestroyDoor.
+                
             }
         }
 

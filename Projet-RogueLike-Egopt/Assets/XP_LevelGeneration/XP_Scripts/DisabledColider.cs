@@ -16,7 +16,7 @@ public class DisabledColider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<GameManager>().canDeleted = true)
+        if (GetComponent<GameManager>().canDeleted == true)
         {
             bxC.enabled = false;
         }

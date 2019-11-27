@@ -10,7 +10,7 @@ public class XP_SpawningSystem : MonoBehaviour
 
     public void Spawning()
     {
-        randEnemy = Random.Range(0, 2);
+        randEnemy = Random.Range(0, 3);
         Instantiate(enemies[randEnemy],transform.position, transform.rotation);
         Destroy(gameObject);
     }

@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraChange: {x: 0, y: -10}
-  playerChange: {x: 0, y: -5, z: 0}
+  playerChange: {x: 0, y: -5.5, z: 0}
   cam: {fileID: 0}
 --- !u!1 &2640992687812805524
 GameObject:
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraChange: {x: 0, y: 10}
-  playerChange: {x: 0, y: 5, z: 0}
+  playerChange: {x: 0, y: 5.5, z: 0}
   cam: {fileID: 0}
 --- !u!1 &4090944695771859096
 GameObject:
@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraChange: {x: -18.25, y: 0}
-  playerChange: {x: -4, y: 0, z: 0}
+  playerChange: {x: -4.5, y: 0, z: 0}
   cam: {fileID: 0}
 --- !u!1 &8961665838626799107
 GameObject:
@@ -1289,5 +1289,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraChange: {x: 18.25, y: 0}
-  playerChange: {x: 4, y: 0, z: 0}
+  playerChange: {x: 4.5, y: 0, z: 0}
   cam: {fileID: 0}
