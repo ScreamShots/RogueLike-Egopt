@@ -29,9 +29,9 @@ public class WeaponManager : MonoBehaviour
     }
     public void WeaponAttack()
     {
-        for (int i = 0; i < enemyInRangList.Count; i++)
+        foreach (GameObject enemy in enemyInRangList)
         {
-            enemyInRangList[i].GetComponent<EnemyHealthSystem>().IsTakingDmg(weaponDmg);
-        }
+            enemy.GetComponent<EnemyHealthSystem>().IsTakingDmg(weaponDmg);
+        }        
     }
 }

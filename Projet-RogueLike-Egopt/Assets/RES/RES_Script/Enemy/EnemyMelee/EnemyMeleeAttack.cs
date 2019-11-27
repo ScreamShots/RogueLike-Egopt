@@ -17,6 +17,8 @@ public class EnemyMeleeAttack : MonoBehaviour
     public GameObject warning;
     public GameObject warningInstanciated;
 
+    public Animator EAAnimator;
+
     private void Start()
     {
         isEnemyAttackAvailable = true;
@@ -43,6 +45,7 @@ public class EnemyMeleeAttack : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
         isEnemyAttacking = true;
         attackDirection = GetComponent<EnemyMeleeMovement>().enemyDirection;
+        EAAnimator.SetTrigger("isAttacking");
 
         warningInstanciated = Instantiate(warning);
         warningInstanciated.transform.parent = GetComponent<Transform>();

@@ -18,6 +18,11 @@ public class EnemyMeleeMovement : MonoBehaviour
     public float speed;
     public int enemyDirection;
 
+    //Animator
+    public Animator MSAnimator;
+    public bool isMoving;
+
+
     void Start()
     {
         isEnnemyMoovAvailable = true;
@@ -33,6 +38,8 @@ public class EnemyMeleeMovement : MonoBehaviour
         Move();
 
         Direction();
+
+        MSAnimatorStuff();
     }
 
     
@@ -41,6 +48,8 @@ public class EnemyMeleeMovement : MonoBehaviour
 
         if (move != Vector3.zero)
         {
+            isMoving = true;
+
             if (verticalMoove >= Mathf.Sqrt(2) / 2)
             {
                 enemyDirection = 0;        //up
@@ -57,6 +66,10 @@ public class EnemyMeleeMovement : MonoBehaviour
             {
                 enemyDirection = 3;        //left
             }
+        }
+        else
+        {
+            isMoving = false;
         }
 
         //GetComponent<EnemyMeleeAttack>().attackDirection = enemyDirection;
@@ -75,5 +88,13 @@ public class EnemyMeleeMovement : MonoBehaviour
         {
             ennemyRgb.velocity = move * speed * Time.fixedDeltaTime;
         }
+    }
+
+    void MSAnimatorStuff()
+    {
+        MSAnimator.SetBool("isMoving", isMoving);
+        MSAnimator.SetInteger("enemyDirection", enemyDirection);
+        MSAnimator.SetFloat("moveX", ennemyRgb.velocity.x);
+        MSAnimator.SetFloat("moveY", ennemyRgb.velocity.y);
     }
 }

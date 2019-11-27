@@ -32,10 +32,13 @@ public class PlayerMovement : MonoBehaviour
     public float dashCooldown;
     public AnimationCurve dashCurve;
 
-    
-   
+    //animator stuff
+    public Animator animatorPlayer;
+    public bool isMoving;
+
     void Awake()
     {
+        //animatorPlayer = GetComponent<Animator>();
         playerRgb = GetComponent<Rigidbody2D>();
 
         isPlayerMoovAvailable = true;
@@ -59,10 +62,12 @@ public class PlayerMovement : MonoBehaviour
 
         //Dash
 
-        if (Input.GetAxisRaw("Roll") > 0 && isPlayerDashAvailable == true && PlayerUse.isPlayerInUse == false && PlayerHealthSystem.isPlayerDead == false)
+        if (Input.GetAxisRaw("Roll") > 0 && isPlayerDashAvailable == true && PlayerUse.isPlayerInUse == false)
         {
             StartCoroutine(Dash(lastMove));
         }
+
+        AnimatorStuff();
     }
 
     //Move
@@ -74,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
         move = new Vector3(inputHorizontalMoove, inputVerticalMoove, 0);
 
-        if (isPlayerMoovAvailable == true && PlayerHealthSystem.isPlayerDead == false)
+        if (isPlayerMoovAvailable == true)
         {
             playerRgb.velocity = move.normalized * speed * Time.fixedDeltaTime;
         }
@@ -90,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
         if (move != Vector3.zero)
         {
             lastMove = move;
+            isMoving = true;
 
             if (directionVertical >= Mathf.Sqrt(2)/2)
             {
@@ -108,9 +114,14 @@ public class PlayerMovement : MonoBehaviour
                 playerDirection = 3;        //left
             }
         }
+        else
+        {
+            isMoving = false;
+        }
 
         GetComponent<PlayerUse>().attackDirection = playerDirection;
     }
+
 
 
     //Dash
@@ -136,5 +147,15 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(dashCooldown);
         isPlayerDashAvailable = true;
+    }
+
+    public void AnimatorStuff()
+    {
+        animatorPlayer.SetFloat("moveY", playerRgb.velocity.y);
+        animatorPlayer.SetFloat("moveX", playerRgb.velocity.x);
+        animatorPlayer.SetInteger("playerDirection", playerDirection);
+        animatorPlayer.SetBool("isMoving", isMoving);
+        animatorPlayer.SetBool("canDash", isPlayerDashAvailable);
+        animatorPlayer.SetBool("dashIsPressed", isPlayerDashing);
     }
 }

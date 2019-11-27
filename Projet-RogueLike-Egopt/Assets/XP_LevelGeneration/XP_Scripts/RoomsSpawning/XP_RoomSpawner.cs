@@ -22,10 +22,10 @@ public class XP_RoomSpawner : MonoBehaviour
 
     private void Update()
     {
-        if ( numberOfRooms > 15)
+        if ( numberOfRooms > 12)
         {
             spawningIsFinish = true;
-            //Debug.Log(spawningIsFinish);
+            Debug.Log(spawningIsFinish);
         }
     }
 
@@ -33,7 +33,7 @@ public class XP_RoomSpawner : MonoBehaviour
     {
         
         spawned = false;
-        Invoke("SpawnRoom", 0.1f);
+        Invoke("SpawnRoom", 0.05f);
         numberOfRooms = GameObject.FindGameObjectsWithTag("Rooms").Length;
         Debug.Log(numberOfRooms);
 
@@ -43,9 +43,9 @@ public class XP_RoomSpawner : MonoBehaviour
 
     void SpawnRoom()
     {
-        if (spawned == false && numberOfRooms <= 14 && spawningIsFinish == false)
+        if (spawned == false && numberOfRooms <= 12 && spawningIsFinish == false)
         {
-            if (openingDirection == 1 )
+            if (openingDirection == 1)
             {
                 // Need to spawn a room with a BOTTOM door
                 rand = Random.Range(0, templates.bottomRooms.Length);
@@ -53,21 +53,21 @@ public class XP_RoomSpawner : MonoBehaviour
                 
 
             }
-            else if (openingDirection == 2 )
+            else if (openingDirection == 2)
             {
                 // Need to spawn a room with a TOP door
                 rand = Random.Range(0, templates.topRooms.Length);
                 Instantiate(templates.topRooms[rand], transform.position, templates.topRooms[rand].transform.rotation);
                 numberOfRooms += 1;
             }
-            else if (openingDirection == 3 )
+            else if (openingDirection == 3)
             {
                 // Need to spawn a room with a LEFT door
                 rand = Random.Range(0, templates.leftRooms.Length);
                 Instantiate(templates.leftRooms[rand], transform.position, templates.leftRooms[rand].transform.rotation);
 
             }
-            else if (openingDirection == 4 )
+            else if (openingDirection == 4)
             {
                 // Need to spawn a room with a RIGHT door
                 rand = Random.Range(0, templates.rightRooms.Length);
@@ -85,7 +85,7 @@ public class XP_RoomSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == ("MiddleCenter") ||  other.gameObject.tag == "SpawnRoom" || other.gameObject.tag == ("SpawnPoint"))
+        if (other.gameObject.tag == ("SpawnPoint") ||  other.gameObject.tag == "SpawnRoom")
         {
                Destroy(gameObject);
           

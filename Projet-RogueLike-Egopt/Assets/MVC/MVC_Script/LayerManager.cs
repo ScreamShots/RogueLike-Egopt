@@ -5,14 +5,14 @@ using UnityEngine;
 public class LayerManager : MonoBehaviour
 {
     private GameObject[] props;
-    private SpriteRenderer charaSpr;
+    private SpriteRenderer playerSpr;
     private SpriteRenderer propsSpr;
 
 
     void Start()
     {
         props = GameObject.FindGameObjectsWithTag("Props");
-        charaSpr = GetComponent<SpriteRenderer>();
+        playerSpr = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -26,15 +26,15 @@ public class LayerManager : MonoBehaviour
         {
             for (int i=0; i<props.Length; i++)
             {
-                if (props[i].transform.position.y < transform.position.y - 1)
+                if (props[i].transform.position.y < transform.position.y)
                 {
                     propsSpr = props[i].GetComponent<SpriteRenderer>();
-                    propsSpr.sortingOrder = charaSpr.sortingOrder + 1; 
+                    propsSpr.sortingOrder = playerSpr.sortingOrder + 1; 
                 }
                 else 
                 {
                     propsSpr = props[i].GetComponent<SpriteRenderer>();
-                    propsSpr.sortingOrder = charaSpr.sortingOrder - 1;
+                    propsSpr.sortingOrder = playerSpr.sortingOrder - 1;
                 }
             }
         }
