@@ -27,7 +27,7 @@ public class PlayerUse : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetAxisRaw("AtkUse") > 0)
+        if (Input.GetAxisRaw("AtkUse") > 0 && PlayerHealthSystem.isPlayerDead == false)
         {
             if(PlayerInventory.playerInventory[PlayerInventory.inventoryIndex] != null)
             {

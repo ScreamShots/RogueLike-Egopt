@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 7916279392161102633}
   - component: {fileID: 289676879710804149}
   - component: {fileID: 66119677716654790}
+  - component: {fileID: -8016586153370777285}
   - component: {fileID: 7681505193561129398}
   - component: {fileID: 4987098332077097046}
-  - component: {fileID: 4380849160949434288}
+  - component: {fileID: 6883045960797988150}
   m_Layer: 0
   m_Name: SqueletteArcher
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,12 +119,38 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.020673871, y: -0.016539097}
   m_Size: {x: 0.36710525, y: 1.5476875}
   m_Direction: 0
+--- !u!61 &-8016586153370777285
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916279392161102632}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.02, y: -0.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.53333336, y: 1.4}
+    newSize: {x: 0.1882353, y: 0.49411765}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3}
+  m_EdgeRadius: 0
 --- !u!114 &7681505193561129398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +186,7 @@ MonoBehaviour:
   projectile: {fileID: 619184275757471172, guid: 3876a63561635f04ebca4431dc3fdf0b,
     type: 3}
   startTimeBtwShots: 2
---- !u!114 &4380849160949434288
+--- !u!114 &6883045960797988150
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,12 +195,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7916279392161102632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c8a6b2da45c66d41a35d177b14534a2, type: 3}
+  m_Script: {fileID: 11500000, guid: b82a039bc7852bd4eb5e684427fe5f59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMaxHp: 50
-  enemyHp: 50
-  healthBarUI: {fileID: 7989776115601484701}
+  enemyMaxHp: 100
+  enemyHp: 0
+  healthBar: {fileID: 7989776115601484701}
 --- !u!1001 &6517388793619312709
 PrefabInstance:
   m_ObjectHideFlags: 0
