@@ -25,7 +25,7 @@ public class XP_RoomSpawner : MonoBehaviour
         if ( numberOfRooms > 15)
         {
             spawningIsFinish = true;
-            Debug.Log(spawningIsFinish);
+            //Debug.Log(spawningIsFinish);
         }
     }
 
@@ -35,7 +35,7 @@ public class XP_RoomSpawner : MonoBehaviour
         spawned = false;
         Invoke("SpawnRoom", 0.1f);
         numberOfRooms = GameObject.FindGameObjectsWithTag("Rooms").Length;
-        Debug.Log(numberOfRooms);
+        //Debug.Log(numberOfRooms);
 
     }
 
