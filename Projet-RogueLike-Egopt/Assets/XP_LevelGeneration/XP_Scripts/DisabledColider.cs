@@ -4,23 +4,21 @@ using UnityEngine;
 
 public class DisabledColider : MonoBehaviour
 {
-    private int numberOfSpawnedRooms;
+    private BoxCollider2D bxC;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        bxC = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        numberOfSpawnedRooms = GameObject.FindGameObjectsWithTag("Rooms").Length;
-
-        if (numberOfSpawnedRooms >= 13)
+        if (GetComponent<GameManager>().canDeleted = true)
         {
-            GetComponent<BoxCollider2D>().enabled = false;
+            bxC.enabled = false;
         }
     }
 }
