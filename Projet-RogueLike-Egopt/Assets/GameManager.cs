@@ -10,15 +10,18 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        numberOfRoomsSpawned = GameObject.FindGameObjectsWithTag("Rooms").Length;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        numberOfRoomsSpawned = GameObject.FindGameObjectsWithTag("Rooms").Length;
         if (numberOfRoomsSpawned > 12)
         {
+           
             canDeleted = true;
+            Debug.Log(canDeleted);
         }
     }
 }
