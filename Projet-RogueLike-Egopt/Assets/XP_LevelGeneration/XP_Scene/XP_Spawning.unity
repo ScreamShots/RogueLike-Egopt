@@ -361,7 +361,7 @@ PrefabInstance:
     - target: {fileID: 5688791241476954894, guid: 848da0b87bfd84947867dfcb9d29f32e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -34.5
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 5688791240660086283, guid: 848da0b87bfd84947867dfcb9d29f32e,
         type: 3}
@@ -497,6 +497,16 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1473255780}
+    - target: {fileID: 54436460348400174, guid: b0fd6d9fc93f7094f9470953759d782a,
+        type: 3}
+      propertyPath: dashSpeed
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 54436460348400174, guid: b0fd6d9fc93f7094f9470953759d782a,
+        type: 3}
+      propertyPath: speed
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0fd6d9fc93f7094f9470953759d782a, type: 3}
 --- !u!1 &1473255778
@@ -1233,6 +1243,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298830874516905891, guid: a1f80c9a73b409f48ba8ad0c86b1f97e,
+        type: 3}
+      propertyPath: cameraChange.x
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298830874516905891, guid: a1f80c9a73b409f48ba8ad0c86b1f97e,
+        type: 3}
+      propertyPath: playerChange.x
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5618778293131574017, guid: a1f80c9a73b409f48ba8ad0c86b1f97e,
         type: 3}
