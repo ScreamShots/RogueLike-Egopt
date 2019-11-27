@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    /*private SceneManaging sceneStuff;
+    private SceneManaging sceneStuff;
 
     public GameObject pauseMenu;
     public GameObject optionMenu;
@@ -19,9 +19,9 @@ public class MenuManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        PauseGame();
     }
 
     public void PauseGame()
@@ -35,7 +35,7 @@ public class MenuManager : MonoBehaviour
             //SceneManager.LoadScene("PauseScreenScene", LoadSceneMode.Additive);
             Debug.Log("Game paused");
         }
-        else if (sceneStuff.gameIsPaused && sceneStuff.gameIsRunning)
+        else if (sceneStuff.gameIsPaused == true && sceneStuff.gameIsRunning == false)
         {
             UnloadPauseButton();
         }
@@ -65,6 +65,18 @@ public class MenuManager : MonoBehaviour
         Debug.Log("Options opened");
     }
 
+    public void QuitOptions()
+    {
+        if (sceneStuff.gameIsPaused)
+        {
+            QuitOptionsPause();
+        }
+        else
+        {
+            QuitOptionsTitle();
+        }
+    }
+
     public void QuitOptionsPause()
     {
         optionMenu.SetActive(false);
@@ -90,5 +102,5 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("TitleScreenScene");
         Time.timeScale = 1f;
         Debug.Log("You're back to title");
-    }*/
+    }
 }
