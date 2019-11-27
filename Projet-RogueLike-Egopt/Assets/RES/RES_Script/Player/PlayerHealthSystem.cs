@@ -10,16 +10,18 @@ public class PlayerHealthSystem : MonoBehaviour
 
     public float playerMaxHp;
     public float playerHp;
-    //public Image healthBar;
+    public Image healthBar;
+    public static bool isPlayerDead;
 
     void Start()
     {
         playerHp = playerMaxHp;
+        isPlayerDead = false;
     }
 
     private void Update()
     {
-        //healthBar.fillAmount = playerHp / playerMaxHp;
+        healthBar.fillAmount = playerHp / playerMaxHp;
     }
 
     public void IsTakingDmg(float damageValue)       //Put every action requiered when the player is taking dmg on this fonction
@@ -30,7 +32,7 @@ public class PlayerHealthSystem : MonoBehaviour
         {
             PlayerDeath();
         }
-        Debug.Log(playerHp);
+        //Debug.Log(playerHp);
     }
 
     public void PlayerIsHealing(float healValue)             //Put every action requiered when the player is healed on this fonction  
@@ -47,7 +49,7 @@ public class PlayerHealthSystem : MonoBehaviour
     void PlayerDeath()                                  //Put every action requiered when the player is dead on this function
     {
         Debug.Log("Vous êtes mort");
-        PlayerMovement.isPlayerMoovAvailable = false;
+        isPlayerDead = true;
         GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
 
     }

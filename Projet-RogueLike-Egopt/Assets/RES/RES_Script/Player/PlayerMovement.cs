@@ -32,10 +32,15 @@ public class PlayerMovement : MonoBehaviour
     public float dashCooldown;
     public AnimationCurve dashCurve;
 
+<<<<<<< HEAD
     //animator stuff
     public Animator animatorPlayer;
     public bool isMoving;
 
+=======
+    
+   
+>>>>>>> ResetXanthin
     void Awake()
     {
         //animatorPlayer = GetComponent<Animator>();
@@ -62,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Dash
 
-        if (Input.GetAxisRaw("Roll") > 0 && isPlayerDashAvailable == true && PlayerUse.isPlayerInUse == false)
+        if (Input.GetAxisRaw("Roll") > 0 && isPlayerDashAvailable == true && PlayerUse.isPlayerInUse == false && PlayerHealthSystem.isPlayerDead == false)
         {
             StartCoroutine(Dash(lastMove));
         }
@@ -79,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
         move = new Vector3(inputHorizontalMoove, inputVerticalMoove, 0);
 
-        if (isPlayerMoovAvailable == true)
+        if (isPlayerMoovAvailable == true && PlayerHealthSystem.isPlayerDead == false)
         {
             playerRgb.velocity = move.normalized * speed * Time.fixedDeltaTime;
         }

@@ -21,7 +21,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Inv"))
+        if (Input.GetButtonDown("Inv") && PlayerHealthSystem.isPlayerDead == false)
         {
             InventoryRotation((int)Input.GetAxisRaw("Inv"));
 
@@ -32,14 +32,14 @@ public class PlayerInventory : MonoBehaviour
         GetComponent<PlayerUse>().equipiedItem = selectionedObject;
 
     }
-    //Input.GetButtonDown("Pick") && collision.gameObject.tag == "PickableObject"
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetButtonDown("Pick") && collision.gameObject.tag == "PickableObject")
+        if (Input.GetButtonDown("Pick") && collision.gameObject.tag == "PickableObject" && PlayerHealthSystem.isPlayerDead == false)        //casser si il y a plusieur objet détecté en m^me temps
         {
             PickingObject(collision.gameObject);
             Destroy(collision.gameObject);
+            
         }
     }
 
