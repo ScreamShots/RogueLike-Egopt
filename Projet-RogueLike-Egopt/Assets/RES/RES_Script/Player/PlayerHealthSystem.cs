@@ -9,48 +9,71 @@ public class PlayerHealthSystem : MonoBehaviour
     //Statement
 
     public float playerMaxHp;
+    public float playerMinHp;
     public float playerHp;
+    public float playerImmuneTime;
     public Image healthBar;
-    public static bool isPlayerDead;
 
     void Start()
     {
         playerHp = playerMaxHp;
-        isPlayerDead = false;
     }
-
+    
     private void Update()
     {
-        healthBar.fillAmount = playerHp / playerMaxHp;
-    }
 
-    public void IsTakingDmg(float damageValue)       //Put every action requiered when the player is taking dmg on this fonction
-    {
-        playerHp -= damageValue;
+        //healthBar.fillAmount = playerHp / playerMaxHp;
 
         if (playerHp <= 0)
         {
             PlayerDeath();
         }
-        //Debug.Log(playerHp);
+    }
+
+    public void IsTakingDmg(float damageValue)       //Put every action requiered when the player is taking dmg on this fonction
+    {
+        if (PlayerStatusManager.isPlayerImmune == false)
+        {
+            playerHp -= damageValue;
+            StartCoroutine("PlayerImmunityActivation");
+        }      
     }
 
     public void PlayerIsHealing(float healValue)             //Put every action requiered when the player is healed on this fonction  
     {
-        playerHp += healValue;
-
-        if (playerHp > playerMaxHp)
+        if(PlayerStatusManager.isPlayerDead == false)
         {
-            playerHp = playerMaxHp;
-        }
+            playerHp += healValue;
 
+            if (playerHp > playerMaxHp)
+            {
+                playerHp = playerMaxHp;
+            }
+        }
     }
 
     void PlayerDeath()                                  //Put every action requiered when the player is dead on this function
     {
         Debug.Log("Vous êtes mort");
-        isPlayerDead = true;
+
+        PlayerStatusManager.isPlayerDead = true;
+
         GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
 
+        GetComponent<SpriteRenderer>().color = Color.black; //TEmporaryFeedBack
+
+    }
+
+    public IEnumerator PlayerImmunityActivation()
+    {
+        PlayerStatusManager.isPlayerImmune = true;
+
+        GetComponent<SpriteRenderer>().color = Color.green; //TEmporaryFeedBack
+
+        yield return new WaitForSeconds(playerImmuneTime);
+
+        GetComponent<SpriteRenderer>().color = Color.white; //TEmporaryFeedBack
+
+        PlayerStatusManager.isPlayerImmune = false;
     }
 }

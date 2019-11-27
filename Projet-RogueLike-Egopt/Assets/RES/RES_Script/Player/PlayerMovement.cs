@@ -7,10 +7,10 @@ public class PlayerMovement : MonoBehaviour
     //Statement
 
     public static Rigidbody2D playerRgb;
+    public GameObject respawnPoint;
 
     //Move
 
-    public static bool isPlayerMoovAvailable;
     public float speed;
     public Vector3 move;
     public float inputHorizontalMoove;
@@ -25,24 +25,19 @@ public class PlayerMovement : MonoBehaviour
 
     //Dash
 
-    public static bool isPlayerDashAvailable;
-    public static bool isPlayerDashing;
     public float dashSpeed;
     public float dashTime;
     public float dashCooldown;
     public AnimationCurve dashCurve;
 
+    //Fall
+
     void Awake()
     {
         playerRgb = GetComponent<Rigidbody2D>();
 
-        isPlayerMoovAvailable = true;
-        isPlayerDashAvailable = true;
-
         playerDirection = 0;
         lastMove = new Vector3(1, 0, 0);
-
-        isPlayerDashing = false;
     }
 
     void FixedUpdate()
@@ -57,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Dash
 
-        if (Input.GetAxisRaw("Roll") > 0 && isPlayerDashAvailable == true && PlayerUse.isPlayerInUse == false && PlayerHealthSystem.isPlayerDead == false)
+        if (Input.GetAxisRaw("Roll") > 0 && PlayerStatusManager.isPlayerDashAvailable == true )
         {
             StartCoroutine(Dash(lastMove));
         }
@@ -72,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
         move = new Vector3(inputHorizontalMoove, inputVerticalMoove, 0);
 
-        if (isPlayerMoovAvailable == true && PlayerHealthSystem.isPlayerDead == false)
+        if (PlayerStatusManager.isPlayerMoveAvailable == true)
         {
             playerRgb.velocity = move.normalized * speed * Time.fixedDeltaTime;
         }
@@ -116,9 +111,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator Dash(Vector3 dashDirection)
     {
         float timer = 0.0f;
-        isPlayerDashAvailable = false;
-        isPlayerMoovAvailable = false;
-        isPlayerDashing = true;
+        PlayerStatusManager.isPlayerDashing = true;
 
         while (timer < dashTime)
         {
@@ -129,10 +122,39 @@ public class PlayerMovement : MonoBehaviour
 
         playerRgb.velocity = Vector3.zero;
 
-        isPlayerMoovAvailable = true;
-        isPlayerDashing = false;
+        PlayerStatusManager.isPlayerMoveAvailable = true;
+        PlayerStatusManager.isPlayerDashing = false;
+        PlayerStatusManager.isPlayerUtilisationAvailable = true;
 
         yield return new WaitForSeconds(dashCooldown);
-        isPlayerDashAvailable = true;
+        PlayerStatusManager.isPlayerDashAvailable = true;
+    }
+
+    //Fall
+
+    public IEnumerator PlayerFall(float dmg)
+    {
+        if (PlayerStatusManager.isPlayerFallAvailable)
+        {
+            PlayerStatusManager.isPlayerFalling = true;
+
+            playerRgb.velocity = new Vector3(0, 0, 0);
+
+            GetComponent<SpriteRenderer>().color = Color.red; // Temporary FeedBack
+
+            yield return new WaitForSeconds(1.3f);
+
+            GetComponent<Transform>().position = respawnPoint.GetComponent<Transform>().position;
+
+            GetComponent<SpriteRenderer>().color = Color.white; // Temporary FeedBack
+            GetComponent<PlayerHealthSystem>().IsTakingDmg(dmg);
+
+            PlayerStatusManager.isPlayerMoveAvailable = true;
+            PlayerStatusManager.isPlayerDashAvailable = true;
+            PlayerStatusManager.isPlayerFalling = false;
+            PlayerStatusManager.isPlayerUtilisationAvailable = true;
+            PlayerStatusManager.isPlayerAttackAvailable = true;
+        }
+       
     }
 }

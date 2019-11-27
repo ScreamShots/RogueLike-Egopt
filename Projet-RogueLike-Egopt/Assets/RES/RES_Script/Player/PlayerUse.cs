@@ -6,10 +6,6 @@ public class PlayerUse : MonoBehaviour
 {
     //Statement
 
-    public static bool isPlayerAttackAvailable;
-    public static bool isPlayerUtilisationAvailable;
-    public static bool isPlayerInUse;
-
     public float attackSpeed;
     public float useSpeed;
     public float imobilisationTime;
@@ -18,35 +14,25 @@ public class PlayerUse : MonoBehaviour
     public GameObject usedWeapon;
     public GameObject equipiedItem;
 
-    void Start()
-    {
-        isPlayerAttackAvailable = true;
-        isPlayerUtilisationAvailable = true;
-        isPlayerInUse = false;
-    }
 
     void Update()
     {
-        if (Input.GetAxisRaw("AtkUse") > 0 && PlayerHealthSystem.isPlayerDead == false)
-        {
-            if(PlayerInventory.playerInventory[PlayerInventory.inventoryIndex] != null)
-            {
+        if (Input.GetAxisRaw("AtkUse") > 0 && PlayerInventory.playerInventory[PlayerInventory.inventoryIndex] != null)
+        {          
                 if (equipiedItem.tag == "Weapon")
                 {
-                    if (isPlayerAttackAvailable == true && PlayerMovement.isPlayerDashing == false)
+                    if (PlayerStatusManager.isPlayerAttackAvailable == true )
                     {
                         StartCoroutine(Attack());
                     }
                 }
-
-                if (equipiedItem.tag == "Consumable")
+                else if (equipiedItem.tag == "Consumable")
                 {
-                    if (isPlayerUtilisationAvailable == true && PlayerMovement.isPlayerDashing == false)
+                    if (PlayerStatusManager.isPlayerUtilisationAvailable == true )
                     {
                         StartCoroutine(Attack());
                     }
-                }
-            }        
+                }       
         }
     }
 
@@ -56,11 +42,9 @@ public class PlayerUse : MonoBehaviour
         usedWeapon.transform.parent = GetComponent<Transform>();
         usedWeapon.transform.localPosition = new Vector3(0, 0, 0);
 
-        isPlayerAttackAvailable = false;
-        PlayerMovement.isPlayerMoovAvailable = false;
-        PlayerMovement.isPlayerDashAvailable = false;
+        PlayerStatusManager.isPlayerInUse = true;
         PlayerMovement.playerRgb.velocity = new Vector3(0, 0, 0);
-        isPlayerInUse = true;
+        
 
         attackSpeed = usedWeapon.GetComponent<WeaponManager>().weaponAttackSpeed;
         imobilisationTime = usedWeapon.GetComponent<WeaponManager>().weaponImobilisationTime;
@@ -91,21 +75,18 @@ public class PlayerUse : MonoBehaviour
 
         yield return new WaitForSeconds(imobilisationTime);
         Destroy(usedWeapon);
-        PlayerMovement.isPlayerMoovAvailable = true;
-        PlayerMovement.isPlayerDashAvailable = true;
-        isPlayerInUse = false;
+        PlayerStatusManager.isPlayerMoveAvailable = true;
+        PlayerStatusManager.isPlayerDashAvailable = true;
+        PlayerStatusManager.isPlayerInUse = false;
 
         yield return new WaitForSeconds(attackSpeed);
 
-        isPlayerAttackAvailable = true;
+        PlayerStatusManager.isPlayerAttackAvailable = true;
     }
 
     IEnumerator ItemUse()
     {
-        isPlayerUtilisationAvailable = false;
-        PlayerMovement.isPlayerDashAvailable = false;
-        isPlayerAttackAvailable = false;
-        isPlayerInUse = true;
+        PlayerStatusManager.isPlayerInUse = true;
 
         yield return null;
 
@@ -115,9 +96,9 @@ public class PlayerUse : MonoBehaviour
 
         yield return new WaitForSeconds(useSpeed);
 
-        isPlayerUtilisationAvailable = true;
-        PlayerMovement.isPlayerDashAvailable = true;
-        isPlayerAttackAvailable = true;
-        isPlayerInUse = false;
+        PlayerStatusManager.isPlayerUtilisationAvailable = true;
+        PlayerStatusManager.isPlayerDashAvailable = true;
+        PlayerStatusManager.isPlayerAttackAvailable = true;
+        PlayerStatusManager.isPlayerInUse = false;
     }
 }

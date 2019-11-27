@@ -26,7 +26,7 @@ public class LayerManager : MonoBehaviour
         {
             for (int i=0; i<props.Length; i++)
             {
-                if (props[i].transform.position.y < transform.position.y - 1)
+                if (props[i].transform.position.y < transform.position.y - 0.25)
                 {
                     propsSpr = props[i].GetComponent<SpriteRenderer>();
                     propsSpr.sortingOrder = charaSpr.sortingOrder + 1; 

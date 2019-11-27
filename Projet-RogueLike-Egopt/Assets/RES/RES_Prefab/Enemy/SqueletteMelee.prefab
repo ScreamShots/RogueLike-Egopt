@@ -1,5 +1,62 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3335122907740612658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7144429295632430203}
+  - component: {fileID: 1934087753131630016}
+  m_Layer: 0
+  m_Name: CollisionDetection
+  m_TagString: CharacterGroundCollision
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7144429295632430203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3335122907740612658}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7916279392161102630}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1934087753131630016
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3335122907740612658}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.019999996, y: -0.6075966}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.53333336, y: 1.4}
+    newSize: {x: 0.1882353, y: 0.49411765}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.0848068}
+  m_EdgeRadius: 0
 --- !u!1 &5894330076030885450
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +129,6 @@ GameObject:
   - component: {fileID: 7916279392161102633}
   - component: {fileID: 289676879710804149}
   - component: {fileID: 66119677716654790}
-  - component: {fileID: -7300100353151510199}
   - component: {fileID: 4964152688628867534}
   - component: {fileID: 5387443923290662423}
   - component: {fileID: 2053981538665749294}
@@ -96,6 +152,7 @@ Transform:
   m_Children:
   - {fileID: 5081869905977183992}
   - {fileID: 6381873511855841615}
+  - {fileID: 7144429295632430203}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -186,32 +243,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.020673871, y: -0.016539097}
   m_Size: {x: 0.36710525, y: 1.5476875}
   m_Direction: 0
---- !u!61 &-7300100353151510199
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7916279392161102632}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.02, y: -0.5}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.53333336, y: 1.4}
-    newSize: {x: 0.1882353, y: 0.49411765}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.3}
-  m_EdgeRadius: 0
 --- !u!114 &4964152688628867534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,11 +309,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7916279392161102630}
     m_Modifications:
-    - target: {fileID: 7440235359997198696, guid: e6030dc2aedfc8948930ba0a786f71a2,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 1310769468689612432, guid: e6030dc2aedfc8948930ba0a786f71a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -387,6 +413,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440235359997198696, guid: e6030dc2aedfc8948930ba0a786f71a2,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 4744926825129180030, guid: e6030dc2aedfc8948930ba0a786f71a2,
         type: 3}

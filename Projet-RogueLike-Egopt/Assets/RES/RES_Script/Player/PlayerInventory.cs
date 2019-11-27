@@ -21,12 +21,9 @@ public class PlayerInventory : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Inv") && PlayerHealthSystem.isPlayerDead == false)
+        if (Input.GetButtonDown("Inv"))
         {
             InventoryRotation((int)Input.GetAxisRaw("Inv"));
-
-            Debug.Log(inventoryIndex);
-
         }
         selectionedObject = playerInventory[inventoryIndex];
         GetComponent<PlayerUse>().equipiedItem = selectionedObject;
@@ -35,7 +32,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetButtonDown("Pick") && collision.gameObject.tag == "PickableObject" && PlayerHealthSystem.isPlayerDead == false)        //casser si il y a plusieur objet détecté en m^me temps
+        if (Input.GetButtonDown("Pick") && collision.gameObject.tag == "PickableObject" && PlayerStatusManager.isPickingAvailable)        //casser si il y a plusieur objet détecté en m^me temps
         {
             PickingObject(collision.gameObject);
             Destroy(collision.gameObject);
@@ -45,25 +42,31 @@ public class PlayerInventory : MonoBehaviour
 
     public void InventoryRotation(int slidingdirection)
     {
-        inventoryIndex += slidingdirection;
-        if (inventoryIndex > 2)
+        if (PlayerStatusManager.isInventoryScrollingAvailable == true)
         {
-            inventoryIndex = 0;
+            inventoryIndex += slidingdirection;
+            if (inventoryIndex > 2)
+            {
+                inventoryIndex = 0;
+            }
+            else if (inventoryIndex < 0)
+            {
+                inventoryIndex = 2;
+            }
         }
-        else if (inventoryIndex < 0)
-        {
-            inventoryIndex = 2;
-        }
-
     }
 
     public void PickingObject(GameObject item)
     {
-        if (playerInventory[inventoryIndex] != null)
+        if(PlayerStatusManager.isPickingAvailable == true)
         {
-            playerInventory[inventoryIndex].GetComponent<ItemDrop>().Drop();
+            if (playerInventory[inventoryIndex] != null)
+            {
+                playerInventory[inventoryIndex].GetComponent<ItemDrop>().Drop();
+            }
+            playerInventory[inventoryIndex] = item.GetComponent<PickableStorage>().storedObject;
         }
-        playerInventory[inventoryIndex] = item.GetComponent<PickableStorage>().storedObject;
+        
     }
 
 }
