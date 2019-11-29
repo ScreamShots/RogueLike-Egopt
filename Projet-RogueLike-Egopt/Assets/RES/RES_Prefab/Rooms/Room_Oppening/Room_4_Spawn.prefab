@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8663466564560693163}
   - component: {fileID: -3832321381628959959}
+  - component: {fileID: 5463938731642648530}
   m_Layer: 0
   m_Name: Room_4_Spawn
   m_TagString: Rooms
@@ -66,6 +67,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.1798806, y: 2.9301171}
   m_EdgeRadius: 0
+--- !u!114 &5463938731642648530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8694845550386709153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77686546c55ae42498e9162217af78bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allRoomCreated: []
+  allEnemy: []
+  bossRoomSpawnObject: {fileID: 8694845550386709153, guid: 34a931e461a57ac48a056f19b9215a44,
+    type: 3}
+  roomGenerator: {fileID: 6694714286078466342, guid: ee9014e5d3fa2434089f74a0b9b2f0a4,
+    type: 3}
+  roomList: {fileID: 5131712783396089380, guid: c58d293d4eb6fad40ae74ae1037fdedf,
+    type: 3}
+  maxNumberofRoomCreated: 0
+  minNumberofRoomCreated: 0
+  timerEndOfGeneration: 0
 --- !u!1001 &310046989592582320
 PrefabInstance:
   m_ObjectHideFlags: 0

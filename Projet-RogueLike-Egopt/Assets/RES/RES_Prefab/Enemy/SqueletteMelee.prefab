@@ -44,7 +44,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00006592274, y: -0.29236615}
+  m_Offset: {x: 0.0069376305, y: -0.27076936}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13255334, y: 0.0924027}
+  m_Size: {x: 0.107029855, y: 0.06098926}
   m_EdgeRadius: 0
 --- !u!1 &5894330076030885450
 GameObject:
@@ -240,8 +240,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00480783, y: 0.010873318}
-  m_Size: {x: 0.14498115, y: 0.7033844}
+  m_Offset: {x: 0.0076213405, y: -0.00090685487}
+  m_Size: {x: 0.0996535, y: 0.5541702}
   m_Direction: 0
 --- !u!114 &4964152688628867534
 MonoBehaviour:
@@ -309,11 +309,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7916279392161102630}
     m_Modifications:
-    - target: {fileID: 7440235359997198696, guid: e6030dc2aedfc8948930ba0a786f71a2,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 1310769468689612432, guid: e6030dc2aedfc8948930ba0a786f71a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -418,6 +413,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440235359997198696, guid: e6030dc2aedfc8948930ba0a786f71a2,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 4744926825129180030, guid: e6030dc2aedfc8948930ba0a786f71a2,
         type: 3}
