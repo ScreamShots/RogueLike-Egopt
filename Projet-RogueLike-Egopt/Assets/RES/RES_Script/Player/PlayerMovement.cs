@@ -125,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
         PlayerStatusManager.isPlayerMoveAvailable = true;
         PlayerStatusManager.isPlayerDashing = false;
         PlayerStatusManager.isPlayerUtilisationAvailable = true;
+        PlayerStatusManager.isPlayerAttackAvailable = true;
 
         yield return new WaitForSeconds(dashCooldown);
         PlayerStatusManager.isPlayerDashAvailable = true;

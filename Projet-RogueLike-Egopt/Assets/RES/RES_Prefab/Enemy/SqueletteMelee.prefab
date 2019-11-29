@@ -44,7 +44,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.019999996, y: -0.6075966}
+  m_Offset: {x: 0.00006592274, y: -0.29236615}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.0848068}
+  m_Size: {x: 0.13255334, y: 0.0924027}
   m_EdgeRadius: 0
 --- !u!1 &5894330076030885450
 GameObject:
@@ -104,7 +104,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.5
 --- !u!114 &3874608084146294679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7916279392161102632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.149091, y: -2.8151164, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5081869905977183992}
@@ -240,8 +240,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.020673871, y: -0.016539097}
-  m_Size: {x: 0.36710525, y: 1.5476875}
+  m_Offset: {x: 0.00480783, y: 0.010873318}
+  m_Size: {x: 0.14498115, y: 0.7033844}
   m_Direction: 0
 --- !u!114 &4964152688628867534
 MonoBehaviour:
@@ -309,6 +309,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7916279392161102630}
     m_Modifications:
+    - target: {fileID: 7440235359997198696, guid: e6030dc2aedfc8948930ba0a786f71a2,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy Canvas
+      objectReference: {fileID: 0}
     - target: {fileID: 1310769468689612432, guid: e6030dc2aedfc8948930ba0a786f71a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -413,11 +418,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7440235359997198696, guid: e6030dc2aedfc8948930ba0a786f71a2,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 4744926825129180030, guid: e6030dc2aedfc8948930ba0a786f71a2,
         type: 3}

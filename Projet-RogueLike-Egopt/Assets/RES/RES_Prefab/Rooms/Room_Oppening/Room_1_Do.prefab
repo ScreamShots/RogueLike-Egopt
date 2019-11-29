@@ -34,6 +34,7 @@ Transform:
   - {fileID: 1625453280359541936}
   - {fileID: 4562065702322145745}
   - {fileID: 6433444976694166877}
+  - {fileID: 8620642792734129507}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -63,6 +64,87 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.1798806, y: 2.9301171}
   m_EdgeRadius: 0
+--- !u!1001 &2201412446572034764
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8663466564560693163}
+    m_Modifications:
+    - target: {fileID: 3986248219972449508, guid: 4a399e586e431c34a9bdf039f100b026,
+        type: 3}
+      propertyPath: m_Name
+      value: LDGenerator
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986248219972449508, guid: 4a399e586e431c34a9bdf039f100b026,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000,
+        type: 0}
+    - target: {fileID: 7579083212941313967, guid: 4a399e586e431c34a9bdf039f100b026,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579083212941313967, guid: 4a399e586e431c34a9bdf039f100b026,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579083212941313967, guid: 4a399e586e431c34a9bdf039f100b026,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579083212941313967, guid: 4a399e586e431c34a9bdf039f100b026,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579083212941313967, guid: 4a399e586e431c34a9bdf039f100b026,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579083212941313967, guid: 4a399e586e431c34a9bdf039f100b026,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579083212941313967, guid: 4a399e586e431c34a9bdf039f100b026,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579083212941313967, guid: 4a399e586e431c34a9bdf039f100b026,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579083212941313967, guid: 4a399e586e431c34a9bdf039f100b026,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579083212941313967, guid: 4a399e586e431c34a9bdf039f100b026,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579083212941313967, guid: 4a399e586e431c34a9bdf039f100b026,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a399e586e431c34a9bdf039f100b026, type: 3}
+--- !u!4 &8620642792734129507 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7579083212941313967, guid: 4a399e586e431c34a9bdf039f100b026,
+    type: 3}
+  m_PrefabInstance: {fileID: 2201412446572034764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3454284851411387856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70,11 +152,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8663466564560693163}
     m_Modifications:
-    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
-        type: 3}
-      propertyPath: m_Name
-      value: RoomSpawnerDisable Top
-      objectReference: {fileID: 0}
     - target: {fileID: 5723280349141884439, guid: b7f18615f50037f409c345f7c4f0afc6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -130,6 +207,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
+        type: 3}
+      propertyPath: m_Name
+      value: RoomSpawnerDisable Top
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7f18615f50037f409c345f7c4f0afc6, type: 3}
 --- !u!4 &6961783145820642247 stripped
@@ -145,11 +227,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8663466564560693163}
     m_Modifications:
-    - target: {fileID: 3986248219972449508, guid: e2299a0a060b60b4297aecc44c5d0b90,
-        type: 3}
-      propertyPath: m_Name
-      value: StyleGenerator
-      objectReference: {fileID: 0}
     - target: {fileID: 7579083212941313967, guid: e2299a0a060b60b4297aecc44c5d0b90,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -205,6 +282,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3986248219972449508, guid: e2299a0a060b60b4297aecc44c5d0b90,
+        type: 3}
+      propertyPath: m_Name
+      value: StyleGenerator
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2299a0a060b60b4297aecc44c5d0b90, type: 3}
 --- !u!4 &4267961266303338410 stripped
@@ -220,11 +302,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8663466564560693163}
     m_Modifications:
-    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
-        type: 3}
-      propertyPath: m_Name
-      value: RoomSpawnerDisable Right
-      objectReference: {fileID: 0}
     - target: {fileID: 5723280349141884439, guid: b7f18615f50037f409c345f7c4f0afc6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -280,6 +357,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
+        type: 3}
+      propertyPath: m_Name
+      value: RoomSpawnerDisable Right
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7f18615f50037f409c345f7c4f0afc6, type: 3}
 --- !u!4 &1625453280359541936 stripped
@@ -295,11 +377,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8663466564560693163}
     m_Modifications:
-    - target: {fileID: 6163939957265743762, guid: ee9014e5d3fa2434089f74a0b9b2f0a4,
-        type: 3}
-      propertyPath: m_Name
-      value: RoomSpawner
-      objectReference: {fileID: 0}
     - target: {fileID: 5723280349141884439, guid: ee9014e5d3fa2434089f74a0b9b2f0a4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -355,6 +432,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6163939957265743762, guid: ee9014e5d3fa2434089f74a0b9b2f0a4,
+        type: 3}
+      propertyPath: m_Name
+      value: RoomSpawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee9014e5d3fa2434089f74a0b9b2f0a4, type: 3}
 --- !u!4 &2642556680081700865 stripped
@@ -370,11 +452,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8663466564560693163}
     m_Modifications:
-    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
-        type: 3}
-      propertyPath: m_Name
-      value: RoomSpawnerDisable Left
-      objectReference: {fileID: 0}
     - target: {fileID: 5723280349141884439, guid: b7f18615f50037f409c345f7c4f0afc6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -430,6 +507,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
+        type: 3}
+      propertyPath: m_Name
+      value: RoomSpawnerDisable Left
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7f18615f50037f409c345f7c4f0afc6, type: 3}
 --- !u!4 &4562065702322145745 stripped
@@ -445,11 +527,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8663466564560693163}
     m_Modifications:
-    - target: {fileID: 7047600929061464390, guid: 7d343484889ae3040b76e1e8b960495e,
-        type: 3}
-      propertyPath: m_Name
-      value: Door_BottomUp
-      objectReference: {fileID: 0}
     - target: {fileID: 2360762463065218515, guid: 7d343484889ae3040b76e1e8b960495e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -504,6 +581,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047600929061464390, guid: 7d343484889ae3040b76e1e8b960495e,
+        type: 3}
+      propertyPath: m_Name
+      value: Door_BottomUp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d343484889ae3040b76e1e8b960495e, type: 3}

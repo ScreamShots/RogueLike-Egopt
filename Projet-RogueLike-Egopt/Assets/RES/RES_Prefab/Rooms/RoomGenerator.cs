@@ -81,10 +81,6 @@ public class RoomGenerator : MonoBehaviour
         }
         else if(alreadySpawn == false && numberOfRoomCreated >= numberMaxOfRoom)
         {
-            Instantiate(lastRoomToSpawn, transform.position, transform.rotation);
-            alreadySpawn = true;
-            numberOfRoomCreated += 1;
-            isRoomCreated = true;
             Debug.Log("c'est terminée");
             Debug.Log(numberOfRoomCreated);
         }

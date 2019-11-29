@@ -33,25 +33,28 @@ public class Door : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "CharacterGroundCollision")
+        if (collision.gameObject.tag == "CharacterGroundCollision" && collision.gameObject.transform.parent.tag == "Player")
         {
             PlayerMovement.playerRgb.velocity = new Vector3(0, 0, 0);
 
-            if(transform.position.x - linkedDoorTransform.position.x < 0)
+            if (PlayerStatusManager.isPlayerDashing == false)
             {
-                collision.gameObject.transform.parent.position = linkedDoorTransform.position + new Vector3(0.3f,0,0);
-            }
-            else if (transform.position.x - linkedDoorTransform.position.x > 0)
-            {
-                collision.gameObject.transform.parent.position = linkedDoorTransform.position + new Vector3(-0.3f, 0, 0);
-            }
-            else if(transform.position.y - linkedDoorTransform.position.y < 0)
-            {
-                collision.gameObject.transform.parent.position = linkedDoorTransform.position + new Vector3(0, 0.3f, 0);
-            }
-            else if (transform.position.y - linkedDoorTransform.position.y > 0)
-            {
-                collision.gameObject.transform.parent.position = linkedDoorTransform.position + new Vector3(0, -0.3f, 0);
+                if (transform.position.x - linkedDoorTransform.position.x < 0)
+                {
+                    collision.gameObject.transform.parent.position = linkedDoorTransform.position + new Vector3(0.3f, 0, 0);
+                }
+                else if (transform.position.x - linkedDoorTransform.position.x > 0)
+                {
+                    collision.gameObject.transform.parent.position = linkedDoorTransform.position + new Vector3(-0.3f, 0, 0);
+                }
+                else if (transform.position.y - linkedDoorTransform.position.y < 0)
+                {
+                    collision.gameObject.transform.parent.position = linkedDoorTransform.position + new Vector3(0, 0.3f, 0);
+                }
+                else if (transform.position.y - linkedDoorTransform.position.y > 0)
+                {
+                    collision.gameObject.transform.parent.position = linkedDoorTransform.position + new Vector3(0, -0.3f, 0);
+                }
             }
         }
 

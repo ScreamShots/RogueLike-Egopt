@@ -43,8 +43,11 @@ public class PlayerUse : MonoBehaviour
         usedWeapon.transform.localPosition = new Vector3(0, 0, 0);
 
         PlayerStatusManager.isPlayerInUse = true;
+        PlayerStatusManager.isPlayerMoveAvailable = false;
         PlayerMovement.playerRgb.velocity = new Vector3(0, 0, 0);
-        
+
+
+
 
         attackSpeed = usedWeapon.GetComponent<WeaponManager>().weaponAttackSpeed;
         imobilisationTime = usedWeapon.GetComponent<WeaponManager>().weaponImobilisationTime;
