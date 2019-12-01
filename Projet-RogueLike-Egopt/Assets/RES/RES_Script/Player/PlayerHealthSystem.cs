@@ -60,15 +60,12 @@ public class PlayerHealthSystem : MonoBehaviour
 
         GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
 
-        GetComponent<SpriteRenderer>().color = Color.black; //TEmporaryFeedBack
 
     }
 
     public IEnumerator PlayerImmunityActivation()
     {
         PlayerStatusManager.isPlayerImmune = true;
-
-        GetComponent<SpriteRenderer>().color = Color.green; //TEmporaryFeedBack
 
         yield return new WaitForSeconds(playerImmuneTime);
 

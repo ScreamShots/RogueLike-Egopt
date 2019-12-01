@@ -30,7 +30,7 @@ public class PlayerUse : MonoBehaviour
                 {
                     if (PlayerStatusManager.isPlayerUtilisationAvailable == true )
                     {
-                        StartCoroutine(Attack());
+                        StartCoroutine(ItemUse());
                     }
                 }       
         }
@@ -42,17 +42,10 @@ public class PlayerUse : MonoBehaviour
         usedWeapon.transform.parent = GetComponent<Transform>();
         usedWeapon.transform.localPosition = new Vector3(0, 0, 0);
 
-        PlayerStatusManager.isPlayerInUse = true;
-        PlayerStatusManager.isPlayerMoveAvailable = false;
-        PlayerMovement.playerRgb.velocity = new Vector3(0, 0, 0);
-
-
-
+        PlayerStatusManager.isPlayerAttacking = true;
 
         attackSpeed = usedWeapon.GetComponent<WeaponManager>().weaponAttackSpeed;
         imobilisationTime = usedWeapon.GetComponent<WeaponManager>().weaponImobilisationTime;
-
-
 
         switch (attackDirection)
         {
@@ -80,7 +73,7 @@ public class PlayerUse : MonoBehaviour
         Destroy(usedWeapon);
         PlayerStatusManager.isPlayerMoveAvailable = true;
         PlayerStatusManager.isPlayerDashAvailable = true;
-        PlayerStatusManager.isPlayerInUse = false;
+        PlayerStatusManager.isPlayerAttacking = false;
 
         yield return new WaitForSeconds(attackSpeed);
 
@@ -89,7 +82,7 @@ public class PlayerUse : MonoBehaviour
 
     IEnumerator ItemUse()
     {
-        PlayerStatusManager.isPlayerInUse = true;
+        PlayerStatusManager.isPlayerUsing = true;
 
         yield return null;
 
@@ -102,6 +95,6 @@ public class PlayerUse : MonoBehaviour
         PlayerStatusManager.isPlayerUtilisationAvailable = true;
         PlayerStatusManager.isPlayerDashAvailable = true;
         PlayerStatusManager.isPlayerAttackAvailable = true;
-        PlayerStatusManager.isPlayerInUse = false;
+        PlayerStatusManager.isPlayerUsing = false;
     }
 }

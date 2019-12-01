@@ -73,19 +73,19 @@ public class Door : MonoBehaviour
             {
                 if (transform.position.x - linkedDoorTransform.position.x < 0)
                 {
-                    obj.transform.parent.position = linkedDoorTransform.position + new Vector3(0.3f, 0, 0);
+                    obj.transform.parent.position = linkedDoorTransform.position + new Vector3(0.30f, 0, 0);
                 }
                 else if (transform.position.x - linkedDoorTransform.position.x > 0)
                 {
-                    obj.transform.parent.position = linkedDoorTransform.position + new Vector3(-0.3f, 0, 0);
+                    obj.transform.parent.position = linkedDoorTransform.position + new Vector3(-0.30f, 0, 0);
                 }
                 else if (transform.position.y - linkedDoorTransform.position.y < 0)
                 {
-                    obj.transform.parent.position = linkedDoorTransform.position + new Vector3(0, 0.3f, 0);
+                    obj.transform.parent.position = linkedDoorTransform.position + new Vector3(0, 0.30f, 0);
                 }
                 else if (transform.position.y - linkedDoorTransform.position.y > 0)
                 {
-                    obj.gameObject.transform.parent.position = linkedDoorTransform.position + new Vector3(0, -0.3f, 0);
+                    obj.gameObject.transform.parent.position = linkedDoorTransform.position + new Vector3(0, -0.30f, 0);
                 }
             }
         }

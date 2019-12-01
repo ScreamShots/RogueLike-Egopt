@@ -43,9 +43,11 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //Move
-
-        Move();
-
+        if (PlayerStatusManager.isPlayerMoveAvailable == true)
+        {
+            Move();
+        }
+          
         //Direction
 
         Direction();
@@ -62,15 +64,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move()
     {
+        
         inputHorizontalMoove = Input.GetAxisRaw("HorizontalMove");
         inputVerticalMoove = Input.GetAxisRaw("VerticalMove");
 
         move = new Vector3(inputHorizontalMoove, inputVerticalMoove, 0);
 
-        if (PlayerStatusManager.isPlayerMoveAvailable == true)
-        {
-            playerRgb.velocity = move.normalized * speed * Time.fixedDeltaTime;
-        }
+        playerRgb.velocity = move.normalized * speed * Time.fixedDeltaTime;
+        
     }
 
     //Direction
@@ -139,19 +140,17 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerStatusManager.isPlayerFalling = true;
 
-            playerRgb.velocity = new Vector3(0, 0, 0);
-
-            GetComponent<SpriteRenderer>().color = Color.red; // Temporary FeedBack
 
             yield return new WaitForSeconds(1.3f);
 
-            GetComponent<Transform>().position = respawnPoint.GetComponent<Transform>().position;
+            GetComponent<Transform>().position = new Vector3(0, 0, 0);
 
             GetComponent<SpriteRenderer>().color = Color.white; // Temporary FeedBack
             GetComponent<PlayerHealthSystem>().IsTakingDmg(dmg);
 
             PlayerStatusManager.isPlayerMoveAvailable = true;
             PlayerStatusManager.isPlayerDashAvailable = true;
+            PlayerStatusManager.isPlayerFallAvailable = true;
             PlayerStatusManager.isPlayerFalling = false;
             PlayerStatusManager.isPlayerUtilisationAvailable = true;
             PlayerStatusManager.isPlayerAttackAvailable = true;

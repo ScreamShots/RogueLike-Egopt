@@ -16,7 +16,8 @@ public class PlayerStatusManager : MonoBehaviour
 
     public static bool isPlayerAttackAvailable;
     public static bool isPlayerUtilisationAvailable;
-    public static bool isPlayerInUse;
+    public static bool isPlayerUsing;
+    public static bool isPlayerAttacking;
 
     //Health Status
 
@@ -42,7 +43,8 @@ public class PlayerStatusManager : MonoBehaviour
 
         isPlayerAttackAvailable = true;
         isPlayerUtilisationAvailable = true;
-        isPlayerInUse = false;
+        isPlayerUsing = false;
+        isPlayerAttacking = false;
 
         //Health Status
 
@@ -61,24 +63,12 @@ public class PlayerStatusManager : MonoBehaviour
 
     private void Update()
     {
+
         //Movement Status
 
-        if (isPlayerMoveAvailable == true)
-        {
-
-        }
-        else if (isPlayerMoveAvailable == false)
+        if (isPlayerMoveAvailable == false)
         {
             isPlayerDashAvailable = false;
-        }
-
-        if (isPlayerDashAvailable == true)
-        {
-
-        }
-        else if (isPlayerDashAvailable == false)
-        {
-
         }
 
         if (isPlayerDashing == true)
@@ -99,56 +89,31 @@ public class PlayerStatusManager : MonoBehaviour
             isPickingAvailable = false;
         }
 
-        else if (isPlayerDashing == false)
-        {
-
-        }
-
-        if (isPlayerFallAvailable == false)
-        {
-
-        }
-        
-        else if (isPlayerFallAvailable == false)
-        {
-
-        }
-
         if (isPlayerFalling == true)
         {
+            GetComponent<SpriteRenderer>().color = Color.red;       //TemporaryFeedBack
+            PlayerMovement.playerRgb.velocity = new Vector3(0, 0, 0);
 
-        }
-        else if (isPlayerFalling == false)
-        {
+            //Movement Status
+
+            isPlayerMoveAvailable = false;
+            isPlayerDashAvailable = false;
+            isPlayerFallAvailable = false;
+
+            //Use - Attack Status
+
+            isPlayerAttackAvailable = false;
+            isPlayerUtilisationAvailable = false;
 
         }
 
         //Use - Attack Status
 
-        if (isPlayerAttackAvailable == true)
-        {
-
-        }
-        else if (isPlayerAttackAvailable == false)
-        {
-
-        }
-
-        if (isPlayerUtilisationAvailable == true)
-        {
-
-        }
-        else if (isPlayerUtilisationAvailable == false)
-        {
-
-        }
-
-        if (isPlayerInUse == true)
+        if (isPlayerUsing == true)
         {
             //Movement Status
 
             isPlayerDashAvailable = false;
-            isPlayerMoveAvailable = false;
 
             //Use - Attack Status
 
@@ -163,10 +128,29 @@ public class PlayerStatusManager : MonoBehaviour
 
 
         }
-        else if (isPlayerInUse == false)
+
+        if (isPlayerAttacking == true)
         {
+            //Movement Status
+
+            isPlayerDashAvailable = false;
+            isPlayerMoveAvailable = false;
+            PlayerMovement.playerRgb.velocity = new Vector3(0, 0, 0);
+
+            //Use - Attack Status
+
+            isPlayerAttackAvailable = false;
+            isPlayerUtilisationAvailable = false;
+
+
+            //Inventory Status
+
+            isInventoryScrollingAvailable = false;
+            isPickingAvailable = false;
+
 
         }
+
 
         //Health Status
 
@@ -184,7 +168,7 @@ public class PlayerStatusManager : MonoBehaviour
 
             isPlayerAttackAvailable = false;
             isPlayerUtilisationAvailable = false;
-            isPlayerInUse = false;
+            isPlayerUsing = false;
 
             //Health Status
 
@@ -195,42 +179,14 @@ public class PlayerStatusManager : MonoBehaviour
             isInventoryScrollingAvailable = false;
             isPickingAvailable = false;
 
-        }
-        else if (isPlayerDead == false)
-        {
+            GetComponent<SpriteRenderer>().color = Color.black;     //temporary FeedBack
 
         }
 
         if (isPlayerImmune == true)
         {
             //Movement Status
-
-            isPlayerFallAvailable = false;
-
+            GetComponent<SpriteRenderer>().color = Color.green;     //temporary FeedBack
         }
-        else if (isPlayerImmune == false)
-        {
-
-        }
-
-        //Inventory Status
-
-        if (isInventoryScrollingAvailable == true)
-        {
-
-        }
-        else if (isInventoryScrollingAvailable == false)
-        {
-
-        }
-
-        if (isPickingAvailable == true)
-        {
-
-        }
-        else if (isPickingAvailable == false)
-        {
-
-        }
-    }
+    }     
 }
