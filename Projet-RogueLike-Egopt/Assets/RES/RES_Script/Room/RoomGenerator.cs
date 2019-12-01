@@ -22,7 +22,7 @@ public class RoomGenerator : MonoBehaviour
     {
         alreadySpawn = false;
         isRoomCreated = false;
-        timerEndOfGeneration = 2f;
+        timerEndOfGeneration = 1f;
         generationIsFinished = false;
 
         if (transform.localPosition.y > 0 && transform.localPosition.x == 0) //spawnpoint is top
@@ -71,11 +71,11 @@ public class RoomGenerator : MonoBehaviour
     }
     IEnumerator SpawnARoom()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
 
         if (alreadySpawn == false && numberOfRoomCreated < maxNumberOfRoomCreated)
         {
-            Instantiate(spawnableRoom[randomNumber], transform.position, transform.rotation);
+            Instantiate(spawnableRoom[randomNumber], transform.position, transform.rotation);  
             alreadySpawn = true;
             isRoomCreated = true;
             numberOfRoomCreated += 1;

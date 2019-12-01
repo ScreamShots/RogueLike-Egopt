@@ -5,27 +5,22 @@ using UnityEngine;
 public class BossRoomSpawner : MonoBehaviour
 {
     public GameObject[] bossSpawnPoint;
-    public GameObject bossRoom;
-    public static bool bossRoomIsSpawned;
-    public float securityWaitingTime;
 
     public void Start()
     {
+        bossSpawnPoint = new GameObject[transform.childCount];
         
-        bossRoomIsSpawned = false;
+    }
 
-        for (int i = 0; i < bossSpawnPoint.Length; i++)
+    private void Update()
+    {
+        for (int i = 0; i < transform.childCount; i++)
         {
-            if (bossSpawnPoint[i].GetComponent<BossSpawner>().createBossRoomIsPossible == true)
+            bossSpawnPoint[i] = transform.GetChild(i).gameObject;
+            if (bossSpawnPoint[i].GetComponent<BossSpawner>().SpawnBossRoom() == true)
             {
-                Debug.Log("coucou");
-                Instantiate(bossRoom, transform.position, transform.rotation);
-                bossRoomIsSpawned = true;
                 Destroy(this.gameObject);
-            }
-            else
-            {
-                bossRoomIsSpawned = false;
+                break;
             }
         }
 

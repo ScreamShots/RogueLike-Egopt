@@ -13,7 +13,7 @@ public class Door : MonoBehaviour
     {
         isOnGround = false;
         isOverlaped = false;
-        timer = 0.3f;
+        timer = 0.1f;
     }
 
     private void Update()

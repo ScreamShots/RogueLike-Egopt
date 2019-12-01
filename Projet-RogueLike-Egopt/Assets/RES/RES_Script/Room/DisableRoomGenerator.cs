@@ -8,7 +8,7 @@ public class DisableRoomGenerator : MonoBehaviour
 
     private void Awake()
     {
-        timerEndOfGeneration = 2f;
+        timerEndOfGeneration = 1f;
     }
        
     void Update()
