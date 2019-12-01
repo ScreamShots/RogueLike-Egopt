@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8663466564560693163}
   - component: {fileID: 8258970329772696226}
+  - component: {fileID: 1948575512243983278}
   m_Layer: 0
   m_Name: FinalBoss
   m_TagString: Rooms
@@ -62,6 +63,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.360161, y: 5.860254}
   m_EdgeRadius: 0
+--- !u!114 &1948575512243983278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8694845550386709153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ac6392017fbb6f41b04370a6a5465d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorInThisRoom: []
+  enemyInThisRoom: []
+  isRoomActivated: 0
 --- !u!1001 &382238059244444291
 PrefabInstance:
   m_ObjectHideFlags: 0

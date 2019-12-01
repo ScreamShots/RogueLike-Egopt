@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8663466564560693163}
   - component: {fileID: 8258970329772696226}
+  - component: {fileID: -4439471221176860164}
   m_Layer: 0
   m_Name: Room_1_Do
   m_TagString: Rooms
@@ -64,6 +65,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.1798806, y: 2.9301171}
   m_EdgeRadius: 0
+--- !u!114 &-4439471221176860164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8694845550386709153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ac6392017fbb6f41b04370a6a5465d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorInThisRoom: []
+  enemyInThisRoom: []
 --- !u!1001 &2201412446572034764
 PrefabInstance:
   m_ObjectHideFlags: 0
