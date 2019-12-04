@@ -46,7 +46,6 @@ public class RespawnPointEntity : MonoBehaviour
         for (int i = 0; i < allRoomRespawnPoint.Length; i++)
         {
             allRoomRespawnPoint[i].SetActive(false);
-            Debug.Log("coucou");
         }
 
     }

@@ -10,7 +10,6 @@ public class RespawnPoint : MonoBehaviour
         {
             PlayerMovement.respawnPosition = transform.position;
             transform.parent.gameObject.GetComponent<RespawnPointEntity>().DesactivateRespawnPoint();
-            Debug.Log("hello");
         }
     }
 }

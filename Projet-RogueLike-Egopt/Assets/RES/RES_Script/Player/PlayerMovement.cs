@@ -124,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
 
         while (timer < dashTime)
         {
-            playerRgb.velocity = dashDirection.normalized * dashSpeed * dashCurve.Evaluate(timer / dashTime);
+            playerRgb.velocity = dashDirection.normalized * dashSpeed * dashCurve.Evaluate(timer / dashTime) * Time.deltaTime;
             timer += Time.deltaTime;
             yield return null;
         }
@@ -135,6 +135,7 @@ public class PlayerMovement : MonoBehaviour
         PlayerStatusManager.isPlayerDashing = false;
         PlayerStatusManager.isPlayerUtilisationAvailable = true;
         PlayerStatusManager.isPlayerAttackAvailable = true;
+        PlayerStatusManager.isPlayerFallAvailable = true;
 
         yield return new WaitForSeconds(dashCooldown);
         PlayerStatusManager.isPlayerDashAvailable = true;
