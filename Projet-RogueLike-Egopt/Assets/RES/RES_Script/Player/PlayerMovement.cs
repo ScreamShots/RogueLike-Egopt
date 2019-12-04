@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
     //Statement
 
     public static Rigidbody2D playerRgb;
-    public GameObject respawnPoint;
 
     //Move
 
@@ -32,12 +31,16 @@ public class PlayerMovement : MonoBehaviour
 
     //Fall
 
-    void Awake()
+    public static Vector3 respawnPosition;
+
+
+    void Start()
     {
         playerRgb = GetComponent<Rigidbody2D>();
 
         playerDirection = 0;
         lastMove = new Vector3(1, 0, 0);
+        respawnPosition = new Vector3(0, 0, 0);
     }
 
     void FixedUpdate()
@@ -57,6 +60,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetAxisRaw("Roll") > 0 && PlayerStatusManager.isPlayerDashAvailable == true )
         {
             StartCoroutine(Dash(lastMove));
+        }
+
+        if(Input.GetKeyDown(KeyCode.A) == true)
+        {
+            StartCoroutine(PlayerFall(0));
         }
     }
 
@@ -143,7 +151,7 @@ public class PlayerMovement : MonoBehaviour
 
             yield return new WaitForSeconds(1.3f);
 
-            GetComponent<Transform>().position = new Vector3(0, 0, 0);
+            GetComponent<Transform>().position = respawnPosition;
 
             GetComponent<SpriteRenderer>().color = Color.white; // Temporary FeedBack
             GetComponent<PlayerHealthSystem>().IsTakingDmg(dmg);

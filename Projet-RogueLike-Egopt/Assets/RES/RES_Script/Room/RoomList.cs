@@ -10,5 +10,6 @@ public class RoomList : MonoBehaviour
     public GameObject[] leftOpenRoom;
 
     public GameObject startRoom;
+    public GameObject bossRoomSpawnEntity;
 
 }

@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class RoomStyleGenerator : MonoBehaviour
 {
-    public GameObject[] roomStyle;
-    public int randomNumber;
-    public GameObject roomStyleChoosed;
+    [SerializeField] private GameObject[] roomStyle;
+    private int randomNumber;
 
     private void Awake()
     {
         randomNumber = Random.Range(0, roomStyle.Length);
-        roomStyleChoosed = Instantiate(roomStyle[randomNumber]);
-        roomStyleChoosed.transform.position = GetComponent<Transform>().position;
-        roomStyleChoosed.transform.parent = GetComponent<Transform>().parent;
+        Instantiate(roomStyle[randomNumber], transform.parent, false);
         Destroy(this.gameObject);
-
     }
 }

@@ -4,27 +4,15 @@ using UnityEngine;
 
 public class RoomGenerator : MonoBehaviour
 {
-    public RoomList roomList;
-    public GameObject[] spawnableRoom;
+    [SerializeField] private RoomList roomList;
+    private GameObject[] spawnableRoom;
+    private bool alreadySpawn;
+    private int randomNumber;
 
-    public static int numberOfRoomCreated;
-    public int maxNumberOfRoomCreated;
-    public int minNumberOfRoomCreated;
-    public float timerEndOfGeneration;
-    public static bool generationIsFinished;
-
-    public bool alreadySpawn;
-    public static bool isRoomCreated;
-
-    public int randomNumber;
-
-    private void Awake()
+    private void Start()
     {
         alreadySpawn = false;
-        isRoomCreated = false;
-        timerEndOfGeneration = 1f;
-        generationIsFinished = false;
-
+        
         if (transform.localPosition.y > 0 && transform.localPosition.x == 0) //spawnpoint is top
         {
             spawnableRoom = roomList.topOpenRoom;
@@ -53,36 +41,25 @@ public class RoomGenerator : MonoBehaviour
 
     private void Update()
     {
-        if (isRoomCreated == false)
+        if (RoomGenerationHandler.isBasicGenerationFinished == true)
         {
-            timerEndOfGeneration -= Time.deltaTime;
-
-            if (timerEndOfGeneration <= 0)
-            {
-                Debug.Log("Nombre de salles dans la scene:" + numberOfRoomCreated);
-                generationIsFinished = true;
-                Destroy(this.gameObject);
-            }
+            Destroy(this.gameObject);            
         }
-        else if (isRoomCreated == true)
-        {
-            isRoomCreated = false;
-        }
+        
     }
     IEnumerator SpawnARoom()
     {
         yield return new WaitForSeconds(0.1f);
 
-        if (alreadySpawn == false && numberOfRoomCreated < maxNumberOfRoomCreated)
+        if (alreadySpawn == false && RoomGenerationHandler.numberOfRoomCreated < RoomGenerationHandler.maxNumberOfRoom)
         {
             Instantiate(spawnableRoom[randomNumber], transform.position, transform.rotation);  
             alreadySpawn = true;
-            isRoomCreated = true;
-            numberOfRoomCreated += 1;
+
+            RoomGenerationHandler.isARoomCreatedRecently = true;
+            RoomGenerationHandler.numberOfRoomCreated += 1;
         }
     }
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "SpawnRoom" || collision.gameObject.tag == "SpawnRoomDisable")

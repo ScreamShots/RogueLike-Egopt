@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BossSpawner : MonoBehaviour
 {
-    public bool createBossRoomIsPossible;
-    public GameObject BossRoom;
+    private bool createBossRoomIsPossible;
+    [SerializeField]private GameObject BossRoom;
 
     private void Start()
     {
@@ -21,15 +21,12 @@ public class BossSpawner : MonoBehaviour
     }
     public bool SpawnBossRoom()
     {
-
         if (createBossRoomIsPossible == true && RoomGenerationHandler.isLevelPlayable == false)
         {
-            Debug.Log("creation");
             Instantiate(BossRoom, transform.position, transform.rotation);
-            RoomGenerationHandler.isLevelPlayable = true;
+            RoomGenerationHandler.isBossRoomCreated = true;
             return true;
         }
-
         return false;
     }
 }

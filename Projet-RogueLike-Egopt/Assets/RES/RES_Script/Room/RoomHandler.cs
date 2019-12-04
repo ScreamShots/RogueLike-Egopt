@@ -8,6 +8,7 @@ public class RoomHandler : MonoBehaviour
     public List<GameObject> enemyInThisRoom;
     public bool isRoomActivated;
 
+
     private void Start()
     {
         isRoomActivated = false;
@@ -40,11 +41,14 @@ public class RoomHandler : MonoBehaviour
         {
             doorInThisRoom.Remove(collision.gameObject);
         }
+        if (collision.gameObject.tag == "Player")
+        {
+            isRoomActivated = false;
+        }
 
-        
     }
 
-    void Update()
+    private void Update()
     {
         if (isRoomActivated == true)
         {
