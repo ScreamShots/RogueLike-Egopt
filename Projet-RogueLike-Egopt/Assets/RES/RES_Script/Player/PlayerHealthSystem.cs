@@ -12,18 +12,17 @@ public class PlayerHealthSystem : MonoBehaviour
     public float playerMinHp;
     public float playerHp;
     public float playerImmuneTime;
-    public Image healthBar;
+
+    public static bool playerIsImune;
 
     void Start()
     {
         playerHp = playerMaxHp;
+        playerIsImune = false;
     }
     
     private void Update()
     {
-
-        //healthBar.fillAmount = playerHp / playerMaxHp;
-
         if (playerHp <= 0)
         {
             PlayerDeath();
@@ -32,23 +31,20 @@ public class PlayerHealthSystem : MonoBehaviour
 
     public void IsTakingDmg(float damageValue)       //Put every action requiered when the player is taking dmg on this fonction
     {
-        if (PlayerStatusManager.isPlayerImmune == false)
+        if (playerIsImune == false)
         {
             playerHp -= damageValue;
-            StartCoroutine("PlayerImmunityActivation");
+            StartCoroutine(PlayerImmunityActivation());
         }      
     }
 
     public void PlayerIsHealing(float healValue)             //Put every action requiered when the player is healed on this fonction  
     {
-        if(PlayerStatusManager.isPlayerDead == false)
-        {
-            playerHp += healValue;
+        playerHp += healValue;
 
-            if (playerHp > playerMaxHp)
-            {
-                playerHp = playerMaxHp;
-            }
+        if (playerHp > playerMaxHp)
+        {
+            playerHp = playerMaxHp;
         }
     }
 
@@ -56,21 +52,18 @@ public class PlayerHealthSystem : MonoBehaviour
     {
         Debug.Log("Vous êtes mort");
 
-        PlayerStatusManager.isPlayerDead = true;
-
-        GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
-
+        Destroy(this.gameObject);
 
     }
 
     public IEnumerator PlayerImmunityActivation()
     {
-        PlayerStatusManager.isPlayerImmune = true;
+        playerIsImune = true;
+        Debug.Log("vous êtes temporairement imunisé");
 
         yield return new WaitForSeconds(playerImmuneTime);
 
-        GetComponent<SpriteRenderer>().color = Color.white; //TEmporaryFeedBack
-
-        PlayerStatusManager.isPlayerImmune = false;
+        playerIsImune = false;
+        Debug.Log("vous n'êtes plus imunisé");
     }
 }
