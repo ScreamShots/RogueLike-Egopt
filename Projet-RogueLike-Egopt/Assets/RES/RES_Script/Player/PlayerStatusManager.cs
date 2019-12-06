@@ -4,189 +4,246 @@ using UnityEngine;
 
 public class PlayerStatusManager : MonoBehaviour
 {
-    //Movement Status
+    //Current State Algorithm
 
-    public static bool isPlayerMoveAvailable;
-    public static bool isPlayerDashAvailable;
-    public static bool isPlayerDashing;
-    public static bool isPlayerFallAvailable;
-    public static bool isPlayerFalling;
+    public int currentState;
+    public int lastState;
 
-    //Use - Attack Status
+    //In Time Status
 
-    public static bool isPlayerAttackAvailable;
-    public static bool isPlayerUtilisationAvailable;
-    public static bool isPlayerUsing;
-    public static bool isPlayerAttacking;
+    public static bool isDashing;       // state 1
+    public static bool isFalling;       // state 2
+    public static bool isAttacking;     // state 3
+    public static bool isUsing;         // state 4
+    public static bool isInteracting;   // state 5
 
-    //Health Status
+    //Status Ending
 
-    public static bool isPlayerDead;
-    public static bool isPlayerImmune;
+    public static bool needToEndDash;
+    public static bool needToEndFall;
+    public static bool needToEndAttack;
+    public static bool needToEndUse;
+    public static bool needToEndInteract;
 
-    //Inventory Status
+    //CD Status
 
-    public static bool isInventoryScrollingAvailable;
-    public static bool isPickingAvailable;
+    public static bool cdOnDash;
+    public static bool cdOnAttack;
+    public static bool cdOnInteract;
+
+    //Availability
+
+    public static bool canMove;
+    public static bool canDash;
+    public static bool canFall;
+    public static bool canAttack;
+    public static bool canUse;
+    public static bool canInteract;
+    public static bool canPick;
+    public static bool canScroll;
+    
 
     private void Start()
     {
-        //Movement Status
+        currentState = 0;
+        lastState = 0;
 
-        isPlayerMoveAvailable = true;
-        isPlayerDashAvailable = true;
-        isPlayerDashing = false;
-        isPlayerFallAvailable = true;
-        isPlayerFalling = false;
+        isDashing = false;
+        isFalling = false;
+        isAttacking = false;
+        isUsing = false;
+        isInteracting = false;
 
-        //Use - Attack Status
+        needToEndAttack = false;
+        needToEndDash = false;
+        needToEndFall = false;
+        needToEndInteract = false;
+        needToEndUse = false;
 
-        isPlayerAttackAvailable = true;
-        isPlayerUtilisationAvailable = true;
-        isPlayerUsing = false;
-        isPlayerAttacking = false;
+        cdOnAttack = false;
+        cdOnDash = false;
+        cdOnInteract = false;
 
-        //Health Status
-
-        isPlayerDead = false;
-        isPlayerImmune = false;
-
-        //Inventory Status
-
-        isInventoryScrollingAvailable = true;
-        isPickingAvailable = true;
+        canAttack = true;
+        canDash = true;
+        canFall = true;
+        canInteract = true;
+        canMove = true;
+        canPick = true;
+        canScroll = true;
+        canUse = true;
 
     }
-
-
-
-
-    private void Update()
+    private void FixedUpdate()
     {
 
-        //Movement Status
+        if (needToEndDash == true)
+        {            
+            if (cdOnAttack == false) { canAttack = true; }
 
-        if (isPlayerMoveAvailable == false)
-        {
-            isPlayerDashAvailable = false;
-        }
+            if (cdOnInteract == false) { canInteract = true; }
 
-        if (isPlayerDashing == true)
-        {
-            //Movement Status
+            canMove = true;
+            canPick = true;
+            canFall = true;
+            canUse = true;
 
-            isPlayerMoveAvailable = false;
-            isPlayerDashAvailable = false;
-            isPlayerFallAvailable = false;
-
-            //Use - Attack Status
-
-            isPlayerAttackAvailable = false;
-            isPlayerUtilisationAvailable = false;
-
-            //Inventory Status
-
-            isPickingAvailable = false;
-        }
-
-        if (isPlayerFalling == true)
-        {
-            GetComponent<SpriteRenderer>().color = Color.red;       //TemporaryFeedBack
-            PlayerMovement.playerRgb.velocity = new Vector3(0, 0, 0);
-
-            //Movement Status
-
-            isPlayerMoveAvailable = false;
-            isPlayerDashAvailable = false;
-            isPlayerFallAvailable = false;
-
-            //Use - Attack Status
-
-            isPlayerAttackAvailable = false;
-            isPlayerUtilisationAvailable = false;
+            needToEndDash = false;
+            isDashing = false;
 
         }
-
-        //Use - Attack Status
-
-        if (isPlayerUsing == true)
+        else if (needToEndFall == true)
         {
-            //Movement Status
+            if (cdOnDash == false) { canDash = true; }
 
-            isPlayerDashAvailable = false;
+            if (cdOnAttack == false) { canAttack = true; }
 
-            //Use - Attack Status
+            if (cdOnInteract == false) { canInteract = true; }
 
-            isPlayerAttackAvailable = false;
-            isPlayerUtilisationAvailable = false;
+            canMove = true;
+            canPick = true;
+            canUse = true;
 
-
-            //Inventory Status
-
-            isInventoryScrollingAvailable = false;
-            isPickingAvailable = false;
-
-
+            needToEndFall = false;
+            isFalling = false;
         }
-
-        if (isPlayerAttacking == true)
+        else if (needToEndAttack == true)
         {
-            //Movement Status
+            if (cdOnDash == false) { canDash = true; }
 
-            isPlayerDashAvailable = false;
-            isPlayerMoveAvailable = false;
-            PlayerMovement.playerRgb.velocity = new Vector3(0, 0, 0);
+            if (cdOnInteract == false) { canInteract = true; }
 
-            //Use - Attack Status
+            canMove = true;
+            canPick = true;
+            canFall = true;
+            canUse = true;
 
-            isPlayerAttackAvailable = false;
-            isPlayerUtilisationAvailable = false;
+            needToEndAttack = false;
+            isAttacking = false;
+        }
+        else if (needToEndUse == true)
+        {
+            if (cdOnAttack == false) { canAttack = true; }
 
+            if (cdOnInteract == false) { canInteract = true; }
 
-            //Inventory Status
+            if (cdOnDash == false) { canDash = true; }
 
-            isInventoryScrollingAvailable = false;
-            isPickingAvailable = false;
+            canMove = true;
+            canPick = true;
+            canFall = true;
 
+            needToEndUse = false;
+            isUsing = false;
+        }
+        else if (needToEndInteract == true)
+        {
+            if (cdOnAttack == false) { canAttack = true; }
 
+            if (cdOnDash == false) { canDash = true; }
+
+            canMove = true;
+            canPick = true;
+            canScroll = true;
+            canFall = true;
+            canUse = true;
+
+            needToEndInteract = false;
+            isInteracting = false;
         }
 
 
-        //Health Status
+        if (isDashing == true) { currentState = 1; }
 
-        if (isPlayerDead == true)
+        else if (isFalling == true) { currentState = 2; }
+
+        else if (isAttacking == true) { currentState = 3; }
+
+        else if (isUsing == true) { currentState = 4; }
+
+        else if (isInteracting == true) { currentState = 5; }
+
+        else
+        { currentState = 0; }
+
+
+        if (currentState != lastState)
         {
-            //Movement Status
+            lastState = currentState;
 
-            isPlayerMoveAvailable = false;
-            isPlayerDashAvailable = false;
-            isPlayerDashing = false;
-            isPlayerFallAvailable = false;
-            isPlayerFalling = false;
+            switch (currentState)
+            {
+                case 1:
+                    canMove = false;
+                    canDash = false;
+                    canFall = false;
+                    canAttack = false;
+                    canInteract = false;
+                    canUse = false;
+                    canPick = false;
+                    break;
 
-            //Use - Attack Status
+                case 2:
+                    canMove = false;
+                    canDash = false;
+                    canFall = false;
+                    canAttack = false;
+                    canUse = false;
+                    canInteract = false;
+                    canPick = false;
+                    PlayerMovement.playerRgb.velocity = new Vector3(0, 0, 0);
+                    break;
 
-            isPlayerAttackAvailable = false;
-            isPlayerUtilisationAvailable = false;
-            isPlayerUsing = false;
+                case 3:
+                    canMove = false;
+                    canDash = false;
+                    canFall = false;
+                    canAttack = false;
+                    canUse = false;
+                    canInteract = false;
+                    canPick = false;
+                    PlayerMovement.playerRgb.velocity = new Vector3(0, 0, 0);
+                    break;
 
-            //Health Status
+                case 4:
+                    canMove = false;
+                    canDash = false;
+                    canFall = false;
+                    canAttack = false;
+                    canUse = false;
+                    canInteract = false;
+                    canPick = false;
+                    canScroll = false;
+                    break;
 
-            isPlayerImmune = false;
+                case 5:
+                    canMove = false;
+                    canDash = false;
+                    canFall = false;
+                    canAttack = false;
+                    canUse = false;
+                    canInteract = false;
+                    canPick = false;
+                    canScroll = false;
+                    PlayerMovement.playerRgb.velocity = new Vector3(0, 0, 0);
+                    break;
 
-            //Inventory Status
-
-            isInventoryScrollingAvailable = false;
-            isPickingAvailable = false;
-
-            GetComponent<SpriteRenderer>().color = Color.black;     //temporary FeedBack
+                default:                    
+                    break;
+            }
 
         }
 
-        if (isPlayerImmune == true)
+        if (currentState == 0)
         {
-            //Movement Status
-            GetComponent<SpriteRenderer>().color = Color.green;     //temporary FeedBack
+            if (cdOnDash == false) { canDash = true; }
+
+            if (cdOnAttack == false) { canAttack = true; }
+
+            if (cdOnInteract == false) { canInteract = true; }
+
+            canFall = true;
+            canUse = true;
         }
-    }     
+    }
 }

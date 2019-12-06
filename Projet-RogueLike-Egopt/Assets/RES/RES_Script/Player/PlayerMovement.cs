@@ -11,70 +11,85 @@ public class PlayerMovement : MonoBehaviour
     //Move
 
     public float speed;
-    public Vector3 move;
-    public float inputHorizontalMoove;
-    public float inputVerticalMoove;
+    [SerializeField]private Vector3 move;
+    private float inputHorizontalMoove;
+    private float inputVerticalMoove;
 
     //Direction
 
-    public int playerDirection;
-    public Vector3 lastMove;
-    public float directionHorizontal;
-    public float directionVertical;
+    private int direction;
+    private Vector3 lastMove;
+    private float directionHorizontal;
+    private float directionVertical;
 
     //Dash
 
-    public float dashSpeed;
-    public float dashTime;
-    public float dashCooldown;
-    public AnimationCurve dashCurve;
+    [SerializeField] private float dashSpeed;
+    [SerializeField] private float dashTime;
+    [SerializeField] private float dashCooldown;
+    [SerializeField] private AnimationCurve dashCurve;
 
     //Fall
 
     public static Vector3 respawnPosition;
+    [SerializeField] private float fallingTime;
+
+    //Animator
+
+    public Animator playerAnimator;
 
 
     void Start()
     {
         playerRgb = GetComponent<Rigidbody2D>();
 
-        playerDirection = 0;
+        direction = 0;
         lastMove = new Vector3(1, 0, 0);
         respawnPosition = new Vector3(0, 0, 0);
     }
 
     void FixedUpdate()
     {
-        //Move
-        if (PlayerStatusManager.isPlayerMoveAvailable == true)
-        {
-            Move();
-        }
-          
         //Direction
 
         Direction();
 
+        //Move
+
+        if (PlayerStatusManager.canMove == true)
+        {
+            Move();
+        }
+
         //Dash
 
-        if (Input.GetAxisRaw("Roll") > 0 && PlayerStatusManager.isPlayerDashAvailable == true )
+        if (Input.GetAxisRaw("Roll") > 0)
         {
             StartCoroutine(Dash(lastMove));
         }
 
-        if(Input.GetKeyDown(KeyCode.A) == true)
+        
+        
+        if (playerRgb.velocity.x != 0 || playerRgb.velocity.y != 0)
         {
-            StartCoroutine(PlayerFall(0));
+            playerAnimator.SetBool("isRuning", true);
         }
+        else if (playerRgb.velocity.x == 0 || playerRgb.velocity.y == 0)
+        {
+            playerAnimator.SetBool("isRuning", false);
+        }
+
     }
 
     //Move
 
-    public void Move()
+    void Move()
     {
         
         inputHorizontalMoove = Input.GetAxisRaw("HorizontalMove");
         inputVerticalMoove = Input.GetAxisRaw("VerticalMove");
+
+        
 
         move = new Vector3(inputHorizontalMoove, inputVerticalMoove, 0);
 
@@ -84,34 +99,39 @@ public class PlayerMovement : MonoBehaviour
 
     //Direction
 
-    public void Direction()
+    void Direction()
     {
         directionHorizontal = Input.GetAxis("HorizontalMove");
         directionVertical = Input.GetAxis("VerticalMove");
-        
+
+       
+
         if (move != Vector3.zero)
         {
             lastMove = move;
 
             if (directionVertical >= Mathf.Sqrt(2)/2)
             {
-                playerDirection = 0;        //up
+                direction = 0;        //up
             }
             else if (directionVertical <= -Mathf.Sqrt(2)/2)
             {
-                playerDirection = 2;        //down
+                direction = 2;        //down
             }
             else if (directionHorizontal >= Mathf.Sqrt(2)/2)
             {
-                playerDirection = 1;        //right
+                direction = 1;        //right
             }
             else if (directionHorizontal <= -Mathf.Sqrt(2)/2)
             {
-                playerDirection = 3;        //left
+                direction = 3;        //left
             }
         }
 
-        GetComponent<PlayerUse>().attackDirection = playerDirection;
+        GetComponent<PlayerUse>().attackDirection = direction;
+        playerAnimator.SetFloat("xDirection", lastMove.x);
+        playerAnimator.SetFloat("yDirection", lastMove.y);
+
     }
 
 
@@ -119,50 +139,46 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Dash(Vector3 dashDirection)
     {
-        float timer = 0.0f;
-        PlayerStatusManager.isPlayerDashing = true;
-
-        while (timer < dashTime)
+        if (PlayerStatusManager.canDash == true && PlayerStatusManager.isAttacking == false && PlayerStatusManager.isUsing == false)
         {
-            playerRgb.velocity = dashDirection.normalized * dashSpeed * dashCurve.Evaluate(timer / dashTime) * Time.deltaTime;
-            timer += Time.deltaTime;
-            yield return null;
-        }
+            float timer = 0.0f;
 
-        playerRgb.velocity = Vector3.zero;
+            PlayerStatusManager.isDashing = true;
 
-        PlayerStatusManager.isPlayerMoveAvailable = true;
-        PlayerStatusManager.isPlayerDashing = false;
-        PlayerStatusManager.isPlayerUtilisationAvailable = true;
-        PlayerStatusManager.isPlayerAttackAvailable = true;
-        PlayerStatusManager.isPlayerFallAvailable = true;
+            while (timer < dashTime)
+            {
+                playerRgb.velocity = dashDirection.normalized * dashSpeed * dashCurve.Evaluate(timer / dashTime) * Time.deltaTime;
+                timer += Time.deltaTime;
+                yield return null;
+            }
 
-        yield return new WaitForSeconds(dashCooldown);
-        PlayerStatusManager.isPlayerDashAvailable = true;
+            playerRgb.velocity = Vector3.zero;
+
+            PlayerStatusManager.needToEndDash = true;
+            PlayerStatusManager.cdOnDash = true;
+
+            yield return new WaitForSeconds(dashCooldown);
+
+            PlayerStatusManager.cdOnDash = false;
+        }     
     }
 
     //Fall
 
-    public IEnumerator PlayerFall(float dmg)
+    IEnumerator PlayerFall(float dmg)
     {
-        if (PlayerStatusManager.isPlayerFallAvailable)
+        if (PlayerStatusManager.canFall)
         {
-            PlayerStatusManager.isPlayerFalling = true;
+            PlayerStatusManager.isFalling = true;
 
-
-            yield return new WaitForSeconds(1.3f);
+            yield return new WaitForSeconds(fallingTime);
 
             GetComponent<Transform>().position = respawnPosition;
 
             GetComponent<SpriteRenderer>().color = Color.white; // Temporary FeedBack
             GetComponent<PlayerHealthSystem>().IsTakingDmg(dmg);
 
-            PlayerStatusManager.isPlayerMoveAvailable = true;
-            PlayerStatusManager.isPlayerDashAvailable = true;
-            PlayerStatusManager.isPlayerFallAvailable = true;
-            PlayerStatusManager.isPlayerFalling = false;
-            PlayerStatusManager.isPlayerUtilisationAvailable = true;
-            PlayerStatusManager.isPlayerAttackAvailable = true;
+            PlayerStatusManager.needToEndFall = true;
         }
        
     }

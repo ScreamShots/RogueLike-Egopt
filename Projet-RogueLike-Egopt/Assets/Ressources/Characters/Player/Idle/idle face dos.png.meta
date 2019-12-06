@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: 0ddc8bff0663271419b406e384c79bbf
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6673111026421016044
+    second: idle face dos_0
+  - first:
+      213: -7560938003258352744
+    second: idle face dos_1
+  - first:
+      213: 1291248538785048374
+    second: idle face dos_2
+  - first:
+      213: 2959269642087814670
+    second: idle face dos_3
+  - first:
+      213: -6420253126541366042
+    second: idle face dos_4
+  - first:
+      213: -1715185007578007507
+    second: idle face dos_5
+  - first:
+      213: 4287954276950475451
+    second: idle face dos_6
+  - first:
+      213: -5365965395889660831
+    second: idle face dos_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -45,7 +69,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 70
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +132,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: idle face dos_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 46
+        width: 16
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.52380955}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21853f5b309a1db44915b9302f34c556
+      internalID: -6673111026421016044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle face dos_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 46
+        width: 16
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5116279}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8302909e5393943920976066ad5d00
+      internalID: -7560938003258352744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle face dos_2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 46
+        width: 16
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b77ee11b74fd64a8a0097dbcceba77
+      internalID: 1291248538785048374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle face dos_3
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 46
+        width: 16
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5116279}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e24dff11bf4fa4f9222ff81f93f005
+      internalID: 2959269642087814670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle face dos_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 16
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.52380955}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd89d6caee0778041bb17d214e695eb9
+      internalID: -6420253126541366042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle face dos_5
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1
+        width: 16
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5116279}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cdb8f90344a8824c9743a77e2a13c8d
+      internalID: -1715185007578007507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle face dos_6
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1
+        width: 16
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e49f2b28cb31ec04cac351e1164fce0b
+      internalID: 4287954276950475451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle face dos_7
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1
+        width: 16
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5116279}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf29913eeb87a3641b0f45e230b1e143
+      internalID: -5365965395889660831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

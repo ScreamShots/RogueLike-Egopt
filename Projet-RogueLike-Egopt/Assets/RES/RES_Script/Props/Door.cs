@@ -69,7 +69,7 @@ public class Door : MonoBehaviour
         {
             PlayerMovement.playerRgb.velocity = new Vector3(0, 0, 0);
 
-            if (PlayerStatusManager.isPlayerDashing == false)
+            if (PlayerStatusManager.isDashing == false)
             {
                 if (transform.position.x - linkedDoorTransform.position.x < 0)
                 {

@@ -8,11 +8,11 @@ public class PlayerHealthSystem : MonoBehaviour
 {
     //Statement
 
-    public float playerMaxHp;
-    public float playerMinHp;
-    public float playerHp;
-    public float playerImmuneTime;
+    [SerializeField] private float playerMaxHp;
+    [SerializeField] private float playerMinHp;
+    public static float playerHp;
 
+    [SerializeField] private float playerImmuneTime;
     public static bool playerIsImune;
 
     void Start()

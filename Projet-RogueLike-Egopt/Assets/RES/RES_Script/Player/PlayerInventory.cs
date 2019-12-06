@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public GameObject startingWeapon;
+    [SerializeField] private GameObject startingWeapon;
+    [SerializeField] private GameObject selectionedObject;
     public static GameObject[] playerInventory;
-    public GameObject selectionedObject;
 
     public static int inventoryIndex;
-    public int inventorySize;
+    [SerializeField] private int inventorySize;
 
     private void Start()
     {
@@ -32,17 +32,16 @@ public class PlayerInventory : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetButtonDown("Pick") && collision.gameObject.tag == "PickableObject" && PlayerStatusManager.isPickingAvailable)        //casser si il y a plusieur objet détecté en m^me temps
+        if (Input.GetButtonDown("Pick") && collision.gameObject.tag == "PickableObject")
         {
             PickingObject(collision.gameObject);
-            Destroy(collision.gameObject);
-            
+            Destroy(collision.gameObject);            
         }
     }
 
     public void InventoryRotation(int slidingdirection)
     {
-        if (PlayerStatusManager.isInventoryScrollingAvailable == true)
+        if (PlayerStatusManager.canScroll == true)
         {
             inventoryIndex += slidingdirection;
             if (inventoryIndex > 2)
@@ -58,7 +57,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void PickingObject(GameObject item)
     {
-        if(PlayerStatusManager.isPickingAvailable == true)
+        if(PlayerStatusManager.canPick == true)
         {
             if (playerInventory[inventoryIndex] != null)
             {
