@@ -28,14 +28,15 @@ public class PlayerInventory : MonoBehaviour
         selectionedObject = playerInventory[inventoryIndex];
         GetComponent<PlayerUse>().equipiedItem = selectionedObject;
 
+        if (Input.GetKeyDown(KeyCode.A)) { PlayerStatusManager.canPick = true; }
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (Input.GetButtonDown("Pick") && collision.gameObject.tag == "PickableObject")
         {
-            PickingObject(collision.gameObject);
-            Destroy(collision.gameObject);            
+            StartCoroutine(PickingObject(collision.gameObject));          
         }
     }
 
@@ -52,18 +53,29 @@ public class PlayerInventory : MonoBehaviour
             {
                 inventoryIndex = 2;
             }
+            Debug.Log( playerInventory[inventoryIndex]);
         }
     }
 
-    public void PickingObject(GameObject item)
+    public IEnumerator PickingObject(GameObject item)
     {
         if(PlayerStatusManager.canPick == true)
         {
+            PlayerStatusManager.canPick = false;
             if (playerInventory[inventoryIndex] != null)
             {
-                playerInventory[inventoryIndex].GetComponent<ItemDrop>().Drop();
+                Instantiate(playerInventory[inventoryIndex].GetComponent<ItemDrop>().pickableVersionObject, transform.position, transform.rotation) ;
+                playerInventory[inventoryIndex] = item.GetComponent<PickableStorage>().storedObject;
+                Destroy(item.gameObject);
             }
-            playerInventory[inventoryIndex] = item.GetComponent<PickableStorage>().storedObject;
+            else
+            {
+                playerInventory[inventoryIndex] = item.GetComponent<PickableStorage>().storedObject;
+                Destroy(item.gameObject);
+            }
+
+            yield return new WaitForSeconds(0.00001f);
+            PlayerStatusManager.canPick = true;
         }
         
     }

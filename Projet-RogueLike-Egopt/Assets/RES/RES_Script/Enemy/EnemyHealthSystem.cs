@@ -9,16 +9,10 @@ public class EnemyHealthSystem : MonoBehaviour
 
     public float enemyMaxHp;
     public float enemyHp;
-    public Image healthBar;
 
     void Start()
     {
         enemyHp = enemyMaxHp;
-    }
-
-    private void Update()
-    {
-        healthBar.fillAmount = enemyHp / enemyMaxHp;
     }
 
     public void IsTakingDmg(float damageValue)       //Put every action requiered when the player is taking dmg on this fonction
@@ -30,7 +24,6 @@ public class EnemyHealthSystem : MonoBehaviour
         {
             EnemyDeath();
         }
-        //Debug.Log(playerHp);
     }
 
     public void EnemyIsHealing(float healValue)             //Put every action requiered when the player is healed on this fonction  
@@ -46,6 +39,7 @@ public class EnemyHealthSystem : MonoBehaviour
 
     void EnemyDeath()                                  //Put every action requiered when the player is dead on this function
     {
+        Debug.Log("dead");
         Destroy(this.gameObject);
     }
 }

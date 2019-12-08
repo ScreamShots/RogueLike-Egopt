@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     //Direction
 
     private int direction;
-    private Vector3 lastMove;
+    public Vector3 lastMove;
     private float directionHorizontal;
     private float directionVertical;
 
@@ -33,11 +33,6 @@ public class PlayerMovement : MonoBehaviour
 
     public static Vector3 respawnPosition;
     [SerializeField] private float fallingTime;
-
-    //Animator
-
-    public Animator playerAnimator;
-
 
     void Start()
     {
@@ -65,20 +60,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetAxisRaw("Roll") > 0)
         {
-            StartCoroutine(Dash(lastMove));
-        }
+            if (PlayerStatusManager.canDash == true)
+            {
+                
+                StartCoroutine(Dash(lastMove));
+                
+            }
 
-        
-        
-        if (playerRgb.velocity.x != 0 || playerRgb.velocity.y != 0)
-        {
-            playerAnimator.SetBool("isRuning", true);
         }
-        else if (playerRgb.velocity.x == 0 || playerRgb.velocity.y == 0)
-        {
-            playerAnimator.SetBool("isRuning", false);
-        }
-
     }
 
     //Move
@@ -110,28 +99,24 @@ public class PlayerMovement : MonoBehaviour
         {
             lastMove = move;
 
-            if (directionVertical >= Mathf.Sqrt(2)/2)
+            if (directionVertical >= Mathf.Sqrt(2)/2 && directionHorizontal <= Mathf.Sqrt(2) / 2 && directionHorizontal >= -Mathf.Sqrt(2) / 2)
             {
                 direction = 0;        //up
             }
-            else if (directionVertical <= -Mathf.Sqrt(2)/2)
+            else if (directionVertical <= -Mathf.Sqrt(2)/2 && directionHorizontal <= Mathf.Sqrt(2) / 2 && directionHorizontal >= -Mathf.Sqrt(2) / 2)
             {
-                direction = 2;        //down
+                direction = 2;        //down               
             }
-            else if (directionHorizontal >= Mathf.Sqrt(2)/2)
+            else if (directionHorizontal >= Mathf.Sqrt(2)/2 && directionVertical <= Mathf.Sqrt(2) / 2 && directionVertical >= -Mathf.Sqrt(2) / 2)
             {
-                direction = 1;        //right
+                direction = 1;        //right                
             }
-            else if (directionHorizontal <= -Mathf.Sqrt(2)/2)
+            else if (directionHorizontal <= -Mathf.Sqrt(2)/2 && directionVertical <= Mathf.Sqrt(2) / 2 && directionVertical >= -Mathf.Sqrt(2) / 2)
             {
-                direction = 3;        //left
+                direction = 3;        //left 
             }
         }
-
-        GetComponent<PlayerUse>().attackDirection = direction;
-        playerAnimator.SetFloat("xDirection", lastMove.x);
-        playerAnimator.SetFloat("yDirection", lastMove.y);
-
+        GetComponent<PlayerUse>().attackDirection = direction;        
     }
 
 
@@ -144,6 +129,8 @@ public class PlayerMovement : MonoBehaviour
             float timer = 0.0f;
 
             PlayerStatusManager.isDashing = true;
+            
+
 
             while (timer < dashTime)
             {
@@ -155,6 +142,7 @@ public class PlayerMovement : MonoBehaviour
             playerRgb.velocity = Vector3.zero;
 
             PlayerStatusManager.needToEndDash = true;
+            
             PlayerStatusManager.cdOnDash = true;
 
             yield return new WaitForSeconds(dashCooldown);
@@ -164,18 +152,23 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //Fall
-
-    IEnumerator PlayerFall(float dmg)
+    public void StartFall(float dmg, Transform fallPosition, Transform playerPosition)
+    {
+        StartCoroutine(PlayerFall(dmg, fallPosition, playerPosition));
+    }
+    public IEnumerator PlayerFall(float dmg, Transform fallPosition, Transform playerPosition)
     {
         if (PlayerStatusManager.canFall)
         {
             PlayerStatusManager.isFalling = true;
 
+            GetComponent<Transform>().position = fallPosition.position + new Vector3(0,0.3f,0) ;
+            
+
             yield return new WaitForSeconds(fallingTime);
 
             GetComponent<Transform>().position = respawnPosition;
 
-            GetComponent<SpriteRenderer>().color = Color.white; // Temporary FeedBack
             GetComponent<PlayerHealthSystem>().IsTakingDmg(dmg);
 
             PlayerStatusManager.needToEndFall = true;

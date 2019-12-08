@@ -21,7 +21,7 @@ public class EnemyArcherMovement : MonoBehaviour
 
     private void Start()
     {
-        playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        playerTransform = GameObject.FindWithTag("Player").transform;
     }
     private void FixedUpdate()
     {

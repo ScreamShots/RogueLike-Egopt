@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class LayerManager : MonoBehaviour
 {
-    private GameObject[] props;
+    public  List<GameObject> props;
     private SpriteRenderer charaSpr;
     private SpriteRenderer propsSpr;
 
 
     void Start()
     {
-        props = GameObject.FindGameObjectsWithTag("Props");
+        props.AddRange(GameObject.FindGameObjectsWithTag("Props"));
         charaSpr = GetComponent<SpriteRenderer>();
     }
 
@@ -22,19 +22,19 @@ public class LayerManager : MonoBehaviour
 
     private void LayerManaging()
     {
-        if (props.Length != 0)
+        if (props.Count != 0)
         {
-            for (int i=0; i<props.Length; i++)
+            for (int i=0; i<props.Count; i++)
             {
                 if (props[i].transform.position.y < transform.position.y - 0.25)
                 {
                     propsSpr = props[i].GetComponent<SpriteRenderer>();
-                    propsSpr.sortingOrder = charaSpr.sortingOrder + 1; 
+                    charaSpr.sortingOrder = propsSpr.sortingOrder - 1; 
                 }
                 else 
                 {
                     propsSpr = props[i].GetComponent<SpriteRenderer>();
-                    propsSpr.sortingOrder = charaSpr.sortingOrder - 1;
+                    charaSpr.sortingOrder = propsSpr.sortingOrder + 1;
                 }
             }
         }

@@ -55,7 +55,7 @@ public class HoleTrap : MonoBehaviour
         {
             if (objectInRange[i].transform.parent.gameObject.tag == "Player")
             {
-                objectInRange[i].transform.parent.gameObject.GetComponent<PlayerMovement>().StartCoroutine("PlayerFall", trapDmg);
+                objectInRange[i].transform.parent.gameObject.GetComponent<PlayerMovement>().StartFall(trapDmg,transform, objectInRange[i].transform);
             }
         }
 

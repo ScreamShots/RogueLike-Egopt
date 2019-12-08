@@ -10,9 +10,11 @@ public class PlayerUse : MonoBehaviour
     private float useSpeed;
     private float imobilisationTime;
     public int attackDirection;
-
-    //[SerializeField] private GameObject usedWeapon;
     public GameObject equipiedItem;
+
+    //Animator
+
+    public Animator playerAnimator; 
 
 
     void Update()
@@ -21,7 +23,9 @@ public class PlayerUse : MonoBehaviour
         {          
                 if (equipiedItem.tag == "Weapon")
                 {             
-                        StartCoroutine(Attack());                    
+                        StartCoroutine(Attack());
+                        
+
                 }
                 else if (equipiedItem.tag == "Consumable")
                 {                
@@ -38,12 +42,14 @@ public class PlayerUse : MonoBehaviour
         {
             PlayerStatusManager.isAttacking = true;
 
+            
+
             usedWeapon = Instantiate(equipiedItem);
             usedWeapon.transform.parent = GetComponent<Transform>();
             usedWeapon.transform.localPosition = new Vector3(0, 0, 0);            
 
             attackSpeed = usedWeapon.GetComponent<WeaponManager>().weaponAttackSpeed;
-            imobilisationTime = usedWeapon.GetComponent<WeaponManager>().weaponImobilisationTime;
+            imobilisationTime = usedWeapon.GetComponent<WeaponManager>().weaponImobilisationTime;            
 
             switch (attackDirection)
             {

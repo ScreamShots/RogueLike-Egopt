@@ -41,6 +41,10 @@ public class PlayerStatusManager : MonoBehaviour
     public static bool canInteract;
     public static bool canPick;
     public static bool canScroll;
+
+    //Animator
+
+    public Animator playerAnimator;    
     
 
     private void Start()
@@ -76,6 +80,7 @@ public class PlayerStatusManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        
 
         if (needToEndDash == true)
         {            

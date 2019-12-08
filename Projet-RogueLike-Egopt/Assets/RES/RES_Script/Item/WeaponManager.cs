@@ -12,6 +12,8 @@ public class WeaponManager : MonoBehaviour
 
     public List<GameObject> enemyInRangList;
 
+    public int weaponId; // 0 = saber 1 = spear 2 = hammer
+
     private void OnTriggerEnter2D(Collider2D character)
     {
         if (character.gameObject.tag == "Enemy")

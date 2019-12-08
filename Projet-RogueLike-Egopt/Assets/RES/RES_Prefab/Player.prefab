@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7549219960090772119}
   - component: {fileID: 4664103310161891124}
   - component: {fileID: 3410242296112805351}
+  - component: {fileID: 1609725748223637748}
   m_Layer: 0
   m_Name: Rendering
   m_TagString: Untagged
@@ -94,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e3363711edc094d95690ed2dbca1d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  props: []
 --- !u!95 &3410242296112805351
 Animator:
   serializedVersion: 3
@@ -113,6 +115,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1609725748223637748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623556141946891848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfb06f91fa78d046a8736a8b46ed648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 0}
 --- !u!1 &2381946811977984154
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +217,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 110
+  move: {x: 0, y: 0, z: 0}
+  lastMove: {x: 0, y: 0, z: 0}
   dashSpeed: 180
   dashTime: 0.3
   dashCooldown: 1
@@ -247,8 +264,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  fallingTime: 0
-  playerAnimator: {fileID: 3410242296112805351}
+  fallingTime: 0.5
 --- !u!114 &308797032114549613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,6 +295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDirection: 0
   equipiedItem: {fileID: 0}
+  playerAnimator: {fileID: 3410242296112805351}
 --- !u!114 &2267346089759508474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   lastState: 0
+  playerAnimator: {fileID: 3410242296112805351}
 --- !u!1 &6900935842606605521
 GameObject:
   m_ObjectHideFlags: 0

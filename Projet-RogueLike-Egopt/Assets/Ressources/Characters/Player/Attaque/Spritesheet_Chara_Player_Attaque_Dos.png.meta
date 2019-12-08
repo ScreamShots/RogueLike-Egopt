@@ -54,7 +54,7 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -63,11 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-  spritePixelsToUnits: 30
-=======
-  spritePixelsToUnits: 100
->>>>>>> Réparation
+  spritePixelsToUnits: 70
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -85,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,40 +93,13 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-=======
->>>>>>> Réparation
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -138,18 +107,18 @@ TextureImporter:
       name: Spritesheet_Chara_Player_Attaque_Dos_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 25
         y: 0
-        width: 68
-        height: 63
+        width: 16
+        height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2e40f50eeb23ee4180a99acdb4454cf
+      spriteID: b54ee33ec021d46469ec5cd1e8dfde72
       internalID: 5144269667236608309
       vertices: []
       indices: 
@@ -159,18 +128,18 @@ TextureImporter:
       name: Spritesheet_Chara_Player_Attaque_Dos_1
       rect:
         serializedVersion: 2
-        x: 68
+        x: 93
         y: 0
-        width: 68
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 27
+        height: 41
+      alignment: 9
+      pivot: {x: 0.2962963, y: 0.5121951}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edd725bdd4db9c44cbc903d5d0461475
+      spriteID: 69bb52dd1f015044ba471b9e8dd472f1
       internalID: -6949957280437947847
       vertices: []
       indices: 
@@ -180,18 +149,18 @@ TextureImporter:
       name: Spritesheet_Chara_Player_Attaque_Dos_2
       rect:
         serializedVersion: 2
-        x: 136
+        x: 143
         y: 0
-        width: 68
+        width: 54
         height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4814815, y: 0.3015873}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8662a5933abffa46a6fec29d11a824d
+      spriteID: 7917b5fbf53c2a54db336e68fcdaf8d8
       internalID: 752393058984346190
       vertices: []
       indices: 
@@ -201,18 +170,18 @@ TextureImporter:
       name: Spritesheet_Chara_Player_Attaque_Dos_3
       rect:
         serializedVersion: 2
-        x: 204
+        x: 211
         y: 0
-        width: 68
+        width: 54
         height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4814815, y: 0.3015873}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6e6e4a2357987e4ba4fa7e7679d0581
+      spriteID: 9248b201b6aaadf47a8748d649809a65
       internalID: 5411175353661381931
       vertices: []
       indices: 
@@ -222,18 +191,18 @@ TextureImporter:
       name: Spritesheet_Chara_Player_Attaque_Dos_4
       rect:
         serializedVersion: 2
-        x: 272
-        y: 0
-        width: 68
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 289
+        y: 1
+        width: 27
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5925926, y: 0.48780486}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 144b0e49df2b2384d900adc405beb83f
+      spriteID: a9310f28da5fe0d479e64b7422d5ef77
       internalID: -2071751502410434941
       vertices: []
       indices: 
@@ -243,18 +212,18 @@ TextureImporter:
       name: Spritesheet_Chara_Player_Attaque_Dos_5
       rect:
         serializedVersion: 2
-        x: 340
+        x: 365
         y: 0
-        width: 68
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 16
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fb8d9dc48a3dd7439b51e418147958e
+      spriteID: bcedc404b58b2e84f87768f80eff8ede
       internalID: 6997345171750030285
       vertices: []
       indices: 
@@ -263,7 +232,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: cbb2f33e88c121a43810a97983e9b7e8
     internalID: 0
     vertices: []
     indices: 
