@@ -14,10 +14,6 @@ public class PlayerUse : MonoBehaviour
     private GameObject actualItem;
     [HideInInspector] public float additionalStrength;
 
-    //Animator
-
-    public Animator playerAnimator; 
-
 
     void Update()
     {
