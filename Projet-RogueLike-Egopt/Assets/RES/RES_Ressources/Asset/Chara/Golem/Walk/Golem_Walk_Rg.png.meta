@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: 5b875222f6869cb4fabc7caf3a091211
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7660054384592842324
+    second: Golem_Walk_Rg_0
+  - first:
+      213: -6457644002887449043
+    second: Golem_Walk_Rg_1
+  - first:
+      213: 7390670857493524269
+    second: Golem_Walk_Rg_2
+  - first:
+      213: 1453676778584943374
+    second: Golem_Walk_Rg_3
+  - first:
+      213: 3519882133988855542
+    second: Golem_Walk_Rg_4
+  - first:
+      213: -1563222978445171728
+    second: Golem_Walk_Rg_5
+  - first:
+      213: 5094875543868294338
+    second: Golem_Walk_Rg_6
+  - first:
+      213: 1276517673943520767
+    second: Golem_Walk_Rg_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -31,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,12 +64,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 70
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,9 +94,189 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Golem_Walk_Rg_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 13
+        width: 56
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5178572, y: 0.50980395}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c752cbba2eadb9a45a4ffa31782ef39f
+      internalID: -7660054384592842324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Rg_1
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 13
+        width: 56
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5178572, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d3d217e074022145bfe30482c30f7a7
+      internalID: -6457644002887449043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Rg_2
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 13
+        width: 56
+        height: 53
+      alignment: 9
+      pivot: {x: 0.5178572, y: 0.509434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b6af4e5a1cfc9408368aaffef9cab4
+      internalID: 7390670857493524269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Rg_3
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 13
+        width: 56
+        height: 53
+      alignment: 9
+      pivot: {x: 0.4107143, y: 0.509434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf56e98266f2de47a5b9a3678197ca7
+      internalID: 1453676778584943374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Rg_4
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 14
+        width: 56
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5178572, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77604bc647b89fe4cbf8fc8dc43d0430
+      internalID: 3519882133988855542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Rg_5
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 13
+        width: 56
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5357143, y: 0.50980395}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 026fc223acf61c94889c54b38c82125c
+      internalID: -1563222978445171728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Rg_6
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 13
+        width: 56
+        height: 50
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21048808c161bb64a8add005279125b0
+      internalID: 5094875543868294338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Rg_7
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 12
+        width: 56
+        height: 51
+      alignment: 9
+      pivot: {x: 0.46428573, y: 0.50980395}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ff64b142c87f24cafc5b960ca3970a
+      internalID: 1276517673943520767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

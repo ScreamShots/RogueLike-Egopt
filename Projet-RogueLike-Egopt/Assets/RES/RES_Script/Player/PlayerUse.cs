@@ -11,6 +11,8 @@ public class PlayerUse : MonoBehaviour
     private float imobilisationTime;
     public int attackDirection;
     public GameObject equipiedItem;
+    private GameObject actualItem;
+    [HideInInspector] public float additionalStrength;
 
     //Animator
 
@@ -36,34 +38,33 @@ public class PlayerUse : MonoBehaviour
 
     IEnumerator Attack()
     {
-        GameObject usedWeapon;
 
-        if (PlayerStatusManager.canAttack == true && PlayerStatusManager.isDashing == false)
+        if (PlayerStatusManager.canAttack == true && PlayerStatusManager.isDashing == false && actualItem == null)
         {
             PlayerStatusManager.isAttacking = true;
 
-            
 
-            usedWeapon = Instantiate(equipiedItem);
-            usedWeapon.transform.parent = GetComponent<Transform>();
-            usedWeapon.transform.localPosition = new Vector3(0, 0, 0);            
 
-            attackSpeed = usedWeapon.GetComponent<WeaponManager>().weaponAttackSpeed;
-            imobilisationTime = usedWeapon.GetComponent<WeaponManager>().weaponImobilisationTime;            
+            actualItem = Instantiate(equipiedItem);
+            actualItem.transform.parent = GetComponent<Transform>();
+            actualItem.transform.localPosition = new Vector3(0, 0, 0);            
+
+            attackSpeed = actualItem.GetComponent<WeaponManager>().weaponAttackSpeed;
+            imobilisationTime = actualItem.GetComponent<WeaponManager>().weaponImobilisationTime;            
 
             switch (attackDirection)
             {
                 case 0:     // up
-                    usedWeapon.transform.Rotate(0, 0, 0);
+                    actualItem.transform.Rotate(0, 0, 0);
                     break;
                 case 1:     //right
-                    usedWeapon.transform.Rotate(0, 0, -90);
+                    actualItem.transform.Rotate(0, 0, -90);
                     break;
                 case 2:     //down
-                    usedWeapon.transform.Rotate(0, 0, 180);
+                    actualItem.transform.Rotate(0, 0, 180);
                     break;
                 case 3:     //left
-                    usedWeapon.transform.Rotate(0, 0, 90);
+                    actualItem.transform.Rotate(0, 0, 90);
                     break;
 
                 default:
@@ -71,10 +72,10 @@ public class PlayerUse : MonoBehaviour
             }
 
             yield return new WaitForSeconds(0.001f);
-            usedWeapon.GetComponent<WeaponManager>().WeaponAttack();
+            actualItem.GetComponent<WeaponManager>().WeaponAttack(additionalStrength);
 
             yield return new WaitForSeconds(imobilisationTime);
-            Destroy(usedWeapon);
+            Destroy(actualItem);
             PlayerStatusManager.needToEndAttack = true;
             PlayerStatusManager.cdOnAttack = true;
 
@@ -86,16 +87,27 @@ public class PlayerUse : MonoBehaviour
 
     IEnumerator ItemUse()
     {
-        if (PlayerStatusManager.canUse == true && PlayerStatusManager.isDashing == false)
+        if (PlayerStatusManager.canUse == true && PlayerStatusManager.isDashing == false && PlayerStatusManager.isDashing == false && actualItem == null)
         {
+            float effectDuration;
+
             PlayerStatusManager.isUsing = true;
 
-            useSpeed = equipiedItem.GetComponent<ItemManager>().useSpeed;
-            equipiedItem.GetComponent<ItemManager>().ItemEffectActivation();
+            useSpeed = equipiedItem.GetComponent<ItemManager>().useSpeed;          
 
             yield return new WaitForSeconds(useSpeed);
 
+            actualItem = Instantiate(equipiedItem, transform.position, transform.rotation);
+            actualItem.transform.parent = transform;
+            actualItem.GetComponent<ItemManager>().ItemEffectActivation(this.gameObject);
+            effectDuration = actualItem.GetComponent<ItemManager>().effectDuration; 
+
+            PlayerInventory.playerInventory[PlayerInventory.inventoryIndex] = null;
+
             PlayerStatusManager.needToEndUse = true;
+
+            yield return new WaitForSeconds(effectDuration);
+            Destroy(actualItem);
         }
         
     }

@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: e561db38425ca5e48bfafac635a49c9c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6120920501510785948
+    second: Golem_Walk_Lt_0
+  - first:
+      213: -8664674695566536392
+    second: Golem_Walk_Lt_1
+  - first:
+      213: -867995353539332166
+    second: Golem_Walk_Lt_2
+  - first:
+      213: -8955451061608077361
+    second: Golem_Walk_Lt_3
+  - first:
+      213: 8421057054005505089
+    second: Golem_Walk_Lt_4
+  - first:
+      213: 2763770442792179293
+    second: Golem_Walk_Lt_5
+  - first:
+      213: -9030578535767165253
+    second: Golem_Walk_Lt_6
+  - first:
+      213: 2775729880363156552
+    second: Golem_Walk_Lt_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -31,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,12 +64,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 70
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,9 +94,189 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Golem_Walk_Lt_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 13
+        width: 56
+        height: 51
+      alignment: 9
+      pivot: {x: 0.48214287, y: 0.50980395}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd88edbc08082d94d90ba30f9138dc8c
+      internalID: -6120920501510785948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Lt_1
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 13
+        width: 56
+        height: 52
+      alignment: 9
+      pivot: {x: 0.48214287, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7bbf3d360166584e916bbdb35189082
+      internalID: -8664674695566536392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Lt_2
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 13
+        width: 56
+        height: 53
+      alignment: 9
+      pivot: {x: 0.48214287, y: 0.509434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b5bf86684a757488123fcab9aafefa
+      internalID: -867995353539332166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Lt_3
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 13
+        width: 32
+        height: 53
+      alignment: 9
+      pivot: {x: 0.65625, y: 0.509434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd792026322e0e64cb044d90eea61d21
+      internalID: -8955451061608077361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Lt_4
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 13
+        width: 55
+        height: 52
+      alignment: 9
+      pivot: {x: 0.49090907, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c056c4719de8c3b4b81bf45b8a078c8c
+      internalID: 8421057054005505089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Lt_5
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 13
+        width: 55
+        height: 51
+      alignment: 9
+      pivot: {x: 0.49090907, y: 0.50980395}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32c0533a30866a7439491f256fb32a02
+      internalID: 2763770442792179293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Lt_6
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 13
+        width: 55
+        height: 50
+      alignment: 9
+      pivot: {x: 0.49090907, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27865437ea3a8da449ecf0af14233ba9
+      internalID: -9030578535767165253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Lt_7
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 12
+        width: 34
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5882353, y: 0.50980395}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d67fcf9927ffb54986a57dacacc8154
+      internalID: 2775729880363156552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

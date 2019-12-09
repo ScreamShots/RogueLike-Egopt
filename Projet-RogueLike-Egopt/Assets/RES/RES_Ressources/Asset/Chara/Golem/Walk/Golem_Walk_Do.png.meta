@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: 3b4df8749de55a449a3e5822e7fed24e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4399493948366896757
+    second: Golem_Walk_Do_0
+  - first:
+      213: 1514854082022284130
+    second: Golem_Walk_Do_1
+  - first:
+      213: -3713367890584097339
+    second: Golem_Walk_Do_2
+  - first:
+      213: 980980423481284466
+    second: Golem_Walk_Do_3
+  - first:
+      213: -8722042910958119923
+    second: Golem_Walk_Do_4
+  - first:
+      213: 1996098525582107517
+    second: Golem_Walk_Do_5
+  - first:
+      213: -154274025462255430
+    second: Golem_Walk_Do_6
+  - first:
+      213: 4395502293491598475
+    second: Golem_Walk_Do_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -31,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,12 +64,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 70
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,9 +94,189 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Golem_Walk_Do_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 18
+        width: 55
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c857372ceb062884fbcdf5ab3d2d30a2
+      internalID: 4399493948366896757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Do_1
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 18
+        width: 55
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f8be3101e162d4c8d94b519f69f762
+      internalID: 1514854082022284130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Do_2
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 18
+        width: 55
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b33b7720d469842a7c16f670d7b201
+      internalID: -3713367890584097339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Do_3
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 18
+        width: 55
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5c8893813c11ca4296e40495e6352b1
+      internalID: 980980423481284466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Do_4
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 18
+        width: 55
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04260a9317840f449827d2094363f272
+      internalID: -8722042910958119923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Do_5
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 18
+        width: 55
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665920cee2236674caaded1beac464d7
+      internalID: 1996098525582107517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Do_6
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 18
+        width: 55
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28d2688d0ee60184e8bdb0eb62553ea0
+      internalID: -154274025462255430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Do_7
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 18
+        width: 55
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31df25d73561f0b4ea370929180ae02f
+      internalID: 4395502293491598475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

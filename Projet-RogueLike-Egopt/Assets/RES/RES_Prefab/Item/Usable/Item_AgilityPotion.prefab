@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &276039723957774553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8232396390605491963}
+  - component: {fileID: 3878873702070366599}
+  - component: {fileID: 4405700505908418738}
+  m_Layer: 0
+  m_Name: Item_AgilityPotion
+  m_TagString: Consumable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8232396390605491963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276039723957774553}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.21619014, y: 0.23706582, z: -0.66772455}
+  m_LocalScale: {x: 1.6666665, y: 1.6666665, z: 1.6666665}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3878873702070366599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276039723957774553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd613912f1a9d5468eb507e8c188bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useSpeed: 2
+  itemId: 1
+  healBoostRatio: 0
+  speedBoostRatio: 1.5
+  strengthBoostValue: 0
+  effectDuration: 5
+--- !u!114 &4405700505908418738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276039723957774553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e82043346765a95459b01ddc94d42535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickableVersionObject: {fileID: 8667760244781489218, guid: 60fabc092a14dd241a420ffaaef23978,
+    type: 3}

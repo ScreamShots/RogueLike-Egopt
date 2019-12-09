@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: 61618f6bd04d5b143a72b41c1672bf6d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 6635713971665177876
+    second: Golem_Walk_Up_0
+  - first:
+      213: 8696879094253089095
+    second: Golem_Walk_Up_1
+  - first:
+      213: 1403187920595465242
+    second: Golem_Walk_Up_2
+  - first:
+      213: -9048082750773769752
+    second: Golem_Walk_Up_3
+  - first:
+      213: -3740451749898116645
+    second: Golem_Walk_Up_4
+  - first:
+      213: 6363496117758164743
+    second: Golem_Walk_Up_5
+  - first:
+      213: 7436547093468711599
+    second: Golem_Walk_Up_6
+  - first:
+      213: 32153188071801986
+    second: Golem_Walk_Up_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -31,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,12 +64,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 70
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,9 +94,189 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Golem_Walk_Up_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 18
+        width: 55
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd68be6d34f08af4883c0d87d5269a2f
+      internalID: 6635713971665177876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Up_1
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 18
+        width: 55
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7887a83c13c9252468259683e99e2e7d
+      internalID: 8696879094253089095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Up_2
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 18
+        width: 55
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfd15a406ae89564fabd2cae3fdd7e89
+      internalID: 1403187920595465242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Up_3
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 18
+        width: 55
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd26009258b7bb14ca0a3648e9e079a2
+      internalID: -9048082750773769752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Up_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 18
+        width: 55
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b17e4a9fca335fa4fad08366d2d4468d
+      internalID: -3740451749898116645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Up_5
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 18
+        width: 55
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95a2e495ffcdfe145930c570ff7dea22
+      internalID: 6363496117758164743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Up_6
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 18
+        width: 55
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 056dd60481382314494acb8db34f4357
+      internalID: 7436547093468711599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_Walk_Up_7
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 18
+        width: 55
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b488db8004a9b4281beda504f24971
+      internalID: 32153188071801986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

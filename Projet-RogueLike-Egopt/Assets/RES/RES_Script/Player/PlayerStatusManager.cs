@@ -137,6 +137,7 @@ public class PlayerStatusManager : MonoBehaviour
             canMove = true;
             canPick = true;
             canFall = true;
+            canScroll = true;
 
             needToEndUse = false;
             isUsing = false;
@@ -211,7 +212,7 @@ public class PlayerStatusManager : MonoBehaviour
                     break;
 
                 case 4:
-                    canMove = false;
+                    canMove = true;
                     canDash = false;
                     canFall = false;
                     canAttack = false;

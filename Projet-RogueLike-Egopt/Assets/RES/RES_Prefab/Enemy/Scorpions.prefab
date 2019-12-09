@@ -163,7 +163,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.3}
   serializedVersion: 2
   m_Radius: 1.9
 --- !u!114 &2184915578710499577
@@ -224,7 +224,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.3}
   serializedVersion: 2
   m_Radius: 0.75
 --- !u!114 &9060656659647307155
@@ -425,16 +425,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerInRange: 0
   isPlayerTooClose: 0
+  isOnAWall: 0
   speed: 50
-  scorpionRgb: {fileID: 0}
-  playerTransform: {fileID: 0}
-  move: {x: 0, y: 0, z: 0}
+  shotCd: 3
   scorpionsMunition: {fileID: 3707333449646484303, guid: cb872ed473ab1e245a285756dead496a,
     type: 3}
-  actualMunition: {fileID: 0}
-  shotCd: 3
-  actualShotCd: 0
-  isOnAWall: 0
 --- !u!114 &5331146528151899461
 MonoBehaviour:
   m_ObjectHideFlags: 0

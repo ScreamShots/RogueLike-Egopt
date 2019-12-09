@@ -1,7 +1,25 @@
 fileFormatVersion: 2
 guid: 7ecda6b55636fb14b84572f4d7b301b1
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 9088119645500190094
+    second: Skeleton_Attack_Do_0
+  - first:
+      213: -2748689990699266594
+    second: Skeleton_Attack_Do_1
+  - first:
+      213: -2158219319053493245
+    second: Skeleton_Attack_Do_2
+  - first:
+      213: 4032604988065489498
+    second: Skeleton_Attack_Do_3
+  - first:
+      213: 6430216388050758278
+    second: Skeleton_Attack_Do_4
+  - first:
+      213: 805835544379216726
+    second: Skeleton_Attack_Do_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -31,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,12 +58,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 70
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,9 +88,147 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Skeleton_Attack_Do_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 38
+        width: 17
+        height: 41
+      alignment: 9
+      pivot: {x: 0.64705884, y: 0.53658533}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f5d8176f71494a43a0fbfac65a5f631
+      internalID: 9088119645500190094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_Attack_Do_1
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 38
+        width: 24
+        height: 38
+      alignment: 9
+      pivot: {x: 0.75, y: 0.55263156}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6bc88ba946b4644ad678a1b34493d9
+      internalID: -2748689990699266594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_Attack_Do_2
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 20
+        width: 48
+        height: 57
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.6666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e872d794bbf9d4289c5ce0f377aec3
+      internalID: -2158219319053493245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_Attack_Do_3
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 20
+        width: 48
+        height: 57
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.6666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13795935de3ed44cb936351f1f608ca
+      internalID: 4032604988065489498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_Attack_Do_4
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 38
+        width: 17
+        height: 40
+      alignment: 9
+      pivot: {x: 0.64705884, y: 0.55}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f416026e9f4d01b42866d97868cff5ff
+      internalID: 6430216388050758278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_Attack_Do_5
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 38
+        width: 17
+        height: 41
+      alignment: 9
+      pivot: {x: 0.64705884, y: 0.53658533}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 952b85f629bb11c4da654d7235593c6a
+      internalID: 805835544379216726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

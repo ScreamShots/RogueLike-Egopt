@@ -8,9 +8,9 @@ public class PlayerHealthSystem : MonoBehaviour
 {
     //Statement
 
-    [SerializeField] private float playerMaxHp;
-    [SerializeField] private float playerMinHp;
-    public static float playerHp;
+    public float playerMaxHp;
+    public float playerMinHp;
+    public float playerHp;
 
     [SerializeField] private float playerImmuneTime;
     public static bool playerIsImune;
@@ -41,6 +41,7 @@ public class PlayerHealthSystem : MonoBehaviour
     public void PlayerIsHealing(float healValue)             //Put every action requiered when the player is healed on this fonction  
     {
         playerHp += healValue;
+        Debug.Log("heal" + healValue);
 
         if (playerHp > playerMaxHp)
         {

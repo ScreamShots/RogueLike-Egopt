@@ -29,11 +29,11 @@ public class WeaponManager : MonoBehaviour
         }
 
     }
-    public void WeaponAttack()
+    public void WeaponAttack(float adDmg)
     {
         for (int i = 0; i < enemyInRangList.Count; i++)
         {
-            enemyInRangList[i].GetComponent<EnemyHealthSystem>().IsTakingDmg(weaponDmg);
+            enemyInRangList[i].GetComponent<EnemyHealthSystem>().IsTakingDmg(weaponDmg + adDmg);
         }
     }
 }

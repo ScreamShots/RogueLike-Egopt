@@ -8,6 +8,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private GameObject startingWeapon;
     [SerializeField] private GameObject selectionedObject;
     public static GameObject[] playerInventory;
+    public List<GameObject> securityStock;
 
     public static int inventoryIndex;
     [SerializeField] private int inventorySize;
@@ -28,15 +29,25 @@ public class PlayerInventory : MonoBehaviour
         selectionedObject = playerInventory[inventoryIndex];
         GetComponent<PlayerUse>().equipiedItem = selectionedObject;
 
-        if (Input.GetKeyDown(KeyCode.A)) { PlayerStatusManager.canPick = true; }
-
+        if (Input.GetButtonDown("Pick") && securityStock.Count != 0)
+        {
+            StartCoroutine(PickingObject(securityStock[0]));
+        }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Input.GetButtonDown("Pick") && collision.gameObject.tag == "PickableObject")
+        if (collision.gameObject.tag == "PickableObject")
         {
-            StartCoroutine(PickingObject(collision.gameObject));          
+            securityStock.Add(collision.gameObject);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "PickableObject")
+        {
+            securityStock.Remove(collision.gameObject);
         }
     }
 
@@ -64,7 +75,7 @@ public class PlayerInventory : MonoBehaviour
             PlayerStatusManager.canPick = false;
             if (playerInventory[inventoryIndex] != null)
             {
-                Instantiate(playerInventory[inventoryIndex].GetComponent<ItemDrop>().pickableVersionObject, transform.position, transform.rotation) ;
+                Instantiate(playerInventory[inventoryIndex].GetComponent<ItemDrop>().pickableVersionObject, transform.position - new Vector3(0,0.15f,0), transform.rotation) ;
                 playerInventory[inventoryIndex] = item.GetComponent<PickableStorage>().storedObject;
                 Destroy(item.gameObject);
             }
