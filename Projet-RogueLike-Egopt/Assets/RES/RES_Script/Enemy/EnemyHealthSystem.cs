@@ -10,9 +10,19 @@ public class EnemyHealthSystem : MonoBehaviour
     public float enemyMaxHp;
     public float enemyHp;
 
+    public Image HpBarFront;
+    public Image HpBarBack;
+
+
     void Start()
     {
         enemyHp = enemyMaxHp;
+        
+    }
+
+    private void Update()
+    {
+        HpBarFront.fillAmount = enemyHp / enemyMaxHp;
     }
 
     public void IsTakingDmg(float damageValue)       //Put every action requiered when the player is taking dmg on this fonction

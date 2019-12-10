@@ -280,6 +280,7 @@ MonoBehaviour:
   startingWeapon: {fileID: 2707228538706793494, guid: ba1e1e55addf66e40ac4ae68073e98f0,
     type: 3}
   selectionedObject: {fileID: 0}
+  securityStock: []
   inventorySize: 3
 --- !u!114 &2640595440199165435
 MonoBehaviour:
@@ -295,7 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDirection: 0
   equipiedItem: {fileID: 0}
-  playerAnimator: {fileID: 3410242296112805351}
+  additionalStrength: 0
 --- !u!114 &2267346089759508474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,6 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMaxHp: 100
   playerMinHp: 0
+  playerHp: 0
   playerImmuneTime: 1.5
 --- !u!114 &8275988367135995617
 MonoBehaviour:

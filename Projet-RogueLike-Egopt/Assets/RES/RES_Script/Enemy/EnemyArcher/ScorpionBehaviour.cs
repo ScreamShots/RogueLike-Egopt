@@ -53,8 +53,6 @@ public class ScorpionBehaviour : MonoBehaviour
         if (actualShotCd <= 0 && isPlayerInRange == true && isPlayerTooClose == false)
         {
             actualMunition = Instantiate(scorpionsMunition, transform.position, Quaternion.identity);
-            Debug.Log(isOnAWall);
-
 
             actualShotCd = shotCd;
         }
@@ -66,6 +64,22 @@ public class ScorpionBehaviour : MonoBehaviour
         if (isOnAWall == false && actualMunition != null)
         {
             actualMunition.GetComponent<ScorpionMunition>().isDestructible = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Walls" || collision.gameObject.tag == "Props")
+        {
+            isOnAWall = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Walls" || collision.gameObject.tag == "Props")
+        {
+            isOnAWall = false;
         }
     }
 }

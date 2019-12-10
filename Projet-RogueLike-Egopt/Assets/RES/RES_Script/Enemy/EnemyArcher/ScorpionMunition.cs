@@ -11,7 +11,7 @@ public class ScorpionMunition : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float dmg;
 
-    [HideInInspector] public bool isDestructible;
+    /*[HideInInspector]*/ public bool isDestructible;
 
     private void Start()
     {

@@ -73,6 +73,10 @@ public class SpikeTrap : MonoBehaviour
             {
                 objectInRange[i].transform.parent.gameObject.GetComponent<PlayerHealthSystem>().IsTakingDmg(spikeDmg);
             }
+            if (objectInRange[i].transform.parent.gameObject.tag == "Enemy")
+            {
+                objectInRange[i].transform.parent.gameObject.GetComponent<EnemyHealthSystem>().IsTakingDmg(spikeDmg);
+            }
         }
     }
 }
