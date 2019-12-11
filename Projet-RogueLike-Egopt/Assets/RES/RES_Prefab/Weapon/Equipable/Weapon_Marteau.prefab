@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 4040827097038487253}
   - component: {fileID: 4925682770445915489}
   - component: {fileID: 6633406320477258880}
+  - component: {fileID: -2993550144770663159}
   m_Layer: 0
   m_Name: Weapon_Marteau
   m_TagString: Weapon
@@ -409,6 +410,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickableVersionObject: {fileID: 7734535245585211807, guid: f79efb18e0ae9de4096eca6ed4b05c92,
     type: 3}
+--- !u!114 &-2993550144770663159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2707228538706793494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ecc319d9334724a9fa51aa43ac251f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryDisplay: {fileID: 21300000, guid: 895ecf8f1323ffc4aaad9c1b95415021, type: 3}
 --- !u!1 &3115977619974655076
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,8 +13,14 @@ public class PlayerUse : MonoBehaviour
     public GameObject equipiedItem;
     private GameObject actualItem;
     [HideInInspector] public float additionalStrength;
+    private bool attackSecurityCheck;
+    private bool useSecurityCheck;
 
-
+    private void Start()
+    {
+        attackSecurityCheck = false;
+        useSecurityCheck = false;
+    }
     void Update()
     {
         if (Input.GetAxisRaw("AtkUse") > 0 && PlayerInventory.playerInventory[PlayerInventory.inventoryIndex] != null)
@@ -35,11 +41,10 @@ public class PlayerUse : MonoBehaviour
     IEnumerator Attack()
     {
 
-        if (PlayerStatusManager.canAttack == true && PlayerStatusManager.isDashing == false && actualItem == null)
+        if (PlayerStatusManager.canAttack == true && PlayerStatusManager.isDashing == false && attackSecurityCheck == false)
         {
             PlayerStatusManager.isAttacking = true;
-
-
+            attackSecurityCheck = true;
 
             actualItem = Instantiate(equipiedItem);
             actualItem.transform.parent = GetComponent<Transform>();
@@ -74,6 +79,7 @@ public class PlayerUse : MonoBehaviour
             Destroy(actualItem);
             PlayerStatusManager.needToEndAttack = true;
             PlayerStatusManager.cdOnAttack = true;
+            attackSecurityCheck = false;
 
             yield return new WaitForSeconds(attackSpeed);
 
@@ -83,9 +89,10 @@ public class PlayerUse : MonoBehaviour
 
     IEnumerator ItemUse()
     {
-        if (PlayerStatusManager.canUse == true && PlayerStatusManager.isDashing == false && PlayerStatusManager.isDashing == false && actualItem == null)
+        if (PlayerStatusManager.canUse == true && PlayerStatusManager.isDashing == false && PlayerStatusManager.isDashing == false && useSecurityCheck == false)
         {
             float effectDuration;
+            useSecurityCheck = true;
 
             PlayerStatusManager.isUsing = true;
 
@@ -93,6 +100,7 @@ public class PlayerUse : MonoBehaviour
 
             yield return new WaitForSeconds(useSpeed);
 
+            useSecurityCheck = false;
             actualItem = Instantiate(equipiedItem, transform.position, transform.rotation);
             actualItem.transform.parent = transform;
             actualItem.GetComponent<ItemManager>().ItemEffectActivation(this.gameObject);
@@ -101,9 +109,7 @@ public class PlayerUse : MonoBehaviour
             PlayerInventory.playerInventory[PlayerInventory.inventoryIndex] = null;
 
             PlayerStatusManager.needToEndUse = true;
-
-            yield return new WaitForSeconds(effectDuration);
-            Destroy(actualItem);
+            Debug.Log(PlayerStatusManager.canAttack);
         }
         
     }

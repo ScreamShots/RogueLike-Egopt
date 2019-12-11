@@ -42,29 +42,37 @@ public class ItemManager : MonoBehaviour
 
     void LifePotion(GameObject characterUsing)
     {
+        Debug.Log("Start");
         characterUsing.GetComponent<PlayerHealthSystem>().PlayerIsHealing(characterUsing.GetComponent<PlayerHealthSystem>().playerMaxHp * healBoostRatio);
+        Debug.Log("Stop");
+        Destroy(this.gameObject);
     }
 
     IEnumerator AgilityPotion(GameObject characterUsing)
     {
-        Debug.Log("AgilityPotion Consumed, speed increased for " + effectDuration);
+        Debug.Log("Start");
         characterUsing.GetComponent<PlayerMovement>().speed = characterUsing.GetComponent<PlayerMovement>().speed * speedBoostRatio;
+        GameObject.FindWithTag("Player").GetComponentInChildren<SpriteRenderer>().color = Color.green;
 
         yield return new WaitForSeconds(effectDuration);
 
         characterUsing.GetComponent<PlayerMovement>().speed = characterUsing.GetComponent<PlayerMovement>().speed / speedBoostRatio;
-        Debug.Log("End of the AgilityPotion effect");
+        GameObject.FindWithTag("Player").GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        Debug.Log("Stop");
+        Destroy(this.gameObject);
     }
 
     IEnumerator StrengthPotion(GameObject characterUsing)
     {
-        Debug.Log("StrengthPotion Consumed, strength increased for " + effectDuration);
-
+        Debug.Log("Start");
         characterUsing.GetComponent<PlayerUse>().additionalStrength += strengthBoostValue;
+        GameObject.FindWithTag("Player").GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
 
         yield return new WaitForSeconds(effectDuration);
 
         characterUsing.GetComponent<PlayerUse>().additionalStrength -= strengthBoostValue;
-        Debug.Log("End of the StrengthPotion effect");
+        GameObject.FindWithTag("Player").GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        Debug.Log("Stop");
+        Destroy(this.gameObject);
     }
 }

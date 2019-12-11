@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8232396390605491963}
   - component: {fileID: 3878873702070366599}
   - component: {fileID: 4405700505908418738}
+  - component: {fileID: -4664080941920795369}
   m_Layer: 0
   m_Name: Item_LifePotion
   m_TagString: Consumable
@@ -49,6 +50,7 @@ MonoBehaviour:
   healBoostRatio: 0.25
   speedBoostRatio: 0
   strengthBoostValue: 0
+  effectDuration: 0
 --- !u!114 &4405700505908418738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,3 +65,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickableVersionObject: {fileID: 8667760244781489218, guid: ba8b998757d9c98489624ca48d2dd79f,
     type: 3}
+--- !u!114 &-4664080941920795369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276039723957774553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ecc319d9334724a9fa51aa43ac251f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryDisplay: {fileID: 21300000, guid: 7729b1d6dcf188346865fad56163027e, type: 3}

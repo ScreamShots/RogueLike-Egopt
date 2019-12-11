@@ -51,10 +51,16 @@ public class PlayerMovement : MonoBehaviour
 
         //Move
 
+        inputHorizontalMoove = Input.GetAxisRaw("HorizontalMove");
+        inputVerticalMoove = Input.GetAxisRaw("VerticalMove");
+
+        move = new Vector3(inputHorizontalMoove, inputVerticalMoove, 0);
+
         if (PlayerStatusManager.canMove == true)
         {
             Move();
         }
+
 
         //Dash
 
@@ -74,16 +80,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        
-        inputHorizontalMoove = Input.GetAxisRaw("HorizontalMove");
-        inputVerticalMoove = Input.GetAxisRaw("VerticalMove");
-
-        
-
-        move = new Vector3(inputHorizontalMoove, inputVerticalMoove, 0);
-
-        playerRgb.velocity = move.normalized * speed * Time.fixedDeltaTime;
-        
+        playerRgb.velocity = move.normalized * speed * Time.fixedDeltaTime;        
     }
 
     //Direction
@@ -122,11 +119,22 @@ public class PlayerMovement : MonoBehaviour
 
     //Dash
 
-    IEnumerator Dash(Vector3 dashDirection)
+    IEnumerator Dash(Vector3 dashDirectio)
     {
         if (PlayerStatusManager.canDash == true && PlayerStatusManager.isAttacking == false && PlayerStatusManager.isUsing == false)
         {
             float timer = 0.0f;
+            Vector3 dashDirection = new Vector3(0,0,0);
+
+            if(move != Vector3.zero) //move.x != 0 || move.y != 0
+            {
+                dashDirection = move.normalized;
+            }
+            else if (move == Vector3.zero) //move.x == 0 && move.y == 0
+            {
+                dashDirection = lastMove.normalized;
+                Debug.Log(lastMove);
+            }
 
             PlayerStatusManager.isDashing = true;
             
