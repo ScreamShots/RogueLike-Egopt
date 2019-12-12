@@ -17,6 +17,9 @@ public class PlayerStatusManager : MonoBehaviour
     public static bool isUsing;         // state 4
     public static bool isInteracting;   // state 5
 
+    public static bool isLoading;
+
+
     //Status Ending
 
     public static bool needToEndDash;
@@ -24,6 +27,8 @@ public class PlayerStatusManager : MonoBehaviour
     public static bool needToEndAttack;
     public static bool needToEndUse;
     public static bool needToEndInteract;
+
+    public static bool needToEndLoad;
 
     //CD Status
 
@@ -57,12 +62,14 @@ public class PlayerStatusManager : MonoBehaviour
         isAttacking = false;
         isUsing = false;
         isInteracting = false;
+        isLoading = false;
 
         needToEndAttack = false;
         needToEndDash = false;
         needToEndFall = false;
         needToEndInteract = false;
         needToEndUse = false;
+        needToEndLoad = false;
 
         cdOnAttack = false;
         cdOnDash = false;
@@ -157,6 +164,30 @@ public class PlayerStatusManager : MonoBehaviour
             needToEndInteract = false;
             isInteracting = false;
         }
+        else if (needToEndLoad == true)
+        {
+            canAttack = true;
+            canDash = true;
+            canFall = true;
+            canInteract = true;
+            canMove = true;
+            canPick = true;
+            canScroll = true;
+            canUse = true;
+        }
+
+        if (isLoading == true)
+        {
+            canAttack = false;
+            canDash = false;
+            canFall = false;
+            canInteract = false;
+            canMove = false;
+            canPick = false;
+            canScroll = false;
+            canUse = false;
+            PlayerMovement.playerRgb.velocity = new Vector3(0, 0, 0);
+        }
 
 
         if (isDashing == true) { currentState = 1; }
@@ -170,10 +201,9 @@ public class PlayerStatusManager : MonoBehaviour
         else if (isInteracting == true) { currentState = 5; }
 
         else
-        { currentState = 0; }
+        { currentState = 0; }        
 
-
-        if (currentState != lastState)
+        if (currentState != lastState && isLoading == false)
         {
             lastState = currentState;
 
@@ -240,7 +270,7 @@ public class PlayerStatusManager : MonoBehaviour
 
         }
 
-        if (currentState == 0)
+        if (currentState == 0 && isLoading == false)
         {
             if (cdOnDash == false) { canDash = true; }
 

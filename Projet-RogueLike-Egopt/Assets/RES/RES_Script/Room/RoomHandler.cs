@@ -7,11 +7,21 @@ public class RoomHandler : MonoBehaviour
     public List<GameObject> doorInThisRoom;
     public List<GameObject> enemyInThisRoom;
     public bool isRoomActivated;
+    public bool isThisRoomSpawn;
+    public bool canSpawnChest;
+    public bool chestAlreadySpawned;
+    public GameObject chest;
+    public GameObject thisChest;
+    public GameObject gameCamera;
 
 
     private void Start()
     {
         isRoomActivated = false;
+        canSpawnChest = false;
+        chestAlreadySpawned = false;
+        gameCamera = GameObject.FindWithTag("MainCamera");
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -56,16 +66,29 @@ public class RoomHandler : MonoBehaviour
             {
                 foreach (GameObject door in doorInThisRoom)
                 {
-                    door.GetComponent<Door>().isDoorLocked = false;
+                    door.GetComponent<Door>().isDoorLocked = false;                           
                 }
+                canSpawnChest = true;
             }
             else if (enemyInThisRoom.Count != 0)
             {
                 foreach (GameObject door in doorInThisRoom)
                 {
                     door.GetComponent<Door>().isDoorLocked = true;
+                    
                 }
+                Destroy(thisChest);
+                chestAlreadySpawned = false;
+                canSpawnChest = false;
             }
+
+            if (isThisRoomSpawn == false && canSpawnChest == true && chestAlreadySpawned == false)
+            {
+                thisChest = Instantiate(chest, transform.position, Quaternion.identity);
+                chestAlreadySpawned = true;
+            }
+
+            gameCamera.transform.position = transform.position;
         }
         
     }

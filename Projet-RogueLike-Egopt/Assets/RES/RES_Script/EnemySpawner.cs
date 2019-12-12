@@ -7,12 +7,13 @@ public class EnemySpawner : MonoBehaviour
     public GameObject[] enemyToSpawn;
     public GameObject linkedRoom;
     public int randomNumber;
+    public float timeBeforeSpawn;
 
     private void Update()
     {
         if (linkedRoom.GetComponent<RoomHandler>().isRoomActivated == true)
         {
-            SpawnEnemy();
+            StartCoroutine(SpawnEnemy());
         }
     }
 
@@ -24,8 +25,14 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    void SpawnEnemy()
+    IEnumerator SpawnEnemy()
     {
+        //PlayerStatusManager.isLoading = true;
+
+        yield return new WaitForSeconds(0);
+
+        //PlayerStatusManager.needToEndLoad = true;
+
         randomNumber = Random.Range(0, enemyToSpawn.Length);
         Instantiate(enemyToSpawn[randomNumber], transform.position, transform.rotation);
 

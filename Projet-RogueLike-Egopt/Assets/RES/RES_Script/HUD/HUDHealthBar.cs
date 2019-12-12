@@ -6,17 +6,16 @@ using UnityEngine.UI;
 public class HUDHealthBar : MonoBehaviour
 {
     public PlayerHealthSystem playerHealthSystem;
-
     public Image healthBarFront;
-
-    private void Start()
-    {
-        playerHealthSystem = GameObject.FindWithTag("Player").GetComponent<PlayerHealthSystem>();
-    }
+    public Text hpAmoutDisplay;
+    public float hpPercentage;
 
     private void Update()
     {
+        playerHealthSystem = GameObject.FindWithTag("Player").GetComponent<PlayerHealthSystem>();
         healthBarFront.fillAmount = playerHealthSystem.playerHp / playerHealthSystem.playerMaxHp;
+        hpPercentage = (playerHealthSystem.playerHp / playerHealthSystem.playerMaxHp) * 100;
+        hpAmoutDisplay.text = hpPercentage.ToString() + " %";
 
         if (PlayerHealthSystem.playerIsImune == true)
         {

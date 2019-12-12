@@ -7,11 +7,11 @@ public class LayerManager : MonoBehaviour
     public  List<GameObject> props;
     private SpriteRenderer charaSpr;
     private SpriteRenderer propsSpr;
+    private bool needReOrdering;
 
 
     void Start()
     {
-        props.AddRange(GameObject.FindGameObjectsWithTag("Props"));
         charaSpr = GetComponent<SpriteRenderer>();
     }
 
@@ -28,17 +28,18 @@ public class LayerManager : MonoBehaviour
             {
                 if (props[i].transform.position.y < transform.position.y - 0.25)
                 {
+
                     propsSpr = props[i].GetComponent<SpriteRenderer>();
-                    charaSpr.sortingOrder = propsSpr.sortingOrder - 1; 
+                    charaSpr.sortingOrder = propsSpr.sortingOrder - 1;
+                    
                 }
                 else 
                 {
                     propsSpr = props[i].GetComponent<SpriteRenderer>();
-                    charaSpr.sortingOrder = propsSpr.sortingOrder + 1;
+
+                    charaSpr.sortingOrder = propsSpr.sortingOrder + 1;                   
                 }
             }
         }
     }
-
-
 }

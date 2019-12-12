@@ -9,15 +9,19 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private GameObject selectionedObject;
     public static GameObject[] playerInventory;
     public List<GameObject> securityStock;
+    public List<GameObject> chestSecurityStock;
+    public GameObject buttonADisplay;
 
     public static int inventoryIndex;
     [SerializeField] private int inventorySize;
+    public bool canOpen;
 
     private void Start()
     {
         playerInventory = new GameObject[inventorySize];
         playerInventory[0] = startingWeapon;
         inventoryIndex = 0;
+        buttonADisplay.SetActive(false);
     }
 
     private void Update()
@@ -29,9 +33,17 @@ public class PlayerInventory : MonoBehaviour
         selectionedObject = playerInventory[inventoryIndex];
         GetComponent<PlayerUse>().equipiedItem = selectionedObject;
 
-        if (Input.GetButtonDown("Pick") && securityStock.Count != 0)
+        if (Input.GetButtonDown("Pick"))
         {
-            StartCoroutine(PickingObject(securityStock[0]));
+            if (securityStock.Count != 0 && chestSecurityStock.Count == 0)
+            {
+                StartCoroutine(PickingObject(securityStock[0]));
+            }
+            if(chestSecurityStock.Count != 0)
+            {
+                OpenChest(chestSecurityStock[0]);
+            }           
+
         }
     }
 
@@ -39,15 +51,29 @@ public class PlayerInventory : MonoBehaviour
     {
         if (collision.gameObject.tag == "PickableObject")
         {
+            buttonADisplay.SetActive(true);
             securityStock.Add(collision.gameObject);
         }
+
+        if (collision.gameObject.tag == "Chest")
+        {
+            chestSecurityStock.Add(collision.gameObject);
+            buttonADisplay.SetActive(true);
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "PickableObject")
         {
+            buttonADisplay.SetActive(false);
             securityStock.Remove(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Chest")
+        {
+            chestSecurityStock.Remove(collision.gameObject);
+            buttonADisplay.SetActive(false);
         }
     }
 
@@ -87,8 +113,22 @@ public class PlayerInventory : MonoBehaviour
 
             yield return new WaitForSeconds(0.00001f);
             PlayerStatusManager.canPick = true;
+        }       
+    }
+
+    void OpenChest(GameObject chest)
+    {
+        Debug.Log("yo");
+        if (PlayerStatusManager.canUse == true)
+        {
+            
+            PlayerStatusManager.canUse = false;
+            PlayerStatusManager.isUsing = true;
+
+            chest.GetComponent<ChestBehaviour>().isOpen = true;
+
+            PlayerStatusManager.needToEndUse = true;
         }
-        
     }
 
 }
