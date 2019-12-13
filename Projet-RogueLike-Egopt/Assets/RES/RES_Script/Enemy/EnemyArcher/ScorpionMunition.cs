@@ -11,7 +11,7 @@ public class ScorpionMunition : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float dmg;
 
-    /*[HideInInspector]*/ public bool isDestructible;
+    public bool isDestructible;
 
     private void Start()
     {
@@ -24,8 +24,16 @@ public class ScorpionMunition : MonoBehaviour
 
     private void FixedUpdate()
     {
+        float timer = 0.2f;
+
         munitionRgb.velocity = targetedPosition * speed * Time.fixedDeltaTime;
-        Debug.Log(isDestructible);
+
+        timer -= Time.fixedDeltaTime;
+
+        if (timer <= 0 )
+        {
+            isDestructible = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,7 +43,7 @@ public class ScorpionMunition : MonoBehaviour
             if(isDestructible == true)
             {
                 Destroy(this.gameObject);
-            }           
+            }                    
         }
         if (collision.gameObject.tag == "Player")
         {

@@ -6,31 +6,35 @@ public class ScorpionBehaviour : MonoBehaviour
 {
     [HideInInspector] public bool isPlayerInRange;
     [HideInInspector] public bool isPlayerTooClose;
-    [HideInInspector] public bool isOnAWall;
 
     [SerializeField] private float speed;
     [SerializeField] private float shotCd;
-    private float actualShotCd;
+    public float launchingTime;
+    public bool canShot;
+    public bool isShooting;
+
 
     private Rigidbody2D scorpionRgb;
     private Transform playerTransform;
-    private Vector3 move;
+    public Vector3 move;
+    public Vector3 lastMove;
     [SerializeField] private GameObject scorpionsMunition;
-    private GameObject actualMunition;
+
     
 
     private void Start()
     {
         isPlayerInRange = false;
         isPlayerTooClose = false;
-        isOnAWall = false;
+        isShooting = false;
 
-        actualShotCd = 0;
+        canShot = true;
 
         scorpionRgb = GetComponent<Rigidbody2D>();
         playerTransform = GameObject.FindWithTag("Player").transform;
 
         move = new Vector3(0, 0, 0);
+        lastMove = new Vector3(0, 0, 0);
     }
 
     private void FixedUpdate()
@@ -50,36 +54,44 @@ public class ScorpionBehaviour : MonoBehaviour
             scorpionRgb.velocity = -move * speed * Time.fixedDeltaTime;
         }
 
-        if (actualShotCd <= 0 && isPlayerInRange == true && isPlayerTooClose == false)
+        if (isPlayerInRange == true && isPlayerTooClose == false)
         {
-            actualMunition = Instantiate(scorpionsMunition, transform.position, Quaternion.identity);
 
-            actualShotCd = shotCd;
-        }
-        else
-        {
-            actualShotCd -= Time.fixedDeltaTime;
-        }
+            StartCoroutine(Shoot());
 
-        if (isOnAWall == false && actualMunition != null)
-        {
-            actualMunition.GetComponent<ScorpionMunition>().isDestructible = true;
-        }
+        }  
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    IEnumerator Shoot()
     {
-        if(collision.gameObject.tag == "Walls" || collision.gameObject.tag == "Props")
+        if (canShot == true)
         {
-            isOnAWall = true;
-        }
-    }
+            lastMove = move;
+            canShot = false;
+            isShooting = true;
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Walls" || collision.gameObject.tag == "Props")
-        {
-            isOnAWall = false;
+            yield return new WaitForSeconds(launchingTime);
+
+            if (isPlayerTooClose == true)
+            {
+                isShooting = false;
+                canShot = true;
+                lastMove = new Vector3(0, 0, 0);
+                yield break;
+                
+            }
+            else
+            {
+                Instantiate(scorpionsMunition, transform.position, Quaternion.identity);
+                isShooting = false;
+            }
+            
+            isShooting = false;
+
+            yield return new WaitForSeconds(shotCd);
+            canShot = true;
+            lastMove = new Vector3(0, 0, 0);
         }
+        
     }
 }

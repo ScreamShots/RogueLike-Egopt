@@ -12,7 +12,7 @@ public class QuickSand : MonoBehaviour
         {
             if (collision.gameObject.transform.parent.gameObject.tag == "Player")
             {
-                collision.gameObject.transform.parent.gameObject.GetComponent<PlayerMovement>().speed *= slowRatio;
+                collision.gameObject.transform.parent.gameObject.GetComponent<PlayerMovement>().speed *= (1-slowRatio);
             }
         }    
     }
@@ -23,7 +23,7 @@ public class QuickSand : MonoBehaviour
         {
             if (collision.gameObject.transform.parent.gameObject.tag == "Player")
             {
-                collision.gameObject.transform.parent.gameObject.GetComponent<PlayerMovement>().speed /= slowRatio;
+                collision.gameObject.transform.parent.gameObject.GetComponent<PlayerMovement>().speed /= (1-slowRatio);
             }
         }
     }

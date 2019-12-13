@@ -47,7 +47,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.75}
+  m_Offset: {x: 0, y: 0.85}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -58,7 +58,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 1.5}
+  m_Size: {x: 0.6, y: 1.7}
   m_EdgeRadius: 0
 --- !u!114 &4925682770445915489
 MonoBehaviour:
@@ -74,7 +74,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponAttackSpeed: 0.5
   weaponDmg: 40
-  weaponImobilisationTime: 0.5
+  weaponImobilisationTime: 0.4
+  launchingTime: 0
   iconDisplay: {fileID: 21300000, guid: 06ad135d74f3340439a788980e159883, type: 3}
   enemyInRangList: []
   weaponId: 1

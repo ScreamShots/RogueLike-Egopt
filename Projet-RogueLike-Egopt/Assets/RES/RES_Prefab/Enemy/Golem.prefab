@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 4399493948366896757, guid: 3b4df8749de55a449a3e5822e7fed24e,
+  m_Sprite: {fileID: -6120920501510785948, guid: e561db38425ca5e48bfafac635a49c9c,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -172,7 +172,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.34}
+  m_Offset: {x: 0, y: -0.21353912}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -183,7 +183,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.42220947, y: 0.06393951}
+  m_Size: {x: 0.20739013, y: 0.12565613}
   m_EdgeRadius: 0
 --- !u!1 &2872051847846030794
 GameObject:
@@ -236,7 +236,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.02}
+  m_Offset: {x: -0.015808105, y: 0.007949829}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -247,7 +247,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6731411, y: 0.63363135}
+  m_Size: {x: 0.8748779, y: 0.78189087}
   m_EdgeRadius: 0
 --- !u!50 &6664317559972687208
 Rigidbody2D:
@@ -381,6 +381,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HpBarCanvas (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7565278599720708912, guid: 79a5c9e2e5c2bbe4193f5b7a439cb658,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5944524034747033077, guid: 79a5c9e2e5c2bbe4193f5b7a439cb658,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -485,11 +490,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565278599720708912, guid: 79a5c9e2e5c2bbe4193f5b7a439cb658,
-        type: 3}
-      propertyPath: m_FillAmount
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79a5c9e2e5c2bbe4193f5b7a439cb658, type: 3}

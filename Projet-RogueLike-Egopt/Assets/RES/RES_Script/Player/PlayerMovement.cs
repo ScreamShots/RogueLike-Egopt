@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashTime;
     [SerializeField] private float dashCooldown;
     [SerializeField] private AnimationCurve dashCurve;
+    public float dashDistance;
 
     //Fall
 
@@ -41,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
         direction = 0;
         lastMove = new Vector3(1, 0, 0);
         respawnPosition = new Vector3(0, 0, 0);
+
+        
     }
 
     void FixedUpdate()
@@ -74,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
+        dashTime = dashDistance / dashSpeed;
     }
 
     //Move
@@ -123,6 +127,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (PlayerStatusManager.canDash == true && PlayerStatusManager.isAttacking == false && PlayerStatusManager.isUsing == false)
         {
+            PlayerStatusManager.isDashing = true;
+            PlayerStatusManager.canDash = false;
+
             float timer = 0.0f;
             Vector3 dashDirection = new Vector3(0,0,0);
 
@@ -133,18 +140,13 @@ public class PlayerMovement : MonoBehaviour
             else if (move == Vector3.zero) //move.x == 0 && move.y == 0
             {
                 dashDirection = lastMove.normalized;
-                Debug.Log(lastMove);
             }
-
-            PlayerStatusManager.isDashing = true;
-            
-
 
             while (timer < dashTime)
             {
                 playerRgb.velocity = dashDirection.normalized * dashSpeed * dashCurve.Evaluate(timer / dashTime) * Time.deltaTime;
                 timer += Time.deltaTime;
-                yield return null;
+                yield return new WaitForFixedUpdate();
             }
 
             playerRgb.velocity = Vector3.zero;

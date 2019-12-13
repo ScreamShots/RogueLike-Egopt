@@ -31,6 +31,7 @@ public class PlayerInventory : MonoBehaviour
             InventoryRotation((int)Input.GetAxisRaw("Inv"));
         }
         selectionedObject = playerInventory[inventoryIndex];
+        
         GetComponent<PlayerUse>().equipiedItem = selectionedObject;
 
         if (Input.GetButtonDown("Pick"))
@@ -51,7 +52,10 @@ public class PlayerInventory : MonoBehaviour
     {
         if (collision.gameObject.tag == "PickableObject")
         {
-            buttonADisplay.SetActive(true);
+            if (PlayerStatusManager.isDashing == false)
+            {
+                buttonADisplay.SetActive(true);
+            }
             securityStock.Add(collision.gameObject);
         }
 
@@ -79,18 +83,28 @@ public class PlayerInventory : MonoBehaviour
 
     public void InventoryRotation(int slidingdirection)
     {
+        bool rotationIsDone = false;
         if (PlayerStatusManager.canScroll == true)
-        {
-            inventoryIndex += slidingdirection;
-            if (inventoryIndex > 2)
+        { 
+            while(rotationIsDone == false)
             {
-                inventoryIndex = 0;
+                inventoryIndex += slidingdirection;
+
+                if ((inventoryIndex) > (playerInventory.Length-1))
+                {
+                    inventoryIndex = 0;
+                }
+                else if ((inventoryIndex) < 0)
+                {
+                    inventoryIndex = 2;
+                }
+
+                if(playerInventory[inventoryIndex] != null)
+                {
+                    rotationIsDone = true;
+                }
             }
-            else if (inventoryIndex < 0)
-            {
-                inventoryIndex = 2;
-            }
-            Debug.Log( playerInventory[inventoryIndex]);
+           
         }
     }
 
@@ -101,12 +115,26 @@ public class PlayerInventory : MonoBehaviour
             PlayerStatusManager.canPick = false;
             if (playerInventory[inventoryIndex] != null)
             {
-                Instantiate(playerInventory[inventoryIndex].GetComponent<ItemDrop>().pickableVersionObject, transform.position - new Vector3(0,0.15f,0), transform.rotation) ;
-                playerInventory[inventoryIndex] = item.GetComponent<PickableStorage>().storedObject;
-                Destroy(item.gameObject);
+                bool alreadyStored = false;
+                for (int i = 0; i < playerInventory.Length; i++)
+                {
+                    if (playerInventory[i] == null)
+                    {
+                        playerInventory[i] = item.GetComponent<PickableStorage>().storedObject;
+                        Destroy(item.gameObject);
+                        alreadyStored = true;
+                        break;
+                    }
+                }
+                if (alreadyStored == false)
+                {
+                    Instantiate(playerInventory[inventoryIndex].GetComponent<ItemDrop>().pickableVersionObject, transform.position - new Vector3(0, 0.15f, 0), transform.rotation);
+                    playerInventory[inventoryIndex] = item.GetComponent<PickableStorage>().storedObject;
+                    Destroy(item.gameObject);
+                }                
             }
             else
-            {
+            {                
                 playerInventory[inventoryIndex] = item.GetComponent<PickableStorage>().storedObject;
                 Destroy(item.gameObject);
             }

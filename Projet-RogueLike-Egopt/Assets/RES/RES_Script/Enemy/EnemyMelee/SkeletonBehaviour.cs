@@ -24,6 +24,7 @@ public class SkeletonBehaviour : MonoBehaviour
 
 
 
+
     private void Start()
     {
         skeletonRgb = GetComponent<Rigidbody2D>();
@@ -91,7 +92,7 @@ public class SkeletonBehaviour : MonoBehaviour
             isAttacking = true;
             canMove = false;
             attackDirection = direction;
-            Debug.Log(attackDirection);
+
 
             yield return new WaitForSeconds(warningTime);
 
@@ -122,8 +123,6 @@ public class SkeletonBehaviour : MonoBehaviour
             actualWeapon.GetComponent<EnemyWeaponManager>().WeaponAttack();
 
             yield return new WaitForSeconds(immobilizationTime);
-
-            Destroy(actualWeapon);
 
             isAttacking = false;
             canMove = true;

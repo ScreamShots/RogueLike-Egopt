@@ -46,6 +46,8 @@ public class PlayerUse : MonoBehaviour
             PlayerStatusManager.isAttacking = true;
             attackSecurityCheck = true;
 
+            yield return new WaitForSeconds(equipiedItem.GetComponent<WeaponManager>().launchingTime);
+
             actualItem = Instantiate(equipiedItem);
             actualItem.transform.parent = GetComponent<Transform>();
             actualItem.transform.localPosition = new Vector3(0, 0, 0);            
@@ -57,12 +59,20 @@ public class PlayerUse : MonoBehaviour
             {
                 case 0:     // up
                     actualItem.transform.Rotate(0, 0, 0);
+                    if(actualItem.GetComponent<WeaponManager>().weaponId == 1)
+                    {
+                        actualItem.transform.localPosition += new Vector3(0.105f, 0,0);
+                    }
                     break;
                 case 1:     //right
                     actualItem.transform.Rotate(0, 0, -90);
                     break;
                 case 2:     //down
                     actualItem.transform.Rotate(0, 0, 180);
+                    if (actualItem.GetComponent<WeaponManager>().weaponId == 1)
+                    {
+                        actualItem.transform.localPosition += new Vector3(-0.06f, 0, 0);
+                    }
                     break;
                 case 3:     //left
                     actualItem.transform.Rotate(0, 0, 90);
@@ -76,7 +86,7 @@ public class PlayerUse : MonoBehaviour
             actualItem.GetComponent<WeaponManager>().WeaponAttack(additionalStrength);
 
             yield return new WaitForSeconds(imobilisationTime);
-            Destroy(actualItem);
+
             PlayerStatusManager.needToEndAttack = true;
             PlayerStatusManager.cdOnAttack = true;
             attackSecurityCheck = false;

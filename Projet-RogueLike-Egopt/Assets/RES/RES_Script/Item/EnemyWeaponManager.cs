@@ -31,5 +31,6 @@ public class EnemyWeaponManager : MonoBehaviour
         {
             player.GetComponent<PlayerHealthSystem>().IsTakingDmg(weaponDmg);
         }
+        Destroy(this.gameObject);
     }
 }

@@ -60,11 +60,9 @@ public class PlayerHealthSystem : MonoBehaviour
     public IEnumerator PlayerImmunityActivation()
     {
         playerIsImune = true;
-        Debug.Log("vous êtes temporairement imunisé");
 
         yield return new WaitForSeconds(playerImmuneTime);
 
         playerIsImune = false;
-        Debug.Log("vous n'êtes plus imunisé");
     }
 }

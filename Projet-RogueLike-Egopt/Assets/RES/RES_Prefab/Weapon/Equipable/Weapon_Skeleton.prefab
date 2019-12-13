@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8621487029919820606}
   - component: {fileID: 5218692201390729704}
   m_Layer: 0
-  m_Name: Weapon_SqueletteMelee
+  m_Name: Weapon_Skeleton
   m_TagString: Weapon
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9b1522c82c1fc4c8ff9919cbd56fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponAttackSpeed: 0.5
+  weaponAttackSpeed: 1
   weaponDmg: 10
-  weaponImobilisationTime: 1
+  weaponImobilisationTime: 1.5
   playerInRangList: []
 --- !u!60 &5218692201390729704
 PolygonCollider2D:

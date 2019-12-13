@@ -7,6 +7,7 @@ public class WeaponManager : MonoBehaviour
     public float weaponAttackSpeed;
     public float weaponDmg;
     public float weaponImobilisationTime;
+    public float launchingTime;
 
     [SerializeField] public Sprite iconDisplay; //Temporary Inventory UI
 
@@ -33,7 +34,12 @@ public class WeaponManager : MonoBehaviour
     {
         for (int i = 0; i < enemyInRangList.Count; i++)
         {
-            enemyInRangList[i].GetComponent<EnemyHealthSystem>().IsTakingDmg(weaponDmg + adDmg);
+            if(enemyInRangList[i] != null)
+            {
+                enemyInRangList[i].GetComponent<EnemyHealthSystem>().IsTakingDmg(weaponDmg + adDmg);
+            }
+            
         }
+        Destroy(this.gameObject);
     }
 }

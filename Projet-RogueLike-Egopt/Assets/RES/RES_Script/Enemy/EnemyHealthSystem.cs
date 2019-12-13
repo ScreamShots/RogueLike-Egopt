@@ -28,7 +28,6 @@ public class EnemyHealthSystem : MonoBehaviour
     public void IsTakingDmg(float damageValue)       //Put every action requiered when the player is taking dmg on this fonction
     {
         enemyHp -= damageValue;
-        Debug.Log("enemy is taking dmg" + enemyHp);
 
         if (enemyHp <= 0)
         {
@@ -49,7 +48,6 @@ public class EnemyHealthSystem : MonoBehaviour
 
     void EnemyDeath()                                  //Put every action requiered when the player is dead on this function
     {
-        Debug.Log("dead");
         Destroy(this.gameObject);
     }
 }
