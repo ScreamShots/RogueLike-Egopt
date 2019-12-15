@@ -14,24 +14,22 @@ public class HUDInventoryCenter : MonoBehaviour
         if (PlayerInventory.playerInventory[PlayerInventory.inventoryIndex] != null)
         {
             centerInventorySlot.sprite = PlayerInventory.playerInventory[PlayerInventory.inventoryIndex].GetComponent<InventoryStorage>().inventoryDisplay;
+            centerInventorySlot.color = new Color(255f, 255f, 255f, 1f);
 
             if (PlayerInventory.playerInventory[PlayerInventory.inventoryIndex].tag == "Consumable" && PlayerStatusManager.isUsing == true)
             {
 
                 cdDisplay.fillAmount = cdTime;
-                Debug.Log("yo " + cdDisplay.fillAmount);
                 cdTime += (1 / PlayerInventory.playerInventory[PlayerInventory.inventoryIndex].GetComponent<ItemManager>().useSpeed * Time.fixedDeltaTime);
             }
         }
         else
         {
-            centerInventorySlot.sprite = emptyDisplay;
+            centerInventorySlot.sprite = null;
+            centerInventorySlot.color = new Color(0f, 0f, 0f, 0f);
             cdTime = 0;
             cdDisplay.fillAmount = 0;
-        }
-
-        
-        
+        }        
     }
 
 }

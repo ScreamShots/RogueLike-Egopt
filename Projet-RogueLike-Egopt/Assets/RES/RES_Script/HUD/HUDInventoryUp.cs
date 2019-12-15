@@ -23,10 +23,12 @@ public class HUDInventoryUp : MonoBehaviour
         if (PlayerInventory.playerInventory[nextInventoryIndex] != null)
         {
             upInventorySlot.sprite = PlayerInventory.playerInventory[nextInventoryIndex].GetComponent<InventoryStorage>().inventoryDisplay;
+            upInventorySlot.color = new Color(255f, 255f, 255f, 1f);
         }
         else
         {
-            upInventorySlot.sprite = emptyDisplay;
+            upInventorySlot.sprite = null;
+            upInventorySlot.color = new Color(0f, 0f, 0f, 0f);
         }
     }
 }
