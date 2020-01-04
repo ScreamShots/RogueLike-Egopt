@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
-  m_Sprite: {fileID: -6120920501510785948, guid: e561db38425ca5e48bfafac635a49c9c,
+  m_SortingOrder: -1
+  m_Sprite: {fileID: -8722042910958119923, guid: 3b4df8749de55a449a3e5822e7fed24e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 6664317559972687208}
   - component: {fileID: 4443788539417606710}
   - component: {fileID: 3187233822335047655}
+  - component: {fileID: 5227254664309437604}
   m_Layer: 0
   m_Name: Golem
   m_TagString: Enemy
@@ -289,9 +290,11 @@ MonoBehaviour:
   attackSpeed: 0
   immobilizationTime: 0
   warningTime: 0.77
+  spawnTime: 0.7
   attackDirection: 0
   isPlayerInRange: 0
   isAttacking: 0
+  isSpawned: 0
 --- !u!114 &3187233822335047655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +311,18 @@ MonoBehaviour:
   enemyHp: 0
   HpBarFront: {fileID: 627282140700825838}
   HpBarBack: {fileID: 3193491296351330728}
+--- !u!114 &5227254664309437604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2872051847846030794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b9f96f158957e40a5347ea1589e69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6146585544796359177
 GameObject:
   m_ObjectHideFlags: 0

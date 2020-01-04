@@ -78,7 +78,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,7 +98,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -80
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 9c82f2f3a66c65b44ad51f2e8862636a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 6488953234634913732}
   - component: {fileID: 2372355525321749840}
   - component: {fileID: 3577915173683186677}
+  - component: {fileID: 8977941010497367574}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Chest
@@ -221,7 +222,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0047821105, y: -0.14174135}
+  m_Offset: {x: 0.0047821105, y: -0.08455671}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -232,7 +233,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.31142968, y: 0.05920747}
+  m_Size: {x: 0.31142968, y: 0.17357674}
   m_EdgeRadius: 0
 --- !u!114 &2372355525321749840
 MonoBehaviour:
@@ -260,6 +261,8 @@ MonoBehaviour:
   - {fileID: 6245116894388948884}
   - {fileID: 251918125609055394}
   isOpen: 0
+  openChest: {fileID: 8046719279099388085, guid: 289e76b19fd49c7409cbc2f08f3a98a9,
+    type: 3}
 --- !u!61 &3577915173683186677
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -286,6 +289,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.45, y: 0.45}
   m_EdgeRadius: 0
+--- !u!114 &8977941010497367574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8046719279099388085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b9f96f158957e40a5347ea1589e69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastY: 0
+  baseSortingOrder: 0
 --- !u!1 &8642218347799058839
 GameObject:
   m_ObjectHideFlags: 0

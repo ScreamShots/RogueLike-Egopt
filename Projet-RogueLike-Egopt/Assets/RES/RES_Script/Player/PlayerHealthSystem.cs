@@ -12,20 +12,39 @@ public class PlayerHealthSystem : MonoBehaviour
     public float playerMinHp;
     public float playerHp;
 
+    public float playerLostHp;
+
     [SerializeField] private float playerImmuneTime;
     public static bool playerIsImune;
+    public bool playerTookDmg;
+    public float timer;
 
     void Start()
     {
         playerHp = playerMaxHp;
         playerIsImune = false;
+        playerTookDmg = false;
+        playerLostHp = playerMaxHp;
     }
     
-    private void Update()
+    private void FixedUpdate()
     {
         if (playerHp <= 0)
         {
             PlayerDeath();
+        }
+
+        if (playerTookDmg == true)
+        {
+            if(timer >= 1)
+            {
+                playerLostHp = playerHp;
+                playerTookDmg = false;
+            }
+            else
+            {
+                timer += Time.fixedDeltaTime;
+            }
         }
     }
 
@@ -34,7 +53,9 @@ public class PlayerHealthSystem : MonoBehaviour
         if (playerIsImune == false)
         {
             playerHp -= damageValue;
-            StartCoroutine(PlayerImmunityActivation());
+            //StartCoroutine(PlayerImmunityActivation());
+            playerTookDmg = true;
+            timer = 0;
         }      
     }
 

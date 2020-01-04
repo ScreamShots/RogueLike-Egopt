@@ -10,8 +10,11 @@ public class ScorpionBehaviour : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float shotCd;
     public float launchingTime;
+    public float spawnTime;
+
     public bool canShot;
     public bool isShooting;
+    public bool isSpawned;
 
 
     private Rigidbody2D scorpionRgb;
@@ -24,6 +27,7 @@ public class ScorpionBehaviour : MonoBehaviour
 
     private void Start()
     {
+        isSpawned = false;
         isPlayerInRange = false;
         isPlayerTooClose = false;
         isShooting = false;
@@ -35,31 +39,36 @@ public class ScorpionBehaviour : MonoBehaviour
 
         move = new Vector3(0, 0, 0);
         lastMove = new Vector3(0, 0, 0);
+
+        StartCoroutine(Spawn());
     }
 
     private void FixedUpdate()
     {
-        move = -(transform.position - playerTransform.position).normalized;
-
-        if (isPlayerInRange == false)
+        if (isSpawned == true)
         {
-            scorpionRgb.velocity = move * speed * Time.fixedDeltaTime;
-        }
-        else if (isPlayerInRange == true && isPlayerTooClose == false)
-        {
-            scorpionRgb.velocity = new Vector3(0, 0, 0);
-        }
-        else if (isPlayerTooClose == true)
-        {
-            scorpionRgb.velocity = -move * speed * Time.fixedDeltaTime;
-        }
+            move = -(transform.position - playerTransform.position).normalized;
 
-        if (isPlayerInRange == true && isPlayerTooClose == false)
-        {
+            if (isPlayerInRange == false)
+            {
+                scorpionRgb.velocity = move * speed * Time.fixedDeltaTime;
+            }
+            else if (isPlayerInRange == true && isPlayerTooClose == false)
+            {
+                scorpionRgb.velocity = new Vector3(0, 0, 0);
+            }
+            else if (isPlayerTooClose == true)
+            {
+                scorpionRgb.velocity = -move * speed * Time.fixedDeltaTime;
+            }
 
-            StartCoroutine(Shoot());
+            if (isPlayerInRange == true && isPlayerTooClose == false)
+            {
 
-        }  
+                StartCoroutine(Shoot());
+
+            }
+        }        
     }
 
     IEnumerator Shoot()
@@ -93,5 +102,12 @@ public class ScorpionBehaviour : MonoBehaviour
             lastMove = new Vector3(0, 0, 0);
         }
         
+    }
+
+    IEnumerator Spawn()
+    {
+        yield return new WaitForSeconds(spawnTime);
+
+        isSpawned = true;
     }
 }

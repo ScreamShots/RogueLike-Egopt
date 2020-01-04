@@ -8,6 +8,7 @@ public class ChestBehaviour : MonoBehaviour
     public List<GameObject> itemToDrop;
     public GameObject[] dropZone;
     public bool isOpen;
+    public GameObject openChest;
 
     private void Start()
     {
@@ -28,7 +29,8 @@ public class ChestBehaviour : MonoBehaviour
                 itemToDrop.Remove(itemDroped);
             }
 
-            Destroy(this.gameObject);
+            Instantiate(openChest, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 

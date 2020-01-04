@@ -82,7 +82,11 @@ MonoBehaviour:
   enemyInThisRoom: []
   isRoomActivated: 0
   isThisRoomSpawn: 0
+  canSpawnChest: 0
+  chestAlreadySpawned: 0
   chest: {fileID: 8046719279099388085, guid: faef2dd71985c5049a71dd0b9af58e41, type: 3}
+  thisChest: {fileID: 0}
+  gameCamera: {fileID: 0}
 --- !u!1001 &135687516058482385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90,21 +94,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8663466564560693163}
     m_Modifications:
-    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
-        type: 3}
-      propertyPath: m_Name
-      value: RoomSpawnerDisable Left
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000,
-        type: 0}
     - target: {fileID: 5723280349141884439, guid: b7f18615f50037f409c345f7c4f0afc6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.6
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 5723280349141884439, guid: b7f18615f50037f409c345f7c4f0afc6,
         type: 3}
@@ -156,6 +149,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
+        type: 3}
+      propertyPath: m_Name
+      value: RoomSpawnerDisable Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7f18615f50037f409c345f7c4f0afc6, type: 3}
 --- !u!4 &5660780864226568390 stripped
@@ -171,17 +175,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8663466564560693163}
     m_Modifications:
-    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
-        type: 3}
-      propertyPath: m_Name
-      value: RoomSpawnerDisable Bot
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000,
-        type: 0}
     - target: {fileID: 5723280349141884439, guid: b7f18615f50037f409c345f7c4f0afc6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -237,6 +230,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
+        type: 3}
+      propertyPath: m_Name
+      value: RoomSpawnerDisable Bot
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7f18615f50037f409c345f7c4f0afc6, type: 3}
 --- !u!4 &5087967903611946903 stripped
@@ -252,6 +256,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8663466564560693163}
     m_Modifications:
+    - target: {fileID: 3986248219972449508, guid: e2299a0a060b60b4297aecc44c5d0b90,
+        type: 3}
+      propertyPath: m_Name
+      value: StyleGenerator
+      objectReference: {fileID: 0}
     - target: {fileID: 7579083212941313967, guid: e2299a0a060b60b4297aecc44c5d0b90,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -307,11 +316,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3986248219972449508, guid: e2299a0a060b60b4297aecc44c5d0b90,
-        type: 3}
-      propertyPath: m_Name
-      value: StyleGenerator
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2299a0a060b60b4297aecc44c5d0b90, type: 3}
 --- !u!4 &4677311478540055498 stripped
@@ -327,11 +331,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8663466564560693163}
     m_Modifications:
-    - target: {fileID: 8158659325406890159, guid: 33c63451c617a404587c521815721440,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerRespawnPointEntity
-      objectReference: {fileID: 0}
     - target: {fileID: 5503078912507187081, guid: 33c63451c617a404587c521815721440,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -387,6 +386,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8158659325406890159, guid: 33c63451c617a404587c521815721440,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerRespawnPointEntity
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33c63451c617a404587c521815721440, type: 3}
 --- !u!4 &8278942309105098778 stripped
@@ -405,7 +409,7 @@ PrefabInstance:
     - target: {fileID: 2360762463065218515, guid: b6bf82e499efac742b14a23386ee6d77,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2360762463065218515, guid: b6bf82e499efac742b14a23386ee6d77,
         type: 3}
@@ -477,17 +481,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8663466564560693163}
     m_Modifications:
-    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
-        type: 3}
-      propertyPath: m_Name
-      value: RoomSpawnerDisable Top
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000,
-        type: 0}
     - target: {fileID: 5723280349141884439, guid: b7f18615f50037f409c345f7c4f0afc6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -543,6 +536,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
+        type: 3}
+      propertyPath: m_Name
+      value: RoomSpawnerDisable Top
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163939957265743762, guid: b7f18615f50037f409c345f7c4f0afc6,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7f18615f50037f409c345f7c4f0afc6, type: 3}
 --- !u!4 &810524734292205918 stripped
@@ -558,15 +562,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8663466564560693163}
     m_Modifications:
-    - target: {fileID: 6163939957265743762, guid: ee9014e5d3fa2434089f74a0b9b2f0a4,
-        type: 3}
-      propertyPath: m_Name
-      value: RoomSpawner
-      objectReference: {fileID: 0}
     - target: {fileID: 5723280349141884439, guid: ee9014e5d3fa2434089f74a0b9b2f0a4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.6
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5723280349141884439, guid: ee9014e5d3fa2434089f74a0b9b2f0a4,
         type: 3}
@@ -617,6 +616,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163939957265743762, guid: ee9014e5d3fa2434089f74a0b9b2f0a4,
+        type: 3}
+      propertyPath: m_Name
+      value: RoomSpawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee9014e5d3fa2434089f74a0b9b2f0a4, type: 3}

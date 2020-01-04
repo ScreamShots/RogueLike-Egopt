@@ -50,7 +50,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,9 +125,11 @@ MonoBehaviour:
     type: 3}
   spikeDisable: {fileID: 4180171848873060491, guid: 59f727f16b21d5344b67965066392501,
     type: 3}
+  spikeWarning: {fileID: -8054664037693643888, guid: 10933224e22906745b74082026e3406e,
+    type: 3}
+  spikeEnabled: 0
   activationTime: 1.4
   desactivationTime: 1.4
   spikeDmg: 15
-  spikeTimerActivated: 0
-  spikeDmgActivated: 0
-  objectInRange: []
+  timer: 0
+  stayingTarget: []

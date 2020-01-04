@@ -9,9 +9,11 @@ public class Door : MonoBehaviour
     public bool isOverlaped;
     public bool isDoorLocked;
     public float timer;
+    public Animator animator;
 
-    private void Awake()
+    private void Start()
     {
+        animator = GetComponent<Animator>();
         isOnGround = false;
         isOverlaped = false;
         isDoorLocked = true;
@@ -32,11 +34,11 @@ public class Door : MonoBehaviour
 
         if (isDoorLocked == true)
         {
-            GetComponent<SpriteRenderer>().color = Color.red; //temporary feedback
+            animator.SetTrigger("Open");
         }
         if (isDoorLocked == false)
         {
-            GetComponent<SpriteRenderer>().color = Color.white;
+            animator.SetTrigger("Close");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

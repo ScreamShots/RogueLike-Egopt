@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1199803325413332853}
   - component: {fileID: 1403875700133804517}
   - component: {fileID: 3950534357144311294}
+  - component: {fileID: 8301401141230755083}
   m_Layer: 0
   m_Name: ScorpionMunition
   m_TagString: Untagged
@@ -96,6 +97,18 @@ MonoBehaviour:
   speed: 220
   dmg: 10
   isDestructible: 0
+--- !u!114 &8301401141230755083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3707333449646484303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b9f96f158957e40a5347ea1589e69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6940384937359062930
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +158,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -165,7 +178,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 78987c4eab66d0542a21433751a20d53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

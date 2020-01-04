@@ -12,7 +12,8 @@ public class SkeletonBehaviour : MonoBehaviour
     [SerializeField] private float speed;
     [HideInInspector]public float attackSpeed;
     [HideInInspector] public float immobilizationTime;
-    [SerializeField] private float warningTime;    
+    [SerializeField] private float warningTime;
+    public float spawnTime;
     
     private int direction;
     [HideInInspector] public int attackDirection;
@@ -21,12 +22,15 @@ public class SkeletonBehaviour : MonoBehaviour
     [HideInInspector] public bool isAttacking;
     private bool canAttack;
     private bool canMove;
+    public bool isSpawned;
 
 
 
 
     private void Start()
     {
+        isSpawned = false;
+
         skeletonRgb = GetComponent<Rigidbody2D>();
         playerTransform = GameObject.FindWithTag("Player").transform;
         isPlayerInRange = false;
@@ -37,25 +41,28 @@ public class SkeletonBehaviour : MonoBehaviour
         canMove = true;
         attackDirection = 0;
 
+        StartCoroutine(Spawn());
+
     }
 
     private void FixedUpdate()
     {
-        move = (playerTransform.position - transform.position).normalized;
-
-        if (isPlayerInRange == false && canMove == true)
+        if(isSpawned == true)
         {
-            skeletonRgb.velocity = move * speed * Time.fixedDeltaTime;
+            move = (playerTransform.position - transform.position).normalized;
+
+            if (isPlayerInRange == false && canMove == true)
+            {
+                skeletonRgb.velocity = move * speed * Time.fixedDeltaTime;
+            }
+            else if (isPlayerInRange == true)
+            {
+                skeletonRgb.velocity = new Vector3(0, 0, 0);
+                StartCoroutine(Attack());
+            }
+
+            Direction();
         }
-        else if (isPlayerInRange == true)
-        {
-            skeletonRgb.velocity = new Vector3(0, 0, 0);
-            StartCoroutine(Attack());
-        }
-
-        Direction();
-
-
     }
 
     void Direction()
@@ -132,5 +139,12 @@ public class SkeletonBehaviour : MonoBehaviour
             canAttack = true;
 
         }
+    }
+
+    IEnumerator Spawn()
+    {
+        yield return new WaitForSeconds(spawnTime);
+
+        isSpawned = true;
     }
 }

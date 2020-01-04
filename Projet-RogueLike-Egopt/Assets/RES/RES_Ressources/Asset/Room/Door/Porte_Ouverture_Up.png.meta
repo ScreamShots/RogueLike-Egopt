@@ -1,7 +1,43 @@
 fileFormatVersion: 2
 guid: 3285e9f59b7ba094aa0e981f00ba5252
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5297826631923447938
+    second: Porte_Ouverture_Up_0
+  - first:
+      213: -7811113624045704196
+    second: Porte_Ouverture_Up_1
+  - first:
+      213: 1532081878022676578
+    second: Porte_Ouverture_Up_2
+  - first:
+      213: -5617634336072744022
+    second: Porte_Ouverture_Up_3
+  - first:
+      213: -8429656220690562624
+    second: Porte_Ouverture_Up_4
+  - first:
+      213: 5522356840735938182
+    second: Porte_Ouverture_Up_5
+  - first:
+      213: 928845428550418527
+    second: Porte_Ouverture_Up_6
+  - first:
+      213: -4956472469007135257
+    second: Porte_Ouverture_Up_7
+  - first:
+      213: -3170389950684827731
+    second: Porte_Ouverture_Up_8
+  - first:
+      213: -8624653563714015459
+    second: Porte_Ouverture_Up_9
+  - first:
+      213: -8797517123180716844
+    second: Porte_Ouverture_Up_10
+  - first:
+      213: -6813959702106563793
+    second: Porte_Ouverture_Up_11
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -31,7 +67,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +76,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +106,273 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Porte_Ouverture_Up_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edab56e352354104582c7c36b3f1afad
+      internalID: 5297826631923447938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Porte_Ouverture_Up_1
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 0
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 375ba4462b757e1429afa221d55bdb62
+      internalID: -7811113624045704196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Porte_Ouverture_Up_2
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 0
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f07b45dd2cf9784390110015018f3f6
+      internalID: 1532081878022676578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Porte_Ouverture_Up_3
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 0
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 021988b9a9f16f84699ba0aa5ce32e04
+      internalID: -5617634336072744022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Porte_Ouverture_Up_4
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 0
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 768cb9a701dc5a441b9394bdaf0a9546
+      internalID: -8429656220690562624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Porte_Ouverture_Up_5
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 0
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a658635e900c6b4692051c8b18e0dd9
+      internalID: 5522356840735938182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Porte_Ouverture_Up_6
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 0
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f806839bb40f1c4dbce9156fb735455
+      internalID: 928845428550418527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Porte_Ouverture_Up_7
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 0
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6388bbfac9982ae49946f1e7fb03efcb
+      internalID: -4956472469007135257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Porte_Ouverture_Up_8
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 0
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a814669eace62ac49acd7d53e4383675
+      internalID: -3170389950684827731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Porte_Ouverture_Up_9
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 0
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10519375c59cd814abdbd7a1d858961f
+      internalID: -8624653563714015459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Porte_Ouverture_Up_10
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 0
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9746fde4c23d5244fba41719abbd3c54
+      internalID: -8797517123180716844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Porte_Ouverture_Up_11
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 0
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7e83845555ede4fac7aa67ee11f03f
+      internalID: -6813959702106563793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

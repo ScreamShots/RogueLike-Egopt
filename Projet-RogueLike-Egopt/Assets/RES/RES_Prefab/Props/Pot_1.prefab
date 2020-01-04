@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5555496405454984940}
   - component: {fileID: 6935675953320437215}
   - component: {fileID: 2882739335947148246}
+  - component: {fileID: 5508350086783457494}
   m_Layer: 0
   m_Name: Pot_1
   m_TagString: Props
@@ -50,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -80
+  m_SortingOrder: -1
   m_Sprite: {fileID: -8056621280973359245, guid: 2ca61aa135feff4459ac5747894246a6,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -125,3 +126,15 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0012071878, y: 0.11764706}
   m_Size: {x: 0.10162458, y: 0.23529412}
   m_Direction: 0
+--- !u!114 &5508350086783457494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5640021395399438499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b9f96f158957e40a5347ea1589e69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

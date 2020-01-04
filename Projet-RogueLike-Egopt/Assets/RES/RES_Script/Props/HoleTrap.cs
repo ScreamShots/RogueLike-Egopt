@@ -8,10 +8,12 @@ public class HoleTrap : MonoBehaviour
     public List<GameObject> objectInRange;
     public bool trapActivated;
     public float trapDmg;
+    public Animator animator;
 
     private void Start()
     {
         trapActivated = false;
+        animator = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,7 +29,7 @@ public class HoleTrap : MonoBehaviour
 
             if (trapActivated == true)
             {
-                HoleTrapEffect();
+                StartCoroutine(HoleTrapEffect());
             }
         }
     }
@@ -39,18 +41,18 @@ public class HoleTrap : MonoBehaviour
 
     IEnumerator HoleTRapActivation()
     {
-        GetComponent<SpriteRenderer>().color = Color.yellow; // Temporary FeedBack
+        animator.SetTrigger("Open");
 
         yield return new WaitForSeconds(activationTime);
         trapActivated = true;
 
-        GetComponent<SpriteRenderer>().color = Color.red; // Temporary FeedBack
-
-        HoleTrapEffect();
+        StartCoroutine(HoleTrapEffect());
     }
 
-    void HoleTrapEffect()
+    IEnumerator HoleTrapEffect()
     {
+        yield return new WaitForSeconds(0.12f);
+
         for (int i = 0; i < objectInRange.Count; i++)
         {
             if (objectInRange[i].transform.parent.gameObject.tag == "Player")

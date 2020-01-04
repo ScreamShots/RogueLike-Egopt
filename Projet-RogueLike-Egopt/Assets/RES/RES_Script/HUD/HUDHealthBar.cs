@@ -7,24 +7,56 @@ public class HUDHealthBar : MonoBehaviour
 {
     public PlayerHealthSystem playerHealthSystem;
     public Image healthBarFront;
-    public Text hpAmoutDisplay;
-    public float hpPercentage;
+    public Image healthBarBack;
+    public bool playerSpawned;
+    public float lastHpAmout;
+
+
+    private void Start()
+    {
+        playerSpawned = false;
+    }
 
     private void Update()
     {
-        playerHealthSystem = GameObject.FindWithTag("Player").GetComponent<PlayerHealthSystem>();
-        healthBarFront.fillAmount = playerHealthSystem.playerHp / playerHealthSystem.playerMaxHp;
-        hpPercentage = (playerHealthSystem.playerHp / playerHealthSystem.playerMaxHp) * 100;
-        hpAmoutDisplay.text = hpPercentage.ToString() + " %";
-
-        if (PlayerHealthSystem.playerIsImune == true)
+        if (playerSpawned == true)
         {
-            healthBarFront.color = Color.magenta;
+            healthBarFront.fillAmount = playerHealthSystem.playerHp / playerHealthSystem.playerMaxHp;
+            healthBarBack.fillAmount = lastHpAmout / playerHealthSystem.playerMaxHp;
+
+            /*if (PlayerHealthSystem.playerIsImune == true)
+            {
+                healthBarFront.color = Color.magenta;
+            }
+            else
+            {
+                healthBarFront.color = Color.white;
+            }*/
+
+            if (playerHealthSystem.playerLostHp < lastHpAmout)
+            {
+                lastHpAmout -= Time.fixedDeltaTime * 50;
+            }
+            else if(playerHealthSystem.playerLostHp > lastHpAmout)
+            {
+                lastHpAmout = playerHealthSystem.playerLostHp;
+            }
+
+
+
         }
         else
         {
-            healthBarFront.color = Color.white;
+            GameObject player = GameObject.FindWithTag("Player");
+
+            if(player != null)
+            {
+                playerHealthSystem = player.GetComponent<PlayerHealthSystem>();
+                playerSpawned = true;
+            }
         }
+
+        
     }
     
 }
