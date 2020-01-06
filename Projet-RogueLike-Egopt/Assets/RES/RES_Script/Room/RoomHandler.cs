@@ -15,7 +15,7 @@ public class RoomHandler : MonoBehaviour
     public GameObject gameCamera;
     public bool isThisBossRoom;
     public bool cameraIsSet;
-
+    public bool isThisShop;
 
     private void Start()
     {

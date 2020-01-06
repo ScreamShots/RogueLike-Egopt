@@ -73,11 +73,16 @@ public class RoomGenerationHandler : MonoBehaviour
                     Debug.Log("Nombre de Salle insuffisant");
                     ResetLevelGeneration();
                 }
+                else if (RoomGenerator.shopIsSpawned == false)
+                {
+                    ResetLevelGeneration();
+                }
                 else if (numberOfRoomCreated >= minNumberOfRoom && isLevelPlayable == false)
                 {
                     CreateBossRoom();
                     security = false;
                 }
+               
             }
         }
 
@@ -110,13 +115,19 @@ public class RoomGenerationHandler : MonoBehaviour
     public void ResetLevelGeneration()
     {
         Debug.Log("recréation du niveau en cours...");
+        RoomGenerator.shopIsSpawned = false;
+        GameObject[] allRoom = GameObject.FindGameObjectsWithTag("Rooms");
 
         Instantiate(roomList.startRoom, new Vector3(0, -0.162f, 0), transform.rotation);
 
-        for (int i = 0; i < allRoomCreated.Count; i++)
+        /*for (int i = 0; i < allRoomCreated.Count; i++)
         {
-            Destroy(allRoomCreated[i]);
-        }
+            //Destroy(allRoomCreated[i]);
+        }*/
+        for (int i = 0; i < allRoom.Length; i++)
+       {
+           Destroy(allRoom[i]);
+       }
 
     }
 

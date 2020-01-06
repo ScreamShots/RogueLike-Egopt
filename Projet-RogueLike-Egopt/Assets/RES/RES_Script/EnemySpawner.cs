@@ -11,10 +11,14 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if (linkedRoom.GetComponent<RoomHandler>().isRoomActivated == true)
+        if (linkedRoom != null)
         {
-            StartCoroutine(SpawnEnemy());
+            if (linkedRoom.GetComponent<RoomHandler>().isRoomActivated == true)
+            {
+                StartCoroutine(SpawnEnemy());
+            }
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

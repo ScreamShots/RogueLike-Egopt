@@ -11,24 +11,27 @@ public class HUDInventoryUp : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerInventory.inventoryIndex < PlayerInventory.playerInventory.Length - 1)
+        if (PlayerInventory.playerInventory != null)
         {
-            nextInventoryIndex = PlayerInventory.inventoryIndex + 1;
-        }
-        else if (PlayerInventory. inventoryIndex == PlayerInventory.playerInventory.Length - 1)
-        {
-            nextInventoryIndex = 0;
-        }
+            if (PlayerInventory.inventoryIndex < PlayerInventory.playerInventory.Length - 1)
+            {
+                nextInventoryIndex = PlayerInventory.inventoryIndex + 1;
+            }
+            else if (PlayerInventory.inventoryIndex == PlayerInventory.playerInventory.Length - 1)
+            {
+                nextInventoryIndex = 0;
+            }
 
-        if (PlayerInventory.playerInventory[nextInventoryIndex] != null)
-        {
-            upInventorySlot.sprite = PlayerInventory.playerInventory[nextInventoryIndex].GetComponent<InventoryStorage>().inventoryDisplay;
-            upInventorySlot.color = new Color(255f, 255f, 255f, 1f);
-        }
-        else
-        {
-            upInventorySlot.sprite = null;
-            upInventorySlot.color = new Color(0f, 0f, 0f, 0f);
-        }
+            if (PlayerInventory.playerInventory[nextInventoryIndex] != null)
+            {
+                upInventorySlot.sprite = PlayerInventory.playerInventory[nextInventoryIndex].GetComponent<InventoryStorage>().inventoryDisplay;
+                upInventorySlot.color = new Color(255f, 255f, 255f, 1f);
+            }
+            else
+            {
+                upInventorySlot.sprite = null;
+                upInventorySlot.color = new Color(0f, 0f, 0f, 0f);
+            }
+        }        
     }
 }

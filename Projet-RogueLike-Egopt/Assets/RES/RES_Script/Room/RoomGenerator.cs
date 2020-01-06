@@ -8,30 +8,66 @@ public class RoomGenerator : MonoBehaviour
     private GameObject[] spawnableRoom;
     private bool alreadySpawn;
     private int randomNumber;
+    public float shopSpawnRate;
+    public static bool shopIsSpawned;
+    public bool shopIsSelectionned;
+    
 
     private void Start()
     {
         alreadySpawn = false;
-        
-        if (transform.localPosition.y > 0 && transform.localPosition.x == 0) //spawnpoint is top
-        {
-            spawnableRoom = roomList.topOpenRoom;
+        shopIsSelectionned = false;
+        Debug.Log(shopSpawnRate);
 
-        }
-        else if (transform.localPosition.y < 0 && transform.localPosition.x == 0) //spawnpoint is bot
-        {
-            spawnableRoom = roomList.botOpenRoom;
 
-        }
-        else if (transform.localPosition.x > 0 && transform.localPosition.y == 0) //spawnpoint is right
+        if (RoomGenerationHandler.numberOfRoomCreated > 5 && shopIsSpawned == false)
         {
-            spawnableRoom = roomList.rightOpenRoom;
+            shopIsSelectionned = true;
 
+            if (transform.localPosition.y > 0 && transform.localPosition.x == 0) //spawnpoint is top
+            {
+                spawnableRoom = roomList.topOpenShop;
+
+            }
+            else if (transform.localPosition.y < 0 && transform.localPosition.x == 0) //spawnpoint is bot
+            {
+                spawnableRoom = roomList.botOpenShop;
+
+            }
+            else if (transform.localPosition.x > 0 && transform.localPosition.y == 0) //spawnpoint is right
+            {
+                spawnableRoom = roomList.rightOpenShop;
+
+            }
+            else if (transform.localPosition.x < 0 && transform.localPosition.y == 0) //spawnpoint is left
+            {
+                spawnableRoom = roomList.leftOpenShop;
+            }
         }
-        else if (transform.localPosition.x < 0 && transform.localPosition.y == 0) //spawnpoint is left
+        else
         {
-            spawnableRoom = roomList.leftOpenRoom;
+
+            if (transform.localPosition.y > 0 && transform.localPosition.x == 0) //spawnpoint is top
+            {
+                spawnableRoom = roomList.topOpenRoom;
+
+            }
+            else if (transform.localPosition.y < 0 && transform.localPosition.x == 0) //spawnpoint is bot
+            {
+                spawnableRoom = roomList.botOpenRoom;
+
+            }
+            else if (transform.localPosition.x > 0 && transform.localPosition.y == 0) //spawnpoint is right
+            {
+                spawnableRoom = roomList.rightOpenRoom;
+
+            }
+            else if (transform.localPosition.x < 0 && transform.localPosition.y == 0) //spawnpoint is left
+            {
+                spawnableRoom = roomList.leftOpenRoom;
+            }
         }
+
 
         randomNumber = Random.Range(0, spawnableRoom.Length);
 
@@ -53,8 +89,17 @@ public class RoomGenerator : MonoBehaviour
 
         if (alreadySpawn == false && RoomGenerationHandler.numberOfRoomCreated < RoomGenerationHandler.maxNumberOfRoom)
         {
-            Instantiate(spawnableRoom[randomNumber], transform.position, transform.rotation);  
-            alreadySpawn = true;
+            if(shopIsSelectionned == true && shopIsSpawned == false)
+            {
+                Instantiate(spawnableRoom[randomNumber], transform.position, transform.rotation);
+                alreadySpawn = true;
+                shopIsSpawned = true;
+            }
+            else if (shopIsSelectionned == false)
+            {
+                Instantiate(spawnableRoom[randomNumber], transform.position, transform.rotation);
+                alreadySpawn = true;
+            }
 
             RoomGenerationHandler.isARoomCreatedRecently = true;
             RoomGenerationHandler.numberOfRoomCreated += 1;

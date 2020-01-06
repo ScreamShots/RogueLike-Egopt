@@ -10,6 +10,11 @@ public class HUDScoreDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreDisplay.text = GameManager.gameManager.score.ToString();
+
+        if (scoreDisplay != null)
+        {
+            scoreDisplay.text = GameManager.gameManager.score.ToString();
+        }
+        
     }
 }
