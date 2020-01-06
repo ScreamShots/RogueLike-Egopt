@@ -427,6 +427,13 @@ MonoBehaviour:
   enemyHp: 0
   HpBarFront: {fileID: 604344950649791971}
   HpBarBack: {fileID: 3208271735802682533}
+  enemyType: Scorpion
+  bronzCoin: {fileID: 1384799743925468086, guid: 90ab773cc019bae479290438ce01a1e3,
+    type: 3}
+  silverCoin: {fileID: 1384799743925468086, guid: 6dc6a94775c6e6944b55bfbeb65066d3,
+    type: 3}
+  goldCoin: {fileID: 1384799743925468086, guid: df59b7be8f030b649815d7328b1d7512,
+    type: 3}
 --- !u!114 &3774223284709280791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,6 +446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b9f96f158957e40a5347ea1589e69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastY: 0
+  baseSortingOrder: 0
 --- !u!1001 &6962094751076028115
 PrefabInstance:
   m_ObjectHideFlags: 0

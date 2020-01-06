@@ -73,6 +73,9 @@ public class PlayerHealthSystem : MonoBehaviour
     {
         Debug.Log("Vous êtes mort");
 
+        GameManager.gameManager.gold = 0;
+        GameManager.gameManager.score = 0;
+
         Destroy(this.gameObject);
 
     }

@@ -346,6 +346,13 @@ MonoBehaviour:
   enemyHp: 0
   HpBarFront: {fileID: 7111273366752391209}
   HpBarBack: {fileID: 5068049115871512943}
+  enemyType: Skeleton
+  bronzCoin: {fileID: 1384799743925468086, guid: 90ab773cc019bae479290438ce01a1e3,
+    type: 3}
+  silverCoin: {fileID: 1384799743925468086, guid: 6dc6a94775c6e6944b55bfbeb65066d3,
+    type: 3}
+  goldCoin: {fileID: 1384799743925468086, guid: df59b7be8f030b649815d7328b1d7512,
+    type: 3}
 --- !u!70 &7470448931068986714
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -374,6 +381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b9f96f158957e40a5347ea1589e69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastY: 0
+  baseSortingOrder: 0
 --- !u!1001 &742273423246318361
 PrefabInstance:
   m_ObjectHideFlags: 0

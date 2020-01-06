@@ -311,6 +311,13 @@ MonoBehaviour:
   enemyHp: 0
   HpBarFront: {fileID: 627282140700825838}
   HpBarBack: {fileID: 3193491296351330728}
+  enemyType: Golem
+  bronzCoin: {fileID: 1384799743925468086, guid: 90ab773cc019bae479290438ce01a1e3,
+    type: 3}
+  silverCoin: {fileID: 1384799743925468086, guid: 6dc6a94775c6e6944b55bfbeb65066d3,
+    type: 3}
+  goldCoin: {fileID: 1384799743925468086, guid: df59b7be8f030b649815d7328b1d7512,
+    type: 3}
 --- !u!114 &5227254664309437604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b9f96f158957e40a5347ea1589e69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastY: 0
+  baseSortingOrder: 0
 --- !u!1 &6146585544796359177
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,11 +404,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HpBarCanvas (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7565278599720708912, guid: 79a5c9e2e5c2bbe4193f5b7a439cb658,
-        type: 3}
-      propertyPath: m_FillAmount
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5944524034747033077, guid: 79a5c9e2e5c2bbe4193f5b7a439cb658,
         type: 3}
@@ -505,6 +509,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7565278599720708912, guid: 79a5c9e2e5c2bbe4193f5b7a439cb658,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79a5c9e2e5c2bbe4193f5b7a439cb658, type: 3}

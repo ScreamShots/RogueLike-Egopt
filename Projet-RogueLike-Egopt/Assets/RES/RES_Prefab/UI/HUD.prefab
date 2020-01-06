@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 3858495654363837917}
   - component: {fileID: 2414539038051503445}
   - component: {fileID: 1084788710862859764}
+  - component: {fileID: 7197883127400046207}
   m_Layer: 5
   m_Name: Filtre
   m_TagString: Untagged
@@ -191,6 +192,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7197883127400046207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216403132482305047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65abc69208544e742ab03a7b22764a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreDisplay: {fileID: 0}
 --- !u!1 &1421681498864386159
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +217,7 @@ GameObject:
   - component: {fileID: 3010135361403504262}
   - component: {fileID: 1133712958609407186}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: goldDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -355,7 +369,7 @@ GameObject:
   - component: {fileID: 7656471958962465692}
   - component: {fileID: 1401285759314874573}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: GoldCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -378,7 +392,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 18, y: 9.8}
+  m_AnchoredPosition: {x: 18, y: 9.799988}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &7656471958962465692
@@ -434,6 +448,8 @@ GameObject:
   - component: {fileID: 3102511891049901795}
   - component: {fileID: 6983645615002597145}
   - component: {fileID: 1986139609250945773}
+  - component: {fileID: 2869516034289118818}
+  - component: {fileID: 5257237607494272291}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -588,6 +604,32 @@ MonoBehaviour:
   upInventorySlot: {fileID: 8202147934011021721}
   emptyDisplay: {fileID: 21300000, guid: 78ce37307b365bb4f9b76a4e59eb566a, type: 3}
   nextInventoryIndex: 0
+--- !u!114 &2869516034289118818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445427625817932838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65abc69208544e742ab03a7b22764a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreDisplay: {fileID: 3893950053872616661}
+--- !u!114 &5257237607494272291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445427625817932838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f0b9e2fc0f2b5043aea868fba8fc6fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldDisplay: {fileID: 1133712958609407186}
 --- !u!1 &2493747713541856533
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,7 +863,7 @@ GameObject:
   - component: {fileID: 862341722272449211}
   - component: {fileID: 3893950053872616661}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ScoreDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1463,7 +1505,7 @@ GameObject:
   - component: {fileID: 4432543217935263356}
   - component: {fileID: 7259427278479606355}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ScorePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

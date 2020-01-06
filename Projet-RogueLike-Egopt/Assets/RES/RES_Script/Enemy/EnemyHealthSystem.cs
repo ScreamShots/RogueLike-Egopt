@@ -13,6 +13,12 @@ public class EnemyHealthSystem : MonoBehaviour
     public Image HpBarFront;
     public Image HpBarBack;
 
+    public string enemyType;
+
+    public GameObject bronzCoin;
+    public GameObject silverCoin;
+    public GameObject goldCoin;
+
 
     void Start()
     {
@@ -48,6 +54,41 @@ public class EnemyHealthSystem : MonoBehaviour
 
     void EnemyDeath()                                  //Put every action requiered when the player is dead on this function
     {
+        float randomGold;
+
+        randomGold = Random.Range(1, 101);
+
+        switch (enemyType)
+        {
+            case "Golem":
+                randomGold *= 1.5f;
+                break;
+            case "Skeleton":
+                randomGold *= 0.8f;
+                break;
+            case "Scorpion":
+                randomGold *= 1.1f;
+                break;
+        }
+
+
+
+        if (randomGold < 65 && randomGold > 10)
+        {
+            Instantiate(bronzCoin, transform.position, Quaternion.identity);
+        }
+        else if (randomGold < 90)
+        {
+            Instantiate(silverCoin, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(goldCoin, transform.position, Quaternion.identity);
+        }
+
+        GameManager.gameManager.AddScore(enemyType);
+
+
         Destroy(this.gameObject);
     }
 }
