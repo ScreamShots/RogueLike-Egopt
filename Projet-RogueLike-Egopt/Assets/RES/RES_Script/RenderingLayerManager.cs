@@ -28,7 +28,7 @@ public class RenderingLayerManager : MonoBehaviour
         {
             lastY = transform.position.y;
 
-            if(gameObject.tag == "Player")
+            if(gameObject.tag == "Player" || gameObject.tag == "Enemy")
             {
                 thisSpriteRenderer.sortingOrder = baseSortingOrder - (int)((transform.position.y - 0.25) * 10f);
             }

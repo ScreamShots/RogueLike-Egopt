@@ -13,6 +13,8 @@ public class RoomHandler : MonoBehaviour
     public GameObject chest;
     public GameObject thisChest;
     public GameObject gameCamera;
+    public bool isThisBossRoom;
+    public bool cameraIsSet;
 
 
     private void Start()
@@ -54,6 +56,7 @@ public class RoomHandler : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             isRoomActivated = false;
+            cameraIsSet = false;
         }
 
     }
@@ -88,7 +91,20 @@ public class RoomHandler : MonoBehaviour
                 chestAlreadySpawned = true;
             }
 
-            gameCamera.transform.position = transform.position;
+            if(isThisBossRoom == true && cameraIsSet == false)
+            {
+                GameObject player = GameObject.FindWithTag("Player");
+                gameCamera.transform.parent = player.transform;
+                gameCamera.transform.position = player.transform.position;
+
+                cameraIsSet = true;
+            }
+            else if (cameraIsSet == false)
+            {
+                gameCamera.transform.position = transform.position;
+                cameraIsSet = true;
+            }
+            
         }
         
     }

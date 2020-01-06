@@ -62,7 +62,6 @@ public class PlayerHealthSystem : MonoBehaviour
     public void PlayerIsHealing(float healValue)             //Put every action requiered when the player is healed on this fonction  
     {
         playerHp += healValue;
-        Debug.Log("heal" + healValue);
 
         if (playerHp > playerMaxHp)
         {

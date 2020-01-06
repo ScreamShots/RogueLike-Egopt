@@ -237,6 +237,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 822273131886059690, guid: 56c322b9017d97541a94c263b39de836,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 9.799988
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632003086006904411, guid: 56c322b9017d97541a94c263b39de836,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.66999817
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56c322b9017d97541a94c263b39de836, type: 3}
 --- !u!1001 &1535655225
@@ -250,6 +260,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Room_4_Spawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694845550386709153, guid: 16db5a99290b3b3418fa2fd58c49f9d3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1562661316636520498, guid: 16db5a99290b3b3418fa2fd58c49f9d3,
         type: 3}

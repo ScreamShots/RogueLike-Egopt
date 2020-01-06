@@ -146,7 +146,6 @@ public class PlayerInventory : MonoBehaviour
 
     void OpenChest(GameObject chest)
     {
-        Debug.Log("yo");
         if (PlayerStatusManager.canUse == true)
         {
             

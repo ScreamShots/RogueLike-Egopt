@@ -42,9 +42,7 @@ public class ItemManager : MonoBehaviour
 
     void LifePotion(GameObject characterUsing)
     {
-        Debug.Log("Start");
         characterUsing.GetComponent<PlayerHealthSystem>().PlayerIsHealing(characterUsing.GetComponent<PlayerHealthSystem>().playerMaxHp * healBoostRatio);
-        Debug.Log("Stop");
         Destroy(this.gameObject);
     }
 
