@@ -85,7 +85,7 @@ public class RoomHandler : MonoBehaviour
                 canSpawnChest = false;
             }
 
-            if (isThisRoomSpawn == false && canSpawnChest == true && chestAlreadySpawned == false)
+            if (isThisRoomSpawn == false && canSpawnChest == true && chestAlreadySpawned == false && isThisShop == false)
             {
                 thisChest = Instantiate(chest, transform.position, Quaternion.identity);
                 chestAlreadySpawned = true;

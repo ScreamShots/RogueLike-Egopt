@@ -45,7 +45,7 @@ public class ScorpionBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isSpawned == true)
+        if (isSpawned == true && GetComponent<EnemyHealthSystem>().isDead == false)
         {
             move = -(transform.position - playerTransform.position).normalized;
 

@@ -10,6 +10,7 @@ public class PlayerInventory : MonoBehaviour
     public static GameObject[] playerInventory;
     public List<GameObject> securityStock;
     public List<GameObject> chestSecurityStock;
+    public List<GameObject> shopSecurityStock;
     public GameObject buttonADisplay;
 
     public static int inventoryIndex;
@@ -31,7 +32,7 @@ public class PlayerInventory : MonoBehaviour
             InventoryRotation((int)Input.GetAxisRaw("Inv"));
         }
         selectionedObject = playerInventory[inventoryIndex];
-        
+
         GetComponent<PlayerUse>().equipiedItem = selectionedObject;
 
         if (Input.GetButtonDown("Pick"))
@@ -40,10 +41,14 @@ public class PlayerInventory : MonoBehaviour
             {
                 StartCoroutine(PickingObject(securityStock[0]));
             }
-            if(chestSecurityStock.Count != 0)
+            else if (chestSecurityStock.Count != 0)
             {
                 OpenChest(chestSecurityStock[0]);
-            }           
+            }
+            else if (shopSecurityStock.Count != 0)
+            {
+                StartCoroutine(BuyObject(shopSecurityStock[0]));
+            }
 
         }
     }
@@ -65,6 +70,12 @@ public class PlayerInventory : MonoBehaviour
             buttonADisplay.SetActive(true);
         }
 
+        if (collision.gameObject.tag == "ShopSlot")
+        {
+            shopSecurityStock.Add(collision.gameObject);
+            buttonADisplay.SetActive(true);
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -79,18 +90,23 @@ public class PlayerInventory : MonoBehaviour
             chestSecurityStock.Remove(collision.gameObject);
             buttonADisplay.SetActive(false);
         }
+        if (collision.gameObject.tag == "ShopSlot")
+        {
+            shopSecurityStock.Remove(collision.gameObject);
+            buttonADisplay.SetActive(false);
+        }
     }
 
     public void InventoryRotation(int slidingdirection)
     {
         bool rotationIsDone = false;
         if (PlayerStatusManager.canScroll == true)
-        { 
-            while(rotationIsDone == false)
+        {
+            while (rotationIsDone == false)
             {
                 inventoryIndex += slidingdirection;
 
-                if ((inventoryIndex) > (playerInventory.Length-1))
+                if ((inventoryIndex) > (playerInventory.Length - 1))
                 {
                     inventoryIndex = 0;
                 }
@@ -99,18 +115,18 @@ public class PlayerInventory : MonoBehaviour
                     inventoryIndex = 2;
                 }
 
-                if(playerInventory[inventoryIndex] != null)
+                if (playerInventory[inventoryIndex] != null)
                 {
                     rotationIsDone = true;
                 }
             }
-           
+
         }
     }
 
     public IEnumerator PickingObject(GameObject item)
     {
-        if(PlayerStatusManager.canPick == true)
+        if (PlayerStatusManager.canPick == true)
         {
             PlayerStatusManager.canPick = false;
             if (playerInventory[inventoryIndex] != null)
@@ -131,24 +147,24 @@ public class PlayerInventory : MonoBehaviour
                     Instantiate(playerInventory[inventoryIndex].GetComponent<ItemDrop>().pickableVersionObject, transform.position - new Vector3(0, 0.15f, 0), transform.rotation);
                     playerInventory[inventoryIndex] = item.GetComponent<PickableStorage>().storedObject;
                     Destroy(item.gameObject);
-                }                
+                }
             }
             else
-            {                
+            {
                 playerInventory[inventoryIndex] = item.GetComponent<PickableStorage>().storedObject;
                 Destroy(item.gameObject);
             }
 
             yield return new WaitForSeconds(0.00001f);
             PlayerStatusManager.canPick = true;
-        }       
+        }
     }
 
     void OpenChest(GameObject chest)
     {
         if (PlayerStatusManager.canUse == true)
         {
-            
+
             PlayerStatusManager.canUse = false;
             PlayerStatusManager.isUsing = true;
 
@@ -158,4 +174,45 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+
+    IEnumerator BuyObject(GameObject obj)
+    {
+        if (GameManager.gameManager.gold > obj.GetComponent<ShopSpot>().price)
+        {
+            GameManager.gameManager.gold -= obj.GetComponent<ShopSpot>().price;
+
+            if (PlayerStatusManager.canPick == true)
+            {
+                PlayerStatusManager.canPick = false;
+                if (playerInventory[inventoryIndex] != null)
+                {
+                    bool alreadyStored = false;
+                    for (int i = 0; i < playerInventory.Length; i++)
+                    {
+                        if (playerInventory[i] == null)
+                        {
+                            playerInventory[i] = obj.GetComponent<ShopSpot>().pickableObject;
+                            Destroy(obj);
+                            alreadyStored = true;
+                            break;
+                        }
+                    }
+                    if (alreadyStored == false)
+                    {
+                        Instantiate(playerInventory[inventoryIndex].GetComponent<ItemDrop>().pickableVersionObject, transform.position - new Vector3(0, 0.15f, 0), transform.rotation);
+                        playerInventory[inventoryIndex] = obj.GetComponent<ShopSpot>().pickableObject;
+                        Destroy(obj);
+                    }
+                }
+                else
+                {
+                    playerInventory[inventoryIndex] = obj.GetComponent<ShopSpot>().pickableObject;
+                    Destroy(obj);
+                }
+
+                yield return new WaitForSeconds(0.00001f);
+                PlayerStatusManager.canPick = true;
+            }
+        }
+    }
 }

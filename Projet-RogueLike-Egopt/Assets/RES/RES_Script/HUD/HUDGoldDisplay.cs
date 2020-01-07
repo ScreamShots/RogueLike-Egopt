@@ -11,6 +11,6 @@ public class HUDGoldDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        goldDisplay.text = GameManager.gameManager.gold.ToString();
+        goldDisplay.text = "x " + GameManager.gameManager.gold.ToString();
     }
 }

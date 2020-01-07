@@ -19,6 +19,8 @@ public class EnemyHealthSystem : MonoBehaviour
     public GameObject silverCoin;
     public GameObject goldCoin;
 
+    public bool isDead;
+
 
     void Start()
     {
@@ -37,7 +39,7 @@ public class EnemyHealthSystem : MonoBehaviour
 
         if (enemyHp <= 0)
         {
-            EnemyDeath();
+           StartCoroutine( EnemyDeath());
         }
     }
 
@@ -52,9 +54,10 @@ public class EnemyHealthSystem : MonoBehaviour
 
     }
 
-    void EnemyDeath()                                  //Put every action requiered when the player is dead on this function
+    IEnumerator EnemyDeath()                                  //Put every action requiered when the player is dead on this function
     {
         float randomGold;
+        isDead = true;
 
         randomGold = Random.Range(1, 101);
 
@@ -88,7 +91,9 @@ public class EnemyHealthSystem : MonoBehaviour
 
         GameManager.gameManager.AddScore(enemyType);
 
+        GetComponentInChildren<Animator>().SetTrigger("dead");
 
+        yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
     }
 }

@@ -47,7 +47,7 @@ public class SkeletonBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(isSpawned == true)
+        if(isSpawned == true && GetComponent<EnemyHealthSystem>().isDead == false)
         {
             move = (playerTransform.position - transform.position).normalized;
 
