@@ -716,7 +716,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -825,7 +825,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upInventorySlot: {fileID: 8202147934011021721}
-  emptyDisplay: {fileID: 21300000, guid: 78ce37307b365bb4f9b76a4e59eb566a, type: 3}
   nextInventoryIndex: 0
 --- !u!114 &2869516034289118818
 MonoBehaviour:
@@ -871,6 +870,8 @@ MonoBehaviour:
   upFill: {fileID: 5008517496046157425}
   centerFill: {fileID: 1593529192710341725}
   downFill: {fileID: 5093120172258543586}
+  nextInventoryIndex: 0
+  previousInventoryIndex: 0
 --- !u!1 &2493747713541856533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,6 +1179,7 @@ GameObject:
   - component: {fileID: 5632003086006904411}
   - component: {fileID: 862341722272449211}
   - component: {fileID: 3893950053872616661}
+  - component: {fileID: 3300710731834137474}
   m_Layer: 5
   m_Name: ScoreDisplay
   m_TagString: Untagged
@@ -1244,6 +1246,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 15329
+--- !u!114 &3300710731834137474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4040877228749593412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -1.5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &4103405186224993809
 GameObject:
   m_ObjectHideFlags: 0
