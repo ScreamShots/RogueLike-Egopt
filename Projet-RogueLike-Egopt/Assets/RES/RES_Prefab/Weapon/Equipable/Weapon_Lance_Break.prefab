@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1752700537578911121}
-  - component: {fileID: 4040827097038487253}
+  - component: {fileID: 4047956227279138956}
   - component: {fileID: 4925682770445915489}
-  - component: {fileID: 6633406320477258880}
-  - component: {fileID: -2993550144770663159}
+  - component: {fileID: 2009220714645546828}
+  - component: {fileID: 1831300959519696085}
   m_Layer: 0
-  m_Name: Weapon_Marteau
+  m_Name: Weapon_Lance_Break
   m_TagString: Weapon
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -29,13 +29,13 @@ Transform:
   m_GameObject: {fileID: 2707228538706793494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &4040827097038487253
-CircleCollider2D:
+--- !u!61 &4047956227279138956
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -47,9 +47,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.4}
+  m_Offset: {x: 0, y: 0.85}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 1.4
+  m_Size: {x: 0.6, y: 1.7}
+  m_EdgeRadius: 0
 --- !u!114 &4925682770445915489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,19 +72,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a56a7719d7d68344e9d40d009be413aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponAttackSpeed: 0.6
-  weaponDmg: 60
+  weaponAttackSpeed: 0.5
+  weaponDmg: 40
   weaponImobilisationTime: 0.4
-  launchingTime: 0.22
+  launchingTime: 0
   durability: 25
   maxdurability: 25
-  isBroke: 0
-  brokeMode: {fileID: 2707228538706793494, guid: c0011bf842c521447a3a3f4c79b2d6de,
-    type: 3}
-  iconDisplay: {fileID: 21300000, guid: 895ecf8f1323ffc4aaad9c1b95415021, type: 3}
+  isBroke: 1
+  brokeMode: {fileID: 0}
+  iconDisplay: {fileID: 21300000, guid: 06ad135d74f3340439a788980e159883, type: 3}
   enemyInRangList: []
-  weaponId: 2
---- !u!114 &6633406320477258880
+  weaponId: 1
+--- !u!114 &2009220714645546828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,9 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82043346765a95459b01ddc94d42535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickableVersionObject: {fileID: 7734535245585211807, guid: f79efb18e0ae9de4096eca6ed4b05c92,
+  pickableVersionObject: {fileID: 7734535245585211807, guid: bbbe4e1383e1dc24283246b4d7e1060e,
     type: 3}
---- !u!114 &-2993550144770663159
+--- !u!114 &1831300959519696085
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,4 +109,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ecc319d9334724a9fa51aa43ac251f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryDisplay: {fileID: 21300000, guid: 334dc8f401365db4b8ba061e8529bf19, type: 3}
+  inventoryDisplay: {fileID: 21300000, guid: 8cc1229bc84243141a2ff94c9f33ce36, type: 3}

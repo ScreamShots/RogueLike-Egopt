@@ -8,6 +8,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private GameObject startingWeapon;
     [SerializeField] private GameObject selectionedObject;
     public static GameObject[] playerInventory;
+    static public GameObject[] durabilityStock;
     public List<GameObject> securityStock;
     public List<GameObject> chestSecurityStock;
     public List<GameObject> shopSecurityStock;
@@ -20,13 +21,19 @@ public class PlayerInventory : MonoBehaviour
     private void Start()
     {
         playerInventory = new GameObject[inventorySize];
+        durabilityStock = new GameObject[inventorySize];
         playerInventory[0] = startingWeapon;
+        durabilityStock[0] = Instantiate(startingWeapon);
+        durabilityStock[0].SetActive(false);
+
         inventoryIndex = 0;
         buttonADisplay.SetActive(false);
+
     }
 
     private void Update()
     {
+               
         if (Input.GetButtonDown("Inv"))
         {
             InventoryRotation((int)Input.GetAxisRaw("Inv"));
@@ -126,6 +133,8 @@ public class PlayerInventory : MonoBehaviour
 
     public IEnumerator PickingObject(GameObject item)
     {
+        GameObject dropedObject;
+
         if (PlayerStatusManager.canPick == true)
         {
             PlayerStatusManager.canPick = false;
@@ -137,6 +146,15 @@ public class PlayerInventory : MonoBehaviour
                     if (playerInventory[i] == null)
                     {
                         playerInventory[i] = item.GetComponent<PickableStorage>().storedObject;
+                        durabilityStock[i] = Instantiate(item.GetComponent<PickableStorage>().storedObject);
+                        durabilityStock[i].SetActive(false);
+
+                        if(durabilityStock[i].tag == "Weapon")
+                        {
+
+                            durabilityStock[i].GetComponent<WeaponManager>().durability = item.GetComponent<PickableStorage>().storedObjectDurability;
+                        }
+                        
                         Destroy(item.gameObject);
                         alreadyStored = true;
                         break;
@@ -144,14 +162,38 @@ public class PlayerInventory : MonoBehaviour
                 }
                 if (alreadyStored == false)
                 {
-                    Instantiate(playerInventory[inventoryIndex].GetComponent<ItemDrop>().pickableVersionObject, transform.position - new Vector3(0, 0.15f, 0), transform.rotation);
+                    dropedObject = Instantiate(playerInventory[inventoryIndex].GetComponent<ItemDrop>().pickableVersionObject, transform.position - new Vector3(0, 0.15f, 0), transform.rotation);
+
+                    if (durabilityStock[inventoryIndex].tag == "Weapon")
+                    {
+                        dropedObject.GetComponent<PickableStorage>().storedObjectDurability = durabilityStock[inventoryIndex].GetComponent<WeaponManager>().durability;
+                    }
+                        
+                    dropedObject.GetComponent<PickableStorage>().dropedByThePlayer = true;
                     playerInventory[inventoryIndex] = item.GetComponent<PickableStorage>().storedObject;
+                    Destroy(durabilityStock[inventoryIndex]);
+                    durabilityStock[inventoryIndex] = Instantiate(item.GetComponent<PickableStorage>().storedObject);
+                    durabilityStock[inventoryIndex].SetActive(false);
+
+                    if (durabilityStock[inventoryIndex].tag == "Weapon")
+                    {
+                        durabilityStock[inventoryIndex].GetComponent<WeaponManager>().durability = item.GetComponent<PickableStorage>().storedObjectDurability;
+                    }
+                        
                     Destroy(item.gameObject);
                 }
             }
             else
             {
                 playerInventory[inventoryIndex] = item.GetComponent<PickableStorage>().storedObject;
+                durabilityStock[inventoryIndex] = Instantiate(item.GetComponent<PickableStorage>().storedObject);
+                durabilityStock[inventoryIndex].SetActive(false);
+
+                if (durabilityStock[inventoryIndex].tag == "Weapon")
+                {
+                    durabilityStock[inventoryIndex].GetComponent<WeaponManager>().durability = item.GetComponent<PickableStorage>().storedObjectDurability;
+                }
+                    
                 Destroy(item.gameObject);
             }
 
@@ -180,6 +222,7 @@ public class PlayerInventory : MonoBehaviour
         if (GameManager.gameManager.gold > obj.GetComponent<ShopSpot>().price)
         {
             GameManager.gameManager.gold -= obj.GetComponent<ShopSpot>().price;
+            GameObject dropedObject;
 
             if (PlayerStatusManager.canPick == true)
             {
@@ -191,23 +234,33 @@ public class PlayerInventory : MonoBehaviour
                     {
                         if (playerInventory[i] == null)
                         {
-                            playerInventory[i] = obj.GetComponent<ShopSpot>().pickableObject;
-                            Destroy(obj);
+                            playerInventory[i] = obj.GetComponent<PickableStorage>().storedObject;
+                            durabilityStock[i] = Instantiate(obj.GetComponent<PickableStorage>().storedObject);
+                            durabilityStock[i].SetActive(false);
+                            durabilityStock[i].GetComponent<WeaponManager>().durability = obj.GetComponent<PickableStorage>().storedObjectDurability;
+                            Destroy(obj.gameObject);
                             alreadyStored = true;
                             break;
                         }
                     }
                     if (alreadyStored == false)
                     {
-                        Instantiate(playerInventory[inventoryIndex].GetComponent<ItemDrop>().pickableVersionObject, transform.position - new Vector3(0, 0.15f, 0), transform.rotation);
-                        playerInventory[inventoryIndex] = obj.GetComponent<ShopSpot>().pickableObject;
-                        Destroy(obj);
+                        dropedObject = Instantiate(playerInventory[inventoryIndex].GetComponent<ItemDrop>().pickableVersionObject, transform.position - new Vector3(0, 0.15f, 0), transform.rotation);
+                        dropedObject.GetComponent<PickableStorage>().storedObjectDurability = durabilityStock[inventoryIndex].GetComponent<WeaponManager>().durability;
+                        playerInventory[inventoryIndex] = obj.GetComponent<PickableStorage>().storedObject;
+                        durabilityStock[inventoryIndex] = Instantiate(obj.GetComponent<PickableStorage>().storedObject);
+                        durabilityStock[inventoryIndex].SetActive(false);
+                        durabilityStock[inventoryIndex].GetComponent<WeaponManager>().durability = obj.GetComponent<PickableStorage>().storedObjectDurability;
+                        Destroy(obj.gameObject);
                     }
                 }
                 else
                 {
-                    playerInventory[inventoryIndex] = obj.GetComponent<ShopSpot>().pickableObject;
-                    Destroy(obj);
+                    playerInventory[inventoryIndex] = obj.GetComponent<PickableStorage>().storedObject;
+                    durabilityStock[inventoryIndex] = Instantiate(obj.GetComponent<PickableStorage>().storedObject);
+                    durabilityStock[inventoryIndex].SetActive(false);
+                    durabilityStock[inventoryIndex].GetComponent<WeaponManager>().durability = obj.GetComponent<PickableStorage>().storedObjectDurability;
+                    Destroy(obj.gameObject);
                 }
 
                 yield return new WaitForSeconds(0.00001f);

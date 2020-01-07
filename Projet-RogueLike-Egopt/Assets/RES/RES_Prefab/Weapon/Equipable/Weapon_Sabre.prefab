@@ -80,6 +80,11 @@ MonoBehaviour:
   weaponDmg: 50
   weaponImobilisationTime: 0.2
   launchingTime: 0
+  durability: 25
+  maxdurability: 25
+  isBroke: 0
+  brokeMode: {fileID: 2707228538706793494, guid: 2d87a248730f8454cae1200d6955d0da,
+    type: 3}
   iconDisplay: {fileID: 21300000, guid: 068477907841bff4ab5bf1ad105b2209, type: 3}
   enemyInRangList: []
   weaponId: 0

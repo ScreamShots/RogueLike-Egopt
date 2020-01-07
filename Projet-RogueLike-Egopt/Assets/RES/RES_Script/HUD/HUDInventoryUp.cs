@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class HUDInventoryUp : MonoBehaviour
 {
     public Image upInventorySlot;
-    public Sprite emptyDisplay;
     public int nextInventoryIndex;
 
     private void Update()

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6633406320477258880}
   - component: {fileID: -2993550144770663159}
   m_Layer: 0
-  m_Name: Weapon_Marteau
+  m_Name: Weapon_Marteau_Break
   m_TagString: Weapon
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -68,9 +68,8 @@ MonoBehaviour:
   launchingTime: 0.22
   durability: 25
   maxdurability: 25
-  isBroke: 0
-  brokeMode: {fileID: 2707228538706793494, guid: c0011bf842c521447a3a3f4c79b2d6de,
-    type: 3}
+  isBroke: 1
+  brokeMode: {fileID: 0}
   iconDisplay: {fileID: 21300000, guid: 895ecf8f1323ffc4aaad9c1b95415021, type: 3}
   enemyInRangList: []
   weaponId: 2
@@ -86,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82043346765a95459b01ddc94d42535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickableVersionObject: {fileID: 7734535245585211807, guid: f79efb18e0ae9de4096eca6ed4b05c92,
+  pickableVersionObject: {fileID: 7734535245585211807, guid: 7a6f2f47fab39d84580dd23ef0728664,
     type: 3}
 --- !u!114 &-2993550144770663159
 MonoBehaviour:
@@ -100,4 +99,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ecc319d9334724a9fa51aa43ac251f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryDisplay: {fileID: 21300000, guid: 334dc8f401365db4b8ba061e8529bf19, type: 3}
+  inventoryDisplay: {fileID: 21300000, guid: 92599053bb48bbe40b63f86d3efd16ed, type: 3}

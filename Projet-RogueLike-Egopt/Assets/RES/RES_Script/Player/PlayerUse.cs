@@ -15,11 +15,13 @@ public class PlayerUse : MonoBehaviour
     [HideInInspector] public float additionalStrength;
     private bool attackSecurityCheck;
     private bool useSecurityCheck;
+    public PlayerInventory inventory;
 
     private void Start()
     {
         attackSecurityCheck = false;
         useSecurityCheck = false;
+        inventory = GetComponent<PlayerInventory>();
     }
     void Update()
     {
@@ -48,7 +50,9 @@ public class PlayerUse : MonoBehaviour
 
             yield return new WaitForSeconds(equipiedItem.GetComponent<WeaponManager>().launchingTime);
 
+            
             actualItem = Instantiate(equipiedItem);
+            
             actualItem.transform.parent = GetComponent<Transform>();
             actualItem.transform.localPosition = new Vector3(0, 0, 0);            
 
@@ -83,7 +87,16 @@ public class PlayerUse : MonoBehaviour
             }
 
             yield return new WaitForSeconds(0.001f);
-            actualItem.GetComponent<WeaponManager>().WeaponAttack(additionalStrength);
+
+            if (actualItem.GetComponent<WeaponManager>().WeaponAttack(additionalStrength) == true)
+            {
+                PlayerInventory.durabilityStock[PlayerInventory.inventoryIndex].GetComponent<WeaponManager>().durability -= 1;
+
+                if (PlayerInventory.durabilityStock[PlayerInventory.inventoryIndex].GetComponent<WeaponManager>().durability <= 0)
+                {
+                    PlayerInventory.durabilityStock[PlayerInventory.inventoryIndex].GetComponent<WeaponManager>().Break();
+                }
+            }
 
             yield return new WaitForSeconds(imobilisationTime);
 
