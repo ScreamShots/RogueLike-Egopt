@@ -48,6 +48,7 @@ public class StartMenu : MonoBehaviour
                 eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(settingsButton[0].gameObject);
 
                 subSettingsMenuActive = false;
+                subMenuActive = true;
                 onSoundSettings = false;
             }
         }
