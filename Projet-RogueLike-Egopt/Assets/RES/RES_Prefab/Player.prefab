@@ -286,6 +286,7 @@ MonoBehaviour:
   selectionedObject: {fileID: 0}
   securityStock: []
   chestSecurityStock: []
+  shopSecurityStock: []
   buttonADisplay: {fileID: 7506733128647623680}
   inventorySize: 3
   canOpen: 0
@@ -304,6 +305,7 @@ MonoBehaviour:
   attackDirection: 0
   equipiedItem: {fileID: 0}
   additionalStrength: 0
+  inventory: {fileID: 0}
 --- !u!114 &2267346089759508474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,7 +321,10 @@ MonoBehaviour:
   playerMaxHp: 100
   playerMinHp: 0
   playerHp: 0
+  playerLostHp: 0
   playerImmuneTime: 1.5
+  playerTookDmg: 0
+  timer: 0
 --- !u!114 &8275988367135995617
 MonoBehaviour:
   m_ObjectHideFlags: 0
