@@ -21,12 +21,12 @@ public class Credits : MonoBehaviour
                 SceneManager.LoadScene(0);
             }
         }
-
-        if (Input.GetButtonUp("SelectMenu"))
+        else
         {
             timer = 0;
         }
 
         charger.fillAmount = (timer / 1.5f);
+
     }
 }

@@ -101,6 +101,7 @@ public class RoomHandler : MonoBehaviour
             }
             else if (cameraIsSet == false)
             {
+                gameCamera.transform.parent = null;
                 gameCamera.transform.position = transform.position;
                 cameraIsSet = true;
             }
