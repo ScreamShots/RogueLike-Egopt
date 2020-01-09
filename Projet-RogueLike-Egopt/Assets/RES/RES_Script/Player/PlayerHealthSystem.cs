@@ -18,6 +18,8 @@ public class PlayerHealthSystem : MonoBehaviour
     public static bool playerIsImune;
     public bool playerTookDmg;
     public float timer;
+    public GameObject gameOverBackGround;
+    public GameObject gameOverUI;
 
     void Start()
     {
@@ -31,7 +33,7 @@ public class PlayerHealthSystem : MonoBehaviour
     {
         if (playerHp <= 0)
         {
-            PlayerDeath();
+            StartCoroutine(PlayerDeath());
         }
 
         if (playerTookDmg == true)
@@ -69,13 +71,20 @@ public class PlayerHealthSystem : MonoBehaviour
         }
     }
 
-    void PlayerDeath()                                  //Put every action requiered when the player is dead on this function
+    IEnumerator PlayerDeath()                                  //Put every action requiered when the player is dead on this function
     {
-        Debug.Log("Vous êtes mort");
-
-        GameManager.gameManager.ResetGame();
-
-
+        Collider2D[] allColliders = GetComponentsInChildren<Collider2D>();
+        for (int i =0; i < allColliders.Length; i++)
+        {
+            allColliders[i].enabled = false;
+        }
+        GetComponentInChildren<Animator>().SetTrigger("Die");
+        PlayerStatusManager.isLoading = true;
+        yield return new WaitForSeconds(1f);
+        gameOverBackGround.SetActive(true);
+        gameOverBackGround.GetComponentInChildren<Animator>().SetTrigger("Die");
+        yield return new WaitForSeconds(1f);
+        gameOverUI.SetActive(true);
     }
 
     public IEnumerator PlayerImmunityActivation()

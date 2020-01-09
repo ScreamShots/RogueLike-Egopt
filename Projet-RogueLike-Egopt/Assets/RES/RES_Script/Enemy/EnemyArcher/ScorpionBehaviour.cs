@@ -71,6 +71,10 @@ public class ScorpionBehaviour : MonoBehaviour
 
             }
         }
+        else if (GetComponent<EnemyHealthSystem>().isDead == true)
+        {
+            scorpionRgb.velocity = new Vector3(0, 0, 0);
+        }
         velocity = scorpionRgb.velocity;
     }
 

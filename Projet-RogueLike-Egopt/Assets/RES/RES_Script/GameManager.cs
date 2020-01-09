@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject loadingScreen;
     public Image loadingImage;
     public GameObject player;
-    
+
 
     public float timer = 0;
 
@@ -89,8 +89,10 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
-        Destroy(player);
+        GameObject.FindWithTag("MainCamera").transform.parent = null;
+        
         SceneManager.LoadScene(0);
+        Destroy(player);
         score = 0;
         gold = 0;
     }

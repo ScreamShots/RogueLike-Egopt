@@ -53,7 +53,7 @@ public class SkeletonBehaviour : MonoBehaviour
 
             if (isPlayerInRange == false && canMove == true)
             {
-                skeletonRgb.velocity = move * speed * Time.fixedDeltaTime;
+                skeletonRgb.velocity = move * speed * Time.deltaTime;
                 
             }
             else if (isPlayerInRange == true)
@@ -63,6 +63,10 @@ public class SkeletonBehaviour : MonoBehaviour
             }
 
             Direction();
+        }
+        else if(GetComponent<EnemyHealthSystem>().isDead == true)
+        {
+            skeletonRgb.velocity = new Vector3(0, 0, 0);
         }
         velocity = skeletonRgb.velocity;
     }

@@ -150,7 +150,7 @@ public class PlayerInventory : MonoBehaviour
                         durabilityStock[i] = Instantiate(item.GetComponent<PickableStorage>().storedObject);
                         durabilityStock[i].transform.parent = transform;
 
-                        yield return new WaitForSeconds(0.01f);
+                        yield return new WaitForSeconds(0.1f);
 
                         durabilityStock[i].SetActive(false);
 
@@ -179,7 +179,7 @@ public class PlayerInventory : MonoBehaviour
                     Destroy(durabilityStock[inventoryIndex]);
                     durabilityStock[inventoryIndex] = Instantiate(item.GetComponent<PickableStorage>().storedObject);
                     durabilityStock[inventoryIndex].transform.parent = transform;
-                    yield return new WaitForSeconds(0.01f);
+                    yield return new WaitForSeconds(0.1f);
                     durabilityStock[inventoryIndex].SetActive(false);
 
                     if (durabilityStock[inventoryIndex].tag == "Weapon")
@@ -195,7 +195,7 @@ public class PlayerInventory : MonoBehaviour
                 playerInventory[inventoryIndex] = item.GetComponent<PickableStorage>().storedObject;
                 durabilityStock[inventoryIndex] = Instantiate(item.GetComponent<PickableStorage>().storedObject);
                 durabilityStock[inventoryIndex].transform.parent = transform;
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForSeconds(0.1f);
                 durabilityStock[inventoryIndex].SetActive(false);
 
                 if (durabilityStock[inventoryIndex].tag == "Weapon")
@@ -243,7 +243,7 @@ public class PlayerInventory : MonoBehaviour
                         playerInventory[i] = obj.GetComponent<ShopSpot>().pickableObject;
                         durabilityStock[i] = Instantiate(obj.GetComponent<ShopSpot>().pickableObject);
                         durabilityStock[i].transform.parent = transform;
-                        yield return new WaitForSeconds(0.01f);
+                        yield return new WaitForSeconds(0.1f);
                         durabilityStock[i].SetActive(false);
 
                         if (durabilityStock[i].tag == "Weapon")
@@ -271,7 +271,7 @@ public class PlayerInventory : MonoBehaviour
                     Destroy(durabilityStock[inventoryIndex]);
                     durabilityStock[inventoryIndex] = Instantiate(obj.GetComponent<ShopSpot>().pickableObject);
                     durabilityStock[inventoryIndex].transform.parent = transform;
-                    yield return new WaitForSeconds(0.01f);
+                    yield return new WaitForSeconds(0.1f);
                     durabilityStock[inventoryIndex].SetActive(false);
 
                     if (durabilityStock[inventoryIndex].tag == "Weapon")
@@ -287,7 +287,8 @@ public class PlayerInventory : MonoBehaviour
                 playerInventory[inventoryIndex] = obj.GetComponent<PickableStorage>().storedObject;
                 durabilityStock[inventoryIndex] = Instantiate(obj.GetComponent<PickableStorage>().storedObject);
                 durabilityStock[inventoryIndex].transform.parent = transform;
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.1f);
                 durabilityStock[inventoryIndex].SetActive(false);
 
                 if (durabilityStock[inventoryIndex].tag == "Weapon")

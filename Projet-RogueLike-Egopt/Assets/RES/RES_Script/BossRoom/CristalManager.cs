@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CristalManager : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class CristalManager : MonoBehaviour
     [SerializeField] float cristalHealthPhaseFour;
     [SerializeField] float cristalHealthPhaseFive;
 
+    [SerializeField]  float globalMaxHealth;
+    [SerializeField]  float globalHealth;    
+
     [SerializeField] Transform[] standPositions;
 
     [SerializeField] WaveManager waveManager;
@@ -30,6 +34,15 @@ public class CristalManager : MonoBehaviour
 
     [SerializeField] GameObject[] fragements;
     [SerializeField] GameObject[] talismans;
+
+    [SerializeField] GameObject core;
+    [SerializeField] GameObject UpLeft;
+    [SerializeField] GameObject UpRight;
+    [SerializeField] GameObject DownLeft;
+    [SerializeField] GameObject DownRight;
+
+    [SerializeField] Image healthBar;
+
 
     void Start()
     {
@@ -56,7 +69,10 @@ public class CristalManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        globalHealth = cristalHealthPhaseOne + cristalHealthPhaseTwo + cristalHealthPhaseThree + cristalHealthPhaseFour + cristalHealthPhaseFive;
+        globalMaxHealth = maxCristalHealthPhaseFive + maxCristalHealthPhaseFour + maxCristalHealthPhaseOne + maxCristalHealthPhaseThree + maxCristalHealthPhaseTwo;
+
+        healthBar.fillAmount = globalHealth / globalMaxHealth;
     }
 
     public void TakeDamage(float dmgValue)
@@ -160,7 +176,8 @@ public class CristalManager : MonoBehaviour
         {
             case 1:
                 transform.position = standPositions[3].position;
-                fragements[0].SetActive(false);                
+                fragements[0].SetActive(false);
+                UpLeft.SetActive(false);
                 waveManager.StopAllCoroutines();
                 canTakeDmgOnTwo = true;
                 canTakeDmgOnOne = false;
@@ -168,6 +185,7 @@ public class CristalManager : MonoBehaviour
             case 2:
                 transform.position = standPositions[2].position;
                 fragements[1].SetActive(false);
+                UpRight.SetActive(false);
                 talismans[0].SetActive(false);
                 talismans[1].SetActive(true);
                 waveManager.StopAllCoroutines();
@@ -177,6 +195,7 @@ public class CristalManager : MonoBehaviour
             case 3:
                 transform.position = standPositions[1].position;
                 fragements[2].SetActive(false);
+                DownLeft.SetActive(false);
                 talismans[1].SetActive(false);
                 talismans[2].SetActive(true);
                 waveManager.StopAllCoroutines();
@@ -186,6 +205,7 @@ public class CristalManager : MonoBehaviour
             case 4:
                 transform.position = standPositions[0].position;
                 fragements[3].SetActive(false);
+                DownRight.SetActive(false);
                 waveManager.StopAllCoroutines();
                 canTakeDmgOnFive = true;
                 canTakeDmgOnFour = false;
@@ -193,6 +213,7 @@ public class CristalManager : MonoBehaviour
             case 5:
                 waveManager.StopPhaseFive();
                 talismans[2].SetActive(false);
+                core.SetActive(false);
                 Destroy(gameObject);
                 break;
             default:

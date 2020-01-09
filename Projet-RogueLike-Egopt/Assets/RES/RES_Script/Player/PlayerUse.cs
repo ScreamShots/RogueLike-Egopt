@@ -86,7 +86,7 @@ public class PlayerUse : MonoBehaviour
                     break;
             }
 
-            yield return new WaitForSeconds(0.001f);
+            yield return new WaitForSeconds(0.1f);
 
             if (actualItem.GetComponent<WeaponManager>().WeaponAttack(additionalStrength) == true)
             {

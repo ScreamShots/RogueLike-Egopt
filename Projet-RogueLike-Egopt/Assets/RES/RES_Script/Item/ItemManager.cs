@@ -50,12 +50,11 @@ public class ItemManager : MonoBehaviour
     {
         Debug.Log("Start");
         characterUsing.GetComponent<PlayerMovement>().speed = characterUsing.GetComponent<PlayerMovement>().speed * speedBoostRatio;
-        GameObject.FindWithTag("Player").GetComponentInChildren<SpriteRenderer>().color = Color.green;
-
+        HUDIcono.speedboost = true;
+        HUDIcono.effectdurationSpeed = effectDuration;
         yield return new WaitForSeconds(effectDuration);
-
+        HUDIcono.speedboost = false;
         characterUsing.GetComponent<PlayerMovement>().speed = characterUsing.GetComponent<PlayerMovement>().speed / speedBoostRatio;
-        GameObject.FindWithTag("Player").GetComponentInChildren<SpriteRenderer>().color = Color.white;
         Debug.Log("Stop");
         Destroy(this.gameObject);
     }
@@ -64,12 +63,11 @@ public class ItemManager : MonoBehaviour
     {
         Debug.Log("Start");
         characterUsing.GetComponent<PlayerUse>().additionalStrength += strengthBoostValue;
-        GameObject.FindWithTag("Player").GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
-
+        HUDIcono.boostforce = true;
+        HUDIcono.effectdurationForce = effectDuration;
         yield return new WaitForSeconds(effectDuration);
-
+        HUDIcono.boostforce = false;
         characterUsing.GetComponent<PlayerUse>().additionalStrength -= strengthBoostValue;
-        GameObject.FindWithTag("Player").GetComponentInChildren<SpriteRenderer>().color = Color.white;
         Debug.Log("Stop");
         Destroy(this.gameObject);
     }

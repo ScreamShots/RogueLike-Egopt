@@ -75,7 +75,7 @@ public class EnemyHealthSystem : MonoBehaviour
         }
 
 
-
+        
         if (randomGold < 65 && randomGold > 10)
         {
             Instantiate(bronzCoin, transform.position, Quaternion.identity);
@@ -90,6 +90,7 @@ public class EnemyHealthSystem : MonoBehaviour
         }
 
         GameManager.gameManager.AddScore(enemyType);
+        HpBarBack.gameObject.SetActive(false);
 
         GetComponentInChildren<Animator>().SetTrigger("dead");
 

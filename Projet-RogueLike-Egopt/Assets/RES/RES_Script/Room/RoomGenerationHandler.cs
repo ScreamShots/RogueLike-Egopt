@@ -107,7 +107,11 @@ public class RoomGenerationHandler : MonoBehaviour
         if (isLevelPlayable == true)
         {
             Debug.Log("Fin de la génération du niveau. Amusez vous bien!");
-            Instantiate(player, transform.position, transform.rotation);
+            if(GameManager.gameManager.player == null)
+            {
+                Instantiate(player, transform.position, transform.rotation);
+            }
+           
             Destroy(GetComponent<RoomGenerationHandler>());
         }
     }

@@ -69,7 +69,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -6306282405663924564, guid: 2d1fd6272ac554445ac611e34a94d78b,
+  m_Sprite: {fileID: -2880734798192188640, guid: 2d1fd6272ac554445ac611e34a94d78b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -155,6 +155,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storedObject: {fileID: 276039723957774553, guid: 9ca5beeac183050498680787613b5f28,
     type: 3}
+  storedObjectDurability: 0
+  baseStoredObjectDurability: 0
+  dropedByThePlayer: 0
+  duraSet: 0
 --- !u!114 &71470135367321297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,4 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastY: 0
-  baseSortingOrder: 0
+  baseSortingOrder: 
