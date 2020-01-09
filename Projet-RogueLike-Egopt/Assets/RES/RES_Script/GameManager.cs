@@ -62,12 +62,9 @@ public class GameManager : MonoBehaviour
             if (player == null)
             {
                 player = GameObject.FindWithTag("Player");
+                DontDestroyOnLoad(player);
             }
-            else if (player != null && player != GameObject.FindWithTag("Player"))
-            {
-                Destroy(player);
-                player = GameObject.FindWithTag("Player");
-            }
+ 
         }
         
     }
@@ -92,6 +89,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
+        Destroy(player);
         SceneManager.LoadScene(0);
         score = 0;
         gold = 0;

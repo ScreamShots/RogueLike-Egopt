@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8614210744487837114}
   - component: {fileID: 2121973900326342210}
   - component: {fileID: 234507242988181526}
+  - component: {fileID: 8707534030229015169}
   m_Layer: 0
   m_Name: QuickSand_1
   m_TagString: Untagged
@@ -71,7 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -990
-  m_Sprite: {fileID: 323597053979461526, guid: 2ca61aa135feff4459ac5747894246a6, type: 3}
+  m_Sprite: {fileID: 2443469237639705056, guid: 75c55f9408586684da76afe43a8b73d5,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32941177, y: 0.16470589}
+    oldSize: {x: 0.37, y: 0.14}
     newSize: {x: 0.32941177, y: 0.16470589}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -121,3 +123,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowRatio: 0.4
+--- !u!95 &8707534030229015169
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5640021395399438499}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc4766fefb9bbe647a8376b15da1b684, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

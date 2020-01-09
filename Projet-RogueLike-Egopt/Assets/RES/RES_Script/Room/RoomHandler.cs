@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoomHandler : MonoBehaviour
 {
@@ -93,11 +94,7 @@ public class RoomHandler : MonoBehaviour
 
             if(isThisBossRoom == true && cameraIsSet == false)
             {
-                GameObject player = GameObject.FindWithTag("Player");
-                gameCamera.transform.parent = player.transform;
-                gameCamera.transform.position = player.transform.position;
-
-                cameraIsSet = true;
+                SceneManager.LoadScene(3);
             }
             else if (cameraIsSet == false)
             {
