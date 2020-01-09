@@ -28,6 +28,9 @@ public class CristalManager : MonoBehaviour
     [SerializeField] bool canTakeDmgOnFour = false;
     [SerializeField] bool canTakeDmgOnFive = false;
 
+    [SerializeField] GameObject[] fragements;
+    [SerializeField] GameObject[] talismans;
+
     void Start()
     {
         if (cristalInstance == null)
@@ -46,6 +49,8 @@ public class CristalManager : MonoBehaviour
         cristalHealthPhaseOne = maxCristalHealthPhaseOne;
         cristalHealthPhaseThree = maxCristalHealthPhaseThree;
         cristalHealthPhaseTwo = maxCristalHealthPhaseTwo;
+
+        talismans[0].SetActive(true);
     }
 
     // Update is called once per frame
@@ -155,30 +160,39 @@ public class CristalManager : MonoBehaviour
         {
             case 1:
                 transform.position = standPositions[3].position;
+                fragements[0].SetActive(false);                
                 waveManager.StopAllCoroutines();
                 canTakeDmgOnTwo = true;
                 canTakeDmgOnOne = false;
                 break;
             case 2:
                 transform.position = standPositions[2].position;
+                fragements[1].SetActive(false);
+                talismans[0].SetActive(false);
+                talismans[1].SetActive(true);
                 waveManager.StopAllCoroutines();
                 canTakeDmgOnThree = true;
                 canTakeDmgOnTwo = false;
                 break;
             case 3:
                 transform.position = standPositions[1].position;
+                fragements[2].SetActive(false);
+                talismans[1].SetActive(false);
+                talismans[2].SetActive(true);
                 waveManager.StopAllCoroutines();
                 canTakeDmgOnFour = true;
                 canTakeDmgOnThree = false;
                 break;
             case 4:
                 transform.position = standPositions[0].position;
+                fragements[3].SetActive(false);
                 waveManager.StopAllCoroutines();
                 canTakeDmgOnFive = true;
                 canTakeDmgOnFour = false;
                 break;
             case 5:
                 waveManager.StopPhaseFive();
+                talismans[2].SetActive(false);
                 Destroy(gameObject);
                 break;
             default:

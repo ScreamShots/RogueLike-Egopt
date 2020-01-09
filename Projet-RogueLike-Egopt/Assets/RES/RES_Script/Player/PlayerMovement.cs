@@ -185,4 +185,30 @@ public class PlayerMovement : MonoBehaviour
         }
        
     }
+
+    public void StartFallBis(float dmg, Transform fallPosition, Transform playerPosition)
+    {
+        StartCoroutine(PlayerFallBis(dmg, fallPosition, playerPosition));
+    }
+    public IEnumerator PlayerFallBis(float dmg, Transform fallPosition, Transform playerPosition)
+    {
+        if (PlayerStatusManager.canFall)
+        {
+            PlayerStatusManager.isFalling = true;
+
+            GetComponent<Transform>().position = fallPosition.position;
+
+
+            yield return new WaitForSeconds(fallingTime);
+
+            GetComponent<Transform>().position = respawnPosition;
+
+            GetComponent<PlayerHealthSystem>().IsTakingDmg(dmg);
+
+            PlayerStatusManager.needToEndFall = true;
+        }
+
+    }
+
+
 }

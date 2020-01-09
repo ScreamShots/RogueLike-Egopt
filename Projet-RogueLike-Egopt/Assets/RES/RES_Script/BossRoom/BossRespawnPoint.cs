@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class BossRespawnPoint : MonoBehaviour
 {
+    public Transform respawnPoint;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            PlayerMovement.respawnPosition = transform.position;
+            PlayerMovement.respawnPosition = respawnPoint.position;
         }
     }
 }
