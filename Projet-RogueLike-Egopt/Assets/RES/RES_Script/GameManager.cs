@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -73,5 +74,12 @@ public class GameManager : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(0);
+        score = 0;
+        gold = 0;
     }
 }

@@ -13,7 +13,7 @@ public class LoadingScreen : MonoBehaviour
         timer = 0;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(timer >= 3f)
         {

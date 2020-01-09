@@ -23,7 +23,7 @@ public class PlayerUse : MonoBehaviour
         useSecurityCheck = false;
         inventory = GetComponent<PlayerInventory>();
     }
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetAxisRaw("AtkUse") > 0 && PlayerInventory.playerInventory[PlayerInventory.inventoryIndex] != null)
         {          

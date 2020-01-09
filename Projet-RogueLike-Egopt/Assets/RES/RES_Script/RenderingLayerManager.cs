@@ -22,7 +22,7 @@ public class RenderingLayerManager : MonoBehaviour
     }
 
    
-    void Update()
+    void FixedUpdate()
     {
         if (lastY != transform.position.y)
         {
