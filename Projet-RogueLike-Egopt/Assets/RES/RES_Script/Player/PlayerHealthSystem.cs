@@ -21,19 +21,28 @@ public class PlayerHealthSystem : MonoBehaviour
     public GameObject gameOverBackGround;
     public GameObject gameOverUI;
 
+
+    //Music
+    public AudioSource playerAudioSource;
     void Start()
     {
         playerHp = playerMaxHp;
         playerIsImune = false;
         playerTookDmg = false;
         playerLostHp = playerMaxHp;
+
+        //Sound
+        playerAudioSource = GetComponent<Audio_Manager_Player>().audioSourcePlayer;
     }
     
     private void FixedUpdate()
     {
         if (playerHp <= 0)
         {
+            
             StartCoroutine(PlayerDeath());
+            
+
         }
 
         if (playerTookDmg == true)
@@ -54,7 +63,10 @@ public class PlayerHealthSystem : MonoBehaviour
     {
         if (playerIsImune == false)
         {
+            
             playerHp -= damageValue;
+            playerAudioSource.clip = GetComponent<Audio_Manager_Player>().playerAudioClip[0];
+            playerAudioSource.Play();
             //StartCoroutine(PlayerImmunityActivation());
             playerTookDmg = true;
             timer = 0;
@@ -64,6 +76,8 @@ public class PlayerHealthSystem : MonoBehaviour
     public void PlayerIsHealing(float healValue)             //Put every action requiered when the player is healed on this fonction  
     {
         playerHp += healValue;
+        playerAudioSource.clip = GetComponent<Audio_Manager_Player>().playerAudioClip[2];
+        playerAudioSource.Play();
 
         if (playerHp > playerMaxHp)
         {
@@ -73,11 +87,13 @@ public class PlayerHealthSystem : MonoBehaviour
 
     IEnumerator PlayerDeath()                                  //Put every action requiered when the player is dead on this function
     {
+        
         Collider2D[] allColliders = GetComponentsInChildren<Collider2D>();
         for (int i =0; i < allColliders.Length; i++)
         {
             allColliders[i].enabled = false;
         }
+        
         GetComponentInChildren<Animator>().SetTrigger("Die");
         PlayerStatusManager.isLoading = true;
         yield return new WaitForSeconds(1f);
@@ -85,6 +101,8 @@ public class PlayerHealthSystem : MonoBehaviour
         gameOverBackGround.GetComponentInChildren<Animator>().SetTrigger("Die");
         yield return new WaitForSeconds(1f);
         gameOverUI.SetActive(true);
+
+        
     }
 
     public IEnumerator PlayerImmunityActivation()

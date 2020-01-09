@@ -35,6 +35,10 @@ public class PlayerMovement : MonoBehaviour
     public static Vector3 respawnPosition;
     [SerializeField] private float fallingTime;
 
+
+    //Music
+    public AudioSource playerAudioSource;
+
     void Start()
     {
         playerRgb = GetComponent<Rigidbody2D>();
@@ -43,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         lastMove = new Vector3(1, 0, 0);
         respawnPosition = new Vector3(0, 0, 0);
 
-        
+        playerAudioSource = GetComponent<Audio_Manager_Player>().audioSourcePlayer;
     }
 
     void FixedUpdate()
@@ -53,8 +57,8 @@ public class PlayerMovement : MonoBehaviour
         Direction();
 
         //Move
-
         inputHorizontalMoove = Input.GetAxisRaw("HorizontalMove");
+
         inputVerticalMoove = Input.GetAxisRaw("VerticalMove");
 
         move = new Vector3(inputHorizontalMoove, inputVerticalMoove, 0);
@@ -71,7 +75,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (PlayerStatusManager.canDash == true)
             {
-                
+                playerAudioSource.clip = GetComponent<Audio_Manager_Player>().playerAudioClip[4];
+                playerAudioSource.Play();
                 StartCoroutine(Dash(lastMove));
                 
             }
@@ -84,7 +89,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        playerRgb.velocity = move.normalized * speed * Time.fixedDeltaTime;        
+        playerRgb.velocity = move.normalized * speed * Time.fixedDeltaTime;
+        
     }
 
     //Direction
@@ -127,6 +133,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (PlayerStatusManager.canDash == true && PlayerStatusManager.isAttacking == false && PlayerStatusManager.isUsing == false)
         {
+            
             PlayerStatusManager.isDashing = true;
             PlayerStatusManager.canDash = false;
 
@@ -141,6 +148,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 dashDirection = lastMove.normalized;
             }
+            
 
             while (timer < dashTime)
             {
@@ -164,6 +172,8 @@ public class PlayerMovement : MonoBehaviour
     //Fall
     public void StartFall(float dmg, Transform fallPosition, Transform playerPosition)
     {
+        playerAudioSource.clip = GetComponent<Audio_Manager_Player>().playerAudioClip[5];
+        playerAudioSource.Play();
         StartCoroutine(PlayerFall(dmg, fallPosition, playerPosition));
     }
     public IEnumerator PlayerFall(float dmg, Transform fallPosition, Transform playerPosition)

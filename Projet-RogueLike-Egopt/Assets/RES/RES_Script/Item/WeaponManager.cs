@@ -20,9 +20,15 @@ public class WeaponManager : MonoBehaviour
 
     public int weaponId; // 0 = saber 1 = spear 2 = hammer
 
+    //Music
+    public AudioSource cameraAudioSource;
+    public Camera mainCamera;
 
-
-
+    public void Start()
+    {
+        mainCamera = Camera.FindGameObjectWithTag("MainCamera");
+        cameraAudioSource = GetComponent<>
+    }
 
     private void OnTriggerEnter2D(Collider2D character)
     {
@@ -89,6 +95,19 @@ public class WeaponManager : MonoBehaviour
         {
             if (enemyInRangList[i] != null)
             {
+                if(weaponId == 0)
+                {
+
+                }
+                else if (weaponId == 1)
+                {
+
+                }
+                else if (weaponId == 2)
+                {
+
+                }
+
                 if (enemyInRangList[i].tag == "Cristal")
                 {
                     CristalManager.cristalInstance.TakeDamage(weaponDmg + adDmg);
