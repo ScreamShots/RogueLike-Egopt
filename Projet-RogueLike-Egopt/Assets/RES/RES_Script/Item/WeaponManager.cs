@@ -26,14 +26,14 @@ public class WeaponManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D character)
     {
-        if (character.gameObject.tag == "Enemy")
+        if (character.gameObject.tag == "Enemy" || character.gameObject.tag == "Cristal" && character.gameObject.tag != "CharacterGroundCollision" && character.gameObject.tag != "CristalComposite")
         {
             enemyInRangList.Add(character.gameObject);
         }
     }
     private void OnTriggerExit2D(Collider2D character)
     {
-        if (character.gameObject.tag == "Enemy")
+        if (character.gameObject.tag == "Enemy" || character.gameObject.tag == "Cristal")
         {
             enemyInRangList.Remove(character.gameObject);
         }
@@ -60,40 +60,48 @@ public class WeaponManager : MonoBehaviour
     {
         bool enemyInRang = false;
         StartCoroutine(WeaponAttackBis(adDmg));
-        Debug.Log(enemyInRangList.Count);
 
-        for (int i = 0; i <enemyInRangList.Count; i++)
+
+        for (int i = 0; i < enemyInRangList.Count; i++)
         {
-            if(enemyInRangList[i] != null)
+            if (enemyInRangList[i] != null)
             {
                 Debug.Log("test");
                 enemyInRang = true;
             }
         }
 
-        if(enemyInRang == true)
+        if (enemyInRang == true)
         {
             return true;
         }
         else
         {
             return false;
-        }     
+        }
 
     }
 
     IEnumerator WeaponAttackBis(float adDmg)
     {
-
+        yield return new WaitForSeconds(0.1f);
         for (int i = 0; i < enemyInRangList.Count; i++)
         {
             if (enemyInRangList[i] != null)
             {
-                enemyInRangList[i].GetComponent<EnemyHealthSystem>().IsTakingDmg(weaponDmg + adDmg);
+                if (enemyInRangList[i].tag == "Cristal")
+                {
+                    CristalManager.cristalInstance.TakeDamage(weaponDmg + adDmg);
+                }
+                else
+                {
+                    enemyInRangList[i].GetComponent<EnemyHealthSystem>().IsTakingDmg(weaponDmg + adDmg);
+                }
+                
             }
 
         }
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.1f);
 
         Destroy(this.gameObject);
     }

@@ -189,7 +189,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8627519703382630870}
   - component: {fileID: 5389885857669867477}
-  - component: {fileID: 6316384615088188083}
   - component: {fileID: 2865675091690970808}
   - component: {fileID: 5245451453149632698}
   m_Layer: 0
@@ -263,19 +262,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6316384615088188083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7814629619215449647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76e3363711edc094d95690ed2dbca1d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  props: []
 --- !u!95 &2865675091690970808
 Animator:
   serializedVersion: 3
@@ -409,6 +395,7 @@ MonoBehaviour:
   isSpawned: 0
   move: {x: 0, y: 0, z: 0}
   lastMove: {x: 0, y: 0, z: 0}
+  velocity: {x: 0, y: 0, z: 0}
   scorpionsMunition: {fileID: 3707333449646484303, guid: cb872ed473ab1e245a285756dead496a,
     type: 3}
 --- !u!114 &5331146528151899461
@@ -434,6 +421,7 @@ MonoBehaviour:
     type: 3}
   goldCoin: {fileID: 1384799743925468086, guid: df59b7be8f030b649815d7328b1d7512,
     type: 3}
+  isDead: 0
 --- !u!114 &3774223284709280791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,11 +443,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7916279392161102630}
     m_Modifications:
-    - target: {fileID: 253208290104052209, guid: 79a5c9e2e5c2bbe4193f5b7a439cb658,
-        type: 3}
-      propertyPath: m_Name
-      value: HpBarCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 5944524034747033077, guid: 79a5c9e2e5c2bbe4193f5b7a439cb658,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -569,6 +552,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.00051795616
+      objectReference: {fileID: 0}
+    - target: {fileID: 253208290104052209, guid: 79a5c9e2e5c2bbe4193f5b7a439cb658,
+        type: 3}
+      propertyPath: m_Name
+      value: HpBarCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79a5c9e2e5c2bbe4193f5b7a439cb658, type: 3}

@@ -18,15 +18,16 @@ public class ScorpionBehaviour : MonoBehaviour
 
 
     private Rigidbody2D scorpionRgb;
-    private Transform playerTransform;
     public Vector3 move;
     public Vector3 lastMove;
+    public Vector3 velocity;
     [SerializeField] private GameObject scorpionsMunition;
 
     
 
     private void Start()
     {
+        velocity = new Vector3(0, 0, 0);
         isSpawned = false;
         isPlayerInRange = false;
         isPlayerTooClose = false;
@@ -35,7 +36,6 @@ public class ScorpionBehaviour : MonoBehaviour
         canShot = true;
 
         scorpionRgb = GetComponent<Rigidbody2D>();
-        playerTransform = GameObject.FindWithTag("Player").transform;
 
         move = new Vector3(0, 0, 0);
         lastMove = new Vector3(0, 0, 0);
@@ -47,11 +47,13 @@ public class ScorpionBehaviour : MonoBehaviour
     {
         if (isSpawned == true && GetComponent<EnemyHealthSystem>().isDead == false)
         {
-            move = -(transform.position - playerTransform.position).normalized;
+            move = -(transform.position - GameManager.gameManager.player.transform.position).normalized;
+
 
             if (isPlayerInRange == false)
             {
                 scorpionRgb.velocity = move * speed * Time.fixedDeltaTime;
+                
             }
             else if (isPlayerInRange == true && isPlayerTooClose == false)
             {
@@ -68,7 +70,8 @@ public class ScorpionBehaviour : MonoBehaviour
                 StartCoroutine(Shoot());
 
             }
-        }        
+        }
+        velocity = scorpionRgb.velocity;
     }
 
     IEnumerator Shoot()

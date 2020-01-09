@@ -119,11 +119,9 @@ public class RoomGenerationHandler : MonoBehaviour
         GameObject[] allRoom = GameObject.FindGameObjectsWithTag("Rooms");
 
         Instantiate(roomList.startRoom, new Vector3(0, -0.162f, 0), transform.rotation);
+        //Instantiate(roomList.startRoom, new Vector3(400, 400, 0), transform.rotation);
 
-        /*for (int i = 0; i < allRoomCreated.Count; i++)
-        {
-            //Destroy(allRoomCreated[i]);
-        }*/
+
         for (int i = 0; i < allRoom.Length; i++)
        {
            Destroy(allRoom[i]);

@@ -5,21 +5,22 @@ using UnityEngine;
 public class ScorpionMunition : MonoBehaviour
 {
     private Rigidbody2D munitionRgb;
-    private Transform playerTransform;
     private Vector3 targetedPosition;
 
     [SerializeField] private float speed;
     [SerializeField] private float dmg;
 
     public bool isDestructible;
+    public Vector3 velocity;
 
     private void Start()
     {
+        velocity = new Vector3(0, 0, 0);
         munitionRgb = GetComponent<Rigidbody2D>();
-        playerTransform = GameObject.FindWithTag("Player").transform;
         isDestructible = false;
 
-        targetedPosition = -(transform.position - playerTransform.position).normalized;
+        targetedPosition = -(transform.position - GameManager.gameManager.player.transform.position).normalized;
+
     }
 
     private void FixedUpdate()
@@ -34,6 +35,8 @@ public class ScorpionMunition : MonoBehaviour
         {
             isDestructible = true;
         }
+
+        velocity = munitionRgb.velocity;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

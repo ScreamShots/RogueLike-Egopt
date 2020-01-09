@@ -5,7 +5,6 @@ using UnityEngine;
 public class SkeletonBehaviour : MonoBehaviour
 {
     private Rigidbody2D skeletonRgb;
-    private Transform playerTransform;
     [SerializeField] private GameObject equipiedWeapon;
     [HideInInspector] public Vector3 move;
 
@@ -23,6 +22,7 @@ public class SkeletonBehaviour : MonoBehaviour
     private bool canAttack;
     private bool canMove;
     public bool isSpawned;
+    public Vector3 velocity;
 
 
 
@@ -30,9 +30,8 @@ public class SkeletonBehaviour : MonoBehaviour
     private void Start()
     {
         isSpawned = false;
-
+        velocity = new Vector3(0, 0, 0);
         skeletonRgb = GetComponent<Rigidbody2D>();
-        playerTransform = GameObject.FindWithTag("Player").transform;
         isPlayerInRange = false;
         move = new Vector3(0, 0, 0);
         direction = 2;
@@ -49,11 +48,13 @@ public class SkeletonBehaviour : MonoBehaviour
     {
         if(isSpawned == true && GetComponent<EnemyHealthSystem>().isDead == false)
         {
-            move = (playerTransform.position - transform.position).normalized;
+            move = (GameManager.gameManager.player.transform.position - transform.position).normalized;
+
 
             if (isPlayerInRange == false && canMove == true)
             {
                 skeletonRgb.velocity = move * speed * Time.fixedDeltaTime;
+                
             }
             else if (isPlayerInRange == true)
             {
@@ -63,6 +64,7 @@ public class SkeletonBehaviour : MonoBehaviour
 
             Direction();
         }
+        velocity = skeletonRgb.velocity;
     }
 
     void Direction()

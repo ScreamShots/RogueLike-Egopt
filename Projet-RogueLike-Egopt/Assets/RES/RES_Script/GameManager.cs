@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject loadingScreen;
     public Image loadingImage;
+    public GameObject player;
     
 
     public float timer = 0;
@@ -35,7 +36,7 @@ public class GameManager : MonoBehaviour
         gold = 0;       
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         loadingScreen = GameObject.FindWithTag("LoadingScreen");
         
@@ -53,6 +54,19 @@ public class GameManager : MonoBehaviour
             {
                 timer = 0;
                 loadingScreen.SetActive(true);
+            }
+        }
+
+        if (GameObject.FindWithTag("Player") != null)
+        {
+            if (player == null)
+            {
+                player = GameObject.FindWithTag("Player");
+            }
+            else if (player != null && player != GameObject.FindWithTag("Player"))
+            {
+                Destroy(player);
+                player = GameObject.FindWithTag("Player");
             }
         }
         

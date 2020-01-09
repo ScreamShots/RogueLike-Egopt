@@ -27,10 +27,20 @@ public class EnemyWeaponManager : MonoBehaviour
     }
     public void WeaponAttack()
     {
+        StartCoroutine(WeaponAttackbis());
+    }
+
+    public IEnumerator WeaponAttackbis()
+    {
+        yield return new WaitForSeconds(0.1f);
+
         foreach (GameObject player in playerInRangList)
         {
             player.GetComponent<PlayerHealthSystem>().IsTakingDmg(weaponDmg);
         }
+
+        yield return new WaitForSeconds(0.1f);
         Destroy(this.gameObject);
     }
 }
+

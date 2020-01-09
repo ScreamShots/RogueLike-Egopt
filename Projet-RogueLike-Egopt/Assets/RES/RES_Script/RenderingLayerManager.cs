@@ -4,21 +4,28 @@ using UnityEngine;
 
 public class RenderingLayerManager : MonoBehaviour
 {
-    SpriteRenderer thisSpriteRenderer;
+    SpriteRenderer[] thisSpriteRenderer;
     public float lastY;
-    public int baseSortingOrder;
+    public int[] baseSortingOrder;
     void Start()
     {       
         lastY = 0;
         if(transform.childCount == 0)
         {
-            thisSpriteRenderer = GetComponent<SpriteRenderer>();
+            thisSpriteRenderer = GetComponents<SpriteRenderer>();
         }
         else
         {
-            thisSpriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
-        }        
-        baseSortingOrder = thisSpriteRenderer.sortingOrder;
+            thisSpriteRenderer = gameObject.GetComponentsInChildren<SpriteRenderer>();
+        }
+
+        baseSortingOrder = new int[thisSpriteRenderer.Length];
+
+        for (int i = 0; i < baseSortingOrder.Length; i++)
+        {
+            baseSortingOrder[i] = thisSpriteRenderer[i].sortingOrder;
+        }
+        
     }
 
    
@@ -30,11 +37,21 @@ public class RenderingLayerManager : MonoBehaviour
 
             if(gameObject.tag == "Player" || gameObject.tag == "Enemy")
             {
-                thisSpriteRenderer.sortingOrder = baseSortingOrder - (int)((transform.position.y - 0.25) * 10f);
+
+                for (int i = 0; i < thisSpriteRenderer.Length; i++)
+                {
+                    thisSpriteRenderer[i].sortingOrder = baseSortingOrder[i] - (int)((transform.position.y - 0.25) * 10f);
+                }
+                
             }
             else
             {
-                thisSpriteRenderer.sortingOrder = baseSortingOrder - (int)(transform.position.y * 10f);
+
+                for (int i = 0; i < thisSpriteRenderer.Length; i++)
+                {
+                    thisSpriteRenderer[i].sortingOrder = baseSortingOrder[i] - (int)(transform.position.y * 10f);
+                }
+                
             }           
 
         }
