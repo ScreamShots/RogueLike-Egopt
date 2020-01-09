@@ -19,29 +19,60 @@ public class HUDIcono : MonoBehaviour
     static public float effectdurationSpeed;
     static public float effectdurationForce;
 
+    public bool onSpeedCoRu;
+    public bool onForceCoRu;
+
     private void Update()
     {
-       if (boostforce == true)
+       if (boostforce == true && onForceCoRu == false)
         {
+            onForceCoRu = true;
             forceBoostUI.SetActive(true);
-            forceTimer += Time.fixedDeltaTime;
-            forceFill.fillAmount =  1-(forceTimer / effectdurationForce);
-            
+            StartCoroutine(TimerForceBoost());
+
+
+        }
+
+       if(speedboost == true && onSpeedCoRu == false)
+        {
+            onSpeedCoRu = true;
+            speedBoostUI.SetActive(true);
+            StartCoroutine(TimerForceSpeed());
+        }
+
+    }
+
+    IEnumerator TimerForceBoost()
+    {
+        yield return new WaitForSeconds(effectdurationForce / 10);
+        forceTimer += effectdurationForce / 10;
+        forceFill.fillAmount = 1 - (forceTimer / effectdurationForce);
+
+        if(forceTimer < effectdurationForce)
+        {
+            StartCoroutine(TimerForceBoost());
         }
         else
         {
+            onForceCoRu = false;
             forceTimer = 0;
             forceBoostUI.SetActive(false);
         }
+    }
 
-       if(speedboost == true)
+    IEnumerator TimerForceSpeed()
+    {
+        yield return new WaitForSeconds(effectdurationSpeed / 10);
+        speedTimer += effectdurationSpeed / 10;
+        speedFill.fillAmount = 1 - (speedTimer / effectdurationSpeed);
+
+        if (speedTimer < effectdurationSpeed)
         {
-            speedBoostUI.SetActive(true);
-            speedTimer += Time.fixedDeltaTime;
-            speedFill.fillAmount = 1-(speedTimer / effectdurationSpeed);
+            StartCoroutine(TimerForceSpeed());
         }
         else
         {
+            onSpeedCoRu = false;
             speedTimer = 0;
             speedBoostUI.SetActive(false);
         }

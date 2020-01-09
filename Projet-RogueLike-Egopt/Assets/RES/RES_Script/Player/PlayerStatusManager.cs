@@ -126,6 +126,7 @@ public class PlayerStatusManager : MonoBehaviour
             canPick = true;
             canFall = true;
             canUse = true;
+            canScroll = true;
 
             needToEndAttack = false;
             isAttacking = false;
@@ -235,6 +236,7 @@ public class PlayerStatusManager : MonoBehaviour
                     canUse = false;
                     canInteract = false;
                     canPick = false;
+                    canScroll = false;
                     PlayerMovement.playerRgb.velocity = new Vector3(0, 0, 0);
                     break;
 

@@ -48,27 +48,23 @@ public class ItemManager : MonoBehaviour
 
     IEnumerator AgilityPotion(GameObject characterUsing)
     {
-        Debug.Log("Start");
         characterUsing.GetComponent<PlayerMovement>().speed = characterUsing.GetComponent<PlayerMovement>().speed * speedBoostRatio;
         HUDIcono.speedboost = true;
         HUDIcono.effectdurationSpeed = effectDuration;
         yield return new WaitForSeconds(effectDuration);
         HUDIcono.speedboost = false;
         characterUsing.GetComponent<PlayerMovement>().speed = characterUsing.GetComponent<PlayerMovement>().speed / speedBoostRatio;
-        Debug.Log("Stop");
         Destroy(this.gameObject);
     }
 
     IEnumerator StrengthPotion(GameObject characterUsing)
     {
-        Debug.Log("Start");
         characterUsing.GetComponent<PlayerUse>().additionalStrength += strengthBoostValue;
         HUDIcono.boostforce = true;
         HUDIcono.effectdurationForce = effectDuration;
         yield return new WaitForSeconds(effectDuration);
         HUDIcono.boostforce = false;
         characterUsing.GetComponent<PlayerUse>().additionalStrength -= strengthBoostValue;
-        Debug.Log("Stop");
         Destroy(this.gameObject);
     }
 }
