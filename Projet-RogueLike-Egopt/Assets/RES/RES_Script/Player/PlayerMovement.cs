@@ -199,6 +199,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void StartFallBis(float dmg, Transform fallPosition, Transform playerPosition)
     {
+        playerAudioSource.clip = GetComponent<Audio_Manager_Player>().playerAudioClip[5];
+        playerAudioSource.Play();
         StartCoroutine(PlayerFallBis(dmg, fallPosition, playerPosition));
     }
     public IEnumerator PlayerFallBis(float dmg, Transform fallPosition, Transform playerPosition)

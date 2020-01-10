@@ -76,8 +76,7 @@ public class PlayerHealthSystem : MonoBehaviour
     public void PlayerIsHealing(float healValue)             //Put every action requiered when the player is healed on this fonction  
     {
         playerHp += healValue;
-        playerAudioSource.clip = GetComponent<Audio_Manager_Player>().playerAudioClip[2];
-        playerAudioSource.Play();
+       
 
         if (playerHp > playerMaxHp)
         {
