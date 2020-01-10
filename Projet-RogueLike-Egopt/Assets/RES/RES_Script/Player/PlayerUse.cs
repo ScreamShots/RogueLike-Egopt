@@ -17,11 +17,17 @@ public class PlayerUse : MonoBehaviour
     private bool useSecurityCheck;
     public PlayerInventory inventory;
 
+    //Music
+    public AudioSource playerAudioSource;
+
     private void Start()
     {
         attackSecurityCheck = false;
         useSecurityCheck = false;
         inventory = GetComponent<PlayerInventory>();
+
+        //Sound
+        playerAudioSource = GetComponent<Audio_Manager_Player>().audioSourcePlayer;
     }
     void FixedUpdate()
     {
@@ -119,8 +125,11 @@ public class PlayerUse : MonoBehaviour
 
             PlayerStatusManager.isUsing = true;
 
-            useSpeed = equipiedItem.GetComponent<ItemManager>().useSpeed;          
+            useSpeed = equipiedItem.GetComponent<ItemManager>().useSpeed;
 
+            //music
+            playerAudioSource.clip = GetComponent<Audio_Manager_Player>().playerAudioClip[2];
+            playerAudioSource.Play();
             yield return new WaitForSeconds(useSpeed);
 
             useSecurityCheck = false;

@@ -24,7 +24,10 @@ public class ScorpionBehaviour : MonoBehaviour
     public Vector3 supposedVelocity;
     [SerializeField] private GameObject scorpionsMunition;
 
-    
+    //music
+    public AudioSource scorpionAudioS;
+    public AudioClip scorpAttack;
+    public AudioClip scorpTakeDamage;
 
     private void Start()
     {
@@ -42,6 +45,9 @@ public class ScorpionBehaviour : MonoBehaviour
         lastMove = new Vector3(0, 0, 0);
 
         StartCoroutine(Spawn());
+
+        //music
+        scorpionAudioS = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -67,13 +73,14 @@ public class ScorpionBehaviour : MonoBehaviour
 
             if (isPlayerInRange == true && isPlayerTooClose == false)
             {
-
+                
                 StartCoroutine(Shoot());
 
             }
         }
         else if (GetComponent<EnemyHealthSystem>().isDead == true)
         {
+            
             scorpionRgb.velocity = new Vector3(0, 0, 0);
         }
         velocity = scorpionRgb.velocity;
@@ -84,6 +91,8 @@ public class ScorpionBehaviour : MonoBehaviour
     {
         if (canShot == true)
         {
+            scorpionAudioS.clip = scorpAttack;
+            scorpionAudioS.Play();
             lastMove = move;
             canShot = false;
             isShooting = true;

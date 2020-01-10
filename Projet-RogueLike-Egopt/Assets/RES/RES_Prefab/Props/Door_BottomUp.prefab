@@ -101,6 +101,8 @@ MonoBehaviour:
   isDoorLocked: 0
   timer: 0
   animator: {fileID: 0}
+  audioSource: {fileID: 0}
+  doorShutted: {fileID: 0}
 --- !u!212 &2990076738541690103
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -333,7 +335,6 @@ MonoBehaviour:
   isOverlaped: 0
   isDoorLocked: 0
   timer: 0
-  animator: {fileID: 0}
 --- !u!95 &3369555086237906085
 Animator:
   serializedVersion: 3
