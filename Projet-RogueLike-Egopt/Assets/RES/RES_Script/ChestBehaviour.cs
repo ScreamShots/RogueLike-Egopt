@@ -10,10 +10,16 @@ public class ChestBehaviour : MonoBehaviour
     public bool isOpen;
     public GameObject openChest;
 
+    private AudioSource audioSourceChest;
+
     private void Start()
     {
+        audioSourceChest = GetComponent<AudioSource>();
+        audioSourceChest.Play();
+
         numberOfDrop = 0;
         isOpen = false;
+        
     }
 
     private void Update()

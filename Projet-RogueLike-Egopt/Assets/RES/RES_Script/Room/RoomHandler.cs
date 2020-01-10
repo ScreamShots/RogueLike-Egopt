@@ -18,13 +18,19 @@ public class RoomHandler : MonoBehaviour
     public bool cameraIsSet;
     public bool isThisShop;
 
+    //music
+    public GameObject musicManagerEnvironnement;
+
     private void Start()
     {
         isRoomActivated = false;
         canSpawnChest = false;
         chestAlreadySpawned = false;
         gameCamera = GameObject.FindWithTag("MainCamera");
-        
+
+        //music
+        musicManagerEnvironnement = GameObject.FindGameObjectWithTag("MusicManager_Environnement");
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -70,16 +76,18 @@ public class RoomHandler : MonoBehaviour
             {
                 foreach (GameObject door in doorInThisRoom)
                 {
-                    door.GetComponent<Door>().isDoorLocked = false;                           
+                    door.GetComponent<Door>().isDoorLocked = false;
+
                 }
                 canSpawnChest = true;
             }
+
             else if (enemyInThisRoom.Count != 0)
             {
                 foreach (GameObject door in doorInThisRoom)
                 {
                     door.GetComponent<Door>().isDoorLocked = true;
-                    
+
                 }
                 Destroy(thisChest);
                 chestAlreadySpawned = false;
@@ -88,8 +96,9 @@ public class RoomHandler : MonoBehaviour
 
             if (isThisRoomSpawn == false && canSpawnChest == true && chestAlreadySpawned == false && isThisShop == false)
             {
+                
                 thisChest = Instantiate(chest, transform.position, Quaternion.identity);
-                chestAlreadySpawned = true;
+                    chestAlreadySpawned = true;
             }
 
             if(isThisBossRoom == true && cameraIsSet == false)

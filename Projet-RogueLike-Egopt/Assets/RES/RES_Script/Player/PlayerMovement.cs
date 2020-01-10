@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Music
     public AudioSource playerAudioSource;
+ 
 
     void Start()
     {
@@ -47,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         lastMove = new Vector3(1, 0, 0);
         respawnPosition = new Vector3(0, 0, 0);
 
-        playerAudioSource = GetComponent<Audio_Manager_Player>().audioSourcePlayer;
+        playerAudioSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()

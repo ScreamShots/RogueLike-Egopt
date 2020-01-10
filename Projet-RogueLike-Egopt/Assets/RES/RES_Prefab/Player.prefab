@@ -488,6 +488,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   dashDistance: 50
   fallingTime: 0.5
+  playerAudioSource: {fileID: 0}
 --- !u!114 &308797032114549613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,7 +588,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.507
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -686,10 +687,13 @@ MonoBehaviour:
   playerAudioClip:
   - {fileID: 8300000, guid: 01e969f70d107a34c864a7deab8b9c82, type: 3}
   - {fileID: 8300000, guid: b98282c019c9f2b41906076bee406bf6, type: 3}
-  - {fileID: 8300000, guid: 9e0b474523ccdf449a47dd3c73b6153d, type: 3}
+  - {fileID: 8300000, guid: 51f942c4fb3846b4a9d1bc98d115b6bb, type: 3}
   - {fileID: 8300000, guid: 21755c9113783204689ba756cd033f8e, type: 3}
   - {fileID: 8300000, guid: 453ce1deeb948384681a58dff0ab9cba, type: 3}
   - {fileID: 8300000, guid: 408cd4413d681c8489f82c778e6eca56, type: 3}
+  - {fileID: 8300000, guid: 7563003b8f617de49bfd91fef141c577, type: 3}
+  - {fileID: 8300000, guid: d3ba59e51bf3a0642946efa5ab3f9019, type: 3}
+  - {fileID: 8300000, guid: 287aacd1f79af1443bdc9c1fbc7be8ba, type: 3}
   audioSourcePlayer: {fileID: -8071824088218782820}
 --- !u!1 &3261842602555711211
 GameObject:

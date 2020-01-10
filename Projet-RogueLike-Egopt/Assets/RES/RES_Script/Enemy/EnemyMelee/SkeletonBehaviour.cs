@@ -24,7 +24,11 @@ public class SkeletonBehaviour : MonoBehaviour
     public bool isSpawned;
     public Vector3 velocity;
 
-
+    //music
+    //music
+    public AudioSource skeletonAudioS;
+    public AudioClip skeletonAttack;
+    public AudioClip skeletonDead;
 
 
     private void Start()
@@ -42,6 +46,8 @@ public class SkeletonBehaviour : MonoBehaviour
 
         StartCoroutine(Spawn());
 
+        //music
+        skeletonAudioS = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -59,6 +65,7 @@ public class SkeletonBehaviour : MonoBehaviour
             else if (isPlayerInRange == true)
             {
                 skeletonRgb.velocity = new Vector3(0, 0, 0);
+                
                 StartCoroutine(Attack());
             }
 
@@ -67,6 +74,7 @@ public class SkeletonBehaviour : MonoBehaviour
         else if(GetComponent<EnemyHealthSystem>().isDead == true)
         {
             skeletonRgb.velocity = new Vector3(0, 0, 0);
+            
         }
         velocity = skeletonRgb.velocity;
     }
@@ -135,6 +143,8 @@ public class SkeletonBehaviour : MonoBehaviour
 
             actualWeapon.GetComponent<EnemyWeaponManager>().WeaponAttack();
 
+            skeletonAudioS.clip = skeletonAttack;
+            skeletonAudioS.Play();
             yield return new WaitForSeconds(immobilizationTime);
 
             isAttacking = false;

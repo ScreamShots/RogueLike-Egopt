@@ -246,6 +246,8 @@ GameObject:
   - component: {fileID: 5106701925636219607}
   - component: {fileID: 7470448931068986714}
   - component: {fileID: 840771163082483395}
+  - component: {fileID: 3339864943820174002}
+  - component: {fileID: 1664363019144189904}
   m_Layer: 0
   m_Name: SqueletteMelee
   m_TagString: Enemy
@@ -317,6 +319,9 @@ MonoBehaviour:
   isAttacking: 0
   isSpawned: 0
   velocity: {x: 0, y: 0, z: 0}
+  skeletonAudioS: {fileID: 3339864943820174002}
+  skeletonAttack: {fileID: 8300000, guid: ad645306103b72946a1461777d4af1f3, type: 3}
+  skeletonDead: {fileID: 8300000, guid: de8928b9dcaf4e446bef2d75421d33af, type: 3}
 --- !u!114 &5106701925636219607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,7 +375,115 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastY: 0
-  baseSortingOrder: 0
+  baseSortingOrder: 
+--- !u!82 &3339864943820174002
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916279392161102632}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1664363019144189904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916279392161102632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5420852e8688ecd46994065f8a249922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &742273423246318361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -378,6 +491,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7916279392161102630}
     m_Modifications:
+    - target: {fileID: 253208290104052209, guid: 79a5c9e2e5c2bbe4193f5b7a439cb658,
+        type: 3}
+      propertyPath: m_Name
+      value: HpBarCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 5944524034747033077, guid: 79a5c9e2e5c2bbe4193f5b7a439cb658,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -487,11 +605,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.00051795616
-      objectReference: {fileID: 0}
-    - target: {fileID: 253208290104052209, guid: 79a5c9e2e5c2bbe4193f5b7a439cb658,
-        type: 3}
-      propertyPath: m_Name
-      value: HpBarCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79a5c9e2e5c2bbe4193f5b7a439cb658, type: 3}

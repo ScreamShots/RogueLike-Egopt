@@ -150,6 +150,8 @@ MonoBehaviour:
   isDoorLocked: 0
   timer: 0
   animator: {fileID: 0}
+  audioSource: {fileID: 0}
+  doorShutted: {fileID: 0}
 --- !u!95 &4144111024060757772
 Animator:
   serializedVersion: 3
@@ -351,6 +353,8 @@ MonoBehaviour:
   isDoorLocked: 0
   timer: 0
   animator: {fileID: 0}
+  audioSource: {fileID: 0}
+  doorShutted: {fileID: 0}
 --- !u!95 &2482114134864651602
 Animator:
   serializedVersion: 3

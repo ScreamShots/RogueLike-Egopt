@@ -11,6 +11,9 @@ public class Door : MonoBehaviour
     public float timer;
     public Animator animator;
 
+
+
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -18,6 +21,8 @@ public class Door : MonoBehaviour
         isOverlaped = false;
         isDoorLocked = true;
         timer = 0.1f;
+
+       
     }
 
     private void Update()
@@ -38,7 +43,9 @@ public class Door : MonoBehaviour
         }
         if (isDoorLocked == false)
         {
+            
             animator.SetTrigger("Close");
+           
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -54,6 +61,7 @@ public class Door : MonoBehaviour
         if(collision.gameObject.tag == "Door")
         {
             isOverlaped = true;
+            
         }
     }
 

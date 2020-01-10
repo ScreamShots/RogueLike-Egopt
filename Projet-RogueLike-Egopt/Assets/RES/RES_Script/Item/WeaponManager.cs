@@ -20,14 +20,15 @@ public class WeaponManager : MonoBehaviour
 
     public int weaponId; // 0 = saber 1 = spear 2 = hammer
 
-    //Music
-    public AudioSource cameraAudioSource;
-    public Camera mainCamera;
 
-    public void Start()
+    public AudioSource weaponAudioSource;
+    public GameObject player;
+
+    private void Start()
     {
-        mainCamera = Camera.FindGameObjectWithTag("MainCamera");
-        cameraAudioSource = GetComponent<>
+        player = GameObject.FindGameObjectWithTag("Player");
+        weaponAudioSource = player.GetComponent<AudioSource>();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D character)
@@ -90,24 +91,28 @@ public class WeaponManager : MonoBehaviour
 
     IEnumerator WeaponAttackBis(float adDmg)
     {
+        if (weaponId == 0)
+        {
+            weaponAudioSource.clip = player.GetComponent<Audio_Manager_Player>().playerAudioClip[6];
+            weaponAudioSource.Play();
+        }
+        else if (weaponId == 1)
+        {
+            weaponAudioSource.clip = player.GetComponent<Audio_Manager_Player>().playerAudioClip[7];
+            weaponAudioSource.Play();
+        }
+        else if (weaponId == 2)
+        {
+            weaponAudioSource.clip = player.GetComponent<Audio_Manager_Player>().playerAudioClip[8];
+            weaponAudioSource.Play();
+        }
+
         yield return new WaitForSeconds(0.1f);
         for (int i = 0; i < enemyInRangList.Count; i++)
         {
             if (enemyInRangList[i] != null)
             {
-                if(weaponId == 0)
-                {
-
-                }
-                else if (weaponId == 1)
-                {
-
-                }
-                else if (weaponId == 2)
-                {
-
-                }
-
+               
                 if (enemyInRangList[i].tag == "Cristal")
                 {
                     CristalManager.cristalInstance.TakeDamage(weaponDmg + adDmg);
@@ -115,6 +120,8 @@ public class WeaponManager : MonoBehaviour
                 else
                 {
                     enemyInRangList[i].GetComponent<EnemyHealthSystem>().IsTakingDmg(weaponDmg + adDmg);
+
+
                 }
                 
             }
