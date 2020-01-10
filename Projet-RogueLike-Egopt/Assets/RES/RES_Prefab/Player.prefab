@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ff9b1c39f036a4ba0406d59cd97ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 110
+  speed: 100
   move: {x: 0, y: 0, z: 0}
   lastMove: {x: 0, y: 0, z: 0}
   dashSpeed: 200
@@ -486,7 +486,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  dashDistance: 50
+  dashDistance: 45
   fallingTime: 0.5
   playerAudioSource: {fileID: 0}
 --- !u!114 &308797032114549613
@@ -539,7 +539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0bb94591b956c64eb2d241d6d33af9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMaxHp: 100
+  playerMaxHp: 150
   playerMinHp: 0
   playerHp: 0
   playerLostHp: 0

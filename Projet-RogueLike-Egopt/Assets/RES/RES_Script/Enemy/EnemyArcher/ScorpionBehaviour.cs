@@ -59,7 +59,7 @@ public class ScorpionBehaviour : MonoBehaviour
 
             if (isPlayerInRange == false)
             {
-                scorpionRgb.velocity = move * speed Time.fixedDeltaTime;
+                scorpionRgb.velocity = move * speed * Time.fixedDeltaTime;
                 
             }
             else if (isPlayerInRange == true && isPlayerTooClose == false)

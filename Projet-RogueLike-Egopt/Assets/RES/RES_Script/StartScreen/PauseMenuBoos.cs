@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenuBoos : MonoBehaviour
 {
+
     public GameObject[] mainButtons;
     public GameObject settingsMenu;
     public Button[] settingsButton;
@@ -34,9 +35,9 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if(pauseMenuOn == false)
+        if (pauseMenuOn == false)
         {
-            if (Input.GetButtonDown("Menu") && RoomGenerationHandler.isLevelPlayable == true)
+            if (Input.GetButtonDown("Menu"))
             {
                 menu.SetActive(true);
                 hud.SetActive(false);
@@ -46,38 +47,38 @@ public class PauseMenu : MonoBehaviour
                 eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(mainButtons[0].gameObject);
             }
         }
-       
-            if (Input.GetButtonDown("BackMenu"))
+
+        if (Input.GetButtonDown("BackMenu"))
+        {
+            if (subMenuActive == true)
             {
-                if (subMenuActive == true)
+                foreach (GameObject button in mainButtons)
                 {
-                    foreach (GameObject button in mainButtons)
-                    {
-                        button.SetActive(true);
-                    }
-
-                    settingsMenu.SetActive(false);
-                    eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(mainButtons[0].gameObject);
-
-                    subMenuActive = false;
+                    button.SetActive(true);
                 }
-                else if (subSettingsMenuActive == true)
-                {
-                    soundSettings.SetActive(false);
-                    graphicSettings.SetActive(false);
 
-                    for (int i = 0; i < settingsButton.Length; i++)
-                    {
-                        settingsButton[i].GetComponent<Button>().enabled = true;
-                        settingsButton[i].gameObject.GetComponent<Image>().enabled = true;
-                    }
-                    eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(settingsButton[0].gameObject);
+                settingsMenu.SetActive(false);
+                eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(mainButtons[0].gameObject);
 
-                    subSettingsMenuActive = false;
-                    subMenuActive = true;
-                    onSoundSettings = false;
-                }
+                subMenuActive = false;
             }
+            else if (subSettingsMenuActive == true)
+            {
+                soundSettings.SetActive(false);
+                graphicSettings.SetActive(false);
+
+                for (int i = 0; i < settingsButton.Length; i++)
+                {
+                    settingsButton[i].GetComponent<Button>().enabled = true;
+                    settingsButton[i].gameObject.GetComponent<Image>().enabled = true;
+                }
+                eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(settingsButton[0].gameObject);
+
+                subSettingsMenuActive = false;
+                subMenuActive = true;
+                onSoundSettings = false;
+            }
+        }
 
         if (Input.GetAxisRaw("VerticalMenuMoveAlt") > 0)
         {
@@ -100,14 +101,15 @@ public class PauseMenu : MonoBehaviour
                 eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(effectsSlider);
                 alreadySwap = true;
             }
-            else if(eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().currentSelectedGameObject == masterSlider && alreadySwap == false)
+            else if (eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().currentSelectedGameObject == masterSlider && alreadySwap == false)
             {
                 eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(musicSlider);
                 alreadySwap = true;
             }
         }
-        
-        if(alreadySwap == true) {
+
+        if (alreadySwap == true)
+        {
 
             StartCoroutine(ResetMenuMove());
         }
@@ -183,10 +185,10 @@ public class PauseMenu : MonoBehaviour
         }
 
         yield return new WaitForSecondsRealtime(0.0001f);
-        if(Time.timeScale == 0)
+        if (Time.timeScale == 0)
         {
             StartCoroutine(ParallelUpdate());
-        }        
+        }
     }
 
 
@@ -210,9 +212,9 @@ public class PauseMenu : MonoBehaviour
 
     public void OpenSetting()
     {
-        foreach(GameObject button in mainButtons)
+        foreach (GameObject button in mainButtons)
         {
-            button.SetActive(false);            
+            button.SetActive(false);
         }
 
         settingsMenu.SetActive(true);

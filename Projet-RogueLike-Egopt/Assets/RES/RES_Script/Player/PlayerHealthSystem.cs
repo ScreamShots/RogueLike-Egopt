@@ -20,6 +20,7 @@ public class PlayerHealthSystem : MonoBehaviour
     public float timer;
     public GameObject gameOverBackGround;
     public GameObject gameOverUI;
+    public bool godMod = false;
 
 
     //Music
@@ -37,6 +38,19 @@ public class PlayerHealthSystem : MonoBehaviour
     
     private void FixedUpdate()
     {
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            if (godMod == true)
+            {
+                godMod = false;
+            }
+            else if (godMod == false)
+            {
+                godMod = true;
+            }
+        }
+
         if (playerHp <= 0)
         {
             
@@ -61,7 +75,7 @@ public class PlayerHealthSystem : MonoBehaviour
 
     public void IsTakingDmg(float damageValue)       //Put every action requiered when the player is taking dmg on this fonction
     {
-        if (playerIsImune == false)
+        if (playerIsImune == false && godMod == false)
         {
             
             playerHp -= damageValue;
