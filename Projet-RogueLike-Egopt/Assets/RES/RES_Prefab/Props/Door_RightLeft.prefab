@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7980414540860231153}
   - component: {fileID: 3213624299396629070}
   - component: {fileID: 4144111024060757772}
+  - component: {fileID: 8546884428622032458}
   m_Layer: 0
   m_Name: Door_1_Left
   m_TagString: Door
@@ -169,6 +170,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8546884428622032458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3503497385434850976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b9f96f158957e40a5347ea1589e69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastY: 0
+  baseSortingOrder: 
 --- !u!1 &7047600929061464390
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +230,7 @@ GameObject:
   - component: {fileID: 6688747820247355640}
   - component: {fileID: 2955793950165294250}
   - component: {fileID: 2482114134864651602}
+  - component: {fileID: 5168820714412952864}
   m_Layer: 0
   m_Name: Door_1_Right
   m_TagString: Door
@@ -370,3 +386,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5168820714412952864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9107236206628240242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b9f96f158957e40a5347ea1589e69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastY: 0
+  baseSortingOrder: 

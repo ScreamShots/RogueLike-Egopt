@@ -86,7 +86,7 @@ public class RoomHandler : MonoBehaviour
                 canSpawnChest = false;
             }
 
-            if (isThisRoomSpawn == false && canSpawnChest == true && chestAlreadySpawned == false && isThisShop == false)
+            if (isThisRoomSpawn == false && canSpawnChest == true && chestAlreadySpawned == false && isThisShop == false && isThisBossRoom == false)
             {
                 thisChest = Instantiate(chest, transform.position, Quaternion.identity);
                 chestAlreadySpawned = true;
@@ -94,7 +94,10 @@ public class RoomHandler : MonoBehaviour
 
             if(isThisBossRoom == true && cameraIsSet == false)
             {
-                SceneManager.LoadScene(3);
+                GameObject.FindWithTag("MainCamera").transform.parent = GameManager.gameManager.player.transform;
+                GameObject.FindWithTag("MainCamera").transform.localPosition = new Vector3(0, 0, 0);
+                cameraIsSet = true;
+
             }
             else if (cameraIsSet == false)
             {

@@ -21,6 +21,7 @@ public class ScorpionBehaviour : MonoBehaviour
     public Vector3 move;
     public Vector3 lastMove;
     public Vector3 velocity;
+    public Vector3 supposedVelocity;
     [SerializeField] private GameObject scorpionsMunition;
 
     
@@ -47,12 +48,12 @@ public class ScorpionBehaviour : MonoBehaviour
     {
         if (isSpawned == true && GetComponent<EnemyHealthSystem>().isDead == false)
         {
-            move = -(transform.position - GameManager.gameManager.player.transform.position).normalized;
+            move = -(transform.position*1000 - GameManager.gameManager.player.transform.position*1000).normalized;
 
 
             if (isPlayerInRange == false)
             {
-                scorpionRgb.velocity = move * speed * Time.fixedDeltaTime;
+                scorpionRgb.velocity = move * speed Time.fixedDeltaTime;
                 
             }
             else if (isPlayerInRange == true && isPlayerTooClose == false)
@@ -76,6 +77,7 @@ public class ScorpionBehaviour : MonoBehaviour
             scorpionRgb.velocity = new Vector3(0, 0, 0);
         }
         velocity = scorpionRgb.velocity;
+        supposedVelocity = (-(transform.position - GameManager.gameManager.player.transform.position).normalized) * speed * Time.fixedDeltaTime;
     }
 
     IEnumerator Shoot()

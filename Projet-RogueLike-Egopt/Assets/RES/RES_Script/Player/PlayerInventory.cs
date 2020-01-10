@@ -29,6 +29,7 @@ public class PlayerInventory : MonoBehaviour
 
         inventoryIndex = 0;
         buttonADisplay.SetActive(false);
+        
 
     }
 
@@ -84,6 +85,11 @@ public class PlayerInventory : MonoBehaviour
             buttonADisplay.SetActive(true);
         }
 
+        if (collision.gameObject.tag == "Teleporter")
+        {
+            buttonADisplay.SetActive(true);
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -101,6 +107,10 @@ public class PlayerInventory : MonoBehaviour
         if (collision.gameObject.tag == "ShopSlot")
         {
             shopSecurityStock.Remove(collision.gameObject);
+            buttonADisplay.SetActive(false);
+        }
+        if (collision.gameObject.tag == "Teleporter")
+        {
             buttonADisplay.SetActive(false);
         }
     }

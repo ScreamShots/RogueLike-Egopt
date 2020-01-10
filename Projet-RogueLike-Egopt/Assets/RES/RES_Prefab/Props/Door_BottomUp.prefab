@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7409786119533555780}
   - component: {fileID: 2990076738541690103}
   - component: {fileID: 3390579102322126889}
+  - component: {fileID: 8480831674122541596}
   m_Layer: 0
   m_Name: Door_1_Up
   m_TagString: Door
@@ -99,6 +100,7 @@ MonoBehaviour:
   isOverlaped: 0
   isDoorLocked: 0
   timer: 0
+  animator: {fileID: 0}
 --- !u!212 &2990076738541690103
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -167,6 +169,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8480831674122541596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976235725503906962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b9f96f158957e40a5347ea1589e69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastY: 0
+  baseSortingOrder: 
 --- !u!1 &4010531849195833276
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +197,7 @@ GameObject:
   - component: {fileID: 8132004348390819224}
   - component: {fileID: 7278404294490214909}
   - component: {fileID: 3369555086237906085}
+  - component: {fileID: 2890006942024587985}
   m_Layer: 0
   m_Name: Door_1_Bottom
   m_TagString: Door
@@ -316,6 +333,7 @@ MonoBehaviour:
   isOverlaped: 0
   isDoorLocked: 0
   timer: 0
+  animator: {fileID: 0}
 --- !u!95 &3369555086237906085
 Animator:
   serializedVersion: 3
@@ -335,6 +353,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2890006942024587985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4010531849195833276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b9f96f158957e40a5347ea1589e69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastY: 0
+  baseSortingOrder: 
 --- !u!1 &7047600929061464390
 GameObject:
   m_ObjectHideFlags: 0

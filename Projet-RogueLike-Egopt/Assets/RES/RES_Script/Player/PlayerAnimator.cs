@@ -66,5 +66,15 @@ public class PlayerAnimator : MonoBehaviour
 
         playerAnimator.SetFloat("xDirection", lastMove.x);
         playerAnimator.SetFloat("yDirection", lastMove.y);
+
+        if (PlayerStatusManager.isUsing == true)
+        {
+            Debug.Log("test");
+            playerAnimator.SetBool("isDrinking", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("isDrinking", false);
+        }
     }
 }
