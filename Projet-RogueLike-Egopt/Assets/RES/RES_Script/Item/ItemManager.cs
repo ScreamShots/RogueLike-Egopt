@@ -23,6 +23,7 @@ public class ItemManager : MonoBehaviour
     {
         if (characterUsing.tag == "Player")
         {
+
             switch (itemId)
             {
                 case 0:

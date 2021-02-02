@@ -49,7 +49,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.4}
   serializedVersion: 2
-  m_Radius: 1.4
+  m_Radius: 1
 --- !u!114 &4925682770445915489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,18 +62,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a56a7719d7d68344e9d40d009be413aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponAttackSpeed: 0.6
-  weaponDmg: 60
+  weaponAttackSpeed: 0.4
+  weaponDmg: 80
   weaponImobilisationTime: 0.4
   launchingTime: 0.22
-  durability: 25
-  maxdurability: 25
+  durability: 10
+  maxdurability: 10
   isBroke: 0
   brokeMode: {fileID: 2707228538706793494, guid: c0011bf842c521447a3a3f4c79b2d6de,
     type: 3}
   iconDisplay: {fileID: 21300000, guid: 35e4211317eab304bae7b762abdc1d0b, type: 3}
   enemyInRangList: []
   weaponId: 2
+  weaponAudioSource: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &6633406320477258880
 MonoBehaviour:
   m_ObjectHideFlags: 0

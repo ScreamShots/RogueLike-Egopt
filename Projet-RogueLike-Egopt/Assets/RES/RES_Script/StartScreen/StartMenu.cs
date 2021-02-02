@@ -161,4 +161,9 @@ public class StartMenu : MonoBehaviour
         subSettingsMenuActive = true;
         onSoundSettings = true;
     }
+
+    public void Arena()
+    {
+        SceneManager.LoadScene(4);
+    }
 }

@@ -223,6 +223,7 @@ public class PauseMenu : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1;
+        Destroy(GameManager.gameManager.player);
         SceneManager.LoadScene(0);
     }
 

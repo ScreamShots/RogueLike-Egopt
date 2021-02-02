@@ -59,11 +59,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 1.4}
-      - {x: -1, y: 0.8}
-      - {x: -0.8, y: -0.5}
-      - {x: 0.8, y: -0.5}
-      - {x: 1, y: 0.8}
+    - - {x: 0, y: 0.9}
+      - {x: -0.8, y: 0.6}
+      - {x: -0.5, y: -0.5}
+      - {x: 0.5, y: -0.5}
+      - {x: 0.8, y: 0.6}
 --- !u!114 &4925682770445915489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponAttackSpeed: 0.3
-  weaponDmg: 50
+  weaponDmg: 15
   weaponImobilisationTime: 0.2
   launchingTime: 0
   durability: 25
@@ -87,6 +87,8 @@ MonoBehaviour:
   iconDisplay: {fileID: 21300000, guid: c0b0bb4da4fcbb34c927e208fbcae5d8, type: 3}
   enemyInRangList: []
   weaponId: 0
+  weaponAudioSource: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &8460145628736507507
 MonoBehaviour:
   m_ObjectHideFlags: 0
