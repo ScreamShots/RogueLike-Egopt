@@ -1,0 +1,126 @@
+#!/usr/bin/env ruby
+
+require 'cgi'
+
+# Generate a changelog file.
+#
+# This is suitable for a changelog file in markdown/text or html format.
+# To generate a pretty changelog, it's required to commit with
+# "Version x.y.z" when a new version is ready.
+#
+# Options
+#
+# --since=x
+#   This is the same as the one for git log.
+#
+# --html
+#   Generate changelog in html.
+#
+# Examples
+#
+# git changelog > Changelog.markdown
+# git changelog --html > Changelog.html
+# git changelog --since=2013-07-01
+# git changelog --since=2.weeks
+# git changelog --since=2.weeks --html
+
+# Parse command line options.
+#
+# Returns nothing.
+def init_options
+  @since = ""
+  @format = :markdown
+  ARGV.each do |arg|
+    if arg.start_with?("--since=")
+      @since = arg.dup
+    elsif arg == "--html"
+      @format = :html
+    end
+  end
+end
+
+# Get the output of `git log`.
+#
+# Returns a multilines String.
+def get_log
+  if @format == :markdown
+    log = `git log --pretty=format:"* %ad %s  %n%b" --date=short #{@since}`
+    log.gsub /^$\n/, ''
+  else
+    `git log --pretty=format:"*<li>%ad %s%n%b</li>" --date=short #{@since}`
+  end
+end
+
+# Indent a string, to be part of the previous list element.
+#
+# str - A String to indent.
+#
+# Examples
+#
+#   indent "foo" # => "  foo"
+#
+# Returns indented String version of str.
+def indent str
+  if @format == :markdown
+    '  ' + CGI.escapeHTML(str)
+  else
+    if str.end_with?("</li>")
+      str
+    else
+    "<br />" + str
+    end
+  end
+end
+
+# Make this a title.
+#
+# Examples
+#
+#   titleize "Version 1.0"
+#   # => "\nVersion 1.0\n==========="
+#
+# str - A String to titleize.
+#
+# Returns a titleized String version of str.
+def titleize str
+  if @format == :markdown
+    str = str[2..-1]
+    str = "\n" + CGI.escapeHTML(str) + "\n" + "=" * str.size
+  else
+    str[1..4] + "<h2>" + CGI.escapeHTML(str[5..-1]) + "</h2>"
+  end
+end
+
+# Returns true if String str is a commit body.
+def commit_body? str
+  not str.start_with? '*'
+end
+
+# Returns true if String str is a «Version» commit.
+def title? str
+  /\*( |<li>).{10} Version/ =~ str
+end
+
+init_options
+
+puts "<p>" if @format == :html
+puts "This changelog is auto-generated using git-changelog."
+puts "See https://github.com/lkdjiin/git-changelog for more information."
+puts "</p>" if @format == :html
+puts
+puts "<ul>" if @format == :html
+
+# Format the log output.
+get_log.split("\n").each do |str|
+  if commit_body? str
+    str = indent str
+  elsif title? str
+    str = titleize str
+  else
+    str = str[1..-1] if @format == :html
+    str = CGI.escapeHTML(str) if @format == :markdown
+  end
+  puts str
+end
+
+puts "</ul>" if @format == :html
